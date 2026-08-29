@@ -1,355 +1,750 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Clarity Chamber</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>The Clarity Chamber | Tarot</title>
 
-    html {
-      scroll-behavior: smooth;
-    }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f8f7f3;
-      color: #20251f;
-      line-height: 1.6;
-    }
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f7f3e9;
+    color: #344236;
+    line-height: 1.7;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo {
+    color: #536654;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: #536654;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+}
+
+nav a:hover {
+    color: #a17b3f;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+    padding: 130px 7% 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(178,194,166,.35), transparent 28%),
+        radial-gradient(circle at 85% 75%, rgba(211,194,148,.22), transparent 30%),
+        #f7f3e9;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.eyebrow {
+    color: #a17b3f;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 22px;
+}
+
+h1 {
+    color: #405442;
+    font-size: clamp(52px, 9vw, 105px);
+    line-height: .92;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+.hero-subtitle {
+    color: #927342;
+    font-size: 23px;
+    font-style: italic;
+    margin-bottom: 16px;
+}
+
+.hero-description {
+    max-width: 560px;
+    color: #697266;
+    font-size: 17px;
+    margin-bottom: 32px;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 28px;
+    background: #71836c;
+    color: #fffdf6;
+    border: 1px solid #a17b3f;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    transition: .25s ease;
+}
+
+.button:hover {
+    background: #526450;
+}
+
+/* ================= TAROT CARD ================= */
+
+.card-area {
+    width: 340px;
+    display: flex;
+    justify-content: center;
+}
+
+.tarot-card {
+    width: 275px;
+    height: 440px;
+
+    background: #eee5cf;
+
+    border: 8px double #a17b3f;
+    outline: 1px solid #a17b3f;
+    outline-offset: -18px;
+
+    padding: 35px 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 45px rgba(68,78,60,.18);
+
+    transform: rotate(3deg);
+}
+
+.card-number {
+    color: #927342;
+    font-size: 18px;
+    letter-spacing: 5px;
+}
+
+.card-symbol {
+    width: 145px;
+    height: 145px;
+
+    border: 2px solid #a17b3f;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #a17b3f;
+    font-size: 65px;
+
+    position: relative;
+}
+
+.card-symbol:before {
+    content: "✦";
+    position: absolute;
+    top: -30px;
+    font-size: 18px;
+}
+
+.card-symbol:after {
+    content: "✦";
+    position: absolute;
+    bottom: -30px;
+    font-size: 18px;
+}
+
+.card-title {
+    color: #536654;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.card-caption {
+    color: #887858;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* ================= ORNAMENT ================= */
+
+.divider {
+    text-align: center;
+    padding: 20px;
+    background: #eee5cf;
+    color: #a17b3f;
+    letter-spacing: 8px;
+}
+
+/* ================= INTRO ================= */
+
+.intro {
+    padding: 100px 7%;
+    text-align: center;
+    background: #eee5cf;
+}
+
+.intro h2 {
+    color: #405442;
+    font-size: clamp(35px, 6vw, 62px);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+.intro p {
+    max-width: 720px;
+    margin: auto;
+    color: #606a5d;
+    font-size: 18px;
+}
+
+/* ================= READINGS ================= */
+
+.services {
+    padding: 100px 7%;
+    background: #f7f3e9;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-title h2 {
+    color: #405442;
+    font-size: 44px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.section-title p {
+    color: #8c7b5d;
+    margin-top: 10px;
+}
+
+.service-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service {
+    background: #fffdf7;
+    border: 1px solid #d3c39d;
+
+    padding: 42px 30px;
+    text-align: center;
+
+    transition: .25s ease;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(70,80,60,.10);
+}
+
+.service-icon {
+    color: #a17b3f;
+    font-size: 40px;
+    margin-bottom: 18px;
+}
+
+.service h3 {
+    color: #536654;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+.service p {
+    color: #737b70;
+}
+
+/* ================= QUOTE ================= */
+
+.quote {
+    padding: 110px 7%;
+    text-align: center;
+
+    background:
+        radial-gradient(circle at center,
+        #dce5d4,
+        #cbd7c2);
+}
+
+.quote p {
+    max-width: 850px;
+    margin: auto;
+
+    color: #405442;
+    font-size: clamp(28px, 5vw, 52px);
+    line-height: 1.2;
+    font-style: italic;
+}
+
+/* ================= CARDS SECTION ================= */
+
+.cards-section {
+    padding: 100px 7%;
+    background: #eee5cf;
+}
+
+.cards-inner {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.cards-inner h2 {
+    color: #405442;
+    font-size: 45px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+.cards-inner p {
+    color: #606a5d;
+    font-size: 18px;
+    margin-bottom: 28px;
+}
+
+/* ================= ABOUT ================= */
+
+.about {
+    padding: 100px 7%;
+    background: #f7f3e9;
+}
+
+.about-inner {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-inner h2 {
+    color: #405442;
+    font-size: 44px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 22px;
+}
+
+.about-inner p {
+    color: #697266;
+    font-size: 18px;
+}
+
+/* ================= CTA ================= */
+
+.cta {
+    padding: 100px 7%;
+    text-align: center;
+    background: #71836c;
+}
+
+.cta h2 {
+    color: #fffdf6;
+    font-size: clamp(35px, 6vw, 58px);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.cta p {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: #edf1e8;
+    font-size: 17px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 35px 7%;
+    text-align: center;
+    background: #eee5cf;
+    color: #7c806f;
+    font-size: 13px;
+    border-top: 1px solid #cbb98e;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
 
     header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 24px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 10;
-    }
-
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: 1px;
+        padding: 20px 6%;
     }
 
     nav {
-      display: flex;
-      gap: 28px;
-    }
-
-    nav a {
-      color: #20251f;
-      text-decoration: none;
-      font-size: 0.95rem;
+        display: none;
     }
 
     .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 120px 7% 80px;
-      background:
-        radial-gradient(circle at 85% 25%, #dfe7d5 0, transparent 28%),
-        radial-gradient(circle at 10% 80%, #ebe4d5 0, transparent 30%),
-        #f8f7f3;
+        padding: 125px 6% 70px;
+        flex-direction: column;
+        text-align: center;
+        gap: 55px;
     }
 
-    .hero-content {
-      max-width: 760px;
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 0.78rem;
-      margin-bottom: 22px;
-      color: #68705f;
-      font-weight: 600;
+    .card-area {
+        width: 100%;
+    }
+
+    .tarot-card {
+        width: 240px;
+        height: 385px;
+    }
+
+    .card-symbol {
+        width: 125px;
+        height: 125px;
+        font-size: 58px;
     }
 
     h1 {
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      line-height: 0.98;
-      letter-spacing: -4px;
-      margin-bottom: 28px;
-      font-weight: 700;
+        font-size: 56px;
     }
 
-    .hero p {
-      max-width: 600px;
-      font-size: 1.2rem;
-      color: #596056;
-      margin-bottom: 38px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 15px 25px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.25s ease;
-    }
-
-    .primary {
-      background: #273026;
-      color: white;
-    }
-
-    .secondary {
-      border: 1px solid #273026;
-      color: #273026;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
+    .service-grid {
+        grid-template-columns: 1fr;
     }
 
     section {
-      padding: 100px 7%;
+        overflow: hidden;
     }
+}
 
-    .intro {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .intro h2 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.05;
-      margin-bottom: 25px;
-    }
-
-    .intro p {
-      color: #62685e;
-      font-size: 1.1rem;
-    }
-
-    .cards {
-      margin-top: 60px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .card {
-      background: white;
-      padding: 38px;
-      border-radius: 24px;
-      border: 1px solid #e7e5de;
-    }
-
-    .card span {
-      display: block;
-      font-size: 0.75rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #7a806f;
-      margin-bottom: 20px;
-    }
-
-    .card h3 {
-      font-size: 1.45rem;
-      margin-bottom: 14px;
-    }
-
-    .card p {
-      color: #686d65;
-    }
-
-    .statement {
-      background: #293229;
-      color: white;
-      text-align: center;
-    }
-
-    .statement h2 {
-      max-width: 850px;
-      margin: auto;
-      font-size: clamp(2.3rem, 5vw, 4.5rem);
-      line-height: 1.05;
-    }
-
-    .cta {
-      text-align: center;
-      background: #e9e4d8;
-    }
-
-    .cta h2 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      margin-bottom: 20px;
-    }
-
-    .cta p {
-      max-width: 600px;
-      margin: 0 auto 30px;
-      color: #646960;
-    }
-
-    footer {
-      padding: 35px 7%;
-      background: #f8f7f3;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      color: #73786f;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 750px) {
-      header {
-        padding: 20px 6%;
-      }
-
-      nav {
-        display: none;
-      }
-
-      .hero {
-        padding-left: 6%;
-        padding-right: 6%;
-      }
-
-      section {
-        padding: 75px 6%;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        letter-spacing: -2px;
-      }
-    }
-  </style>
+</style>
 </head>
+
 
 <body>
 
-  <header>
-    <div class="logo">THE CLARITY CHAMBER</div>
+
+<header>
+
+    <div class="logo">
+        THE CLARITY CHAMBER
+    </div>
 
     <nav>
-      <a href="#about">About</a>
-      <a href="#work">Explore</a>
-      <a href="#contact">Contact</a>
+        <a href="#readings">READINGS</a>
+        <a href="#cards">THE CARDS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
     </nav>
-  </header>
 
-  <main>
+</header>
 
-    <section class="hero">
-      <div class="hero-content">
-        <div class="eyebrow">Welcome to The Clarity Chamber</div>
 
-        <h1>Make space for clarity.</h1>
+<!-- HERO -->
 
-        <p>
-          A thoughtful space for ideas, perspective and meaningful change —
-          designed to help you pause, reflect and move forward with intention.
+<section class="hero">
+
+    <div class="hero-text">
+
+        <div class="eyebrow">
+            Tarot • Intuition • Reflection
+        </div>
+
+        <h1>
+            The<br>
+            Clarity<br>
+            Chamber
+        </h1>
+
+        <div class="hero-subtitle">
+            The cards reveal what the noise conceals.
+        </div>
+
+        <p class="hero-description">
+            Step into a quiet space of symbolism, intuition and reflection.
+            Let the tarot offer another perspective on the questions
+            that matter to you.
         </p>
 
-        <div class="buttons">
-          <a class="button primary" href="#about">Enter the Chamber</a>
-          <a class="button secondary" href="#work">Explore</a>
-        </div>
-      </div>
-    </section>
+        <a class="button" href="#readings">
+            Begin Your Reading
+        </a>
 
-    <section id="about">
-      <div class="intro">
-        <div class="eyebrow">A different perspective</div>
+    </div>
+
+
+    <div class="card-area">
+
+        <div class="tarot-card">
+
+            <div class="card-number">
+                XVII
+            </div>
+
+            <div class="card-symbol">
+                ★
+            </div>
+
+            <div class="card-title">
+                The Star
+            </div>
+
+            <div class="card-caption">
+                HOPE • GUIDANCE • CLARITY
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<div class="divider">
+    ✦ ─── ☾ ─── ✦
+</div>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+    <h2>
+        Enter The Chamber
+    </h2>
+
+    <p>
+        Tarot is a language of symbols, stories and possibilities.
+        Every card offers an invitation to pause, reflect and see
+        your situation from a different angle.
+    </p>
+
+</section>
+
+
+<!-- READINGS -->
+
+<section class="services" id="readings">
+
+    <div class="section-title">
 
         <h2>
-          Clarity begins when you give yourself room to think.
+            Tarot Readings
         </h2>
 
         <p>
-          The Clarity Chamber is a space built around thoughtful ideas,
-          honest reflection and practical perspective.
+            Choose the reading that speaks to your question.
         </p>
-      </div>
 
-      <div class="cards" id="work">
+    </div>
 
-        <div class="card">
-          <span>01 — Pause</span>
-          <h3>Step back.</h3>
-          <p>
-            Create distance from the noise and give your thoughts room to
-            become clearer.
-          </p>
+
+    <div class="service-grid">
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                ♡
+            </div>
+
+            <h3>
+                Love & Relationships
+            </h3>
+
+            <p>
+                Explore connection, emotions, patterns and
+                the questions surrounding your relationships.
+            </p>
+
         </div>
 
-        <div class="card">
-          <span>02 — Reflect</span>
-          <h3>Look deeper.</h3>
-          <p>
-            Explore the questions, ideas and perspectives that shape the way
-            you see things.
-          </p>
+
+        <div class="service">
+
+            <div class="service-icon">
+                ✦
+            </div>
+
+            <h3>
+                Life Path
+            </h3>
+
+            <p>
+                Reflect on where you are, where you may be
+                heading and what deserves your attention.
+            </p>
+
         </div>
 
-        <div class="card">
-          <span>03 — Move</span>
-          <h3>Move forward.</h3>
-          <p>
-            Turn clarity into meaningful action with intention and confidence.
-          </p>
+
+        <div class="service">
+
+            <div class="service-icon">
+                ☼
+            </div>
+
+            <h3>
+                Clarity Reading
+            </h3>
+
+            <p>
+                Bring one question into the chamber and
+                receive a fresh perspective through the cards.
+            </p>
+
         </div>
 
-      </div>
-    </section>
 
-    <section class="statement">
-      <h2>
-        Less noise.<br>
-        More meaning.<br>
-        Clearer direction.
-      </h2>
-    </section>
+    </div>
 
-    <section class="cta" id="contact">
-      <div class="intro">
-        <div class="eyebrow">Begin here</div>
+</section>
 
-        <h2>Welcome to your clearer space.</h2>
+
+<!-- QUOTE -->
+
+<section class="quote">
+
+    <p>
+        “Sometimes the answer is not hidden.
+        We simply need a different way of seeing.”
+    </p>
+
+</section>
+
+
+<!-- THE CARDS -->
+
+<section class="cards-section" id="cards">
+
+    <div class="cards-inner">
+
+        <h2>
+            The Cards
+        </h2>
 
         <p>
-          Discover what happens when you slow down, think differently and
-          make room for what matters.
+            Discover the symbolism, archetypes and stories
+            within the tarot. Each card has a message,
+            a question and a different way of seeing.
         </p>
 
-        <a class="button primary" href="mailto:hello@theclaritychamber.com">
-          Get in touch
+        <a class="button" href="#">
+            Explore The Tarot
         </a>
-      </div>
-    </section>
 
-  </main>
+    </div>
 
-  <footer>
-    <div>© 2026 The Clarity Chamber</div>
-    <div>Thoughtfully created.</div>
-  </footer>
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="about-inner">
+
+        <h2>
+            About The Chamber
+        </h2>
+
+        <p>
+            The Clarity Chamber is a space for tarot,
+            reflection and intuitive exploration — created
+            for those moments when you want to pause,
+            ask a meaningful question and listen more closely
+            to what is already within you.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta" id="contact">
+
+    <h2>
+        Your Question Awaits
+    </h2>
+
+    <p>
+        Step into the chamber and begin exploring
+        the story the cards have to tell.
+    </p>
+
+    <a class="button" href="mailto:hello@theclaritychamber.com">
+        Begin Your Reading
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 The Clarity Chamber
+    <br><br>
+    Tarot • Intuition • Reflection
+
+</footer>
+
 
 </body>
 </html>
