@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Clarity Chamber</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8f7f3;
+      color: #20251f;
+      line-height: 1.6;
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 24px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #20251f;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 7% 80px;
+      background:
+        radial-gradient(circle at 85% 25%, #dfe7d5 0, transparent 28%),
+        radial-gradient(circle at 10% 80%, #ebe4d5 0, transparent 30%),
+        #f8f7f3;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.78rem;
+      margin-bottom: 22px;
+      color: #68705f;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      margin-bottom: 28px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      max-width: 600px;
+      font-size: 1.2rem;
+      color: #596056;
+      margin-bottom: 38px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .primary {
+      background: #273026;
+      color: white;
+    }
+
+    .secondary {
+      border: 1px solid #273026;
+      color: #273026;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 100px 7%;
+    }
+
+    .intro {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .intro p {
+      color: #62685e;
+      font-size: 1.1rem;
+    }
+
+    .cards {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 38px;
+      border-radius: 24px;
+      border: 1px solid #e7e5de;
+    }
+
+    .card span {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #7a806f;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 14px;
+    }
+
+    .card p {
+      color: #686d65;
+    }
+
+    .statement {
+      background: #293229;
+      color: white;
+      text-align: center;
+    }
+
+    .statement h2 {
+      max-width: 850px;
+      margin: auto;
+      font-size: clamp(2.3rem, 5vw, 4.5rem);
+      line-height: 1.05;
+    }
+
+    .cta {
+      text-align: center;
+      background: #e9e4d8;
+    }
+
+    .cta h2 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      margin-bottom: 20px;
+    }
+
+    .cta p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      color: #646960;
+    }
+
+    footer {
+      padding: 35px 7%;
+      background: #f8f7f3;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #73786f;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 750px) {
+      header {
+        padding: 20px 6%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+
+      section {
+        padding: 75px 6%;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">THE CLARITY CHAMBER</div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#work">Explore</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Welcome to The Clarity Chamber</div>
+
+        <h1>Make space for clarity.</h1>
+
+        <p>
+          A thoughtful space for ideas, perspective and meaningful change —
+          designed to help you pause, reflect and move forward with intention.
+        </p>
+
+        <div class="buttons">
+          <a class="button primary" href="#about">Enter the Chamber</a>
+          <a class="button secondary" href="#work">Explore</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="intro">
+        <div class="eyebrow">A different perspective</div>
+
+        <h2>
+          Clarity begins when you give yourself room to think.
+        </h2>
+
+        <p>
+          The Clarity Chamber is a space built around thoughtful ideas,
+          honest reflection and practical perspective.
+        </p>
+      </div>
+
+      <div class="cards" id="work">
+
+        <div class="card">
+          <span>01 — Pause</span>
+          <h3>Step back.</h3>
+          <p>
+            Create distance from the noise and give your thoughts room to
+            become clearer.
+          </p>
+        </div>
+
+        <div class="card">
+          <span>02 — Reflect</span>
+          <h3>Look deeper.</h3>
+          <p>
+            Explore the questions, ideas and perspectives that shape the way
+            you see things.
+          </p>
+        </div>
+
+        <div class="card">
+          <span>03 — Move</span>
+          <h3>Move forward.</h3>
+          <p>
+            Turn clarity into meaningful action with intention and confidence.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="statement">
+      <h2>
+        Less noise.<br>
+        More meaning.<br>
+        Clearer direction.
+      </h2>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="intro">
+        <div class="eyebrow">Begin here</div>
+
+        <h2>Welcome to your clearer space.</h2>
+
+        <p>
+          Discover what happens when you slow down, think differently and
+          make room for what matters.
+        </p>
+
+        <a class="button primary" href="mailto:hello@theclaritychamber.com">
+          Get in touch
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>© 2026 The Clarity Chamber</div>
+    <div>Thoughtfully created.</div>
+  </footer>
+
+</body>
+</html>
