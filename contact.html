@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Booking | The Clarity Chamber</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">The Clarity Chamber</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" class="active">Contact & Booking</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-container">
+    <section class="contact-header">
+      <h1>Get in Touch</h1>
+      <p>Book a session or send an inquiry below.</p>
+    </section>
+
+    <section class="contact-content">
+      <form class="contact-form" action="#" method="POST">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="service">Interested Reading</label>
+          <select id="service" name="service">
+            <option value="virtual">Live / Virtual Reading</option>
+            <option value="recorded">Recorded Video Reading</option>
+            <option value="in-person">In-Person Reading</option>
+            <option value="other">General Inquiry</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message or Questions</label>
+          <textarea id="message" name="message" rows="5" placeholder="Share any specific questions or details..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; The Clarity Chamber. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
