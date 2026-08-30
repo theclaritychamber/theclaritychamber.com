@@ -1,3 +1,4 @@
+<!-- services.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,14 +8,14 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header class="navbar">
+  <header class="site-header">
     <div class="logo">The Clarity Chamber</div>
     <nav>
-      <ul>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html" class="active">Services</a></li>
@@ -23,42 +24,44 @@
     </nav>
   </header>
 
-  <main class="page-container">
-    <section class="services-header">
-      <h1>Reading Formats & Offerings</h1>
-      <p>Choose the format that best fits your needs and comfort.</p>
+  <main class="page-container container">
+    <section class="hero">
+      <h1 class="hero-title">READING <span class="highlight">SERVICES</span></h1>
+      <p class="hero-subtitle">OFFERINGS & FORMATS</p>
     </section>
 
-    <section class="services-list">
-      <div class="service-detail">
-        <h2>Live / Virtual Readings</h2>
-        <p>Real-time video or audio sessions via Zoom or Google Meet. Allows for interactive conversation, follow-up questions, and active card discussion.</p>
-        <ul>
-          <li>30-Minute Focus Session</li>
-          <li>60-Minute Deep Dive Reading</li>
-        </ul>
+    <section class="guidance-grid">
+      <div class="guidance-card">
+        <h3>LIVE / VIRTUAL</h3>
+        <p>Interactive video session via Zoom / WhatsApp[cite: 4].</p>
+        <div class="card-action">
+          <a href="contact.html" class="btn btn-primary">LEARN MORE</a>
+        </div>
       </div>
 
-      <div class="service-detail">
-        <h2>Recorded Video Readings</h2>
-        <p>A comprehensive video recording delivered straight to your inbox within 48–72 hours. Perfect for re-watching whenever you need guidance.</p>
-        <ul>
-          <li>3-Card Overview</li>
-          <li>Full Spread Deep Dive</li>
-        </ul>
+      <div class="guidance-card">
+        <h3>IN-PERSON</h3>
+        <p>Private one-on-one session held by appointment[cite: 4].</p>
+        <div class="card-action">
+          <a href="contact.html" class="btn btn-primary">LEARN MORE</a>
+        </div>
       </div>
 
-      <div class="service-detail">
-        <h2>In-Person Sessions</h2>
-        <p>Exclusive, face-to-face readings designed for immersive connection in a calm, intentional space.</p>
-        <ul>
-          <li>By appointment only</li>
-        </ul>
+      <div class="guidance-card">
+        <h3>RECORDED VIDEO</h3>
+        <p>Comprehensive video recording delivered within 48–72 hours[cite: 4].</p>
+        <div class="card-action">
+          <a href="contact.html" class="btn btn-primary">LEARN MORE</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
+  <footer class="footer-contact container">
+    <div class="contact-item">
+      <div class="contact-icon">✉</div>
+      <p>theclaritychamber@gmail.com</p>
+    </div>
     <p>&copy; The Clarity Chamber. All rights reserved.</p>
   </footer>
 
