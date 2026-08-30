@@ -4,351 +4,174 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The Tarot Cards | The Clarity Chamber</title>
+<title>The Cards | The Clarity Chamber</title>
 
 <style>
-
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
+    background: #f6f2e7;
+    color: #405246;
     font-family: Georgia, "Times New Roman", serif;
-    background: #f7f3e9;
-    color: #344236;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
-/* HEADER */
-
 header {
-    padding: 24px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #d3c39d;
-    background: #f7f3e9;
+    padding: 32px 24px 18px;
+    text-align: center;
+    border-bottom: 1px solid #c8b58a;
 }
 
 .logo {
-    color: #536654;
-    font-size: 19px;
+    font-size: 22px;
+    letter-spacing: 5px;
     font-weight: bold;
-    letter-spacing: 3px;
 }
 
 nav {
+    margin-top: 22px;
     display: flex;
-    gap: 26px;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
 }
 
 nav a {
-    color: #536654;
+    color: #6f806d;
     text-decoration: none;
-    font-size: 13px;
-    letter-spacing: 1.5px;
+    font-size: 12px;
+    letter-spacing: 2px;
 }
 
 nav a:hover {
-    color: #a17b3f;
+    color: #9b7842;
 }
 
-/* HERO */
+main {
+    max-width: 1050px;
+    margin: auto;
+    padding: 75px 22px;
+}
 
 .hero {
-    padding: 95px 7% 80px;
     text-align: center;
-    background:
-        radial-gradient(circle at 15% 30%, rgba(178,194,166,.35), transparent 30%),
-        radial-gradient(circle at 85% 70%, rgba(211,194,148,.25), transparent 30%),
-        #eee5cf;
+    margin-bottom: 70px;
 }
 
 .eyebrow {
-    color: #a17b3f;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 12px;
-    margin-bottom: 20px;
+    color: #a17c45;
+    letter-spacing: 5px;
+    font-size: 13px;
+    margin-bottom: 25px;
 }
 
-.hero h1 {
-    color: #405442;
-    font-size: clamp(48px, 8vw, 82px);
-    text-transform: uppercase;
-    letter-spacing: 4px;
+h1 {
+    font-size: 60px;
     line-height: 1;
     margin-bottom: 25px;
 }
 
-.hero p {
-    max-width: 700px;
+.intro {
+    max-width: 680px;
     margin: auto;
-    color: #697266;
+    color: #69756b;
     font-size: 18px;
 }
 
-/* ORNAMENT */
-
-.ornament {
+.section-title {
     text-align: center;
-    padding: 18px;
-    color: #a17b3f;
-    background: #eee5cf;
-    letter-spacing: 8px;
+    font-size: 36px;
+    margin: 65px 0 30px;
 }
 
-/* LIBRARY */
-
-.library {
-    padding: 90px 7%;
-    background: #f7f3e9;
-}
-
-.library-intro {
-    max-width: 750px;
-    margin: 0 auto 45px;
-    text-align: center;
-}
-
-.library-intro h2 {
-    color: #405442;
-    font-size: 40px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
-}
-
-.library-intro p {
-    color: #697266;
-}
-
-/* FILTERS */
-
-.filters {
-    max-width: 1000px;
-    margin: 0 auto 50px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.filter-button {
-    font-family: Georgia, "Times New Roman", serif;
-    padding: 11px 18px;
-    background: #fffdf7;
-    color: #536654;
-    border: 1px solid #cdbb91;
-    cursor: pointer;
-    letter-spacing: 1px;
-    font-size: 12px;
-}
-
-.filter-button:hover,
-.filter-button.active {
-    background: #71836c;
-    color: white;
-    border-color: #71836c;
-}
-
-/* SEARCH */
-
-.search-box {
-    max-width: 500px;
-    margin: 0 auto 50px;
-}
-
-.search-box input {
-    width: 100%;
-    padding: 15px 18px;
-    border: 1px solid #cdbb91;
-    background: #fffdf7;
-    color: #344236;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 15px;
-    outline: none;
-}
-
-.search-box input:focus {
-    border-color: #71836c;
-}
-
-/* CARD GRID */
-
-.card-grid {
-    max-width: 1150px;
-    margin: auto;
+.cards-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
 }
 
-.tarot-card {
-    background: #fffdf7;
-    border: 1px solid #cdbb91;
-    padding: 28px 24px;
-    min-height: 280px;
-    position: relative;
-    transition: .25s ease;
+.card {
+    background: #f2ead7;
+    border: 1px solid #c8b58a;
+    padding: 25px 12px;
+    min-height: 145px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.2s;
 }
 
-.tarot-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(70,80,60,.10);
-}
-
-.tarot-card:before {
-    content: "✦";
-    position: absolute;
-    top: 10px;
-    left: 13px;
-    color: #b18a4d;
-}
-
-.tarot-card:after {
-    content: "✦";
-    position: absolute;
-    bottom: 10px;
-    right: 13px;
-    color: #b18a4d;
+.card:hover {
+    transform: translateY(-3px);
 }
 
 .card-number {
-    color: #a17b3f;
-    font-size: 12px;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-}
-
-.card-symbol {
-    color: #a17b3f;
-    font-size: 30px;
-    margin-bottom: 8px;
-}
-
-.tarot-card h3 {
-    color: #536654;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+    color: #a17c45;
+    font-size: 13px;
+    letter-spacing: 3px;
     margin-bottom: 10px;
 }
 
-.suit {
-    color: #927342;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 14px;
+.card-symbol {
+    font-size: 27px;
+    color: #a17c45;
+    margin-bottom: 8px;
 }
 
-.meaning {
-    color: #6d756a;
-    font-size: 14px;
+.card-name {
+    font-size: 16px;
+    letter-spacing: 1px;
 }
 
-.reversed {
-    margin-top: 10px;
-    color: #8b7251;
-    font-size: 13px;
+.suits {
+    text-align: center;
+    color: #69756b;
+    margin-bottom: 30px;
     font-style: italic;
 }
 
-/* CTA */
-
-.cta {
-    padding: 100px 7%;
-    text-align: center;
-    background: #71836c;
-}
-
-.cta h2 {
-    color: #fffdf6;
-    font-size: clamp(36px, 6vw, 58px);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 18px;
-}
-
-.cta p {
-    max-width: 650px;
-    margin: 0 auto 30px;
-    color: #edf1e8;
-}
-
-.button {
-    display: inline-block;
-    padding: 14px 26px;
-    background: #eee5cf;
-    color: #536654;
-    border: 1px solid #a17b3f;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 11px;
-}
-
-/* FOOTER */
-
 footer {
-    padding: 35px 7%;
+    border-top: 1px solid #c8b58a;
+    padding: 35px 20px;
     text-align: center;
-    background: #f7f3e9;
-    color: #7c806f;
+    color: #7c847d;
     font-size: 13px;
-    border-top: 1px solid #cbb98e;
+    letter-spacing: 1px;
 }
 
-/* MOBILE */
+@media (max-width: 700px) {
 
-@media (max-width: 800px) {
-
-    header {
-        padding: 20px 6%;
+    .logo {
+        font-size: 18px;
     }
 
     nav {
-        display: none;
+        gap: 14px;
     }
 
-    .hero {
-        padding: 75px 6%;
+    h1 {
+        font-size: 48px;
     }
 
-    .hero h1 {
-        font-size: 50px;
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
     }
 
-    .library {
-        padding: 70px 6%;
+    .card {
+        min-height: 135px;
     }
-
-    .card-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .filters {
-        gap: 8px;
-    }
-
-    .filter-button {
-        padding: 10px 14px;
-    }
-
 }
-
 </style>
 </head>
 
 <body>
-
 
 <header>
 
@@ -360,900 +183,297 @@ footer {
         <a href="index.html">HOME</a>
         <a href="readings.html">READINGS</a>
         <a href="cards.html">THE CARDS</a>
-        <a href="#contact">CONTACT</a>
+        <a href="index.html#about">ABOUT</a>
+        <a href="index.html#contact">CONTACT</a>
     </nav>
 
 </header>
 
+<main>
 
-<section class="hero">
+    <section class="hero">
 
-    <div class="eyebrow">
-        The Clarity Chamber
-    </div>
+        <div class="eyebrow">
+            THE TAROT
+        </div>
 
-    <h1>
-        The Tarot
-    </h1>
+        <h1>
+            THE CARDS
+        </h1>
 
-    <p>
-        Explore the 78 cards of the tarot and discover the
-        symbols, archetypes and meanings within the deck.
-    </p>
-
-</section>
-
-
-<div class="ornament">
-    ✦ ─── ☾ ─── ✦
-</div>
-
-
-<section class="library">
-
-    <div class="library-intro">
-
-        <h2>
-            78 Cards • Infinite Perspectives
-        </h2>
-
-        <p>
-            Browse the Major Arcana and four suits of the Minor Arcana.
-            Search for a card or explore the deck from beginning to end.
+        <p class="intro">
+            Seventy-eight cards. Seventy-eight mirrors.
+            Explore the symbols, archetypes and stories
+            that make up the tarot.
         </p>
 
-    </div>
+    </section>
 
 
-    <div class="search-box">
+    <!-- MAJOR ARCANA -->
 
-        <input
-            type="text"
-            id="search"
-            placeholder="Search the cards..."
-            onkeyup="searchCards()"
-        >
-
-    </div>
-
-
-    <div class="filters">
-
-        <button class="filter-button active" onclick="filterCards('all', this)">
-            ALL 78
-        </button>
-
-        <button class="filter-button" onclick="filterCards('major', this)">
-            MAJOR ARCANA
-        </button>
-
-        <button class="filter-button" onclick="filterCards('wands', this)">
-            WANDS
-        </button>
-
-        <button class="filter-button" onclick="filterCards('cups', this)">
-            CUPS
-        </button>
-
-        <button class="filter-button" onclick="filterCards('swords', this)">
-            SWORDS
-        </button>
-
-        <button class="filter-button" onclick="filterCards('pentacles', this)">
-            PENTACLES
-        </button>
-
-    </div>
-
-
-    <div class="card-grid" id="cardGrid">
-
-
-        <!-- MAJOR ARCANA -->
-
-        <div class="tarot-card major">
-            <div class="card-number">0</div>
-            <div class="card-symbol">✧</div>
-            <h3>The Fool</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">New beginnings, freedom, innocence and taking a leap into the unknown.</div>
-            <div class="reversed">Reversed: recklessness, hesitation or fear of beginning.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">I</div>
-            <div class="card-symbol">✦</div>
-            <h3>The Magician</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Manifestation, skill, confidence and using your resources with intention.</div>
-            <div class="reversed">Reversed: manipulation, untapped potential or scattered energy.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">II</div>
-            <div class="card-symbol">☾</div>
-            <h3>The High Priestess</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Intuition, mystery, inner knowledge and listening beneath the surface.</div>
-            <div class="reversed">Reversed: ignoring intuition, secrecy or confusion.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">III</div>
-            <div class="card-symbol">❀</div>
-            <h3>The Empress</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Abundance, creativity, nurturing and the beauty of growth.</div>
-            <div class="reversed">Reversed: creative blocks, neglect or imbalance.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">IV</div>
-            <div class="card-symbol">♔</div>
-            <h3>The Emperor</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Structure, authority, stability and responsible leadership.</div>
-            <div class="reversed">Reversed: control, rigidity or misuse of authority.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">V</div>
-            <div class="card-symbol">✥</div>
-            <h3>The Hierophant</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Tradition, teaching, spiritual wisdom and established beliefs.</div>
-            <div class="reversed">Reversed: questioning tradition or breaking from convention.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">VI</div>
-            <div class="card-symbol">♡</div>
-            <h3>The Lovers</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Love, union, values, attraction and meaningful choices.</div>
-            <div class="reversed">Reversed: disharmony, difficult choices or misalignment.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">VII</div>
-            <div class="card-symbol">☼</div>
-            <h3>The Chariot</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Determination, direction, control and moving forward with purpose.</div>
-            <div class="reversed">Reversed: lack of direction, conflict or loss of control.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">VIII</div>
-            <div class="card-symbol">∞</div>
-            <h3>Strength</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Courage, compassion, patience and quiet inner strength.</div>
-            <div class="reversed">Reversed: self-doubt, insecurity or suppressed emotion.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">IX</div>
-            <div class="card-symbol">☽</div>
-            <h3>The Hermit</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Solitude, reflection, wisdom and searching inward for answers.</div>
-            <div class="reversed">Reversed: isolation, withdrawal or avoiding inner reflection.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">X</div>
-            <div class="card-symbol">◉</div>
-            <h3>Wheel of Fortune</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Cycles, change, turning points and the movement of circumstances.</div>
-            <div class="reversed">Reversed: resistance to change or repeating old cycles.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">XI</div>
-            <div class="card-symbol">⚖</div>
-            <h3>Justice</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Truth, fairness, accountability and seeing situations clearly.</div>
-            <div class="reversed">Reversed: imbalance, avoidance or unfairness.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">XII</div>
-            <div class="card-symbol">◇</div>
-            <h3>The Hanged Man</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Pause, surrender, patience and seeing something from another perspective.</div>
-            <div class="reversed">Reversed: stagnation, resistance or unwillingness to let go.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">XIII</div>
-            <div class="card-symbol">✺</div>
-            <h3>Death</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Transformation, endings, release and the beginning of something new.</div>
-            <div class="reversed">Reversed: resistance to change or difficulty releasing the past.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">XIV</div>
-            <div class="card-symbol">☯</div>
-            <h3>Temperance</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Balance, patience, harmony and bringing different elements together.</div>
-            <div class="reversed">Reversed: excess, imbalance or impatience.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">XV</div>
-            <div class="card-symbol">♢</div>
-            <h3>The Devil</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Attachment, temptation, patterns and recognising what holds you back.</div>
-            <div class="reversed">Reversed: release, awareness or breaking unhealthy patterns.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">XVI</div>
-            <div class="card-symbol">⚡</div>
-            <h3>The Tower</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Sudden change, revelation, disruption and breaking false foundations.</div>
-            <div class="reversed">Reversed: avoiding change or internal upheaval.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">XVII</div>
-            <div class="card-symbol">☆</div>
-            <h3>The Star</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Hope, inspiration, renewal, healing and faith in the path ahead.</div>
-            <div class="reversed">Reversed: discouragement, doubt or loss of inspiration.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">XVIII</div>
-            <div class="card-symbol">☾</div>
-            <h3>The Moon</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Dreams, intuition, uncertainty, hidden influences and the subconscious.</div>
-            <div class="reversed">Reversed: confusion clearing or hidden matters coming to light.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">XIX</div>
-            <div class="card-symbol">☀</div>
-            <h3>The Sun</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Joy, confidence, clarity, vitality and openness.</div>
-            <div class="reversed">Reversed: temporary cloudiness, delays or muted happiness.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">XX</div>
-            <div class="card-symbol">♢</div>
-            <h3>Judgement</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Awakening, reflection, renewal and answering a deeper calling.</div>
-            <div class="reversed">Reversed: self-doubt, avoidance or difficulty accepting the past.</div>
-        </div>
-
-        <div class="tarot-card major">
-            <div class="card-number">XXI</div>
-            <div class="card-symbol">◌</div>
-            <h3>The World</h3>
-            <div class="suit">Major Arcana</div>
-            <div class="meaning">Completion, fulfilment, integration and the closing of a chapter.</div>
-            <div class="reversed">Reversed: unfinished business or difficulty completing a cycle.</div>
-        </div>
-
-
-        <!-- WANDS -->
-
-        <div class="tarot-card wands">
-            <div class="card-number">ACE</div>
-            <div class="card-symbol">♨</div>
-            <h3>Ace of Wands</h3>
-            <div class="suit">Wands</div>
-            <div class="meaning">Inspiration, passion, creativity and a spark of new energy.</div>
-            <div class="reversed">Reversed: delays, lack of motivation or a false start.</div>
-        </div>
-
-        <div class="tarot-card wands">
-            <div class="card-number">II</div>
-            <div class="card-symbol">Ⅱ</div>
-            <h3>Two of Wands</h3>
-            <div class="suit">Wands</div>
-            <div class="meaning">Planning, choices, vision and considering the road ahead.</div>
-            <div class="reversed">Reversed: fear of the unknown or limited planning.</div>
-        </div>
-
-        <div class="tarot-card wands">
-            <div class="card-number">III</div>
-            <div class="card-symbol">Ⅲ</div>
-            <h3>Three of Wands</h3>
-            <div class="suit">Wands</div>
-            <div class="meaning">Expansion, progress, anticipation and looking toward possibilities.</div>
-            <div class="reversed">Reversed: delays, limited horizons or frustration.</div>
-        </div>
-
-        <div class="tarot-card wands">
-            <div class="card-number">IV</div>
-            <div class="card-symbol">Ⅳ</div>
-            <h3>Four of Wands</h3>
-            <div class="suit">Wands</div>
-            <div class="meaning">Celebration, stability, homecoming and joyful milestones.</div>
-            <div class="reversed">Reversed: tension at home or delayed celebration.</div>
-        </div>
-
-        <div class="tarot-card wands">
-            <div class="card-number">V</div>
-            <div class="card-symbol">Ⅴ</div>
-            <h3>Five of Wands</h3>
-            <div class="suit">Wands</div>
-            <div class="meaning">Competition, tension, differing opinions and energetic challenge.</div>
-            <div class="reversed">Reversed: conflict avoidance or tension beginning to settle.</div>
-        </div>
-
-        <div class="tarot-card wands">
-            <div class="card-number">VI</div>
-            <div class="card-symbol">Ⅵ</div>
-            <h3>Six of Wands</h3>
-            <div class="suit">Wands</div>
-            <div class="meaning">Recognition, confidence, achievement and public success.</div>
-            <div class="reversed">Reversed: self-doubt, lack of recognition or pride.</div>
-        </div>
-
-        <div class="tarot-card wands">
-            <div class="card-number">VII</div>
-            <div class="card-symbol">Ⅶ</div>
-            <h3>Seven of Wands</h3>
-            <div class="suit">Wands</div>
-            <div class="meaning">Standing your ground, courage, boundaries and perseverance.</div>
-            <div class="reversed">Reversed: exhaustion, defensiveness or giving up too soon.</div>
-        </div>
-
-        <div class="tarot-card wands">
-            <div class="card-number">VIII</div>
-            <div class="card-symbol">Ⅷ</div>
-            <h3>Eight of Wands</h3>
-            <div class="suit">Wands</div>
-            <div class="meaning">Movement, momentum, messages and rapid developments.</div>
-            <div class="reversed">Reversed: delays, scattered energy or miscommunication.</div>
-        </div>
-
-        <div class="tarot-card wands">
-            <div class="card-number">IX</div>
-            <div class="card-symbol">Ⅸ</div>
-            <h3>Nine of Wands</h3>
-            <div class="suit">Wands</div>
-            <div class="meaning">Resilience, persistence, boundaries and preparing for the final stretch.</div>
-            <div class="reversed">Reversed: burnout, guardedness or exhaustion.</div>
-        </div>
-
-        <div class="tarot-card wands">
-            <div class="card-number">X</div>
-            <div class="card-symbol">Ⅹ</div>
-            <h3>Ten of Wands</h3>
-            <div class="suit">Wands</div>
-            <div class="meaning">Responsibility, workload, burden and carrying too much.</div>
-            <div class="reversed">Reversed: releasing burdens or refusing unnecessary responsibility.</div>
-        </div>
-
-        <div class="tarot-card wands">
-            <div class="card-number">PAGE</div>
-            <div class="card-symbol">♧</div>
-            <h3>Page of Wands</h3>
-            <div class="suit">Wands</div>
-            <div class="meaning">Curiosity, enthusiasm, exploration and a new creative impulse.</div>
-            <div class="reversed">Reversed: impatience, immaturity or lack of direction.</div>
-        </div>
-
-        <div class="tarot-card wands">
-            <div class="card-number">KNIGHT</div>
-            <div class="card-symbol">♞</div>
-            <h3>Knight of Wands</h3>
-            <div class="suit">Wands</div>
-            <div class="meaning">Adventure, confidence, passion and bold movement.</div>
-            <div class="reversed">Reversed: impulsiveness, inconsistency or recklessness.</div>
-        </div>
-
-        <div class="tarot-card wands">
-            <div class="card-number">QUEEN</div>
-            <div class="card-symbol">♕</div>
-            <h3>Queen of Wands</h3>
-            <div class="suit">Wands</div>
-            <div class="meaning">Confidence, warmth, independence, charisma and creativity.</div>
-            <div class="reversed">Reversed: insecurity, jealousy or diminished confidence.</div>
-        </div>
-
-        <div class="tarot-card wands">
-            <div class="card-number">KING</div>
-            <div class="card-symbol">♔</div>
-            <h3>King of Wands</h3>
-            <div class="suit">Wands</div>
-            <div class="meaning">Vision, leadership, courage and turning ideas into action.</div>
-            <div class="reversed">Reversed: arrogance, impulsiveness or poor leadership.</div>
-        </div>
-
-
-        <!-- CUPS -->
-
-        <div class="tarot-card cups">
-            <div class="card-number">ACE</div>
-            <div class="card-symbol">♡</div>
-            <h3>Ace of Cups</h3>
-            <div class="suit">Cups</div>
-            <div class="meaning">Emotional renewal, love, compassion and an open heart.</div>
-            <div class="reversed">Reversed: emotional blockage or feelings held back.</div>
-        </div>
-
-        <div class="tarot-card cups">
-            <div class="card-number">II</div>
-            <div class="card-symbol">Ⅱ</div>
-            <h3>Two of Cups</h3>
-            <div class="suit">Cups</div>
-            <div class="meaning">Mutual connection, partnership, attraction and emotional harmony.</div>
-            <div class="reversed">Reversed: imbalance, distance or broken connection.</div>
-        </div>
-
-        <div class="tarot-card cups">
-            <div class="card-number">III</div>
-            <div class="card-symbol">Ⅲ</div>
-            <h3>Three of Cups</h3>
-            <div class="suit">Cups</div>
-            <div class="meaning">Friendship, celebration, community and shared happiness.</div>
-            <div class="reversed">Reversed: isolation, excess or social tension.</div>
-        </div>
-
-        <div class="tarot-card cups">
-            <div class="card-number">IV</div>
-            <div class="card-symbol">Ⅳ</div>
-            <h3>Four of Cups</h3>
-            <div class="suit">Cups</div>
-            <div class="meaning">Contemplation, apathy, emotional withdrawal and reassessing desires.</div>
-            <div class="reversed">Reversed: renewed interest or becoming open to opportunity.</div>
-        </div>
-
-        <div class="tarot-card cups">
-            <div class="card-number">V</div>
-            <div class="card-symbol">Ⅴ</div>
-            <h3>Five of Cups</h3>
-            <div class="suit">Cups</div>
-            <div class="meaning">Loss, disappointment, grief and focusing on what has changed.</div>
-            <div class="reversed">Reversed: acceptance, healing and turning toward hope.</div>
-        </div>
-
-        <div class="tarot-card cups">
-            <div class="card-number">VI</div>
-            <div class="card-symbol">Ⅵ</div>
-            <h3>Six of Cups</h3>
-            <div class="suit">Cups</div>
-            <div class="meaning">Nostalgia, childhood, memories, kindness and familiar connections.</div>
-            <div class="reversed">Reversed: living in the past or difficulty moving forward.</div>
-        </div>
-
-        <div class="tarot-card cups">
-            <div class="card-number">VII</div>
-            <div class="card-symbol">Ⅶ</div>
-            <h3>Seven of Cups</h3>
-            <div class="suit">Cups</div>
-            <div class="meaning">Choices, imagination, possibilities and distinguishing fantasy from reality.</div>
-            <div class="reversed">Reversed: clarity, narrowed choices or realistic decision-making.</div>
-        </div>
-
-        <div class="tarot-card cups">
-            <div class="card-number">VIII</div>
-            <div class="card-symbol">Ⅷ</div>
-            <h3>Eight of Cups</h3>
-            <div class="suit">Cups</div>
-            <div class="meaning">Walking away, emotional growth and seeking something deeper.</div>
-            <div class="reversed">Reversed: fear of leaving or returning to something unfinished.</div>
-        </div>
-
-        <div class="tarot-card cups">
-            <div class="card-number">IX</div>
-            <div class="card-symbol">Ⅸ</div>
-            <h3>Nine of Cups</h3>
-            <div class="suit">Cups</div>
-            <div class="meaning">Contentment, wishes, pleasure and appreciating what you have.</div>
-            <div class="reversed">Reversed: dissatisfaction or wishes that don't fulfil as expected.</div>
-        </div>
-
-        <div class="tarot-card cups">
-            <div class="card-number">X</div>
-            <div class="card-symbol">Ⅹ</div>
-            <h3>Ten of Cups</h3>
-            <div class="suit">Cups</div>
-            <div class="meaning">Emotional fulfilment, harmony, family and lasting happiness.</div>
-            <div class="reversed">Reversed: family tension or an ideal that needs redefining.</div>
-        </div>
-
-        <div class="tarot-card cups">
-            <div class="card-number">PAGE</div>
-            <div class="card-symbol">♧</div>
-            <h3>Page of Cups</h3>
-            <div class="suit">Cups</div>
-            <div class="meaning">Emotional openness, imagination, sensitivity and surprising messages.</div>
-            <div class="reversed">Reversed: emotional immaturity or creative insecurity.</div>
-        </div>
-
-        <div class="tarot-card cups">
-            <div class="card-number">KNIGHT</div>
-            <div class="card-symbol">♞</div>
-            <h3>Knight of Cups</h3>
-            <div class="suit">Cups</div>
-            <div class="meaning">Romance, idealism, emotional expression and following the heart.</div>
-            <div class="reversed">Reversed: unrealistic expectations or emotional volatility.</div>
-        </div>
-
-        <div class="tarot-card cups">
-            <div class="card-number">QUEEN</div>
-            <div class="card-symbol">♕</div>
-            <h3>Queen of Cups</h3>
-            <div class="suit">Cups</div>
-            <div class="meaning">Intuition, empathy, compassion and emotional wisdom.</div>
-            <div class="reversed">Reversed: emotional overwhelm or poor boundaries.</div>
-        </div>
-
-        <div class="tarot-card cups">
-            <div class="card-number">KING</div>
-            <div class="card-symbol">♔</div>
-            <h3>King of Cups</h3>
-            <div class="suit">Cups</div>
-            <div class="meaning">Emotional maturity, calm leadership, compassion and balance.</div>
-            <div class="reversed">Reversed: emotional suppression, moodiness or manipulation.</div>
-        </div>
-
-
-        <!-- SWORDS -->
-
-        <div class="tarot-card swords">
-            <div class="card-number">ACE</div>
-            <div class="card-symbol">⚔</div>
-            <h3>Ace of Swords</h3>
-            <div class="suit">Swords</div>
-            <div class="meaning">Truth, clarity, breakthrough, communication and a new perspective.</div>
-            <div class="reversed">Reversed: confusion, misinformation or unclear thinking.</div>
-        </div>
-
-        <div class="tarot-card swords">
-            <div class="card-number">II</div>
-            <div class="card-symbol">Ⅱ</div>
-            <h3>Two of Swords</h3>
-            <div class="suit">Swords</div>
-            <div class="meaning">Indecision, difficult choices, neutrality and needing more information.</div>
-            <div class="reversed">Reversed: information emerging or avoidance becoming impossible.</div>
-        </div>
-
-        <div class="tarot-card swords">
-            <div class="card-number">III</div>
-            <div class="card-symbol">Ⅲ</div>
-            <h3>Three of Swords</h3>
-            <div class="suit">Swords</div>
-            <div class="meaning">Heartbreak, painful truth, grief and emotional processing.</div>
-            <div class="reversed">Reversed: healing, forgiveness or releasing pain.</div>
-        </div>
-
-        <div class="tarot-card swords">
-            <div class="card-number">IV</div>
-            <div class="card-symbol">Ⅳ</div>
-            <h3>Four of Swords</h3>
-            <div class="suit">Swords</div>
-            <div class="meaning">Rest, recovery, contemplation and stepping away from pressure.</div>
-            <div class="reversed">Reversed: restlessness or difficulty allowing yourself to pause.</div>
-        </div>
-
-        <div class="tarot-card swords">
-            <div class="card-number">V</div>
-            <div class="card-symbol">Ⅴ</div>
-            <h3>Five of Swords</h3>
-            <div class="suit">Swords</div>
-            <div class="meaning">Conflict, tension, difficult victories and considering the cost of winning.</div>
-            <div class="reversed">Reversed: reconciliation or releasing conflict.</div>
-        </div>
-
-        <div class="tarot-card swords">
-            <div class="card-number">VI</div>
-            <div class="card-symbol">Ⅵ</div>
-            <h3>Six of Swords</h3>
-            <div class="suit">Swords</div>
-            <div class="meaning">Transition, moving on, healing and travelling toward calmer waters.</div>
-            <div class="reversed">Reversed: resistance to transition or unfinished emotional baggage.</div>
-        </div>
-
-        <div class="tarot-card swords">
-            <div class="card-number">VII</div>
-            <div class="card-symbol">Ⅶ</div>
-            <h3>Seven of Swords</h3>
-            <div class="suit">Swords</div>
-            <div class="meaning">Strategy, independence, secrecy and approaching a situation carefully.</div>
-            <div class="reversed">Reversed: truth revealed, confession or reconsidering a strategy.</div>
-        </div>
-
-        <div class="tarot-card swords">
-            <div class="card-number">VIII</div>
-            <div class="card-symbol">Ⅷ</div>
-            <h3>Eight of Swords</h3>
-            <div class="suit">Swords</div>
-            <div class="meaning">Feeling restricted, limiting beliefs and difficulty seeing available choices.</div>
-            <div class="reversed">Reversed: release, perspective or recognising your agency.</div>
-        </div>
-
-        <div class="tarot-card swords">
-            <div class="card-number">IX</div>
-            <div class="card-symbol">Ⅸ</div>
-            <h3>Nine of Swords</h3>
-            <div class="suit">Swords</div>
-            <div class="meaning">Worry, anxiety, overthinking and fears that grow in the mind.</div>
-            <div class="reversed">Reversed: relief, facing fears or beginning to break a cycle.</div>
-        </div>
-
-        <div class="tarot-card swords">
-            <div class="card-number">X</div>
-            <div class="card-symbol">Ⅹ</div>
-            <h3>Ten of Swords</h3>
-            <div class="suit">Swords</div>
-            <div class="meaning">Endings, finality, release and the closing of a painful chapter.</div>
-            <div class="reversed">Reversed: recovery, survival or resisting an inevitable ending.</div>
-        </div>
-
-        <div class="tarot-card swords">
-            <div class="card-number">PAGE</div>
-            <div class="card-symbol">♧</div>
-            <h3>Page of Swords</h3>
-            <div class="suit">Swords</div>
-            <div class="meaning">Curiosity, observation, communication and seeking the truth.</div>
-            <div class="reversed">Reversed: gossip, impulsive words or scattered thinking.</div>
-        </div>
-
-        <div class="tarot-card swords">
-            <div class="card-number">KNIGHT</div>
-            <div class="card-symbol">♞</div>
-            <h3>Knight of Swords</h3>
-            <div class="suit">Swords</div>
-            <div class="meaning">Determination, directness, action and moving quickly toward a goal.</div>
-            <div class="reversed">Reversed: aggression, haste or acting without considering consequences.</div>
-        </div>
-
-        <div class="tarot-card swords">
-            <div class="card-number">QUEEN</div>
-            <div class="card-symbol">♕</div>
-            <h3>Queen of Swords</h3>
-            <div class="suit">Swords</div>
-            <div class="meaning">Clarity, independence, honesty, discernment and strong boundaries.</div>
-            <div class="reversed">Reversed: bitterness, excessive criticism or emotional distance.</div>
-        </div>
-
-        <div class="tarot-card swords">
-            <div class="card-number">KING</div>
-            <div class="card-symbol">♔</div>
-            <h3>King of Swords</h3>
-            <div class="suit">Swords</div>
-            <div class="meaning">Intellect, truth, fairness, authority and clear decision-making.</div>
-            <div class="reversed">Reversed: coldness, manipulation or misuse of intellect.</div>
-        </div>
-
-
-        <!-- PENTACLES -->
-
-        <div class="tarot-card pentacles">
-            <div class="card-number">ACE</div>
-            <div class="card-symbol">✥</div>
-            <h3>Ace of Pentacles</h3>
-            <div class="suit">Pentacles</div>
-            <div class="meaning">Opportunity, prosperity, grounding and a tangible new beginning.</div>
-            <div class="reversed">Reversed: missed opportunity or unstable foundations.</div>
-        </div>
-
-        <div class="tarot-card pentacles">
-            <div class="card-number">II</div>
-            <div class="card-symbol">Ⅱ</div>
-            <h3>Two of Pentacles</h3>
-            <div class="suit">Pentacles</div>
-            <div class="meaning">Balance, adaptability, priorities and managing competing demands.</div>
-            <div class="reversed">Reversed: overwhelm, imbalance or too many responsibilities.</div>
-        </div>
-
-        <div class="tarot-card pentacles">
-            <div class="card-number">III</div>
-            <div class="card-symbol">Ⅲ</div>
-            <h3>Three of Pentacles</h3>
-            <div class="suit">Pentacles</div>
-            <div class="meaning">Collaboration, craftsmanship, learning and building something well.</div>
-            <div class="reversed">Reversed: poor teamwork or lack of recognition.</div>
-        </div>
-
-        <div class="tarot-card pentacles">
-            <div class="card-number">IV</div>
-            <div class="card-symbol">Ⅳ</div>
-            <h3>Four of Pentacles</h3>
-            <div class="suit">Pentacles</div>
-            <div class="meaning">Security, control, conserving resources and holding tightly to what you value.</div>
-            <div class="reversed">Reversed: letting go, insecurity or excessive attachment.</div>
-        </div>
-
-        <div class="tarot-card pentacles">
-            <div class="card-number">V</div>
-            <div class="card-symbol">Ⅴ</div>
-            <h3>Five of Pentacles</h3>
-            <div class="suit">Pentacles</div>
-            <div class="meaning">Hardship, insecurity, feeling excluded and seeking support.</div>
-            <div class="reversed">Reversed: recovery, support or emerging from difficulty.</div>
-        </div>
-
-        <div class="tarot-card pentacles">
-            <div class="card-number">VI</div>
-            <div class="card-symbol">Ⅵ</div>
-            <h3>Six of Pentacles</h3>
-            <div class="suit">Pentacles</div>
-            <div class="meaning">Generosity, support, reciprocity and the balance of giving and receiving.</div>
-            <div class="reversed">Reversed: unequal exchange or strings attached.</div>
-        </div>
-
-        <div class="tarot-card pentacles">
-            <div class="card-number">VII</div>
-            <div class="card-symbol">Ⅶ</div>
-            <h3>Seven of Pentacles</h3>
-            <div class="suit">Pentacles</div>
-            <div class="meaning">Patience, assessment, long-term growth and waiting for results.</div>
-            <div class="reversed">Reversed: impatience or questioning whether effort is worthwhile.</div>
-        </div>
-
-        <div class="tarot-card pentacles">
-            <div class="card-number">VIII</div>
-            <div class="card-symbol">Ⅷ</div>
-            <h3>Eight of Pentacles</h3>
-            <div class="suit">Pentacles</div>
-            <div class="meaning">Practice, dedication, skill development and commitment to your craft.</div>
-            <div class="reversed">Reversed: perfectionism, boredom or lack of focus.</div>
-        </div>
-
-        <div class="tarot-card pentacles">
-            <div class="card-number">IX</div>
-            <div class="card-symbol">Ⅸ</div>
-            <h3>Nine of Pentacles</h3>
-            <div class="suit">Pentacles</div>
-            <div class="meaning">Independence, comfort, achievement and enjoying what you have cultivated.</div>
-            <div class="reversed">Reversed: dependence, insecurity or superficial success.</div>
-        </div>
-
-        <div class="tarot-card pentacles">
-            <div class="card-number">X</div>
-            <div class="card-symbol">Ⅹ</div>
-            <h3>Ten of Pentacles</h3>
-            <div class="suit">Pentacles</div>
-            <div class="meaning">Legacy, stability, family, long-term security and lasting foundations.</div>
-            <div class="reversed">Reversed: instability, family conflict or disrupted plans.</div>
-        </div>
-
-        <div class="tarot-card pentacles">
-            <div class="card-number">PAGE</div>
-            <div class="card-symbol">♧</div>
-            <h3>Page of Pentacles</h3>
-            <div class="suit">Pentacles</div>
-            <div class="meaning">Learning, opportunity, practical ambition and beginning something tangible.</div>
-            <div class="reversed">Reversed: lack of follow-through or missed practical opportunities.</div>
-        </div>
-
-        <div class="tarot-card pentacles">
-            <div class="card-number">KNIGHT</div>
-            <div class="card-symbol">♞</div>
-            <h3>Knight of Pentacles</h3>
-            <div class="suit">Pentacles</div>
-            <div class="meaning">Reliability, patience, consistency and steady progress.</div>
-            <div class="reversed">Reversed: stagnation, stubbornness or repetitive effort without growth.</div>
-        </div>
-
-        <div class="tarot-card pentacles">
-            <div class="card-number">QUEEN</div>
-            <div class="card-symbol">♕</div>
-            <h3>Queen of Pentacles</h3>
-            <div class="suit">Pentacles</div>
-            <div class="meaning">Grounded care, practicality, abundance and creating a supportive environment.</div>
-            <div class="reversed">Reversed: neglecting yourself or giving too much to others.</div>
-        </div>
-
-        <div class="tarot-card pentacles">
-            <div class="card-number">KING</div>
-            <div class="card-symbol">♔</div>
-            <h3>King of Pentacles</h3>
-            <div class="suit">Pentacles</div>
-            <div class="meaning">Stability, prosperity, responsibility and wise stewardship.</div>
-            <div class="reversed">Reversed: materialism, greed or instability.</div>
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<section class="cta" id="contact">
-
-    <h2>
-        Let The Cards Speak
+    <h2 class="section-title">
+        MAJOR ARCANA
     </h2>
 
-    <p>
-        When you have a question, sometimes a different perspective
-        is all you need to begin seeing clearly.
+    <div class="cards-grid">
+
+        <div class="card">
+            <div class="card-number">0</div>
+            <div class="card-symbol">✦</div>
+            <div class="card-name">THE FOOL</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">I</div>
+            <div class="card-symbol">✧</div>
+            <div class="card-name">THE MAGICIAN</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">II</div>
+            <div class="card-symbol">☾</div>
+            <div class="card-name">THE HIGH PRIESTESS</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">III</div>
+            <div class="card-symbol">❀</div>
+            <div class="card-name">THE EMPRESS</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">IV</div>
+            <div class="card-symbol">♔</div>
+            <div class="card-name">THE EMPEROR</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">V</div>
+            <div class="card-symbol">✧</div>
+            <div class="card-name">THE HIEROPHANT</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">VI</div>
+            <div class="card-symbol">♡</div>
+            <div class="card-name">THE LOVERS</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">VII</div>
+            <div class="card-symbol">◇</div>
+            <div class="card-name">THE CHARIOT</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">VIII</div>
+            <div class="card-symbol">∞</div>
+            <div class="card-name">STRENGTH</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">IX</div>
+            <div class="card-symbol">✦</div>
+            <div class="card-name">THE HERMIT</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">X</div>
+            <div class="card-symbol">☼</div>
+            <div class="card-name">WHEEL OF FORTUNE</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">XI</div>
+            <div class="card-symbol">⚖</div>
+            <div class="card-name">JUSTICE</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">XII</div>
+            <div class="card-symbol">◯</div>
+            <div class="card-name">THE HANGED MAN</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">XIII</div>
+            <div class="card-symbol">☽</div>
+            <div class="card-name">DEATH</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">XIV</div>
+            <div class="card-symbol">✧</div>
+            <div class="card-name">TEMPERANCE</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">XV</div>
+            <div class="card-symbol">◇</div>
+            <div class="card-name">THE DEVIL</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">XVI</div>
+            <div class="card-symbol">⚡</div>
+            <div class="card-name">THE TOWER</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">XVII</div>
+            <div class="card-symbol">☆</div>
+            <div class="card-name">THE STAR</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">XVIII</div>
+            <div class="card-symbol">☾</div>
+            <div class="card-name">THE MOON</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">XIX</div>
+            <div class="card-symbol">☀</div>
+            <div class="card-name">THE SUN</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">XX</div>
+            <div class="card-symbol">♢</div>
+            <div class="card-name">JUDGEMENT</div>
+        </div>
+
+        <div class="card">
+            <div class="card-number">XXI</div>
+            <div class="card-symbol">○</div>
+            <div class="card-name">THE WORLD</div>
+        </div>
+
+    </div>
+
+
+    <!-- MINOR ARCANA -->
+
+    <h2 class="section-title">
+        MINOR ARCANA
+    </h2>
+
+    <p class="suits">
+        Four suits • Four ways of seeing the world
     </p>
 
-    <a class="button" href="readings.html">
-        Explore A Reading
-    </a>
 
-</section>
+    <!-- WANDS -->
 
+    <h2 class="section-title">
+        WANDS
+    </h2>
+
+    <div class="cards-grid">
+
+        <div class="card"><div class="card-number">ACE</div><div class="card-symbol">♠</div><div class="card-name">ACE OF WANDS</div></div>
+        <div class="card"><div class="card-number">II</div><div class="card-name">TWO OF WANDS</div></div>
+        <div class="card"><div class="card-number">III</div><div class="card-name">THREE OF WANDS</div></div>
+        <div class="card"><div class="card-number">IV</div><div class="card-name">FOUR OF WANDS</div></div>
+        <div class="card"><div class="card-number">V</div><div class="card-name">FIVE OF WANDS</div></div>
+        <div class="card"><div class="card-number">VI</div><div class="card-name">SIX OF WANDS</div></div>
+        <div class="card"><div class="card-number">VII</div><div class="card-name">SEVEN OF WANDS</div></div>
+        <div class="card"><div class="card-number">VIII</div><div class="card-name">EIGHT OF WANDS</div></div>
+        <div class="card"><div class="card-number">IX</div><div class="card-name">NINE OF WANDS</div></div>
+        <div class="card"><div class="card-number">X</div><div class="card-name">TEN OF WANDS</div></div>
+        <div class="card"><div class="card-number">PAGE</div><div class="card-name">PAGE OF WANDS</div></div>
+        <div class="card"><div class="card-number">KNIGHT</div><div class="card-name">KNIGHT OF WANDS</div></div>
+        <div class="card"><div class="card-number">QUEEN</div><div class="card-name">QUEEN OF WANDS</div></div>
+        <div class="card"><div class="card-number">KING</div><div class="card-name">KING OF WANDS</div></div>
+
+    </div>
+
+
+    <!-- CUPS -->
+
+    <h2 class="section-title">
+        CUPS
+    </h2>
+
+    <div class="cards-grid">
+
+        <div class="card"><div class="card-number">ACE</div><div class="card-symbol">♡</div><div class="card-name">ACE OF CUPS</div></div>
+        <div class="card"><div class="card-number">II</div><div class="card-name">TWO OF CUPS</div></div>
+        <div class="card"><div class="card-number">III</div><div class="card-name">THREE OF CUPS</div></div>
+        <div class="card"><div class="card-number">IV</div><div class="card-name">FOUR OF CUPS</div></div>
+        <div class="card"><div class="card-number">V</div><div class="card-name">FIVE OF CUPS</div></div>
+        <div class="card"><div class="card-number">VI</div><div class="card-name">SIX OF CUPS</div></div>
+        <div class="card"><div class="card-number">VII</div><div class="card-name">SEVEN OF CUPS</div></div>
+        <div class="card"><div class="card-number">VIII</div><div class="card-name">EIGHT OF CUPS</div></div>
+        <div class="card"><div class="card-number">IX</div><div class="card-name">NINE OF CUPS</div></div>
+        <div class="card"><div class="card-number">X</div><div class="card-name">TEN OF CUPS</div></div>
+        <div class="card"><div class="card-number">PAGE</div><div class="card-name">PAGE OF CUPS</div></div>
+        <div class="card"><div class="card-number">KNIGHT</div><div class="card-name">KNIGHT OF CUPS</div></div>
+        <div class="card"><div class="card-number">QUEEN</div><div class="card-name">QUEEN OF CUPS</div></div>
+        <div class="card"><div class="card-number">KING</div><div class="card-name">KING OF CUPS</div></div>
+
+    </div>
+
+
+    <!-- SWORDS -->
+
+    <h2 class="section-title">
+        SWORDS
+    </h2>
+
+    <div class="cards-grid">
+
+        <div class="card"><div class="card-number">ACE</div><div class="card-symbol">⚔</div><div class="card-name">ACE OF SWORDS</div></div>
+        <div class="card"><div class="card-number">II</div><div class="card-name">TWO OF SWORDS</div></div>
+        <div class="card"><div class="card-number">III</div><div class="card-name">THREE OF SWORDS</div></div>
+        <div class="card"><div class="card-number">IV</div><div class="card-name">FOUR OF SWORDS</div></div>
+        <div class="card"><div class="card-number">V</div><div class="card-name">FIVE OF SWORDS</div></div>
+        <div class="card"><div class="card-number">VI</div><div class="card-name">SIX OF SWORDS</div></div>
+        <div class="card"><div class="card-number">VII</div><div class="card-name">SEVEN OF SWORDS</div></div>
+        <div class="card"><div class="card-number">VIII</div><div class="card-name">EIGHT OF SWORDS</div></div>
+        <div class="card"><div class="card-number">IX</div><div class="card-name">NINE OF SWORDS</div></div>
+        <div class="card"><div class="card-number">X</div><div class="card-name">TEN OF SWORDS</div></div>
+        <div class="card"><div class="card-number">PAGE</div><div class="card-name">PAGE OF SWORDS</div></div>
+        <div class="card"><div class="card-number">KNIGHT</div><div class="card-name">KNIGHT OF SWORDS</div></div>
+        <div class="card"><div class="card-number">QUEEN</div><div class="card-name">QUEEN OF SWORDS</div></div>
+        <div class="card"><div class="card-number">KING</div><div class="card-name">KING OF SWORDS</div></div>
+
+    </div>
+
+
+    <!-- PENTACLES -->
+
+    <h2 class="section-title">
+        PENTACLES
+    </h2>
+
+    <div class="cards-grid">
+
+        <div class="card"><div class="card-number">ACE</div><div class="card-symbol">◇</div><div class="card-name">ACE OF PENTACLES</div></div>
+        <div class="card"><div class="card-number">II</div><div class="card-name">TWO OF PENTACLES</div></div>
+        <div class="card"><div class="card-number">III</div><div class="card-name">THREE OF PENTACLES</div></div>
+        <div class="card"><div class="card-number">IV</div><div class="card-name">FOUR OF PENTACLES</div></div>
+        <div class="card"><div class="card-number">V</div><div class="card-name">FIVE OF PENTACLES</div></div>
+        <div class="card"><div class="card-number">VI</div><div class="card-name">SIX OF PENTACLES</div></div>
+        <div class="card"><div class="card-number">VII</div><div class="card-name">SEVEN OF PENTACLES</div></div>
+        <div class="card"><div class="card-number">VIII</div><div class="card-name">EIGHT OF PENTACLES</div></div>
+        <div class="card"><div class="card-number">IX</div><div class="card-name">NINE OF PENTACLES</div></div>
+        <div class="card"><div class="card-number">X</div><div class="card-name">TEN OF PENTACLES</div></div>
+        <div class="card"><div class="card-number">PAGE</div><div class="card-name">PAGE OF PENTACLES</div></div>
+        <div class="card"><div class="card-number">KNIGHT</div><div class="card-name">KNIGHT OF PENTACLES</div></div>
+        <div class="card"><div class="card-number">QUEEN</div><div class="card-name">QUEEN OF PENTACLES</div></div>
+        <div class="card"><div class="card-number">KING</div><div class="card-name">KING OF PENTACLES</div></div>
+
+    </div>
+
+</main>
 
 <footer>
-
-    © 2026 The Clarity Chamber
+    THE CLARITY CHAMBER
     <br><br>
     Tarot • Intuition • Reflection
-
 </footer>
-
-
-<script>
-
-function filterCards(category, button) {
-
-    const cards = document.querySelectorAll(".tarot-card");
-    const buttons = document.querySelectorAll(".filter-button");
-
-    buttons.forEach(function(btn) {
-        btn.classList.remove("active");
-    });
-
-    button.classList.add("active");
-
-    cards.forEach(function(card) {
-
-        if (category === "all") {
-            card.style.display = "block";
-        } 
-        else if (card.classList.contains(category)) {
-            card.style.display = "block";
-        } 
-        else {
-            card.style.display = "none";
-        }
-
-    });
-
-}
-
-
-function searchCards() {
-
-    const search =
-        document.getElementById("search").value.toLowerCase();
-
-    const cards =
-        document.querySelectorAll(".tarot-card");
-
-    cards.forEach(function(card) {
-
-        const text =
-            card.innerText.toLowerCase();
-
-        if (text.includes(search)) {
-            card.style.display = "block";
-        } 
-        else {
-            card.style.display = "none";
-        }
-
-    });
-
-}
-
-</script>
-
 
 </body>
 </html>
