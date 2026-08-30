@@ -1,3 +1,4 @@
+<!-- contact.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,14 +8,14 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header class="navbar">
+  <header class="site-header">
     <div class="logo">The Clarity Chamber</div>
     <nav>
-      <ul>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
@@ -23,26 +24,26 @@
     </nav>
   </header>
 
-  <main class="page-container">
-    <section class="contact-header">
-      <h1>Get in Touch</h1>
-      <p>Book a session or send an inquiry below.</p>
+  <main class="page-container container">
+    <section class="hero">
+      <h1 class="hero-title">READY FOR <span class="highlight">CLARITY?</span></h1>
+      <p class="hero-description">Let's uncover the answers you're seeking. I'm here to guide you.</p>
     </section>
 
-    <section class="contact-content">
+    <section class="form-container">
       <form class="contact-form" action="#" method="POST">
         <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          <label for="name">FULL NAME</label>
+          <input type="text" id="name" name="name" required>
         </div>
 
         <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="Your Email" required>
+          <label for="email">EMAIL ADDRESS</label>
+          <input type="email" id="email" name="email" required>
         </div>
 
         <div class="form-group">
-          <label for="service">Interested Reading</label>
+          <label for="service">INTERESTED READING</label>
           <select id="service" name="service">
             <option value="virtual">Live / Virtual Reading</option>
             <option value="recorded">Recorded Video Reading</option>
@@ -52,16 +53,20 @@
         </div>
 
         <div class="form-group">
-          <label for="message">Your Message or Questions</label>
-          <textarea id="message" name="message" rows="5" placeholder="Share any specific questions or details..." required></textarea>
+          <label for="message">YOUR MESSAGE</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
         </div>
 
-        <button type="submit" class="btn btn-primary">Send Message</button>
+        <button type="submit" class="btn btn-primary">BOOK YOUR SESSION &rsaquo;</button>
       </form>
     </section>
   </main>
 
-  <footer>
+  <footer class="footer-contact container">
+    <div class="contact-item">
+      <div class="contact-icon">✉</div>
+      <p>theclaritychamber@gmail.com</p>
+    </div>
     <p>&copy; The Clarity Chamber. All rights reserved.</p>
   </footer>
 
