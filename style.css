@@ -1,0 +1,199 @@
+/* Global Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f6f5f0;
+    color: #2c3e35;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, .logo-text h1 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Header */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #f6f5f0;
+    border-bottom: 1px solid #e3e0d5;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    font-size: 24px;
+    color: #a38a59;
+}
+
+.logo-text h1 {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: #1f3128;
+}
+
+.logo-text p {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #a38a59;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2c3e35;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #a38a59;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #23352c;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #a38a59;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(rgba(246,245,240,0.9), rgba(246,245,240,0.9)), url('hero-bg.jpg') center/cover;
+}
+
+.welcome-text {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: #a38a59;
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    color: #1f3128;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+/* Areas of Guidance */
+.guidance-section {
+    padding: 80px 8%;
+    text-align: center;
+    background: #fff;
+}
+
+.guidance-section h3 {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: #1f3128;
+}
+
+.guidance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    border: 1px solid #e3e0d5;
+    padding: 40px 20px;
+    border-radius: 6px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #1f3128;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Quote Section */
+.quote-section {
+    background-color: #1b2e25;
+    color: #f6f5f0;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.quote-section blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.4;
+    color: #e5dec9;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #f0eee6;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.site-footer h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #1f3128;
+}
+
+.contact-info {
+    margin: 30px 0;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.contact-info p {
+    margin: 8px 0;
+}
+
+.footer-note {
+    font-size: 0.8rem;
+    color: #777;
+    margin-top: 20px;
+}
