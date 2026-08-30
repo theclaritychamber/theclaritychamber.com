@@ -4,682 +4,187 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tarot Readings | The Clarity Chamber</title>
+<title>Readings | The Clarity Chamber</title>
 
 <style>
-
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
+    background: #f6f2e7;
+    color: #405246;
     font-family: Georgia, "Times New Roman", serif;
-    background: #f7f3e9;
-    color: #344236;
     line-height: 1.7;
 }
 
-/* ================= HEADER ================= */
-
 header {
-    width: 100%;
-    padding: 25px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #d3c39d;
-    background: #f7f3e9;
+    padding: 32px 24px 18px;
+    text-align: center;
+    border-bottom: 1px solid #c8b58a;
 }
 
 .logo {
-    color: #536654;
-    font-size: 19px;
+    font-size: 22px;
+    letter-spacing: 5px;
     font-weight: bold;
-    letter-spacing: 3px;
 }
 
 nav {
+    margin-top: 22px;
     display: flex;
-    gap: 27px;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
 }
 
 nav a {
-    color: #536654;
+    color: #6f806d;
     text-decoration: none;
-    font-size: 13px;
-    letter-spacing: 1.5px;
+    font-size: 12px;
+    letter-spacing: 2px;
 }
 
-nav a:hover {
-    color: #a17b3f;
-}
-
-/* ================= HERO ================= */
-
-.page-hero {
-    padding: 100px 7% 90px;
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 80px 25px;
     text-align: center;
-
-    background:
-        radial-gradient(circle at 15% 30%, rgba(178,194,166,.35), transparent 30%),
-        radial-gradient(circle at 85% 70%, rgba(211,194,148,.25), transparent 30%),
-        #eee5cf;
 }
 
 .eyebrow {
-    color: #a17b3f;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 12px;
-    margin-bottom: 20px;
+    color: #a17c45;
+    letter-spacing: 5px;
+    font-size: 13px;
+    margin-bottom: 25px;
 }
 
-.page-hero h1 {
-    color: #405442;
-    font-size: clamp(48px, 8vw, 82px);
-    text-transform: uppercase;
-    letter-spacing: 4px;
+h1 {
+    font-size: 58px;
     line-height: 1;
     margin-bottom: 25px;
 }
 
-.page-hero p {
-    max-width: 650px;
-    margin: auto;
-    color: #697266;
+.intro {
+    color: #69756b;
     font-size: 18px;
+    max-width: 650px;
+    margin: 0 auto 55px;
 }
 
-/* ================= ORNAMENT ================= */
-
-.ornament {
-    text-align: center;
-    padding: 18px;
-    color: #a17b3f;
-    background: #eee5cf;
-    letter-spacing: 8px;
+.reading {
+    background: #f2ead7;
+    border: 1px solid #c8b58a;
+    padding: 35px 25px;
+    margin-bottom: 25px;
 }
 
-/* ================= READINGS ================= */
-
-.readings {
-    padding: 100px 7%;
-    background: #f7f3e9;
+.reading h2 {
+    font-size: 27px;
+    margin-bottom: 12px;
 }
 
-.readings-intro {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 60px;
+.reading p {
+    color: #69756b;
+    margin-bottom: 22px;
 }
 
-.readings-intro h2 {
-    color: #405442;
-    font-size: 42px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
-}
-
-.readings-intro p {
-    color: #697266;
-}
-
-/* ================= READING CARDS ================= */
-
-.reading-grid {
-    max-width: 1100px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-}
-
-.reading-card {
-    background: #fffdf7;
-    border: 1px solid #cdbb91;
-    padding: 45px 30px;
-    text-align: center;
-    position: relative;
-    transition: .25s ease;
-}
-
-.reading-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 35px rgba(65,78,60,.12);
-}
-
-.reading-card:before {
-    content: "✦";
-    position: absolute;
-    top: 14px;
-    left: 18px;
-    color: #b18a4d;
-}
-
-.reading-card:after {
-    content: "✦";
-    position: absolute;
-    bottom: 14px;
-    right: 18px;
-    color: #b18a4d;
-}
-
-.card-symbol {
-    font-size: 45px;
-    color: #a17b3f;
-    margin-bottom: 20px;
-}
-
-.reading-card h3 {
-    color: #536654;
-    font-size: 23px;
-    text-transform: uppercase;
+.button {
+    display: inline-block;
+    background: #788b76;
+    color: white;
+    text-decoration: none;
+    padding: 14px 30px;
+    border: 1px solid #a17c45;
     letter-spacing: 2px;
-    margin-bottom: 18px;
+    font-size: 12px;
 }
 
-.reading-card p {
-    color: #70786d;
-    font-size: 15px;
-    margin-bottom: 25px;
-}
-
-.card-details {
-    border-top: 1px solid #ddd0b2;
-    border-bottom: 1px solid #ddd0b2;
-    padding: 15px 0;
-    margin-bottom: 25px;
-    color: #927342;
+footer {
+    border-top: 1px solid #c8b58a;
+    padding: 35px 20px;
+    text-align: center;
+    color: #7c847d;
     font-size: 13px;
     letter-spacing: 1px;
 }
 
-/* ================= BUTTON ================= */
+@media (max-width: 600px) {
+    .logo {
+        font-size: 18px;
+    }
 
-.button {
-    display: inline-block;
-    padding: 14px 25px;
-    background: #71836c;
-    color: #fffdf6;
-    border: 1px solid #a17b3f;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 11px;
-    transition: .25s ease;
-}
-
-.button:hover {
-    background: #536654;
-}
-
-/* ================= PROCESS ================= */
-
-.process {
-    padding: 100px 7%;
-    background: #dce5d4;
-}
-
-.process-title {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.process-title h2 {
-    color: #405442;
-    font-size: 43px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-
-.process-title p {
-    color: #697266;
-    margin-top: 10px;
-}
-
-.process-grid {
-    max-width: 1000px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 40px;
-}
-
-.step {
-    text-align: center;
-}
-
-.step-number {
-    width: 58px;
-    height: 58px;
-    margin: 0 auto 20px;
-
-    border: 1px solid #a17b3f;
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #a17b3f;
-    font-size: 18px;
-}
-
-.step h3 {
-    color: #536654;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-}
-
-.step p {
-    color: #697266;
-    font-size: 15px;
-}
-
-/* ================= NOTE ================= */
-
-.note {
-    padding: 90px 7%;
-    background: #eee5cf;
-}
-
-.note-inner {
-    max-width: 850px;
-    margin: auto;
-    text-align: center;
-}
-
-.note-inner h2 {
-    color: #405442;
-    font-size: 40px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-}
-
-.note-inner p {
-    color: #626b60;
-    font-size: 17px;
-}
-
-/* ================= CTA ================= */
-
-.cta {
-    padding: 100px 7%;
-    text-align: center;
-    background: #71836c;
-}
-
-.cta h2 {
-    color: #fffdf6;
-    font-size: clamp(36px, 6vw, 58px);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 18px;
-}
-
-.cta p {
-    max-width: 650px;
-    margin: 0 auto 30px;
-    color: #edf1e8;
-}
-
-.cta .button {
-    background: #eee5cf;
-    color: #536654;
-}
-
-/* ================= FOOTER ================= */
-
-footer {
-    padding: 35px 7%;
-    text-align: center;
-    background: #f7f3e9;
-    color: #7c806f;
-    font-size: 13px;
-    border-top: 1px solid #cbb98e;
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 800px) {
-
-    header {
-        padding: 20px 6%;
+    h1 {
+        font-size: 48px;
     }
 
     nav {
-        display: none;
-    }
-
-    .page-hero {
-        padding: 80px 6%;
-    }
-
-    .page-hero h1 {
-        font-size: 50px;
-    }
-
-    .readings,
-    .process,
-    .note,
-    .cta {
-        padding-left: 6%;
-        padding-right: 6%;
-    }
-
-    .reading-grid,
-    .process-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .reading-card {
-        padding: 40px 28px;
+        gap: 14px;
     }
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- HEADER -->
-
 <header>
-
-    <div class="logo">
-        THE CLARITY CHAMBER
-    </div>
+    <div class="logo">THE CLARITY CHAMBER</div>
 
     <nav>
         <a href="index.html">HOME</a>
         <a href="readings.html">READINGS</a>
-        <a href="#process">HOW IT WORKS</a>
-        <a href="#contact">CONTACT</a>
+        <a href="cards.html">THE CARDS</a>
+        <a href="index.html#about">ABOUT</a>
+        <a href="index.html#contact">CONTACT</a>
     </nav>
-
 </header>
 
-
-<!-- HERO -->
-
-<section class="page-hero">
+<main>
 
     <div class="eyebrow">
-        The Clarity Chamber
+        TAROT • INTUITION • REFLECTION
     </div>
 
     <h1>
-        Tarot Readings
+        READINGS
     </h1>
 
-    <p>
-        Bring your question into the chamber.
-        The cards offer symbols, perspectives and possibilities
-        to help you see what may already be waiting beneath the surface.
+    <p class="intro">
+        A quiet space to explore the questions, patterns
+        and possibilities that are asking for your attention.
     </p>
 
-</section>
-
-
-<div class="ornament">
-    ✦ ─── ☾ ─── ✦
-</div>
-
-
-<!-- READINGS -->
-
-<section class="readings">
-
-    <div class="readings-intro">
-
-        <h2>
-            Choose Your Reading
-        </h2>
-
+    <div class="reading">
+        <h2>THE CLARITY READING</h2>
         <p>
-            Every reading begins with a question.
-            Choose the space that feels most relevant to you.
+            A reflective tarot experience designed to bring
+            perspective to the question on your mind.
         </p>
-
+        <a class="button" href="#">
+            BEGIN
+        </a>
     </div>
 
-
-    <div class="reading-grid">
-
-
-        <!-- READING 1 -->
-
-        <div class="reading-card">
-
-            <div class="card-symbol">
-                ♡
-            </div>
-
-            <h3>
-                Love & Relationships
-            </h3>
-
-            <p>
-                Explore connection, emotions, relationship patterns
-                and the questions occupying your heart.
-            </p>
-
-            <div class="card-details">
-                LOVE • CONNECTION • EMOTION
-            </div>
-
-            <a class="button" href="#contact">
-                Choose Reading
-            </a>
-
-        </div>
-
-
-        <!-- READING 2 -->
-
-        <div class="reading-card">
-
-            <div class="card-symbol">
-                ✦
-            </div>
-
-            <h3>
-                Life Path
-            </h3>
-
-            <p>
-                A reflective reading for moments of transition,
-                uncertainty, decisions and new directions.
-            </p>
-
-            <div class="card-details">
-                DIRECTION • CHANGE • POSSIBILITY
-            </div>
-
-            <a class="button" href="#contact">
-                Choose Reading
-            </a>
-
-        </div>
-
-
-        <!-- READING 3 -->
-
-        <div class="reading-card">
-
-            <div class="card-symbol">
-                ☼
-            </div>
-
-            <h3>
-                Clarity Reading
-            </h3>
-
-            <p>
-                Bring one meaningful question into the chamber
-                and allow the cards to offer another perspective.
-            </p>
-
-            <div class="card-details">
-                QUESTION • INSIGHT • CLARITY
-            </div>
-
-            <a class="button" href="#contact">
-                Choose Reading
-            </a>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- PROCESS -->
-
-<section class="process" id="process">
-
-    <div class="process-title">
-
-        <h2>
-            Your Reading
-        </h2>
-
+    <div class="reading">
+        <h2>THE THREE CARD READING</h2>
         <p>
-            A simple journey into the cards.
+            Past, present and possibility — three cards,
+            three perspectives, one moment of reflection.
         </p>
-
+        <a class="button" href="#">
+            EXPLORE
+        </a>
     </div>
 
-
-    <div class="process-grid">
-
-
-        <div class="step">
-
-            <div class="step-number">
-                I
-            </div>
-
-            <h3>
-                Ask
-            </h3>
-
-            <p>
-                Bring a question, situation or area of your life
-                that you would like to explore.
-            </p>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="step-number">
-                II
-            </div>
-
-            <h3>
-                Reveal
-            </h3>
-
-            <p>
-                The cards create a symbolic story around
-                the energy and themes surrounding your question.
-            </p>
-
-        </div>
-
-
-        <div class="step">
-
-            <div class="step-number">
-                III
-            </div>
-
-            <h3>
-                Reflect
-            </h3>
-
-            <p>
-                Take the message as an invitation to reflect,
-                rather than a fixed prediction of the future.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- NOTE -->
-
-<section class="note">
-
-    <div class="note-inner">
-
-        <h2>
-            A Different Way Of Seeing
-        </h2>
-
-        <p>
-            Tarot does not have to tell you what will happen.
-            It can help you slow down, recognise patterns,
-            explore possibilities and listen to your own intuition.
-            The final choice always belongs to you.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- CTA -->
-
-<section class="cta" id="contact">
-
-    <h2>
-        Ready To Enter?
-    </h2>
-
-    <p>
-        Choose your reading and begin your journey
-        into The Clarity Chamber.
-    </p>
-
-    <a class="button" href="mailto:hello@theclaritychamber.com">
-        Begin Your Reading
-    </a>
-
-</section>
-
-
-<!-- FOOTER -->
+</main>
 
 <footer>
-
-    © 2026 The Clarity Chamber
+    THE CLARITY CHAMBER
     <br><br>
     Tarot • Intuition • Reflection
-
 </footer>
-
 
 </body>
 </html>
