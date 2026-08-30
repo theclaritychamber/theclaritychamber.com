@@ -4,255 +4,294 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The Cards | The Clarity Chamber</title>
+<title>The Cards | Tarot</title>
 
 <style>
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
-    background: #f6f2e7;
-    color: #405246;
+    margin: 0;
     font-family: Georgia, "Times New Roman", serif;
-    line-height: 1.7;
+    background: #fbf8f2;
+    color: #4d4057;
 }
 
-/* HEADER */
-
 header {
-    padding: 30px 20px 20px;
     text-align: center;
-    border-bottom: 1px solid #c8b58a;
+    padding: 38px 20px 22px;
+    background: #fbf8f2;
 }
 
 .logo {
-    font-size: 21px;
-    letter-spacing: 5px;
-    font-weight: bold;
+    font-size: 32px;
+    letter-spacing: 3px;
+    color: #80658b;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #9b879f;
 }
 
 nav {
-    margin-top: 20px;
     display: flex;
     justify-content: center;
-    gap: 22px;
+    gap: 28px;
     flex-wrap: wrap;
+    padding: 18px 15px;
+    border-top: 1px solid #e9dfd3;
+    border-bottom: 1px solid #e9dfd3;
 }
 
 nav a {
-    color: #6f806d;
     text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 2px;
+    color: #66556f;
+    font-size: 13px;
+    letter-spacing: 1.5px;
 }
 
 nav a:hover {
-    color: #9b7842;
-}
-
-/* PAGE INTRO */
-
-main {
-    max-width: 1050px;
-    margin: auto;
-    padding: 70px 20px 90px;
+    color: #a77e9e;
 }
 
 .hero {
     text-align: center;
-    margin-bottom: 75px;
+    padding: 55px 20px 30px;
 }
 
-.eyebrow {
-    color: #a17c45;
-    letter-spacing: 5px;
-    font-size: 12px;
-    margin-bottom: 22px;
+.hero h1 {
+    margin: 0;
+    font-size: 42px;
+    font-weight: normal;
+    color: #715477;
 }
 
-h1 {
-    font-size: 60px;
-    line-height: 1;
-    margin-bottom: 25px;
+.hero p {
+    max-width: 650px;
+    margin: 16px auto 0;
+    line-height: 1.7;
+    color: #827184;
 }
 
-.intro {
-    max-width: 680px;
-    margin: auto;
-    color: #69756b;
-    font-size: 18px;
+.controls {
+    max-width: 1000px;
+    margin: 10px auto 35px;
+    padding: 0 20px;
 }
 
-/* SECTIONS */
-
-.section-title {
-    text-align: center;
-    font-size: 35px;
-    margin: 65px 0 15px;
-}
-
-.section-description {
-    text-align: center;
-    color: #69756b;
-    font-style: italic;
-    margin-bottom: 30px;
-}
-
-/* CARD GRID */
-
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-}
-
-/* CARD */
-
-.tarot-card {
+.search {
     width: 100%;
-    background: #f2ead7;
-    border: 1px solid #c8b58a;
-    color: #405246;
-    cursor: pointer;
-    font-family: Georgia, "Times New Roman", serif;
-    text-align: center;
-    padding: 25px 12px;
-    min-height: 145px;
-    transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.tarot-card:hover {
-    transform: translateY(-3px);
-    background: #eee4cf;
-}
-
-.tarot-card.active {
-    background: #ebe1ca;
-}
-
-.card-number {
-    color: #a17c45;
-    font-size: 12px;
-    letter-spacing: 3px;
-    margin-bottom: 8px;
-}
-
-.card-symbol {
-    color: #a17c45;
-    font-size: 28px;
-    line-height: 1;
-    margin-bottom: 10px;
-}
-
-.card-name {
+    padding: 15px 18px;
+    border: 1px solid #dfd3dc;
+    border-radius: 30px;
+    background: white;
+    color: #55475b;
+    font-family: inherit;
     font-size: 15px;
-    letter-spacing: 1px;
+    outline: none;
 }
 
-/* MEANING PANEL */
-
-.meaning {
-    display: none;
-    grid-column: 1 / -1;
-    background: #eee7d7;
-    border: 1px solid #c8b58a;
-    padding: 30px;
-    margin-top: -2px;
-    margin-bottom: 8px;
+.search:focus {
+    border-color: #b99db9;
 }
 
-.meaning.open {
-    display: block;
-}
-
-.meaning-title {
-    color: #405246;
-    font-size: 26px;
-    margin-bottom: 18px;
-}
-
-.meaning-label {
-    color: #a17c45;
-    font-size: 11px;
-    letter-spacing: 3px;
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
     margin-top: 18px;
-    margin-bottom: 5px;
 }
 
-.meaning p {
-    color: #69756b;
-    font-size: 16px;
+.filter {
+    border: 1px solid #d8c8d6;
+    background: #fffdf9;
+    color: #715477;
+    padding: 9px 16px;
+    border-radius: 20px;
+    font-family: inherit;
+    cursor: pointer;
 }
 
-.reflection {
-    color: #405246 !important;
+.filter.active,
+.filter:hover {
+    background: #eadfeb;
+}
+
+.cards {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 70px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #fffdf9;
+    border: 1px solid #e4d9df;
+    border-radius: 16px;
+    padding: 25px 18px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(100, 75, 100, .10);
+}
+
+.symbol {
+    width: 72px;
+    height: 92px;
+    margin: 0 auto 17px;
+    border: 1px solid #cdb9ca;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4edf5;
+    color: #80658b;
+    font-size: 30px;
+}
+
+.card h3 {
+    margin: 0 0 7px;
+    color: #614a68;
+    font-size: 19px;
+    font-weight: normal;
+}
+
+.card .type {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #a08da3;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(65, 50, 68, .45);
+    z-index: 1000;
+    padding: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-box {
+    width: min(600px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #fffdf9;
+    border-radius: 20px;
+    padding: 35px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(50, 35, 55, .25);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border: none;
+    background: none;
+    font-size: 28px;
+    color: #8e7890;
+    cursor: pointer;
+}
+
+.modal-symbol {
+    width: 95px;
+    height: 120px;
+    margin: 5px auto 22px;
+    border: 1px solid #cdb9ca;
+    border-radius: 10px;
+    background: #f4edf5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #80658b;
+    font-size: 40px;
+}
+
+.modal h2 {
+    text-align: center;
+    color: #694d70;
+    font-weight: normal;
+    font-size: 30px;
+    margin: 0;
+}
+
+.modal .meaning {
+    text-align: center;
+    color: #9a819b;
+    margin: 8px 0 25px;
     font-style: italic;
-    margin-top: 4px;
 }
 
-/* FOOTER */
+.modal h4 {
+    color: #715477;
+    margin-bottom: 7px;
+}
+
+.modal p {
+    line-height: 1.7;
+    color: #675b69;
+}
 
 footer {
-    border-top: 1px solid #c8b58a;
-    padding: 35px 20px;
     text-align: center;
-    color: #7c847d;
+    padding: 35px 20px;
+    border-top: 1px solid #e9dfd3;
+    color: #a08da3;
     font-size: 13px;
-    letter-spacing: 1px;
 }
 
-/* MOBILE */
-
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
     .logo {
-        font-size: 17px;
-        letter-spacing: 4px;
+        font-size: 25px;
     }
 
-    nav {
-        gap: 13px;
+    .hero h1 {
+        font-size: 34px;
     }
 
-    nav a {
-        font-size: 10px;
-    }
-
-    main {
-        padding-top: 55px;
-    }
-
-    h1 {
-        font-size: 48px;
-    }
-
-    .intro {
-        font-size: 17px;
-    }
-
-    .cards-grid {
+    .cards {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
+        padding-left: 12px;
+        padding-right: 12px;
     }
 
-    .tarot-card {
-        min-height: 135px;
-        padding: 22px 8px;
+    .card {
+        padding: 18px 10px;
     }
 
-    .card-name {
-        font-size: 13px;
+    .symbol {
+        width: 58px;
+        height: 75px;
+        font-size: 25px;
     }
 
-    .meaning {
-        padding: 25px 20px;
+    .card h3 {
+        font-size: 16px;
+    }
+
+    .modal-box {
+        padding: 28px 22px;
     }
 }
 </style>
@@ -262,1671 +301,956 @@ footer {
 
 <header>
 
-    <div class="logo">
-        THE CLARITY CHAMBER
-    </div>
+    <div class="logo">THE CLARITY CHAMBER</div>
 
-    <nav>
-        <a href="index.html">HOME</a>
-        <a href="readings.html">READINGS</a>
-        <a href="cards.html">THE CARDS</a>
-        <a href="index.html#about">ABOUT</a>
-        <a href="index.html#contact">CONTACT</a>
-    </nav>
+    <div class="subtitle">
+        TAROT • INTUITION • SELF-DISCOVERY
+    </div>
 
 </header>
 
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="readings.html">READINGS</a>
+    <a href="cards.html">THE CARDS</a>
+    <a href="about.html">ABOUT</a>
+</nav>
 
-<main>
+<section class="hero">
 
-    <section class="hero">
+    <h1>The Tarot Cards</h1>
 
-        <div class="eyebrow">
-            THE TAROT
-        </div>
-
-        <h1>
-            THE CARDS
-        </h1>
-
-        <p class="intro">
-            Seventy-eight cards. Seventy-eight mirrors.
-            Explore the symbols, archetypes and stories
-            that make up the tarot.
-        </p>
-
-    </section>
-
-
-    <!-- ========================= -->
-    <!-- MAJOR ARCANA -->
-    <!-- ========================= -->
-
-    <h2 class="section-title">
-        MAJOR ARCANA
-    </h2>
-
-    <p class="section-description">
-        The greater themes, turning points and archetypes of the journey.
+    <p>
+        Explore the 78 cards of the Tarot and discover the symbols,
+        themes and meanings traditionally associated with each card.
     </p>
 
+</section>
 
-    <div class="cards-grid">
+<section class="controls">
 
+    <input
+        type="text"
+        id="search"
+        class="search"
+        placeholder="Search for a card..."
+    >
 
-        <!-- THE FOOL -->
+    <div class="filters">
 
-        <button class="tarot-card" onclick="toggleCard(this, 'fool')">
-            <div class="card-number">0</div>
-            <div class="card-symbol">✦</div>
-            <div class="card-name">THE FOOL</div>
+        <button class="filter active" onclick="filterCards('all', this)">
+            ALL 78
         </button>
 
-        <div id="fool" class="meaning">
-            <div class="meaning-title">THE FOOL</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                A new beginning is opening. Stay curious, remain open
-                to possibility, and allow yourself to take the first
-                step without needing the entire path mapped out.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                You may be hesitating because the future feels uncertain,
-                or moving too quickly without considering what you need.
-                Pause and reconnect with your intention.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                What would you begin if you trusted yourself a little more?
-            </p>
-        </div>
-
-
-        <!-- THE MAGICIAN -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'magician')">
-            <div class="card-number">I</div>
-            <div class="card-symbol">✧</div>
-            <div class="card-name">THE MAGICIAN</div>
+        <button class="filter" onclick="filterCards('major', this)">
+            MAJOR ARCANA
         </button>
 
-        <div id="magician" class="meaning">
-            <div class="meaning-title">THE MAGICIAN</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                You have more resources, skills and influence than you
-                may realise. This is a moment to turn intention into action.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                Your energy may be scattered, or you may be doubting
-                your own abilities. Focus on what you can actually control.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                What resource do you already have that you have been overlooking?
-            </p>
-        </div>
-
-
-        <!-- HIGH PRIESTESS -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'priestess')">
-            <div class="card-number">II</div>
-            <div class="card-symbol">☾</div>
-            <div class="card-name">THE HIGH PRIESTESS</div>
+        <button class="filter" onclick="filterCards('wands', this)">
+            WANDS
         </button>
 
-        <div id="priestess" class="meaning">
-            <div class="meaning-title">THE HIGH PRIESTESS</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                Not everything needs an immediate answer. Trust your
-                inner awareness and give yourself space to observe.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                You may be ignoring an inner knowing or allowing outside
-                voices to become louder than your own perspective.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                What do you already know, before anyone else gives you an answer?
-            </p>
-        </div>
-
-
-        <!-- EMPRESS -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'empress')">
-            <div class="card-number">III</div>
-            <div class="card-symbol">❀</div>
-            <div class="card-name">THE EMPRESS</div>
+        <button class="filter" onclick="filterCards('cups', this)">
+            CUPS
         </button>
 
-        <div id="empress" class="meaning">
-            <div class="meaning-title">THE EMPRESS</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                Growth comes through care, creativity and allowing
-                something meaningful the time and attention it needs.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                You may be giving too much while neglecting yourself,
-                or struggling to allow something to develop naturally.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                What in your life needs more care rather than more pressure?
-            </p>
-        </div>
-
-
-        <!-- EMPEROR -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'emperor')">
-            <div class="card-number">IV</div>
-            <div class="card-symbol">♔</div>
-            <div class="card-name">THE EMPEROR</div>
+        <button class="filter" onclick="filterCards('swords', this)">
+            SWORDS
         </button>
 
-        <div id="emperor" class="meaning">
-            <div class="meaning-title">THE EMPEROR</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                Structure, responsibility and clear boundaries can create
-                the stability needed to move forward with confidence.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                Control may have become more important than connection.
-                Consider where flexibility could create better results.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                Where would stronger boundaries create more freedom?
-            </p>
-        </div>
-
-
-        <!-- HIEROPHANT -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'hierophant')">
-            <div class="card-number">V</div>
-            <div class="card-symbol">✧</div>
-            <div class="card-name">THE HIEROPHANT</div>
+        <button class="filter" onclick="filterCards('pentacles', this)">
+            PENTACLES
         </button>
-
-        <div id="hierophant" class="meaning">
-            <div class="meaning-title">THE HIEROPHANT</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                Tradition, teaching and established wisdom may offer
-                useful guidance. Learn from what has already been tested.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                An old rule or expectation may no longer fit who you are.
-                Question what you have accepted without examining it.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                Which belief is yours, and which one did you simply inherit?
-            </p>
-        </div>
-
-
-        <!-- LOVERS -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'lovers')">
-            <div class="card-number">VI</div>
-            <div class="card-symbol">♡</div>
-            <div class="card-name">THE LOVERS</div>
-        </button>
-
-        <div id="lovers" class="meaning">
-            <div class="meaning-title">THE LOVERS</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                Connection, alignment and meaningful choice come into focus.
-                Choose what reflects your values rather than simply your desires.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                There may be tension between what you want and what you
-                know is right for you. Misalignment deserves attention.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                What choice would feel most aligned with who you want to be?
-            </p>
-        </div>
-
-
-        <!-- CHARIOT -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'chariot')">
-            <div class="card-number">VII</div>
-            <div class="card-symbol">◇</div>
-            <div class="card-name">THE CHARIOT</div>
-        </button>
-
-        <div id="chariot" class="meaning">
-            <div class="meaning-title">THE CHARIOT</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                Progress comes through focus and determination. Choose
-                a direction and bring competing energies into alignment.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                You may be moving in several directions at once. Slow down,
-                clarify your priority and regain control of your momentum.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                Where do you need to choose a direction rather than keep circling?
-            </p>
-        </div>
-
-
-        <!-- STRENGTH -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'strength')">
-            <div class="card-number">VIII</div>
-            <div class="card-symbol">∞</div>
-            <div class="card-name">STRENGTH</div>
-        </button>
-
-        <div id="strength" class="meaning">
-            <div class="meaning-title">STRENGTH</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                Real strength can be quiet. Patience, compassion and
-                self-trust can accomplish more than force.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                Self-doubt or emotional pressure may be weakening your
-                confidence. Meet yourself with patience rather than criticism.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                What would change if you treated yourself with more compassion?
-            </p>
-        </div>
-
-
-        <!-- HERMIT -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'hermit')">
-            <div class="card-number">IX</div>
-            <div class="card-symbol">✦</div>
-            <div class="card-name">THE HERMIT</div>
-        </button>
-
-        <div id="hermit" class="meaning">
-            <div class="meaning-title">THE HERMIT</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                Step back from the noise. Solitude and honest reflection
-                can reveal what becomes difficult to hear around others.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                Too much withdrawal may be keeping you from useful
-                connection. Reflection is valuable, but isolation has limits.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                What becomes clearer when you give yourself some quiet?
-            </p>
-        </div>
-
-
-        <!-- WHEEL -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'wheel')">
-            <div class="card-number">X</div>
-            <div class="card-symbol">☼</div>
-            <div class="card-name">WHEEL OF FORTUNE</div>
-        </button>
-
-        <div id="wheel" class="meaning">
-            <div class="meaning-title">WHEEL OF FORTUNE</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                Circumstances are changing. Stay adaptable and recognise
-                opportunities created by movement and new conditions.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                You may feel caught in a repeating pattern. Look for the
-                part of the cycle where your choices can create change.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                What pattern in your life is ready to change?
-            </p>
-        </div>
-
-
-        <!-- JUSTICE -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'justice')">
-            <div class="card-number">XI</div>
-            <div class="card-symbol">⚖</div>
-            <div class="card-name">JUSTICE</div>
-        </button>
-
-        <div id="justice" class="meaning">
-            <div class="meaning-title">JUSTICE</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                Clear thinking and honest assessment are needed. Look
-                at the situation as it is, including your own part in it.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                Something may be out of balance, avoided or viewed through
-                bias. Return to facts and take responsibility where needed.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                What truth would you see if you looked at this without defending yourself?
-            </p>
-        </div>
-
-
-        <!-- HANGED MAN -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'hanged')">
-            <div class="card-number">XII</div>
-            <div class="card-symbol">◯</div>
-            <div class="card-name">THE HANGED MAN</div>
-        </button>
-
-        <div id="hanged" class="meaning">
-            <div class="meaning-title">THE HANGED MAN</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                A pause may be necessary. A different perspective can reveal
-                something that action alone cannot.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                You may be holding yourself in limbo longer than necessary.
-                Consider what you are waiting for before moving again.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                What might look different if you stopped trying to force the answer?
-            </p>
-        </div>
-
-
-        <!-- DEATH -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'death')">
-            <div class="card-number">XIII</div>
-            <div class="card-symbol">☽</div>
-            <div class="card-name">DEATH</div>
-        </button>
-
-        <div id="death" class="meaning">
-            <div class="meaning-title">DEATH</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                A chapter is ending so something different can begin.
-                Release what has reached the end of its purpose.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                Resistance to change may be keeping an old pattern alive.
-                Letting go may be difficult, but necessary.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                What are you holding onto simply because it is familiar?
-            </p>
-        </div>
-
-
-        <!-- TEMPERANCE -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'temperance')">
-            <div class="card-number">XIV</div>
-            <div class="card-symbol">✧</div>
-            <div class="card-name">TEMPERANCE</div>
-        </button>
-
-        <div id="temperance" class="meaning">
-            <div class="meaning-title">TEMPERANCE</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                Balance develops through patience, moderation and thoughtful
-                integration. There is no need to force the process.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                Something may have moved too far in one direction.
-                Reconsider your pace, priorities and emotional balance.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                Where in your life would a little more balance change everything?
-            </p>
-        </div>
-
-
-        <!-- DEVIL -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'devil')">
-            <div class="card-number">XV</div>
-            <div class="card-symbol">◇</div>
-            <div class="card-name">THE DEVIL</div>
-        </button>
-
-        <div id="devil" class="meaning">
-            <div class="meaning-title">THE DEVIL</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                Notice the habits, attachments or fears that are influencing
-                your choices. Awareness is the first step toward freedom.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                You may be beginning to recognise a pattern and loosen
-                its hold. Change starts with seeing the pattern clearly.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                What feels like a choice but may actually be a habit?
-            </p>
-        </div>
-
-
-        <!-- TOWER -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'tower')">
-            <div class="card-number">XVI</div>
-            <div class="card-symbol">⚡</div>
-            <div class="card-name">THE TOWER</div>
-        </button>
-
-        <div id="tower" class="meaning">
-            <div class="meaning-title">THE TOWER</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                A disruption may expose something that was unstable.
-                What changes now may ultimately create room for something
-                more honest.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                You may be resisting an inevitable change or quietly
-                recognising that something can no longer continue as before.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                What truth has become impossible to ignore?
-            </p>
-        </div>
-
-
-        <!-- STAR -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'star')">
-            <div class="card-number">XVII</div>
-            <div class="card-symbol">☆</div>
-            <div class="card-name">THE STAR</div>
-        </button>
-
-        <div id="star" class="meaning">
-            <div class="meaning-title">THE STAR</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                Hope, renewal and a clearer sense of direction are returning.
-                Allow yourself to believe that something better is possible.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                Discouragement may be clouding your perspective. Your path
-                may still be unfolding even if progress feels invisible.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                What possibility still gives you a quiet sense of hope?
-            </p>
-        </div>
-
-
-        <!-- MOON -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'moon')">
-            <div class="card-number">XVIII</div>
-            <div class="card-symbol">☾</div>
-            <div class="card-name">THE MOON</div>
-        </button>
-
-        <div id="moon" class="meaning">
-            <div class="meaning-title">THE MOON</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                Uncertainty, emotion and intuition are influencing the picture.
-                Give yourself time before treating assumptions as facts.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                Confusion may be beginning to clear. What was hidden or
-                misunderstood can become easier to recognise.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                Which part of this situation do you actually know, and which part are you imagining?
-            </p>
-        </div>
-
-
-        <!-- SUN -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'sun')">
-            <div class="card-number">XIX</div>
-            <div class="card-symbol">☀</div>
-            <div class="card-name">THE SUN</div>
-        </button>
-
-        <div id="sun" class="meaning">
-            <div class="meaning-title">THE SUN</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                Clarity, confidence and genuine forward movement are available.
-                Let yourself recognise what is working.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                Something positive may be present but difficult to fully
-                appreciate. Look for the light without demanding perfection.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                What is going well that you have forgotten to acknowledge?
-            </p>
-        </div>
-
-
-        <!-- JUDGEMENT -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'judgement')">
-            <div class="card-number">XX</div>
-            <div class="card-symbol">♢</div>
-            <div class="card-name">JUDGEMENT</div>
-        </button>
-
-        <div id="judgement" class="meaning">
-            <div class="meaning-title">JUDGEMENT</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                A moment of honest evaluation is arriving. Recognise what
-                you have learned and decide what deserves a new beginning.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                Self-judgement or fear of change may be preventing you
-                from responding to what you already understand.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                What lesson are you ready to stop repeating?
-            </p>
-        </div>
-
-
-        <!-- WORLD -->
-
-        <button class="tarot-card" onclick="toggleCard(this, 'world')">
-            <div class="card-number">XXI</div>
-            <div class="card-symbol">○</div>
-            <div class="card-name">THE WORLD</div>
-        </button>
-
-        <div id="world" class="meaning">
-            <div class="meaning-title">THE WORLD</div>
-
-            <div class="meaning-label">UPRIGHT</div>
-            <p>
-                Completion, integration and a sense of arrival. Recognise
-                how far you have travelled before deciding what comes next.
-            </p>
-
-            <div class="meaning-label">REVERSED</div>
-            <p>
-                Something may feel unfinished. Identify what still needs
-                closure rather than carrying an old chapter forward.
-            </p>
-
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">
-                What deserves to be acknowledged before you move forward?
-            </p>
-        </div>
 
     </div>
 
+</section>
 
-    <!-- ========================= -->
-    <!-- MINOR ARCANA -->
-    <!-- ========================= -->
-
-    <h2 class="section-title">
-        MINOR ARCANA
-    </h2>
-
-    <p class="section-description">
-        The everyday experiences, choices, emotions and challenges of the journey.
-    </p>
-
-
-    <!-- WANDS -->
-
-    <h2 class="section-title">
-        WANDS
-    </h2>
-
-    <p class="section-description">
-        Energy • Ambition • Creativity • Action
-    </p>
-
-    <div class="cards-grid">
-
-        <button class="tarot-card" onclick="toggleCard(this, 'acewands')">
-            <div class="card-number">ACE</div>
-            <div class="card-symbol">♠</div>
-            <div class="card-name">ACE OF WANDS</div>
-        </button>
-
-        <div id="acewands" class="meaning">
-            <div class="meaning-title">ACE OF WANDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>A spark of motivation, creativity or new possibility is emerging.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Energy may be blocked, scattered or lacking a clear direction.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What idea is asking you to take the first step?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'twowands')">
-            <div class="card-number">II</div>
-            <div class="card-name">TWO OF WANDS</div>
-        </button>
-
-        <div id="twowands" class="meaning">
-            <div class="meaning-title">TWO OF WANDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>You are considering possibilities and deciding where to direct your energy.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Fear of the unknown may be keeping you from choosing a direction.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Which possibility deserves more serious consideration?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'threewands')">
-            <div class="card-number">III</div>
-            <div class="card-name">THREE OF WANDS</div>
-        </button>
-
-        <div id="threewands" class="meaning">
-            <div class="meaning-title">THREE OF WANDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Plans are beginning to move beyond the initial stage. Look ahead with confidence.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Delays or limited perspective may be slowing your progress.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What future are you preparing for?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'fourwands')">
-            <div class="card-number">IV</div>
-            <div class="card-name">FOUR OF WANDS</div>
-        </button>
-
-        <div id="fourwands" class="meaning">
-            <div class="meaning-title">FOUR OF WANDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Stability, celebration and a meaningful milestone deserve recognition.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Something that should feel stable may need attention or rebuilding.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What progress deserves to be celebrated?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'fivewands')">
-            <div class="card-number">V</div>
-            <div class="card-name">FIVE OF WANDS</div>
-        </button>
-
-        <div id="fivewands" class="meaning">
-            <div class="meaning-title">FIVE OF WANDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Competing ideas or personalities may be creating friction.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Conflict may be easing, or you may be avoiding a necessary conversation.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Which disagreement is actually worth your energy?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'sixwands')">
-            <div class="card-number">VI</div>
-            <div class="card-name">SIX OF WANDS</div>
-        </button>
-
-        <div id="sixwands" class="meaning">
-            <div class="meaning-title">SIX OF WANDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Recognition and progress are available. Allow yourself to acknowledge success.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>You may be seeking approval or feeling overlooked despite real progress.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Can you recognise your own progress without outside approval?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'sevenwands')">
-            <div class="card-number">VII</div>
-            <div class="card-name">SEVEN OF WANDS</div>
-        </button>
-
-        <div id="sevenwands" class="meaning">
-            <div class="meaning-title">SEVEN OF WANDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Protect your position and stand behind what matters to you.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>You may be exhausted from constantly defending yourself.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What is genuinely worth standing up for?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'eightwands')">
-            <div class="card-number">VIII</div>
-            <div class="card-name">EIGHT OF WANDS</div>
-        </button>
-
-        <div id="eightwands" class="meaning">
-            <div class="meaning-title">EIGHT OF WANDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Momentum is building. Communication and movement may happen quickly.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Delays or crossed communication may require patience.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Where would decisive movement help?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'ninewands')">
-            <div class="card-number">IX</div>
-            <div class="card-name">NINE OF WANDS</div>
-        </button>
-
-        <div id="ninewands" class="meaning">
-            <div class="meaning-title">NINE OF WANDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>You have been through difficulty and are closer to completion than you think.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Exhaustion may be making it difficult to continue without support.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What support would make the final stretch easier?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'tenwands')">
-            <div class="card-number">X</div>
-            <div class="card-name">TEN OF WANDS</div>
-        </button>
-
-        <div id="tenwands" class="meaning">
-            <div class="meaning-title">TEN OF WANDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>You may be carrying more responsibility than is sustainable.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>It may be time to delegate, release or reconsider what you are carrying.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What are you carrying that no longer needs to be yours?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'pagewands')">
-            <div class="card-number">PAGE</div>
-            <div class="card-name">PAGE OF WANDS</div>
-        </button>
-
-        <div id="pagewands" class="meaning">
-            <div class="meaning-title">PAGE OF WANDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Curiosity and enthusiasm are encouraging you to explore something new.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Excitement may be present without enough follow-through.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What are you curious enough to explore?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'knightwands')">
-            <div class="card-number">KNIGHT</div>
-            <div class="card-name">KNIGHT OF WANDS</div>
-        </button>
-
-        <div id="knightwands" class="meaning">
-            <div class="meaning-title">KNIGHT OF WANDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Bold action and enthusiasm can create rapid progress.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Impulsiveness may be creating movement without direction.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Where would courage help, and where would patience help more?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'queenwands')">
-            <div class="card-number">QUEEN</div>
-            <div class="card-name">QUEEN OF WANDS</div>
-        </button>
-
-        <div id="queenwands" class="meaning">
-            <div class="meaning-title">QUEEN OF WANDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Confidence, warmth and creative independence are highlighted.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Self-doubt or comparison may be weakening your natural confidence.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Where could you take up more space confidently?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'kingwands')">
-            <div class="card-number">KING</div>
-            <div class="card-name">KING OF WANDS</div>
-        </button>
-
-        <div id="kingwands" class="meaning">
-            <div class="meaning-title">KING OF WANDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Vision and leadership can turn an idea into meaningful action.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Strong ambition may have become impatience or control.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What vision deserves your leadership?</p>
-        </div>
-
-    </div>
-
-
-    <!-- CUPS -->
-
-    <h2 class="section-title">CUPS</h2>
-
-    <p class="section-description">
-        Emotion • Connection • Relationships • Inner life
-    </p>
-
-    <div class="cards-grid">
-
-        <button class="tarot-card" onclick="toggleCard(this, 'acecups')">
-            <div class="card-number">ACE</div>
-            <div class="card-symbol">♡</div>
-            <div class="card-name">ACE OF CUPS</div>
-        </button>
-
-        <div id="acecups" class="meaning">
-            <div class="meaning-title">ACE OF CUPS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>A new emotional beginning, openness or connection is available.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Emotions may be blocked, withheld or difficult to express.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What feeling deserves more room in your life?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'twocups')">
-            <div class="card-number">II</div>
-            <div class="card-name">TWO OF CUPS</div>
-        </button>
-
-        <div id="twocups" class="meaning">
-            <div class="meaning-title">TWO OF CUPS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Mutual understanding, partnership and emotional reciprocity are highlighted.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>An important connection may be experiencing imbalance or misunderstanding.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Where could greater mutual understanding help?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'threecups')">
-            <div class="card-number">III</div>
-            <div class="card-name">THREE OF CUPS</div>
-        </button>
-
-        <div id="threecups" class="meaning">
-            <div class="meaning-title">THREE OF CUPS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Friendship, community and shared happiness deserve attention.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Social dynamics may be draining, excessive or lacking sincerity.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Which relationships genuinely restore you?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'fourcups')">
-            <div class="card-number">IV</div>
-            <div class="card-name">FOUR OF CUPS</div>
-        </button>
-
-        <div id="fourcups" class="meaning">
-            <div class="meaning-title">FOUR OF CUPS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>You may be emotionally withdrawn or overlooking an opportunity.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Your perspective may be opening after a period of disengagement.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What possibility have you been too distracted to notice?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'fivecups')">
-            <div class="card-number">V</div>
-            <div class="card-name">FIVE OF CUPS</div>
-        </button>
-
-        <div id="fivecups" class="meaning">
-            <div class="meaning-title">FIVE OF CUPS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Disappointment deserves acknowledgement, but not necessarily the final word.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Healing and acceptance may be beginning to replace disappointment.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What remains available even after what you lost?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'sixcups')">
-            <div class="card-number">VI</div>
-            <div class="card-name">SIX OF CUPS</div>
-        </button>
-
-        <div id="sixcups" class="meaning">
-            <div class="meaning-title">SIX OF CUPS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Memory, familiarity and sincere connection may be returning to your attention.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>The past may be influencing the present more than it needs to.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What can you appreciate from the past without living in it?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'sevencups')">
-            <div class="card-number">VII</div>
-            <div class="card-name">SEVEN OF CUPS</div>
-        </button>
-
-        <div id="sevencups" class="meaning">
-            <div class="meaning-title">SEVEN OF CUPS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Many possibilities are competing for attention. Discernment is important.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Confusion may be clearing as you narrow your options.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Which option is real rather than simply appealing?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'eightcups')">
-            <div class="card-number">VIII</div>
-            <div class="card-name">EIGHT OF CUPS</div>
-        </button>
-
-        <div id="eightcups" class="meaning">
-            <div class="meaning-title">EIGHT OF CUPS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Something may no longer fulfil you. Walking away can be an act of honesty.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>You may know something needs to change but are not yet ready to leave it.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What are you staying with after it has stopped nourishing you?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'ninecups')">
-            <div class="card-number">IX</div>
-            <div class="card-name">NINE OF CUPS</div>
-        </button>
-
-        <div id="ninecups" class="meaning">
-            <div class="meaning-title">NINE OF CUPS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Contentment and appreciation are available. Notice what is already enough.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Getting what you wanted may not automatically provide the fulfilment you expected.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What would genuine contentment look like for you?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'tencups')">
-            <div class="card-number">X</div>
-            <div class="card-name">TEN OF CUPS</div>
-        </button>
-
-        <div id="tencups" class="meaning">
-            <div class="meaning-title">TEN OF CUPS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Emotional harmony and a deeper sense of belonging are highlighted.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>The picture may look complete externally while something inside feels unresolved.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What does emotional fulfilment actually mean to you?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'pagecups')">
-            <div class="card-number">PAGE</div>
-            <div class="card-name">PAGE OF CUPS</div>
-        </button>
-
-        <div id="pagecups" class="meaning">
-            <div class="meaning-title">PAGE OF CUPS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Emotional curiosity and openness invite you to listen to what you feel.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Emotions may feel immature, confusing or difficult to express clearly.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What feeling have you been dismissing too quickly?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'knightcups')">
-            <div class="card-number">KNIGHT</div>
-            <div class="card-name">KNIGHT OF CUPS</div>
-        </button>
-
-        <div id="knightcups" class="meaning">
-            <div class="meaning-title">KNIGHT OF CUPS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Emotion, imagination and meaningful pursuit are moving forward.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Idealism may be replacing realism or emotional consistency.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Are you following a genuine feeling or an idealised story?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'queencups')">
-            <div class="card-number">QUEEN</div>
-            <div class="card-name">QUEEN OF CUPS</div>
-        </button>
-
-        <div id="queencups" class="meaning">
-            <div class="meaning-title">QUEEN OF CUPS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Emotional intelligence, empathy and inner awareness are strong.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>You may be absorbing other people's emotions at the expense of your own needs.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Where do you need emotional boundaries?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'kingcups')">
-            <div class="card-number">KING</div>
-            <div class="card-name">KING OF CUPS</div>
-        </button>
-
-        <div id="kingcups" class="meaning">
-            <div class="meaning-title">KING OF CUPS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Emotional maturity allows you to remain steady without suppressing feeling.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Emotions may be controlled too tightly or expressed unpredictably.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">How can you honour your emotions without letting them run everything?</p>
-        </div>
-
-    </div>
-
-
-    <!-- SWORDS -->
-
-    <h2 class="section-title">SWORDS</h2>
-
-    <p class="section-description">
-        Thought • Communication • Decisions • Perspective
-    </p>
-
-    <div class="cards-grid">
-
-        <button class="tarot-card" onclick="toggleCard(this, 'aceswords')">
-            <div class="card-number">ACE</div>
-            <div class="card-symbol">⚔</div>
-            <div class="card-name">ACE OF SWORDS</div>
-        </button>
-
-        <div id="aceswords" class="meaning">
-            <div class="meaning-title">ACE OF SWORDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>A clear idea or truth cuts through confusion.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Confusion or poor communication may be clouding your judgement.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What truth needs to be stated clearly?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'twoswords')">
-            <div class="card-number">II</div>
-            <div class="card-name">TWO OF SWORDS</div>
-        </button>
-
-        <div id="twoswords" class="meaning">
-            <div class="meaning-title">TWO OF SWORDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>A decision may be waiting because neither option feels easy.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>A choice can no longer be avoided.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What are you avoiding deciding?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'threeswords')">
-            <div class="card-number">III</div>
-            <div class="card-name">THREE OF SWORDS</div>
-        </button>
-
-        <div id="threeswords" class="meaning">
-            <div class="meaning-title">THREE OF SWORDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Disappointment or painful truth needs acknowledgement.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Healing is beginning, even if the experience still affects you.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What truth needs to be accepted before healing can continue?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'fourswords')">
-            <div class="card-number">IV</div>
-            <div class="card-name">FOUR OF SWORDS</div>
-        </button>
-
-        <div id="fourswords" class="meaning">
-            <div class="meaning-title">FOUR OF SWORDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Rest and mental recovery are necessary before the next move.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>You may be pushing yourself forward before you are ready.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Where would rest improve your clarity?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'fiveswords')">
-            <div class="card-number">V</div>
-            <div class="card-name">FIVE OF SWORDS</div>
-        </button>
-
-        <div id="fiveswords" class="meaning">
-            <div class="meaning-title">FIVE OF SWORDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Winning an argument may come at the cost of the relationship.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>There may be an opportunity to step away from unnecessary conflict.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Is being right worth the cost?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'sixswords')">
-            <div class="card-number">VI</div>
-            <div class="card-name">SIX OF SWORDS</div>
-        </button>
-
-        <div id="sixswords" class="meaning">
-            <div class="meaning-title">SIX OF SWORDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>A difficult chapter is gradually giving way to calmer conditions.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Part of you may still be emotionally attached to what you are leaving.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What would moving forward actually require you to leave behind?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'sevenswords')">
-            <div class="card-number">VII</div>
-            <div class="card-name">SEVEN OF SWORDS</div>
-        </button>
-
-        <div id="sevenswords" class="meaning">
-            <div class="meaning-title">SEVEN OF SWORDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Strategy and discretion may be necessary, but honesty still matters.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Something hidden may be coming into the open.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Where would greater honesty simplify things?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'eightswords')">
-            <div class="card-number">VIII</div>
-            <div class="card-name">EIGHT OF SWORDS</div>
-        </button>
-
-        <div id="eightswords" class="meaning">
-            <div class="meaning-title">EIGHT OF SWORDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>You may feel restricted by a situation or by your own assumptions about it.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>A new perspective can help you recognise choices you previously overlooked.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Which limitation might be a belief rather than a fact?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'nineswords')">
-            <div class="card-number">IX</div>
-            <div class="card-name">NINE OF SWORDS</div>
-        </button>
-
-        <div id="nineswords" class="meaning">
-            <div class="meaning-title">NINE OF SWORDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Worry may be amplifying a situation in your mind.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>You may be beginning to separate fear from what is actually happening.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What is fact, and what is fear filling in?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'tenswords')">
-            <div class="card-number">X</div>
-            <div class="card-name">TEN OF SWORDS</div>
-        </button>
-
-        <div id="tenswords" class="meaning">
-            <div class="meaning-title">TEN OF SWORDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>A difficult cycle has reached its limit. A new chapter can follow.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Recovery is possible, but you may still be processing what happened.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What are you ready to stop carrying forward?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'pageswords')">
-            <div class="card-number">PAGE</div>
-            <div class="card-name">PAGE OF SWORDS</div>
-        </button>
-
-        <div id="pageswords" class="meaning">
-            <div class="meaning-title">PAGE OF SWORDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Curiosity, observation and the search for truth are highlighted.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Overthinking or reacting too quickly may create unnecessary tension.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What do you need to understand before you respond?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'knightswords')">
-            <div class="card-number">KNIGHT</div>
-            <div class="card-name">KNIGHT OF SWORDS</div>
-        </button>
-
-        <div id="knightswords" class="meaning">
-            <div class="meaning-title">KNIGHT OF SWORDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Decisive thinking and direct action can move things forward quickly.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Speed without consideration may create avoidable problems.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Where would slowing down improve your decision?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'queenswords')">
-            <div class="card-number">QUEEN</div>
-            <div class="card-name">QUEEN OF SWORDS</div>
-        </button>
-
-        <div id="queenswords" class="meaning">
-            <div class="meaning-title">QUEEN OF SWORDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Clear boundaries and honest thinking can cut through confusion.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Harshness toward yourself or others may be replacing healthy clarity.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">How can you be honest without becoming unnecessarily hard?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'kingswords')">
-            <div class="card-number">KING</div>
-            <div class="card-name">KING OF SWORDS</div>
-        </button>
-
-        <div id="kingswords" class="meaning">
-            <div class="meaning-title">KING OF SWORDS</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Logic, fairness and disciplined thinking are needed.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Rigid thinking or misuse of authority may be influencing the situation.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What would a calm and objective view reveal?</p>
-        </div>
-
-    </div>
-
-
-    <!-- PENTACLES -->
-
-    <h2 class="section-title">PENTACLES</h2>
-
-    <p class="section-description">
-        Work • Stability • Resources • The material world
-    </p>
-
-    <div class="cards-grid">
-
-        <button class="tarot-card" onclick="toggleCard(this, 'acepentacles')">
-            <div class="card-number">ACE</div>
-            <div class="card-symbol">◇</div>
-            <div class="card-name">ACE OF PENTACLES</div>
-        </button>
-
-        <div id="acepentacles" class="meaning">
-            <div class="meaning-title">ACE OF PENTACLES</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>A practical opportunity offers potential for lasting growth.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>An opportunity may be poorly timed or lacking a stable foundation.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What practical opportunity deserves attention?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'twopentacles')">
-            <div class="card-number">II</div>
-            <div class="card-name">TWO OF PENTACLES</div>
-        </button>
-
-        <div id="twopentacles" class="meaning">
-            <div class="meaning-title">TWO OF PENTACLES</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>You are balancing competing priorities and adapting as circumstances change.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Too many demands may be making your priorities unsustainable.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What needs to be simplified?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'threepentacles')">
-            <div class="card-number">III</div>
-            <div class="card-name">THREE OF PENTACLES</div>
-        </button>
-
-        <div id="threepentacles" class="meaning">
-            <div class="meaning-title">THREE OF PENTACLES</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Skill, collaboration and learning are creating something worthwhile.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Poor communication or lack of cooperation may be slowing progress.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Who could contribute something valuable to this?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'fourpentacles')">
-            <div class="card-number">IV</div>
-            <div class="card-name">FOUR OF PENTACLES</div>
-        </button>
-
-        <div id="fourpentacles" class="meaning">
-            <div class="meaning-title">FOUR OF PENTACLES</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Security matters, but holding too tightly can prevent growth.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>You may be learning to release fear around control or scarcity.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What are you protecting that may need room to grow?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'fivepentacles')">
-            <div class="card-number">V</div>
-            <div class="card-name">FIVE OF PENTACLES</div>
-        </button>
-
-        <div id="fivepentacles" class="meaning">
-            <div class="meaning-title">FIVE OF PENTACLES</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Material or emotional difficulty may be creating a sense of isolation.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Support and recovery may be closer than you realise.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Where could asking for support change the situation?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'sixpentacles')">
-            <div class="card-number">VI</div>
-            <div class="card-name">SIX OF PENTACLES</div>
-        </button>
-
-        <div id="sixpentacles" class="meaning">
-            <div class="meaning-title">SIX OF PENTACLES</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Giving, receiving and fairness are important themes.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>The balance of giving and receiving may be unequal.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Where could reciprocity improve your relationships?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'sevenpentacles')">
-            <div class="card-number">VII</div>
-            <div class="card-name">SEVEN OF PENTACLES</div>
-        </button>
-
-        <div id="sevenpentacles" class="meaning">
-            <div class="meaning-title">SEVEN OF PENTACLES</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Patience is required while you assess whether your effort is producing worthwhile results.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>You may be investing energy without seeing enough meaningful return.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">Is what you are building worth continuing to nurture?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'eightpentacles')">
-            <div class="card-number">VIII</div>
-            <div class="card-name">EIGHT OF PENTACLES</div>
-        </button>
-
-        <div id="eightpentacles" class="meaning">
-            <div class="meaning-title">EIGHT OF PENTACLES</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Practice and consistent effort are developing real mastery.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Repetition without purpose may be creating frustration.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What skill would become stronger with consistent attention?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'ninepentacles')">
-            <div class="card-number">IX</div>
-            <div class="card-name">NINE OF PENTACLES</div>
-        </button>
-
-        <div id="ninepentacles" class="meaning">
-            <div class="meaning-title">NINE OF PENTACLES</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Independence, stability and appreciation of what you have built are highlighted.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>External success may be masking insecurity or dependence.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What have you built that you can genuinely be proud of?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'tenpentacles')">
-            <div class="card-number">X</div>
-            <div class="card-name">TEN OF PENTACLES</div>
-        </button>
-
-        <div id="tenpentacles" class="meaning">
-            <div class="meaning-title">TEN OF PENTACLES</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Long-term security, legacy and shared stability are important.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Family, financial or long-term expectations may need reconsideration.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What kind of foundation do you want to leave behind?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'pagepentacles')">
-            <div class="card-number">PAGE</div>
-            <div class="card-name">PAGE OF PENTACLES</div>
-        </button>
-
-        <div id="pagepentacles" class="meaning">
-            <div class="meaning-title">PAGE OF PENTACLES</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>A practical learning opportunity deserves patient attention.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Good intentions may need more discipline and follow-through.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What could you learn that would improve your future?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'knightpentacles')">
-            <div class="card-number">KNIGHT</div>
-            <div class="card-name">KNIGHT OF PENTACLES</div>
-        </button>
-
-        <div id="knightpentacles" class="meaning">
-            <div class="meaning-title">KNIGHT OF PENTACLES</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Consistency and reliability will accomplish more than rushing.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>You may be stuck in routine or moving so cautiously that progress has stopped.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What small action could you repeat consistently?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'queenpentacles')">
-            <div class="card-number">QUEEN</div>
-            <div class="card-name">QUEEN OF PENTACLES</div>
-        </button>
-
-        <div id="queenpentacles" class="meaning">
-            <div class="meaning-title">QUEEN OF PENTACLES</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Practical care, stability and grounded generosity are highlighted.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>You may be caring for everything except yourself.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What practical form of self-care do you need?</p>
-        </div>
-
-        <button class="tarot-card" onclick="toggleCard(this, 'kingpentacles')">
-            <div class="card-number">KING</div>
-            <div class="card-name">KING OF PENTACLES</div>
-        </button>
-
-        <div id="kingpentacles" class="meaning">
-            <div class="meaning-title">KING OF PENTACLES</div>
-            <div class="meaning-label">UPRIGHT</div>
-            <p>Stability, responsible leadership and long-term thinking are strong.</p>
-            <div class="meaning-label">REVERSED</div>
-            <p>Security may have become overly focused on status, control or material gain.</p>
-            <div class="meaning-label">REFLECTION</div>
-            <p class="reflection">What does true security mean beyond money or status?</p>
-        </div>
-
-    </div>
-
-</main>
-
+<div id="cards" class="cards"></div>
 
 <footer>
-    THE CLARITY CHAMBER
-    <br><br>
-    Tarot • Intuition • Reflection
+    © The Clarity Chamber • Tarot for reflection and self-discovery
 </footer>
+
+
+<div id="modal" class="modal">
+
+    <div class="modal-box">
+
+        <button class="close" onclick="closeModal()">×</button>
+
+        <div id="modalSymbol" class="modal-symbol"></div>
+
+        <h2 id="modalTitle"></h2>
+
+        <div id="modalMeaning" class="meaning"></div>
+
+        <h4>Upright</h4>
+        <p id="modalUpright"></p>
+
+        <h4>Reflection</h4>
+        <p id="modalReflection"></p>
+
+    </div>
+
+</div>
 
 
 <script>
 
-function toggleCard(button, id) {
+const cards = [
 
-    const panel = document.getElementById(id);
+/* MAJOR ARCANA */
 
-    const isOpen = panel.classList.contains("open");
+{
+name:"The Fool",
+type:"major",
+symbol:"0",
+meaning:"Beginnings • Freedom • Adventure",
+upright:"New beginnings, spontaneity, curiosity and the courage to step into the unknown.",
+reflection:"What new experience is calling you, even if you cannot yet see where it will lead?"
+},
 
-    document.querySelectorAll(".meaning").forEach(function(item) {
-        item.classList.remove("open");
-    });
+{
+name:"The Magician",
+type:"major",
+symbol:"I",
+meaning:"Manifestation • Skill • Will",
+upright:"Personal power, creativity, resourcefulness and the ability to turn intention into action.",
+reflection:"What resources or talents do you already have that you may be overlooking?"
+},
 
-    document.querySelectorAll(".tarot-card").forEach(function(item) {
-        item.classList.remove("active");
-    });
+{
+name:"The High Priestess",
+type:"major",
+symbol:"II",
+meaning:"Intuition • Mystery • Inner Wisdom",
+upright:"Intuition, stillness, hidden knowledge and trusting your inner voice.",
+reflection:"What do you already know deep down, before seeking another answer?"
+},
 
-    if (!isOpen) {
-        panel.classList.add("open");
-        button.classList.add("active");
+{
+name:"The Empress",
+type:"major",
+symbol:"III",
+meaning:"Abundance • Creation • Nurturing",
+upright:"Growth, creativity, abundance, beauty and nurturing energy.",
+reflection:"Where in your life could you allow something to grow more naturally?"
+},
 
-        setTimeout(function() {
-            panel.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest"
-            });
-        }, 50);
-    }
+{
+name:"The Emperor",
+type:"major",
+symbol:"IV",
+meaning:"Structure • Authority • Stability",
+upright:"Leadership, structure, boundaries, responsibility and stability.",
+reflection:"Where would stronger boundaries create greater freedom?"
+},
+
+{
+name:"The Hierophant",
+type:"major",
+symbol:"V",
+meaning:"Tradition • Teaching • Beliefs",
+upright:"Tradition, learning, spiritual guidance and established wisdom.",
+reflection:"Which beliefs guide your life, and which ones are ready to be questioned?"
+},
+
+{
+name:"The Lovers",
+type:"major",
+symbol:"VI",
+meaning:"Love • Choice • Alignment",
+upright:"Connection, values, meaningful choices and alignment with the heart.",
+reflection:"What choice would bring you closer to what truly matters to you?"
+},
+
+{
+name:"The Chariot",
+type:"major",
+symbol:"VII",
+meaning:"Determination • Direction • Victory",
+upright:"Focus, determination, momentum and moving forward with confidence.",
+reflection:"Where do you need to take the reins?"
+},
+
+{
+name:"Strength",
+type:"major",
+symbol:"VIII",
+meaning:"Courage • Compassion • Inner Power",
+upright:"Inner strength, patience, courage and compassionate self-control.",
+reflection:"How could gentleness become a source of strength?"
+},
+
+{
+name:"The Hermit",
+type:"major",
+symbol:"IX",
+meaning:"Solitude • Wisdom • Reflection",
+upright:"Introspection, solitude, wisdom and searching within.",
+reflection:"What might become clearer if you gave yourself more quiet?"
+},
+
+{
+name:"Wheel of Fortune",
+type:"major",
+symbol:"X",
+meaning:"Cycles • Change • Destiny",
+upright:"Cycles, change, turning points and the movement of life.",
+reflection:"What chapter of your life appears to be changing?"
+},
+
+{
+name:"Justice",
+type:"major",
+symbol:"XI",
+meaning:"Truth • Balance • Accountability",
+upright:"Fairness, truth, balance and taking responsibility for choices.",
+reflection:"What truth deserves to be faced honestly?"
+},
+
+{
+name:"The Hanged Man",
+type:"major",
+symbol:"XII",
+meaning:"Pause • Perspective • Surrender",
+upright:"A pause, surrender, patience and seeing something from a different perspective.",
+reflection:"What changes when you stop trying to force the situation?"
+},
+
+{
+name:"Death",
+type:"major",
+symbol:"XIII",
+meaning:"Transformation • Endings • Renewal",
+upright:"Transformation, endings, release and the beginning of something new.",
+reflection:"What are you ready to release so something new can emerge?"
+},
+
+{
+name:"Temperance",
+type:"major",
+symbol:"XIV",
+meaning:"Balance • Harmony • Healing",
+upright:"Balance, patience, moderation and integration.",
+reflection:"Where could a little more balance restore your energy?"
+},
+
+{
+name:"The Devil",
+type:"major",
+symbol:"XV",
+meaning:"Attachment • Desire • Patterns",
+upright:"Attachments, temptation, patterns and becoming conscious of what holds you back.",
+reflection:"What pattern has more power over you than you would like?"
+},
+
+{
+name:"The Tower",
+type:"major",
+symbol:"XVI",
+meaning:"Change • Revelation • Liberation",
+upright:"Sudden change, revelation, disruption and breaking down false structures.",
+reflection:"What truth might be asking you to rebuild differently?"
+},
+
+{
+name:"The Star",
+type:"major",
+symbol:"XVII",
+meaning:"Hope • Renewal • Inspiration",
+upright:"Hope, healing, inspiration, openness and renewed faith.",
+reflection:"What gives you hope when you allow yourself to imagine a different future?"
+},
+
+{
+name:"The Moon",
+type:"major",
+symbol:"XVIII",
+meaning:"Dreams • Uncertainty • Intuition",
+upright:"Dreams, intuition, uncertainty and navigating what is not yet clear.",
+reflection:"What fear may be colouring the way you see a situation?"
+},
+
+{
+name:"The Sun",
+type:"major",
+symbol:"XIX",
+meaning:"Joy • Clarity • Vitality",
+upright:"Joy, confidence, clarity, warmth and vitality.",
+reflection:"What brings genuine joy into your life right now?"
+},
+
+{
+name:"Judgement",
+type:"major",
+symbol:"XX",
+meaning:"Awakening • Calling • Renewal",
+upright:"Awakening, reflection, forgiveness and answering an inner calling.",
+reflection:"What part of yourself is asking to be heard?"
+},
+
+{
+name:"The World",
+type:"major",
+symbol:"XXI",
+meaning:"Completion • Integration • Fulfilment",
+upright:"Completion, accomplishment, integration and entering a new cycle.",
+reflection:"What chapter can you acknowledge as complete?"
+},
+
+
+/* WANDS */
+
+{
+name:"Ace of Wands",
+type:"wands",
+symbol:"A",
+meaning:"Inspiration • Potential • Spark",
+upright:"A new spark of creativity, passion or motivation.",
+reflection:"What idea is asking for your attention?"
+},
+
+{
+name:"Two of Wands",
+type:"wands",
+symbol:"II",
+meaning:"Planning • Vision • Possibility",
+upright:"Planning, future vision and considering new possibilities.",
+reflection:"What future are you beginning to imagine?"
+},
+
+{
+name:"Three of Wands",
+type:"wands",
+symbol:"III",
+meaning:"Expansion • Progress • Opportunity",
+upright:"Expansion, progress and watching your plans begin to develop.",
+reflection:"Where are you ready to expand?"
+},
+
+{
+name:"Four of Wands",
+type:"wands",
+symbol:"IV",
+meaning:"Celebration • Stability • Belonging",
+upright:"Celebration, stability, community and milestones.",
+reflection:"What deserves to be celebrated?"
+},
+
+{
+name:"Five of Wands",
+type:"wands",
+symbol:"V",
+meaning:"Competition • Tension • Challenge",
+upright:"Competition, differing opinions and constructive challenge.",
+reflection:"Is conflict helping you grow or simply draining you?"
+},
+
+{
+name:"Six of Wands",
+type:"wands",
+symbol:"VI",
+meaning:"Recognition • Confidence • Success",
+upright:"Recognition, confidence, achievement and encouragement.",
+reflection:"Can you allow yourself to acknowledge how far you've come?"
+},
+
+{
+name:"Seven of Wands",
+type:"wands",
+symbol:"VII",
+meaning:"Courage • Boundaries • Perseverance",
+upright:"Standing your ground, protecting your position and perseverance.",
+reflection:"What is worth standing up for?"
+},
+
+{
+name:"Eight of Wands",
+type:"wands",
+symbol:"VIII",
+meaning:"Momentum • Movement • Communication",
+upright:"Fast movement, momentum, communication and progress.",
+reflection:"Where is life asking you to move rather than wait?"
+},
+
+{
+name:"Nine of Wands",
+type:"wands",
+symbol:"IX",
+meaning:"Resilience • Persistence • Protection",
+upright:"Resilience, persistence and protecting what matters.",
+reflection:"What has your experience taught you about resilience?"
+},
+
+{
+name:"Ten of Wands",
+type:"wands",
+symbol:"X",
+meaning:"Responsibility • Burden • Completion",
+upright:"Heavy responsibility, pressure and carrying too much alone.",
+reflection:"What could you put down?"
+},
+
+{
+name:"Page of Wands",
+type:"wands",
+symbol:"P",
+meaning:"Curiosity • Discovery • Enthusiasm",
+upright:"Curiosity, enthusiasm and exploring a new idea.",
+reflection:"What would you explore if you followed your curiosity?"
+},
+
+{
+name:"Knight of Wands",
+type:"wands",
+symbol:"K",
+meaning:"Passion • Action • Adventure",
+upright:"Passion, confidence, adventure and bold action.",
+reflection:"Where could courageous action change your momentum?"
+},
+
+{
+name:"Queen of Wands",
+type:"wands",
+symbol:"Q",
+meaning:"Confidence • Creativity • Magnetism",
+upright:"Confidence, warmth, creativity and independent spirit.",
+reflection:"Where are you being invited to own your presence?"
+},
+
+{
+name:"King of Wands",
+type:"wands",
+symbol:"K",
+meaning:"Leadership • Vision • Enterprise",
+upright:"Visionary leadership, ambition and purposeful action.",
+reflection:"What vision deserves your leadership?"
+},
+
+
+/* CUPS */
+
+{
+name:"Ace of Cups",
+type:"cups",
+symbol:"A",
+meaning:"Love • Emotion • New Beginning",
+upright:"Emotional renewal, love, compassion and an open heart.",
+reflection:"What would it feel like to make space for more emotional openness?"
+},
+
+{
+name:"Two of Cups",
+type:"cups",
+symbol:"II",
+meaning:"Connection • Partnership • Harmony",
+upright:"Mutual connection, partnership and emotional harmony.",
+reflection:"Which relationship feels genuinely reciprocal?"
+},
+
+{
+name:"Three of Cups",
+type:"cups",
+symbol:"III",
+meaning:"Friendship • Joy • Community",
+upright:"Friendship, celebration, support and shared happiness.",
+reflection:"Who helps you feel most like yourself?"
+},
+
+{
+name:"Four of Cups",
+type:"cups",
+symbol:"IV",
+meaning:"Contemplation • Apathy • Reassessment",
+upright:"Contemplation, emotional withdrawal and reconsidering what is being offered.",
+reflection:"Are you overlooking an opportunity because your attention is elsewhere?"
+},
+
+{
+name:"Five of Cups",
+type:"cups",
+symbol:"V",
+meaning:"Loss • Grief • Perspective",
+upright:"Disappointment, grief and focusing on what has been lost.",
+reflection:"What remains when you gently turn toward what is still here?"
+},
+
+{
+name:"Six of Cups",
+type:"cups",
+symbol:"VI",
+meaning:"Memory • Nostalgia • Innocence",
+upright:"Nostalgia, memories, kindness and reconnecting with the past.",
+reflection:"What from your past still has something valuable to teach you?"
+},
+
+{
+name:"Seven of Cups",
+type:"cups",
+symbol:"VII",
+meaning:"Choices • Imagination • Illusion",
+upright:"Many possibilities, imagination and the need for discernment.",
+reflection:"Which possibility is real enough to deserve your energy?"
+},
+
+{
+name:"Eight of Cups",
+type:"cups",
+symbol:"VIII",
+meaning:"Leaving • Searching • Growth",
+upright:"Walking away from what no longer fulfils you and searching for deeper meaning.",
+reflection:"What are you ready to leave behind?"
+},
+
+{
+name:"Nine of Cups",
+type:"cups",
+symbol:"IX",
+meaning:"Contentment • Wishes • Satisfaction",
+upright:"Emotional satisfaction, gratitude and enjoying what you have created.",
+reflection:"What can you appreciate without needing it to become something more?"
+},
+
+{
+name:"Ten of Cups",
+type:"cups",
+symbol:"X",
+meaning:"Harmony • Belonging • Emotional Fulfilment",
+upright:"Emotional fulfilment, harmony, family and a sense of belonging.",
+reflection:"What does emotional richness mean to you?"
+},
+
+{
+name:"Page of Cups",
+type:"cups",
+symbol:"P",
+meaning:"Sensitivity • Intuition • Creativity",
+upright:"Emotional openness, intuition, imagination and gentle curiosity.",
+reflection:"What message is your emotional world trying to give you?"
+},
+
+{
+name:"Knight of Cups",
+type:"cups",
+symbol:"K",
+meaning:"Romance • Idealism • Invitation",
+upright:"Romance, emotional movement, idealism and heartfelt invitations.",
+reflection:"What would you pursue if you trusted your heart a little more?"
+},
+
+{
+name:"Queen of Cups",
+type:"cups",
+symbol:"Q",
+meaning:"Compassion • Intuition • Emotional Wisdom",
+upright:"Deep empathy, intuition, emotional intelligence and compassion.",
+reflection:"How can you care for yourself with the same compassion you give others?"
+},
+
+{
+name:"King of Cups",
+type:"cups",
+symbol:"K",
+meaning:"Emotional Balance • Wisdom • Compassion",
+upright:"Emotional maturity, calmness, compassion and balanced feeling.",
+reflection:"How can you honour your emotions without allowing them to control you?"
+},
+
+
+/* SWORDS */
+
+{
+name:"Ace of Swords",
+type:"swords",
+symbol:"A",
+meaning:"Clarity • Truth • Breakthrough",
+upright:"Mental clarity, truth, new ideas and decisive understanding.",
+reflection:"What truth would create clarity?"
+},
+
+{
+name:"Two of Swords",
+type:"swords",
+symbol:"II",
+meaning:"Indecision • Pause • Choice",
+upright:"Indecision, avoiding a difficult choice and needing inner clarity.",
+reflection:"What decision are you postponing?"
+},
+
+{
+name:"Three of Swords",
+type:"swords",
+symbol:"III",
+meaning:"Heartbreak • Truth • Release",
+upright:"Heartbreak, difficult truths and emotional pain that needs acknowledgement.",
+reflection:"What needs to be felt rather than avoided?"
+},
+
+{
+name:"Four of Swords",
+type:"swords",
+symbol:"IV",
+meaning:"Rest • Recovery • Stillness",
+upright:"Rest, recovery, reflection and stepping back.",
+reflection:"Where does your mind need permission to rest?"
+},
+
+{
+name:"Five of Swords",
+type:"swords",
+symbol:"V",
+meaning:"Conflict • Tension • Perspective",
+upright:"Conflict, difficult conversations and considering whether winning is worth the cost.",
+reflection:"What would peace look like here?"
+},
+
+{
+name:"Six of Swords",
+type:"swords",
+symbol:"VI",
+meaning:"Transition • Moving On • Healing",
+upright:"Transition, leaving difficulty behind and moving toward calmer waters.",
+reflection:"What are you gradually moving beyond?"
+},
+
+{
+name:"Seven of Swords",
+type:"swords",
+symbol:"VII",
+meaning:"Strategy • Independence • Secrecy",
+upright:"Strategy, independence, discretion and thinking carefully about your approach.",
+reflection:"Where would a more thoughtful strategy help?"
+},
+
+{
+name:"Eight of Swords",
+type:"swords",
+symbol:"VIII",
+meaning:"Restriction • Fear • Perspective",
+upright:"Feeling restricted by fear, assumptions or limiting beliefs.",
+reflection:"Which limitation might be more mental than real?"
+},
+
+{
+name:"Nine of Swords",
+type:"swords",
+symbol:"IX",
+meaning:"Anxiety • Worry • Inner Turmoil",
+upright:"Worry, overthinking and fears that become larger in the mind.",
+reflection:"Which thought deserves to be questioned?"
+},
+
+{
+name:"Ten of Swords",
+type:"swords",
+symbol:"X",
+meaning:"Ending • Release • New Chapter",
+upright:"A difficult ending, release and the beginning of a new chapter.",
+reflection:"What ending could make space for renewal?"
+},
+
+{
+name:"Page of Swords",
+type:"swords",
+symbol:"P",
+meaning:"Curiosity • Ideas • Observation",
+upright:"Curiosity, communication, observation and learning.",
+reflection:"What are you ready to learn?"
+},
+
+{
+name:"Knight of Swords",
+type:"swords",
+symbol:"K",
+meaning:"Action • Determination • Directness",
+upright:"Fast action, determination and direct communication.",
+reflection:"Where would clarity be more useful than hesitation?"
+},
+
+{
+name:"Queen of Swords",
+type:"swords",
+symbol:"Q",
+meaning:"Discernment • Honesty • Independence",
+upright:"Clear thinking, honesty, boundaries and independence.",
+reflection:"What boundary would support your truth?"
+},
+
+{
+name:"King of Swords",
+type:"swords",
+symbol:"K",
+meaning:"Logic • Authority • Clarity",
+upright:"Logic, clear judgement, intellectual authority and fairness.",
+reflection:"How can you balance wisdom with compassion?"
+},
+
+
+/* PENTACLES */
+
+{
+name:"Ace of Pentacles",
+type:"pentacles",
+symbol:"A",
+meaning:"Opportunity • Stability • Potential",
+upright:"A practical new beginning, opportunity or foundation.",
+reflection:"What small opportunity could become something meaningful?"
+},
+
+{
+name:"Two of Pentacles",
+type:"pentacles",
+symbol:"II",
+meaning:"Balance • Adaptation • Priorities",
+upright:"Balancing responsibilities, flexibility and managing changing priorities.",
+reflection:"What needs to be simplified?"
+},
+
+{
+name:"Three of Pentacles",
+type:"pentacles",
+symbol:"III",
+meaning:"Collaboration • Skill • Craft",
+upright:"Teamwork, learning, craftsmanship and building something together.",
+reflection:"Where could collaboration strengthen your work?"
+},
+
+{
+name:"Four of Pentacles",
+type:"pentacles",
+symbol:"IV",
+meaning:"Security • Control • Possession",
+upright:"Security, holding tightly to resources and examining attachment.",
+reflection:"What are you holding onto because it feels safe?"
+},
+
+{
+name:"Five of Pentacles",
+type:"pentacles",
+symbol:"V",
+meaning:"Hardship • Support • Perspective",
+upright:"Material difficulty, feeling excluded and remembering that support exists.",
+reflection:"Where might help be available if you allowed yourself to receive it?"
+},
+
+{
+name:"Six of Pentacles",
+type:"pentacles",
+symbol:"VI",
+meaning:"Generosity • Giving • Receiving",
+upright:"Generosity, support, balance between giving and receiving.",
+reflection:"Is the exchange of energy in your life balanced?"
+},
+
+{
+name:"Seven of Pentacles",
+type:"pentacles",
+symbol:"VII",
+meaning:"Patience • Assessment • Growth",
+upright:"Patience, long-term growth and evaluating progress.",
+reflection:"What deserves more time before you judge its results?"
+},
+
+{
+name:"Eight of Pentacles",
+type:"pentacles",
+symbol:"VIII",
+meaning:"Practice • Dedication • Mastery",
+upright:"Practice, dedication, skill development and steady work.",
+reflection:"What skill becomes stronger every time you practise it?"
+},
+
+{
+name:"Nine of Pentacles",
+type:"pentacles",
+symbol:"IX",
+meaning:"Independence • Abundance • Appreciation",
+upright:"Independence, comfort, achievement and appreciating your own work.",
+reflection:"What have you created that deserves recognition?"
+},
+
+{
+name:"Ten of Pentacles",
+type:"pentacles",
+symbol:"X",
+meaning:"Legacy • Stability • Prosperity",
+upright:"Long-term stability, family, legacy and established abundance.",
+reflection:"What kind of legacy would feel meaningful to you?"
+},
+
+{
+name:"Page of Pentacles",
+type:"pentacles",
+symbol:"P",
+meaning:"Learning • Opportunity • Practicality",
+upright:"Learning, practical opportunity and beginning to build something tangible.",
+reflection:"What practical step could turn an idea into reality?"
+},
+
+{
+name:"Knight of Pentacles",
+type:"pentacles",
+symbol:"K",
+meaning:"Reliability • Patience • Progress",
+upright:"Reliability, patience, consistency and steady progress.",
+reflection:"Where would consistency serve you better than speed?"
+},
+
+{
+name:"Queen of Pentacles",
+type:"pentacles",
+symbol:"Q",
+meaning:"Nurturing • Practicality • Abundance",
+upright:"Practical care, nurturing, stability and creating a comfortable environment.",
+reflection:"How can you make your everyday life feel more supportive?"
+},
+
+{
+name:"King of Pentacles",
+type:"pentacles",
+symbol:"K",
+meaning:"Security • Success • Stewardship",
+upright:"Stability, material success, responsibility and wise stewardship.",
+reflection:"What does true security mean beyond possessions?"
 }
+
+];
+
+
+const cardsContainer = document.getElementById("cards");
+const search = document.getElementById("search");
+
+let currentFilter = "all";
+
+
+function displayCards() {
+
+    const query = search.value.toLowerCase().trim();
+
+    cardsContainer.innerHTML = "";
+
+    const filtered = cards.filter(card => {
+
+        const matchesFilter =
+            currentFilter === "all" ||
+            card.type === currentFilter;
+
+        const matchesSearch =
+            card.name.toLowerCase().includes(query) ||
+            card.meaning.toLowerCase().includes(query);
+
+        return matchesFilter && matchesSearch;
+
+    });
+
+
+    filtered.forEach((card, index) => {
+
+        const div = document.createElement("div");
+
+        div.className = "card";
+
+        div.innerHTML = `
+
+            <div class="symbol">
+                ${card.symbol}
+            </div>
+
+            <h3>${card.name}</h3>
+
+            <div class="type">
+                ${card.type === "major"
+                    ? "Major Arcana"
+                    : card.type}
+            </div>
+
+        `;
+
+        div.onclick = () => openModal(card);
+
+        cardsContainer.appendChild(div);
+
+    });
+
+
+    if (filtered.length === 0) {
+
+        cardsContainer.innerHTML = `
+            <p style="
+                grid-column:1/-1;
+                text-align:center;
+                padding:40px;
+                color:#9a879d;
+            ">
+                No cards found.
+            </p>
+        `;
+
+    }
+
+}
+
+
+function filterCards(type, button) {
+
+    currentFilter = type;
+
+    document
+        .querySelectorAll(".filter")
+        .forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    displayCards();
+
+}
+
+
+search.addEventListener("input", displayCards);
+
+
+function openModal(card) {
+
+    document.getElementById("modalTitle").textContent = card.name;
+
+    document.getElementById("modalMeaning").textContent =
+        card.meaning;
+
+    document.getElementById("modalUpright").textContent =
+        card.upright;
+
+    document.getElementById("modalReflection").textContent =
+        card.reflection;
+
+    document.getElementById("modalSymbol").textContent =
+        card.symbol;
+
+    document.getElementById("modal").classList.add("show");
+
+}
+
+
+function closeModal() {
+
+    document
+        .getElementById("modal")
+        .classList.remove("show");
+
+}
+
+
+document.getElementById("modal").addEventListener("click", function(e) {
+
+    if (e.target === this) {
+        closeModal();
+    }
+
+});
+
+
+displayCards();
 
 </script>
 
