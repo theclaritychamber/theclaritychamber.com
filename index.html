@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,14 +8,14 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header class="navbar">
+  <header class="site-header">
     <div class="logo">The Clarity Chamber</div>
     <nav>
-      <ul>
+      <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
@@ -24,38 +25,77 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Welcome to The Clarity Chamber</h1>
-        <p class="subtitle">Intuitive Tarot Guidance by Loveleen Sarao</p>
-        <p class="tagline">Unveil perspective, embrace self-discovery, and navigate life's transitions with clarity.</p>
-        <div class="cta-buttons">
-          <a href="services.html" class="btn btn-primary">Explore Services</a>
-          <a href="contact.html" class="btn btn-secondary">Book a Reading</a>
+    <section class="hero container">
+      <span class="hero-subtitle">WELCOME TO</span>
+      <h1 class="hero-title">THE CLARITY <span class="highlight">CHAMBER</span></h1>
+      <p class="hero-author">Tarot by <span class="script-text">Loveleen Sarao</span></p>
+      <p class="hero-description">Guiding you with clarity, compassion, and intuitive insight so you can make empowered choices and create the life you're meant for.</p>
+      <a href="contact.html" class="btn btn-primary">BOOK YOUR SESSION &rsaquo;</a>
+    </section>
+
+    <section class="container">
+      <h2 class="section-title">AREAS OF GUIDANCE</h2>
+      <div class="guidance-grid">
+        <div class="guidance-card">
+          <div class="icon-wrapper">✦</div>
+          <h3>PERSONAL GROWTH</h3>
+          <p>Identify self-sabotaging patterns; navigate life transitions.</p>
+        </div>
+        <div class="guidance-card">
+          <div class="icon-wrapper">✦</div>
+          <h3>CAREER & ABUNDANCE</h3>
+          <p>Find the right career path; attract abundance and opportunities.</p>
+        </div>
+        <div class="guidance-card">
+          <div class="icon-wrapper">✦</div>
+          <h3>RELATIONSHIPS & FAMILY</h3>
+          <p>Improve communication; understand family dynamics.</p>
+        </div>
+        <div class="guidance-card">
+          <div class="icon-wrapper">✦</div>
+          <h3>WELLNESS & SPIRITUALITY</h3>
+          <p>Connect with intuition; develop a regular spiritual practice.</p>
         </div>
       </div>
     </section>
 
-    <section class="overview">
-      <h2>Areas of Guidance</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>Career & Purpose</h3>
-          <p>Gain insights into professional transitions, business decisions, and aligning with your authentic path.</p>
-        </div>
-        <div class="card">
-          <h3>Love & Relationships</h3>
-          <p>Understand relational dynamics, romantic potential, and ways to build deeper connection.</p>
-        </div>
-        <div class="card">
-          <h3>Self-Discovery</h3>
-          <p>Uncover personal blocks, cultivate inner wisdom, and foster deep personal growth.</p>
+    <section class="process-section">
+      <div class="container">
+        <h2 class="section-title">WHAT TO EXPECT</h2>
+        <div class="process-grid">
+          <div class="process-step">
+            <h4>CENTERING</h4>
+            <p>Crystal & energy grounding to align and protect your energy.</p>
+          </div>
+          <div class="process-step">
+            <h4>THE SHUFFLE</h4>
+            <p>Focusing heart's intent to bring clarity to your question.</p>
+          </div>
+          <div class="process-step">
+            <h4>THE SPREAD</h4>
+            <p>Reflecting present path and uncovering key insights.</p>
+          </div>
+          <div class="process-step">
+            <h4>ACTIONABLE STEPS</h4>
+            <p>Direction for growth, healing & empowered decision-making.</p>
+          </div>
         </div>
       </div>
+    </section>
+
+    <section class="quote-banner">
+      <span class="quote-mark">“</span>
+      <blockquote>
+        The cards do not lock you into a fixed fate; they reveal the energy you hold right now so you can make empowered choices.
+      </blockquote>
     </section>
   </main>
 
-  <footer>
+  <footer class="footer-contact container">
+    <div class="contact-item">
+      <div class="contact-icon">✉</div>
+      <p>theclaritychamber@gmail.com</p>
+    </div>
     <p>&copy; The Clarity Chamber. All rights reserved.</p>
   </footer>
 
