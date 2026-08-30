@@ -1,0 +1,351 @@
+/* ==========================================================================
+   1. Root Variables & Theme Tokens
+   ========================================================================== */
+:root {
+  /* Colors */
+  --color-bg-light: #fbf9f5;
+  --color-bg-card: #ffffff;
+  --color-bg-alt: #f3f0e8;
+  --color-primary-dark: #2c423f;
+  --color-primary-dark-hover: #1f302e;
+  --color-gold: #b39359;
+  --color-gold-light: #d4af37;
+  --color-text-main: #2b2b2b;
+  --color-text-muted: #555555;
+  --color-border: #e2dad0;
+
+  /* Typography */
+  --font-heading: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-script: 'Cormorant Garamond', 'Alex Brush', cursive, serif;
+  --font-body: 'Montserrat', 'Lato', sans-serif;
+
+  /* Spacing & Borders */
+  --container-width: 1200px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.03);
+  --transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   2. Global Styles & Reset
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ==========================================================================
+   3. Typography
+   ========================================================================== */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-primary-dark);
+  font-weight: 500;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: "✦";
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-gold);
+  margin-top: 0.5rem;
+}
+
+.script-text {
+  font-family: var(--font-script);
+  font-style: italic;
+  text-transform: none;
+  color: var(--color-gold);
+}
+
+/* ==========================================================================
+   4. Buttons & CTAs
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--color-primary-dark);
+  color: #ffffff;
+  border: 1px solid var(--color-primary-dark);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark-hover);
+}
+
+.btn-gold {
+  background-color: var(--color-gold);
+  color: #ffffff;
+  border: 1px solid var(--color-gold);
+}
+
+.btn-gold:hover {
+  background-color: #9e7f47;
+}
+
+/* ==========================================================================
+   5. Header & Navigation
+   ========================================================================== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background-color: rgba(251, 249, 245, 0.9);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text-main);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  transition: var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--color-gold);
+}
+
+/* ==========================================================================
+   6. Hero Section
+   ========================================================================== */
+.hero {
+  padding: 6rem 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-subtitle {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: 3.25rem;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.hero-title .highlight {
+  color: var(--color-gold);
+  display: block;
+}
+
+.hero-author {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  max-width: 480px;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   7. Card Grid (Areas of Guidance)
+   ========================================================================== */
+.guidance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.guidance-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+}
+
+.guidance-card .icon-wrapper {
+  width: 70px;
+  height: 70px;
+  border: 1px solid var(--color-gold);
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guidance-card h3 {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.guidance-card p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   8. Process Section (What to Expect)
+   ========================================================================== */
+.process-section {
+  background-color: var(--color-bg-alt);
+  padding: 5rem 2rem;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.process-step {
+  text-align: center;
+  padding: 0 1rem;
+  border-right: 1px solid var(--color-border);
+}
+
+.process-step:last-child {
+  border-right: none;
+}
+
+.process-step h4 {
+  font-size: 0.85rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.process-step p {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   9. Quote Banner
+   ========================================================================== */
+.quote-banner {
+  background-color: var(--color-primary-dark);
+  color: #ffffff;
+  padding: 4.5rem 2rem;
+  text-align: center;
+}
+
+.quote-banner blockquote {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 300;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
+.quote-banner .quote-mark {
+  color: var(--color-gold);
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   10. Contact Footer Section
+   ========================================================================== */
+.footer-contact {
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--color-border);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  background-color: var(--color-primary-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   11. Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 900px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process-step {
+    border-right: none;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.25rem;
+  }
+  .guidance-grid {
+    grid-template-columns: 1fr;
+  }
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-contact {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+}
