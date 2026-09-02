@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Clarity Chamber | Tarot Readings for Clarity & Perspective</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Embedded Stylesheet */
+        :root {
+          --primary-dark: #2E1F3D;
+          --secondary-accent: #6E4D6E;
+          --gold-accent: #D4AF37;
+          --bg-light: #F3EFE6;
+          --taupe-neutral: #B8B2AA;
+          --text-dark: #2E1F3D;
+          --text-light: #F3EFE6;
+          
+          --font-heading: 'Cormorant Garamond', serif;
+          --font-subheading: 'Montserrat', sans-serif;
+          --font-body: 'Lato', sans-serif;
+        }
+
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+
+        body {
+          background-color: var(--bg-light);
+          color: var(--text-dark);
+          font-family: var(--font-body);
+          line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+          font-family: var(--font-heading);
+          letter-spacing: 1px;
+        }
+
+        h2 {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+          text-align: center;
+          color: var(--primary-dark);
+        }
+
+        .subtitle, .section-desc, .tagline {
+          font-family: var(--font-subheading);
+          text-align: center;
+          margin-bottom: 1.5rem;
+          color: var(--secondary-accent);
+        }
+
+        .btn-primary, .btn-secondary, .btn-nav {
+          display: inline-block;
+          padding: 0.75rem 1.5rem;
+          border-radius: 4px;
+          text-decoration: none;
+          font-family: var(--font-subheading);
+          font-weight: 500;
+          transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+          background-color: var(--gold-accent);
+          color: var(--primary-dark);
+        }
+
+        .btn-secondary {
+          border: 1px solid var(--gold-accent);
+          color: var(--gold-accent);
+        }
+
+        .navbar {
+          background-color: var(--primary-dark);
+          color: var(--text-light);
+          padding: 1.5rem 1rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .navbar h1 {
+          font-size: 1.6rem;
+          color: var(--gold-accent);
+          margin-bottom: 0.8rem;
+        }
+
+        .navbar ul {
+          list-style: none;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.8rem;
+          justify-content: center;
+        }
+
+        .navbar a {
+          color: var(--text-light);
+          text-decoration: none;
+          font-family: var(--font-subheading);
+          font-size: 0.85rem;
+        }
+
+        .btn-nav {
+          background-color: var(--gold-accent);
+          color: var(--primary-dark) !important;
+          padding: 0.4rem 0.8rem;
+        }
+
+        .hero {
+          background-color: var(--primary-dark);
+          color: var(--text-light);
+          padding: 3rem 1.5rem;
+          text-align: center;
+        }
+
+        .hero h2 {
+          color: var(--gold-accent);
+          font-size: 2.2rem;
+        }
+
+        .hero .intro-text {
+          max-width: 600px;
+          margin: 1.5rem auto;
+          font-size: 1rem;
+        }
+
+        .hero-buttons {
+          display: flex;
+          gap: 1rem;
+          justify-content: center;
+          margin-top: 1.5rem;
+        }
+
+        .categories {
+          padding: 3rem 1.5rem;
+        }
+
+        .grid-container {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 1.5rem;
+          max-width: 1000px;
+          margin: 0 auto;
+        }
+
+        .card {
+          background: white;
+          padding: 1.5rem;
+          border-radius: 8px;
+          border-top: 3px solid var(--gold-accent);
+          box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+          color: var(--primary-dark);
+          margin-bottom: 0.5rem;
+        }
+
+        .readings {
+          padding: 3rem 1.5rem;
+          background-color: #EBE5DA;
+        }
+
+        .pricing-grid {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          max-width: 800px;
+          margin: 0 auto;
+        }
+
+        .pricing-card {
+          background: white;
+          padding: 2rem;
+          border-radius: 8px;
+          text-align: center;
+        }
+
+        .pricing-card.highlighted {
+          border: 2px solid var(--gold-accent);
+        }
+
+        .pricing-list {
+          list-style: none;
+          margin: 1.5rem 0;
+        }
+
+        .pricing-list li {
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .features {
+          list-style: none;
+          margin-bottom: 1.5rem;
+          color: #555;
+        }
+
+        .features li {
+          margin-bottom: 0.25rem;
+        }
+
+        .about {
+          padding: 3rem 1.5rem;
+          text-align: center;
+          max-width: 700px;
+          margin: 0 auto;
+        }
+
+        .brand-pillars {
+          margin-top: 1.5rem;
+          font-family: var(--font-subheading);
+          color: var(--secondary-accent);
+          font-weight: 600;
+        }
+
+        .contact {
+          padding: 3rem 1.5rem;
+          text-align: center;
+          background-color: white;
+        }
+
+        .contact-box {
+          margin-top: 1.5rem;
+          padding: 1.5rem;
+          background-color: var(--bg-light);
+          border-radius: 8px;
+          border: 1px dashed var(--taupe-neutral);
+        }
+
+        .contact a {
+          color: var(--primary-dark);
+          font-weight: bold;
+        }
+
+        footer {
+          background-color: var(--primary-dark);
+          color: var(--text-light);
+          text-align: center;
+          padding: 2rem 1.5rem;
+          font-size: 0.9rem;
+        }
+
+        footer a {
+          color: var(--gold-accent);
+          text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <div class="logo">
+            <h1>THE CLARITY CHAMBER</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Loveleen</a></li>
+                <li><a href="#readings">Readings</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact" class="btn-nav">Book a Reading</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>FIND CLARITY. MOVE FORWARD.</h2>
+            <p class="tagline">Tarot readings for clarity, perspective & honest guidance.</p>
+            <p class="intro-text">When life feels uncertain, a different perspective can help you see things more clearly. Loveleen offers private, personalised tarot readings designed to provide honest insights, thoughtful reflection and practical guidance.</p>
+            <div class="hero-buttons">
+                <a href="#readings" class="btn-primary">Book a Reading</a>
+                <a href="#about" class="btn-secondary">Explore Readings</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <h2>What Would You Like Clarity On?</h2>
+        <p class="section-desc">Choose the area you'd like to explore.</p>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Relationships</h3>
+                <p>Explore questions about love, connection, communication, relationships and emotional dynamics.</p>
+            </div>
+            <div class="card">
+                <h3>Career</h3>
+                <p>Gain perspective on career choices, professional direction, opportunities, challenges and the path ahead.</p>
+            </div>
+            <div class="card">
+                <h3>Life Decisions</h3>
+                <p>When you're facing an important choice, a reading can help you look at the situation from a different perspective.</p>
+            </div>
+            <div class="card">
+                <h3>Personal Growth</h3>
+                <p>Reflect on your experiences, patterns, goals and the areas of life where you'd like greater understanding.</p>
+            </div>
+            <div class="card">
+                <h3>General Guidance</h3>
+                <p>Sometimes there isn't one specific question. Bring whatever is on your mind and explore where clarity is needed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offerings Section -->
+    <section id="readings" class="readings">
+        <h2>Choose Your Reading</h2>
+        <p class="section-desc">Two ways to receive personalised tarot guidance.</p>
+        <div class="pricing-grid">
+            <!-- Live Reading -->
+            <div class="pricing-card highlighted">
+                <h3>Live Video Reading</h3>
+                <p class="subtitle">A private conversation with Loveleen via Zoom or Google Meet.</p>
+                <ul class="pricing-list">
+                    <li><strong>30 Minutes:</strong> $60 AUD</li>
+                    <li><strong>60 Minutes:</strong> $80 AUD</li>
+                    <li><strong>90 Minutes:</strong> $100 AUD</li>
+                </ul>
+                <ul class="features">
+                    <li>Personalised tarot interpretation</li>
+                    <li>Private Zoom or Google Meet session</li>
+                    <li>Written summary emailed after the reading</li>
+                </ul>
+                <a href="#contact" class="btn-primary">Book a Live Reading</a>
+            </div>
+
+            <!-- Recorded Reading -->
+            <div class="pricing-card">
+                <h3>Recorded Video Reading</h3>
+                <p class="subtitle">Your reading, whenever you're ready.</p>
+                <ul class="pricing-list">
+                    <li><strong>5 Questions:</strong> $60 AUD</li>
+                    <li><strong>7 Questions:</strong> $80 AUD</li>
+                    <li><strong>11 Questions:</strong> $100 AUD</li>
+                </ul>
+                <ul class="features">
+                    <li>Personalised recorded tarot reading</li>
+                    <li>Your questions addressed individually</li>
+                    <li>Recording delivered by email within 3 business days</li>
+                    <li>Written summary & bonus insight included</li>
+                </ul>
+                <a href="#contact" class="btn-secondary">Order Recorded Reading</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Loveleen Section -->
+    <section id="about" class="about">
+        <h2>Meet Loveleen</h2>
+        <p class="subtitle">Experienced, genuine and grounded.</p>
+        <p>Loveleen is an Advanced Tarot Practitioner who approaches every reading with honesty, intuition, warmth and care. She completed the Tarot Master's Program at the Academy of Tarot, India, with her certificate dated 24 November 2021.</p>
+        <div class="brand-pillars">
+            <span>Direct & Honest</span> • 
+            <span>Intuitive</span> • 
+            <span>Grounded</span> • 
+            <span>Empowering</span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact & Booking</h2>
+        <p>Email: <a href="mailto:loveleensarao@theclaritychamber.com">loveleensarao@theclaritychamber.com</a> | Phone: +61 475 756 576</p>
+        
+        <div class="contact-box">
+            <p>Ready to book or have questions? Send an email directly to <a href="mailto:loveleensarao@theclaritychamber.com">loveleensarao@theclaritychamber.com</a>.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; The Clarity Chamber. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a> | <a href="#">Disclaimer</a></p>
+    </footer>
+
+</body>
+</html>
