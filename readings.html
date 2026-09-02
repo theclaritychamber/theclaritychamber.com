@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Readings | THE CLARITY CHAMBER</title>
+    <style>
+        :root {
+            --deep-plum: #2E1F3D;
+            --dusty-mauve: #6E4D6E;
+            --warm-gold: #D4AF37;
+            --soft-cream: #F3EFE6;
+            --muted-taupe: #B8B2AA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: var(--soft-cream);
+            color: var(--deep-plum);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--deep-plum);
+            color: var(--soft-cream);
+            text-align: center;
+            padding: 2.2rem 1.5rem 1.8rem;
+            border-bottom: 4px solid var(--warm-gold);
+        }
+
+        .logo {
+            width: 180px;
+            height: auto;
+            margin: 0 auto 1.2rem;
+            display: block;
+            border-radius: 50%;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        header h1 {
+            font-size: 1.9rem;
+            letter-spacing: 0.12em;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: var(--soft-cream);
+        }
+
+        header p {
+            color: var(--muted-taupe);
+            font-size: 1.02rem;
+            margin-bottom: 0.3rem;
+            font-style: italic;
+        }
+
+        header p:last-of-type {
+            color: var(--warm-gold);
+            font-style: normal;
+            font-size: 0.95rem;
+            margin-top: 0.6rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* Navigation */
+        nav {
+            margin-top: 1.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.35);
+        }
+
+        nav a {
+            color: var(--soft-cream);
+            text-decoration: none;
+            margin: 0 0.9rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+            transition: color 0.25s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--warm-gold);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -3px;
+            left: 0;
+            background-color: var(--warm-gold);
+            transition: width 0.25s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Main content */
+        main {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            color: var(--deep-plum);
+            margin-bottom: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            position: relative;
+            padding-bottom: 0.6rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--warm-gold);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: var(--deep-plum);
+            margin-bottom: 0.6rem;
+            font-weight: 400;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--deep-plum);
+        }
+
+        /* Reading cards */
+        .reading-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .reading-card {
+            background-color: #fff;
+            border: 1px solid var(--muted-taupe);
+            border-radius: 2px;
+            padding: 2rem 1.7rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .reading-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(46, 31, 61, 0.1);
+        }
+
+        .reading-card h3 {
+            color: var(--dusty-mauve);
+            font-size: 1.35rem;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--warm-gold);
+            display: inline-block;
+        }
+
+        .price-list {
+            background-color: var(--soft-cream);
+            border-left: 3px solid var(--warm-gold);
+            padding: 0.9rem 1.1rem;
+            margin: 1.2rem 0;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .includes {
+            margin-top: 1.3rem;
+        }
+
+        .includes p {
+            font-weight: 400;
+            color: var(--dusty-mauve);
+            margin-bottom: 0.6rem;
+        }
+
+        .includes ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .includes li {
+            position: relative;
+            padding-left: 1.4rem;
+            margin-bottom: 0.45rem;
+            font-size: 0.97rem;
+            color: #4a3f55;
+        }
+
+        .includes li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--warm-gold);
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        /* Booking section */
+        .booking-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin-top: 1.8rem;
+        }
+
+        .booking-card {
+            background-color: #fff;
+            border: 1px solid var(--muted-taupe);
+            padding: 1.8rem 1.6rem;
+            text-align: center;
+            border-radius: 2px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .booking-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(46, 31, 61, 0.1);
+        }
+
+        .booking-card h3 {
+            color: var(--deep-plum);
+            margin-bottom: 0.7rem;
+        }
+
+        .booking-card a {
+            display: inline-block;
+            margin-top: 1.2rem;
+            padding: 0.7rem 1.6rem;
+            background-color: var(--deep-plum);
+            color: var(--soft-cream);
+            text-decoration: none;
+            font-size: 0.92rem;
+            letter-spacing: 0.04em;
+            border: 1px solid var(--deep-plum);
+            transition: all 0.25s ease;
+        }
+
+        .booking-card a:hover {
+            background-color: var(--warm-gold);
+            border-color: var(--warm-gold);
+            color: var(--deep-plum);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--deep-plum);
+            color: var(--muted-taupe);
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.25);
+        }
+
+        footer a {
+            color: var(--muted-taupe);
+            text-decoration: none;
+            margin: 0 0.7rem;
+            transition: color 0.25s ease;
+        }
+
+        footer a:hover {
+            color: var(--warm-gold);
+        }
+
+        footer p:last-child {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: rgba(184, 178, 170, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 750px) {
+            .logo {
+                width: 140px;
+                margin-bottom: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.55rem;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 0.3rem 0.6rem;
+            }
+
+            .reading-grid,
+            .booking-options {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding: 2.2rem 1.2rem 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="The Clarity Chamber Tarot Readings Logo" class="logo">
+        <h1>THE CLARITY CHAMBER</h1>
+        <p>Find clarity. Move forward.</p>
+        <p>Tarot readings for clarity, perspective & honest guidance.</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="readings.html">Readings</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="contact.html">Book a Reading</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Readings</h2>
+            <p>Two ways to receive personalised tarot guidance.</p>
+
+            <div class="reading-grid">
+                <!-- Live Video Reading -->
+                <article class="reading-card">
+                    <h3>Live Video Reading</h3>
+                    <p>A private conversation with Loveleen.</p>
+                    <p>A real-time, one-to-one tarot reading via Zoom or Google Meet.</p>
+                    <p>Choose the session length that suits you:</p>
+                    
+                    <div class="price-list">
+                        30 Minutes — $60<br>
+                        60 Minutes — $80<br>
+                        90 Minutes — $100
+                    </div>
+
+                    <div class="includes">
+                        <p>Every live reading includes:</p>
+                        <ul>
+                            <li>Personalised tarot interpretation</li>
+                            <li>Private Zoom or Google Meet session</li>
+                            <li>Written summary emailed after the reading</li>
+                            <li>Written summary included at no extra cost</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Recorded Video Reading -->
+                <article class="reading-card">
+                    <h3>Recorded Video Reading</h3>
+                    <p>Your reading, whenever you're ready.</p>
+                    <p>Submit your questions and Loveleen will create a personalised recorded tarot reading for you.</p>
+                    <p>Choose the number of questions:</p>
+
+                    <div class="price-list">
+                        5 Questions — $60<br>
+                        7 Questions — $80<br>
+                        11 Questions — $100
+                    </div>
+
+                    <div class="includes">
+                        <p>Every recorded reading includes:</p>
+                        <ul>
+                            <li>Personalised recorded tarot reading</li>
+                            <li>Your questions addressed individually</li>
+                            <li>Recording delivered by email</li>
+                            <li>Written summary included at no extra cost</li>
+                            <li>Bonus insight</li>
+                            <li>Delivery within 3 business days after your questions are received</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <h2>Book a Reading</h2>
+            <p>Find the format that's right for you.</p>
+            
+            <div class="booking-options">
+                <div class="booking-card">
+                    <h3>Live Video Reading</h3>
+                    <p>Choose a 30, 60 or 90-minute private session with Loveleen.</p>
+                    <a href="contact.html">Choose Live Reading</a>
+                </div>
+                <div class="booking-card">
+                    <h3>Recorded Video Reading</h3>
+                    <p>Submit 5, 7 or 11 questions and receive a personalised recorded reading by email.</p>
+                    <a href="contact.html">Choose Recorded Reading</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Book a Reading</a>
+            <a href="contact.html">Contact</a>
+            <a href="legal.html">Legal</a>
+        </p>
+        <p>&copy; The Clarity Chamber. All rights reserved.</p>
+    </footer>
+</body>
+</html>
