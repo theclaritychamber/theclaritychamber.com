@@ -4,29 +4,351 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE CLARITY CHAMBER | Home</title>
+    <style>
+        :root {
+            --deep-plum: #2E1F3D;
+            --dusty-mauve: #6E4D6E;
+            --warm-gold: #D4AF37;
+            --soft-cream: #F3EFE6;
+            --muted-taupe: #B8B2AA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: var(--soft-cream);
+            color: var(--deep-plum);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--deep-plum);
+            color: var(--soft-cream);
+            text-align: center;
+            padding: 2.2rem 1.5rem 1.8rem;
+            border-bottom: 4px solid var(--warm-gold);
+        }
+
+        .logo {
+            width: 180px;
+            height: auto;
+            margin: 0 auto 1.2rem;
+            display: block;
+            border-radius: 50%;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        header h1 {
+            font-size: 1.9rem;
+            letter-spacing: 0.12em;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: var(--soft-cream);
+        }
+
+        header p {
+            color: var(--muted-taupe);
+            font-size: 1.02rem;
+            margin-bottom: 0.3rem;
+            font-style: italic;
+        }
+
+        header p:last-of-type {
+            color: var(--warm-gold);
+            font-style: normal;
+            font-size: 0.95rem;
+            margin-top: 0.6rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* Navigation */
+        nav {
+            margin-top: 1.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.35);
+        }
+
+        nav a {
+            color: var(--soft-cream);
+            text-decoration: none;
+            margin: 0 0.9rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+            transition: color 0.25s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--warm-gold);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -3px;
+            left: 0;
+            background-color: var(--warm-gold);
+            transition: width 0.25s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Main content */
+        main {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            color: var(--deep-plum);
+            margin-bottom: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            position: relative;
+            padding-bottom: 0.6rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--warm-gold);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            color: var(--dusty-mauve);
+            margin-bottom: 0.45rem;
+            font-weight: 400;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--deep-plum);
+        }
+
+        /* Topic list */
+        ul {
+            list-style: none;
+            display: grid;
+            gap: 1.4rem;
+            margin-top: 1.5rem;
+        }
+
+        ul li {
+            background-color: #fff;
+            border: 1px solid var(--muted-taupe);
+            border-left: 4px solid var(--dusty-mauve);
+            padding: 1.3rem 1.5rem;
+            border-radius: 2px;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        ul li:hover {
+            border-left-color: var(--warm-gold);
+            box-shadow: 0 4px 14px rgba(46, 31, 61, 0.08);
+        }
+
+        ul li p {
+            margin-bottom: 0;
+            font-size: 0.98rem;
+            color: #4a3f55;
+        }
+
+        /* Reading options */
+        .reading-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin-top: 1.8rem;
+        }
+
+        .reading-card {
+            background-color: #fff;
+            border: 1px solid var(--muted-taupe);
+            padding: 1.8rem 1.6rem;
+            text-align: center;
+            border-radius: 2px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .reading-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(46, 31, 61, 0.1);
+        }
+
+        .reading-card h3 {
+            color: var(--deep-plum);
+            margin-bottom: 0.7rem;
+            font-size: 1.3rem;
+        }
+
+        .reading-card p {
+            font-size: 0.97rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .reading-card a {
+            display: inline-block;
+            margin-top: 1.1rem;
+            padding: 0.65rem 1.5rem;
+            background-color: var(--deep-plum);
+            color: var(--soft-cream);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.04em;
+            border: 1px solid var(--deep-plum);
+            transition: all 0.25s ease;
+        }
+
+        .reading-card a:hover {
+            background-color: var(--warm-gold);
+            border-color: var(--warm-gold);
+            color: var(--deep-plum);
+        }
+
+        /* CTA section */
+        .cta {
+            background-color: var(--deep-plum);
+            color: var(--soft-cream);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--warm-gold);
+            border-bottom: 3px solid var(--warm-gold);
+        }
+
+        .cta h2 {
+            color: var(--soft-cream);
+            margin-bottom: 1rem;
+        }
+
+        .cta h2::after {
+            background-color: var(--warm-gold);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cta p {
+            color: var(--muted-taupe);
+            max-width: 620px;
+            margin: 0 auto 1.2rem;
+        }
+
+        .cta a {
+            display: inline-block;
+            margin: 1rem 0 1.5rem;
+            padding: 0.8rem 2rem;
+            background-color: var(--warm-gold);
+            color: var(--deep-plum);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        .cta a:hover {
+            background-color: var(--soft-cream);
+            color: var(--deep-plum);
+        }
+
+        .cta strong {
+            color: var(--warm-gold);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--deep-plum);
+            color: var(--muted-taupe);
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.25);
+        }
+
+        footer a {
+            color: var(--muted-taupe);
+            text-decoration: none;
+            margin: 0 0.7rem;
+            transition: color 0.25s ease;
+        }
+
+        footer a:hover {
+            color: var(--warm-gold);
+        }
+
+        footer p:last-child {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: rgba(184, 178, 170, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .logo {
+                width: 140px;
+                margin-bottom: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.55rem;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 0.3rem 0.6rem;
+            }
+
+            .reading-options {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding: 2.2rem 1.2rem 3rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
+        <img src="logo.jpg" alt="The Clarity Chamber Tarot Readings Logo" class="logo">
         <h1>THE CLARITY CHAMBER</h1>
         <p>Find clarity. Move forward.</p>
         <p>Tarot readings for clarity, perspective & honest guidance.</p>
         <nav>
-            <a href="index.html">Home</a> | 
-            <a href="about.html">About Us</a> | 
-            <a href="readings.html">Readings</a> | 
-            <a href="how-it-works.html">How It Works</a> | 
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="readings.html">Readings</a>
+            <a href="how-it-works.html">How It Works</a>
             <a href="contact.html">Book a Reading</a>
         </nav>
     </header>
-
-    <hr>
 
     <main>
         <section>
             <h2>A Space for Perspective</h2>
             <p>Sometimes clarity begins with looking at things differently.</p>
             <p>Life can bring questions about relationships, career, important decisions, personal growth or simply what comes next.</p>
-            <p>A tarot reading can offer a different perspective-helping you explore what may be influencing a situation, understand your thoughts and feelings, and consider the possibilities ahead.</p>
+            <p>A tarot reading can offer a different perspective—helping you explore what may be influencing a situation, understand your thoughts and feelings, and consider the possibilities ahead.</p>
             <p>The aim is not to tell you what to do, but to help you find greater clarity so you can move forward with confidence.</p>
         </section>
 
@@ -60,40 +382,40 @@
         <section>
             <h2>Choose Your Reading</h2>
             <p>Two ways to receive personalised tarot guidance.</p>
-            <div>
-                <h3>Live Video Reading</h3>
-                <p>A private conversation with Loveleen.</p>
-                <p>A real-time, one-to-one tarot reading via Zoom or Google Meet.</p>
-                <a href="contact.html">Book a Live Reading</a>
-            </div>
-            <div>
-                <h3>Recorded Video Reading</h3>
-                <p>Your reading, whenever you're ready.</p>
-                <p>Submit your questions and Loveleen will create a personalised recorded tarot reading for you.</p>
-                <a href="contact.html">Order a Recorded Reading</a>
+            <div class="reading-options">
+                <div class="reading-card">
+                    <h3>Live Video Reading</h3>
+                    <p>A private conversation with Loveleen.</p>
+                    <p>A real-time, one-to-one tarot reading via Zoom or Google Meet.</p>
+                    <a href="contact.html">Book a Live Reading</a>
+                </div>
+                <div class="reading-card">
+                    <h3>Recorded Video Reading</h3>
+                    <p>Your reading, whenever you're ready.</p>
+                    <p>Submit your questions and Loveleen will create a personalised recorded tarot reading for you.</p>
+                    <a href="contact.html">Order a Recorded Reading</a>
+                </div>
             </div>
         </section>
 
-        <section>
+        <section class="cta">
             <h2>Ready When You Are</h2>
             <p>Choose your path to clarity.</p>
             <p>Whether you'd prefer a private conversation or a recorded reading to return to in your own time, choose the format that feels right for you.</p>
+            <a href="contact.html">Book a Reading</a>
             <p>
-                <a href="contact.html">Book a Reading</a><br>
                 <strong>Live Video Reading:</strong> Private, real-time guidance with Loveleen.<br>
                 <strong>Recorded Video Reading:</strong> A personalised reading created around your questions.
             </p>
         </section>
     </main>
 
-    <hr>
-
     <footer>
         <p>
-            <a href="index.html">Home</a> | 
-            <a href="faq.html">FAQ</a> | 
-            <a href="contact.html">Book a Reading</a> | 
-            <a href="contact.html">Contact</a> | 
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Book a Reading</a>
+            <a href="contact.html">Contact</a>
             <a href="legal.html">Legal</a>
         </p>
         <p>&copy; The Clarity Chamber. All rights reserved.</p>
