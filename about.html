@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | THE CLARITY CHAMBER</title>
+    <style>
+        :root {
+            --deep-plum: #2E1F3D;
+            --dusty-mauve: #6E4D6E;
+            --warm-gold: #D4AF37;
+            --soft-cream: #F3EFE6;
+            --muted-taupe: #B8B2AA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: var(--soft-cream);
+            color: var(--deep-plum);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--deep-plum);
+            color: var(--soft-cream);
+            text-align: center;
+            padding: 2.2rem 1.5rem 1.8rem;
+            border-bottom: 4px solid var(--warm-gold);
+        }
+
+        .logo {
+            width: 180px;
+            height: auto;
+            margin: 0 auto 1.2rem;
+            display: block;
+            border-radius: 50%;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+        }
+
+        header h1 {
+            font-size: 1.9rem;
+            letter-spacing: 0.12em;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            color: var(--soft-cream);
+        }
+
+        header p {
+            color: var(--muted-taupe);
+            font-size: 1.02rem;
+            margin-bottom: 0.3rem;
+            font-style: italic;
+        }
+
+        header p:last-of-type {
+            color: var(--warm-gold);
+            font-style: normal;
+            font-size: 0.95rem;
+            margin-top: 0.6rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* Navigation */
+        nav {
+            margin-top: 1.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.35);
+        }
+
+        nav a {
+            color: var(--soft-cream);
+            text-decoration: none;
+            margin: 0 0.9rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.04em;
+            transition: color 0.25s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--warm-gold);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -3px;
+            left: 0;
+            background-color: var(--warm-gold);
+            transition: width 0.25s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Main content */
+        main {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            color: var(--deep-plum);
+            margin-bottom: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            position: relative;
+            padding-bottom: 0.6rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--warm-gold);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--deep-plum);
+        }
+
+        /* Meet Loveleen side-by-side layout */
+        .meet-loveleen {
+            display: flex;
+            gap: 2.2rem;
+            align-items: flex-start;
+            margin-top: 1.5rem;
+        }
+
+        .meet-loveleen .photo {
+            flex: 0 0 42%;
+            max-width: 380px;
+        }
+
+        .meet-loveleen .photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            box-shadow: 0 6px 20px rgba(46, 31, 61, 0.12);
+        }
+
+        .meet-loveleen .bio {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .meet-loveleen .bio p:first-child {
+            font-style: italic;
+            color: var(--dusty-mauve);
+            font-size: 1.1rem;
+        }
+
+        /* Approach list */
+        .approach-list {
+            list-style: none;
+            display: grid;
+            gap: 1.3rem;
+            margin-top: 1.5rem;
+        }
+
+        .approach-list li {
+            background-color: #fff;
+            border: 1px solid var(--muted-taupe);
+            border-left: 4px solid var(--dusty-mauve);
+            padding: 1.4rem 1.6rem;
+            border-radius: 2px;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .approach-list li:hover {
+            border-left-color: var(--warm-gold);
+            box-shadow: 0 4px 14px rgba(46, 31, 61, 0.08);
+        }
+
+        .approach-list strong {
+            display: block;
+            color: var(--dusty-mauve);
+            font-size: 1.15rem;
+            margin-bottom: 0.35rem;
+            font-weight: 400;
+        }
+
+        .approach-list li span {
+            color: #4a3f55;
+            font-size: 0.98rem;
+        }
+
+        /* Contact box */
+        .contact-box {
+            background-color: #fff;
+            border: 1px solid var(--muted-taupe);
+            border-top: 3px solid var(--warm-gold);
+            padding: 2rem 1.8rem;
+            border-radius: 2px;
+        }
+
+        .contact-box p {
+            margin-bottom: 0.7rem;
+        }
+
+        .contact-box a {
+            color: var(--dusty-mauve);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: color 0.25s ease, border-color 0.25s ease;
+        }
+
+        .contact-box a:hover {
+            color: var(--warm-gold);
+            border-bottom-color: var(--warm-gold);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--deep-plum);
+            color: var(--muted-taupe);
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.25);
+        }
+
+        footer a {
+            color: var(--muted-taupe);
+            text-decoration: none;
+            margin: 0 0.7rem;
+            transition: color 0.25s ease;
+        }
+
+        footer a:hover {
+            color: var(--warm-gold);
+        }
+
+        footer p:last-child {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: rgba(184, 178, 170, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .logo {
+                width: 140px;
+                margin-bottom: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.55rem;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 0.3rem 0.6rem;
+            }
+
+            main {
+                padding: 2.2rem 1.2rem 3rem;
+            }
+
+            .meet-loveleen {
+                flex-direction: column;
+                gap: 1.6rem;
+            }
+
+            .meet-loveleen .photo {
+                flex: none;
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="IMG_6955.jpeg" alt="The Clarity Chamber Tarot Readings Logo" class="logo">
+        <h1>THE CLARITY CHAMBER</h1>
+        <p>Find clarity. Move forward.</p>
+        <p>Tarot readings for clarity, perspective & honest guidance.</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="readings.html">Readings</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="contact.html">Book a Reading</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Meet Loveleen</h2>
+            <div class="meet-loveleen">
+                <div class="photo">
+                    <img src="Loveleen.JPG" alt="Loveleen – The Clarity Chamber Tarot Practitioner">
+                </div>
+                <div class="bio">
+                    <p>Experienced, genuine and grounded.</p>
+                    <p>Loveleen is an Advanced Tarot Practitioner who approaches every reading with honesty, intuition, warmth and care.</p>
+                    <p>She completed the Tarot Master's Program at the Academy of Tarot, India, with her certificate dated 24 November 2021.</p>
+                    <p>Her approach is direct and honest while remaining thoughtful and empathetic. She uses tarot to help clients explore their questions, gain perspective and better understand the situation they are facing.</p>
+                    <p>Loveleen is comfortable reading on every topic and believes a meaningful reading should leave you with greater clarity—not fear or confusion.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Our Approach</h2>
+            <ul class="approach-list">
+                <li>
+                    <strong>Direct & Honest</strong>
+                    <span>Clear, straightforward guidance without unnecessary mystery or sensationalism.</span>
+                </li>
+                <li>
+                    <strong>Intuitive</strong>
+                    <span>Reading the cards with experience, intuition and attention to the individual situation.</span>
+                </li>
+                <li>
+                    <strong>Grounded</strong>
+                    <span>Keeping the focus on your real questions, circumstances and perspective.</span>
+                </li>
+                <li>
+                    <strong>Empowering</strong>
+                    <span>The purpose of a reading is to help you understand, reflect and make your own informed choices.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <div class="contact-box">
+                <p>Have a question?</p>
+                <p>If you'd like to ask something before booking, Loveleen would be happy to hear from you.</p>
+                <p>Email: <a href="mailto:loveleensarao@theclaritychamber.com">loveleensarao@theclaritychamber.com</a></p>
+                <p>Phone: <a href="tel:+61475756576">+61 475 756 576</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <a href="index.html">Home</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Book a Reading</a>
+            <a href="contact.html">Contact</a>
+            <a href="legal.html">Legal</a>
+        </p>
+        <p>&copy; The Clarity Chamber. All rights reserved.</p>
+    </footer>
+</body>
+</html>
