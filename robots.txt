@@ -1,0 +1,6 @@
+# https://theclaritychamber.com/robots.txt
+User-agent: *
+Allow: /
+Disallow: /cancel.html
+
+Sitemap: https://theclaritychamber.com/sitemap.xml
