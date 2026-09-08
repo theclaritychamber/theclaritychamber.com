@@ -7,7 +7,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-MHRRCHFL9L');
 </script>
     <meta charset="UTF-8">
@@ -17,16 +16,15 @@
     {"@context":"https://schema.org","@type":"ProfessionalService","name":"The Clarity Chamber","url":"https://theclaritychamber.com/","email":"loveleensarao@theclaritychamber.com","telephone":"+61475756576","areaServed":"AU","currenciesAccepted":"AUD","priceRange":"$60–$100","founder":{"@type":"Person","name":"Loveleen Sarao","jobTitle":"Advanced Tarot Practitioner"}}
     </script>
     <title>The Cards | THE CLARITY CHAMBER</title>
-    <meta name="description" content="Explore the 22 Major Arcana used at The Clarity Chamber. Choose a card to see its image and meaning.">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <meta name="description" content="Explore the Major and Minor Arcana used at The Clarity Chamber. Choose a card to see a grounded meaning — direct, thoughtful, and free of fear.">
+    <link rel="icon" href="images/Logo.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="images/Logo.jpg">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="The Clarity Chamber">
     <meta property="og:title" content="The Cards | The Clarity Chamber">
-    <meta property="og:description" content="Explore the 22 Major Arcana used at The Clarity Chamber. Choose a card to see its image and meaning.">
+    <meta property="og:description" content="Explore the Major and Minor Arcana used at The Clarity Chamber. Choose a card to see a grounded meaning.">
     <meta property="og:url" content="https://theclaritychamber.com/cards.html">
-    <meta property="og:image" content="https://theclaritychamber.com/images/logo.png">
+    <meta property="og:image" content="https://theclaritychamber.com/images/Logo.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <style>
         :root {
@@ -37,11 +35,7 @@
             --muted-taupe: #B8B2AA;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: Georgia, 'Times New Roman', Times, serif;
@@ -64,10 +58,10 @@
             height: auto;
             margin: 0 auto 1.2rem;
             display: block;
-            border-radius: 0;
-            box-shadow: none;
-            background-color: transparent;
-            object-fit: contain;
+            border-radius: 50%;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+            background-color: var(--deep-plum);
+            object-fit: cover;
         }
 
         header h1 {
@@ -109,9 +103,7 @@
             position: relative;
         }
 
-        nav a:hover {
-            color: var(--warm-gold);
-        }
+        nav a:hover { color: var(--warm-gold); }
 
         nav a::after {
             content: '';
@@ -124,45 +116,17 @@
             transition: width 0.25s ease;
         }
 
-        nav a:hover::after {
-            width: 100%;
-        }
+        nav a:hover::after { width: 100%; }
 
-        nav a.active {
-            color: var(--warm-gold);
-        }
+        nav a.active { color: var(--warm-gold); }
+        nav a.active::after { width: 100%; }
 
-        nav a.active::after {
-            width: 100%;
-        }
-
-        header.compact {
-            padding: 1.15rem 1.5rem 1rem;
-        }
-
-        header.compact .logo {
-            width: 88px;
-            margin-bottom: 0.5rem;
-        }
-
-        header.compact h1 {
-            font-size: 1.32rem;
-            margin-bottom: 0.2rem;
-        }
-
-        header.compact .tagline-lead {
-            font-size: 0.95rem;
-            margin-bottom: 0;
-        }
-
-        header.compact .tagline-sub {
-            display: none;
-        }
-
-        header.compact nav {
-            margin-top: 0.95rem;
-            padding-top: 0.8rem;
-        }
+        header.compact { padding: 1.15rem 1.5rem 1rem; }
+        header.compact .logo { width: 88px; margin-bottom: 0.5rem; }
+        header.compact h1 { font-size: 1.32rem; margin-bottom: 0.2rem; }
+        header.compact .tagline-lead { font-size: 0.95rem; margin-bottom: 0; }
+        header.compact .tagline-sub { display: none; }
+        header.compact nav { margin-top: 0.95rem; padding-top: 0.8rem; }
 
         main {
             max-width: 920px;
@@ -190,14 +154,47 @@
             background-color: var(--warm-gold);
         }
 
-        p {
-            margin-bottom: 1rem;
-            color: var(--deep-plum);
+        p { margin-bottom: 1rem; color: var(--deep-plum); }
+
+        .lead-note {
+            color: #4a3f55;
+            margin-bottom: 1.6rem;
         }
 
-        .chooser {
+        .suits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.9rem 1.4rem;
+            margin: 0 0 2rem;
+        }
+
+        .suits article {
+            background: #fff;
+            border: 1px solid var(--muted-taupe);
+            border-radius: 2px;
+            padding: 1rem 1.1rem 0.85rem;
+        }
+
+        .suits h3 {
+            font-size: 1.05rem;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            color: var(--deep-plum);
+            margin-bottom: 0.35rem;
+        }
+
+        .suits p {
+            font-size: 0.95rem;
+            color: #4a3f55;
+            margin-bottom: 0;
+        }
+
+        .chooser-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
             margin: 1.6rem 0 1.4rem;
-            max-width: 420px;
+            max-width: 640px;
         }
 
         .chooser label {
@@ -252,9 +249,7 @@
             align-items: start;
         }
 
-        .card-view.show {
-            display: grid;
-        }
+        .card-view.show { display: grid; }
 
         .card-view img {
             width: 100%;
@@ -264,6 +259,40 @@
             border-radius: 2px;
             box-shadow: 0 6px 20px rgba(46, 31, 61, 0.12);
             background-color: var(--soft-cream);
+        }
+
+        .card-face {
+            display: none;
+            width: 100%;
+            max-width: 260px;
+            min-height: 360px;
+            border-radius: 2px;
+            border: 1px solid rgba(46, 31, 61, 0.18);
+            background: linear-gradient(180deg, #faf7f1 0%, #efe8d8 100%);
+            box-shadow: 0 6px 20px rgba(46, 31, 61, 0.12);
+            text-align: center;
+            padding: 1.6rem 1rem;
+            color: var(--deep-plum);
+        }
+
+        .card-face.show { display: flex; flex-direction: column; justify-content: space-between; }
+
+        .card-face .suit-mark {
+            font-size: 2.4rem;
+            line-height: 1;
+            color: var(--dusty-mauve);
+        }
+
+        .card-face .face-name {
+            font-size: 1.15rem;
+            letter-spacing: 0.04em;
+        }
+
+        .card-face .face-group {
+            font-size: 0.82rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--dusty-mauve);
         }
 
         .meaning .roman {
@@ -292,10 +321,7 @@
             margin: 0.9rem 0 0.25rem;
         }
 
-        .meaning p {
-            color: #4a3f55;
-            margin-bottom: 0.7rem;
-        }
+        .meaning p { color: #4a3f55; margin-bottom: 0.7rem; }
 
         footer {
             background-color: var(--deep-plum);
@@ -313,9 +339,7 @@
             transition: color 0.25s ease;
         }
 
-        footer a:hover {
-            color: var(--warm-gold);
-        }
+        footer a:hover { color: var(--warm-gold); }
 
         footer p:last-child {
             margin-top: 0.7rem;
@@ -323,61 +347,22 @@
             color: rgba(184, 178, 170, 0.7);
         }
 
-        footer .footer-contact {
-            margin-top: 0.85rem;
-            font-size: 0.88rem;
-        }
+        footer .footer-contact { margin-top: 0.85rem; font-size: 0.88rem; }
 
         @media (max-width: 700px) {
-            .logo {
-                width: 140px;
-                margin-bottom: 1rem;
-            }
-
-            header h1 {
-                font-size: 1.55rem;
-            }
-
-            nav a {
-                display: inline-block;
-                margin: 0.3rem 0.6rem;
-            }
-
-            main {
-                padding: 2.2rem 1.2rem 3rem;
-            }
-
-            .card-view.show {
-                grid-template-columns: 1fr;
-            }
-        }
-    
-        /* Square brand mark */
-        .logo {
-            border-radius: 0;
-            box-shadow: none;
-            background-color: transparent;
-            background: transparent;
-            object-fit: contain;
-        }
-        header.compact .logo {
-            border-radius: 0;
-        }
-    
-        header img.logo,
-        img.logo {
-            border-radius: 0 !important;
-            box-shadow: none !important;
-            background: transparent !important;
-            background-color: transparent !important;
-            object-fit: contain !important;
-            overflow: visible;
+            .logo { width: 140px; margin-bottom: 1rem; }
+            header h1 { font-size: 1.55rem; }
+            nav a { display: inline-block; margin: 0.3rem 0.6rem; }
+            main { padding: 2.2rem 1.2rem 3rem; }
+            .card-view.show { grid-template-columns: 1fr; }
+            .chooser-row { grid-template-columns: 1fr; }
+            .suits { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <header class="compact">
-        <img src="images/logo.png" alt="The Clarity Chamber Tarot Readings Logo" class="logo">
+        <img src="images/Logo.jpg" alt="The Clarity Chamber Tarot Readings Logo" class="logo">
         <h1>THE CLARITY CHAMBER</h1>
         <p class="tagline-lead">Find clarity. Move forward.</p>
         <p class="tagline-sub">Tarot readings for clarity, perspective &amp; honest guidance.</p>
@@ -394,21 +379,61 @@
 
     <main>
         <section>
-            <h2>The Major Arcana</h2>
-            <p>These twenty-two cards map the larger themes of a life — beginnings, choices, endings, and the moment the picture comes clear. They are offered here as a quiet reference, not as prediction.</p>
-            <p>Choose a card to see the image and a grounded meaning in the spirit of The Clarity Chamber: direct, thoughtful, and free of fear.</p>
+            <h2>The Cards</h2>
+            <p>A full deck has seventy-eight cards. Twenty-two Major Arcana map the larger themes of a life. Fifty-six Minor Arcana describe the weather of ordinary days — work, feeling, thought and the material world.</p>
+            <p class="lead-note">They are offered here as a quiet reference, not as prediction. Choose a group, then a card, for a grounded meaning in the spirit of The Clarity Chamber: direct, thoughtful, and free of fear.</p>
 
-            <div class="chooser">
-                <label for="cardSelect">Choose a card</label>
-                <select id="cardSelect">
-                    <option value="">Select a card…</option>
-                </select>
+            <div class="suits">
+                <article>
+                    <h3>Major Arcana</h3>
+                    <p>Beginnings, choices, endings, and the moment the picture comes clear.</p>
+                </article>
+                <article>
+                    <h3>Wands</h3>
+                    <p>Initiative, heat and the will to begin. Where energy wants to move.</p>
+                </article>
+                <article>
+                    <h3>Cups</h3>
+                    <p>Feeling, relationship and inner weather. What the heart is doing.</p>
+                </article>
+                <article>
+                    <h3>Swords</h3>
+                    <p>Thought, truth and difficult clarity. What must be said or decided.</p>
+                </article>
+                <article>
+                    <h3>Pentacles</h3>
+                    <p>Body, money, craft and time. What can be built and kept.</p>
+                </article>
+            </div>
+
+            <div class="chooser-row">
+                <div class="chooser">
+                    <label for="groupSelect">Choose a group</label>
+                    <select id="groupSelect">
+                        <option value="major">Major Arcana</option>
+                        <option value="wands">Wands</option>
+                        <option value="cups">Cups</option>
+                        <option value="swords">Swords</option>
+                        <option value="pentacles">Pentacles</option>
+                    </select>
+                </div>
+                <div class="chooser">
+                    <label for="cardSelect">Choose a card</label>
+                    <select id="cardSelect">
+                        <option value="">Select a card…</option>
+                    </select>
+                </div>
             </div>
 
             <div class="stage" aria-live="polite">
-                <div class="empty" id="empty">Select a card to view the image and its meaning.</div>
+                <div class="empty" id="empty">Select a card to view its meaning.</div>
                 <article class="card-view" id="view">
                     <img id="cardImg" alt="">
+                    <div class="card-face" id="cardFace">
+                        <div class="suit-mark" id="faceMark"></div>
+                        <div class="face-name" id="faceName"></div>
+                        <div class="face-group" id="faceGroup"></div>
+                    </div>
                     <div class="meaning">
                         <div class="roman" id="roman"></div>
                         <h3 id="title"></h3>
@@ -436,118 +461,341 @@
     </footer>
 
     <script>
+        const MARK = { major: "✦", wands: "♦", cups: "♥", swords: "♠", pentacles: "●" };
+
         const CARDS = [
-            { roman:"0", name:"The Fool", file:"images/cards/00-the-fool.jpg", theme:"A clean beginning",
+            { group:"major", roman:"0", name:"The Fool", file:"images/cards/00-the-fool.jpg", theme:"A clean beginning",
               meaning:"A threshold. Something is starting before the map is finished. The invitation is trust — not recklessness, but a willingness to take the first honest step.",
               practice:"Notice where you are waiting for certainty that will only arrive after you move. Name the first small step you can take without needing the whole path." },
-            { roman:"I", name:"The Magician", file:"images/cards/01-the-magician.jpg", theme:"Tools already in your hands",
+            { group:"major", roman:"I", name:"The Magician", file:"images/cards/01-the-magician.jpg", theme:"Tools already in your hands",
               meaning:"You already have more than you think: skill, language, timing, will. This card asks you to use what is present rather than wait for a perfect set of conditions.",
               practice:"List the resources you actually have today — people, skills, time, tools. Choose one and put it to work on the question in front of you." },
-            { roman:"II", name:"The High Priestess", file:"images/cards/02-the-high-priestess.jpg", theme:"What you already know",
+            { group:"major", roman:"II", name:"The High Priestess", file:"images/cards/02-the-high-priestess.jpg", theme:"What you already know",
               meaning:"The answer is quieter than the noise around it. Intuition, memory and the part of you that has been watching are trying to speak. Listening is the work.",
               practice:"Before asking anyone else, write what you already suspect is true. Sit with it. Clarity often arrives when you stop overriding your own knowing." },
-            { roman:"III", name:"The Empress", file:"images/cards/03-the-empress.jpg", theme:"Growth and nurture",
+            { group:"major", roman:"III", name:"The Empress", file:"images/cards/03-the-empress.jpg", theme:"Growth and nurture",
               meaning:"Life wants to grow here — a project, a relationship, a body of work, a home. Care, patience and generous conditions matter more than force.",
               practice:"Ask what this situation needs in order to thrive, not merely survive. Then give it one practical form of nourishment this week." },
-            { roman:"IV", name:"The Emperor", file:"images/cards/04-the-emperor.jpg", theme:"Structure and steadiness",
+            { group:"major", roman:"IV", name:"The Emperor", file:"images/cards/04-the-emperor.jpg", theme:"Structure and steadiness",
               meaning:"Order is not the enemy of feeling. Boundaries, plans and responsibility create the container in which clarity can last.",
               practice:"Where is the structure missing? A decision, a boundary, a schedule, a conversation. Put one firm edge in place." },
-            { roman:"V", name:"The Hierophant", file:"images/cards/05-the-hierophant.jpg", theme:"Shared wisdom",
+            { group:"major", roman:"V", name:"The Hierophant", file:"images/cards/05-the-hierophant.jpg", theme:"Shared wisdom",
               meaning:"You do not have to invent every answer alone. Tradition, a teacher, a community or a well-tested path may hold what you need.",
               practice:"Identify whose counsel you trust. Seek one grounded source — a person, a practice, a body of knowledge — and use it." },
-            { roman:"VI", name:"The Lovers", file:"images/cards/06-the-lovers.jpg", theme:"A real choice",
+            { group:"major", roman:"VI", name:"The Lovers", file:"images/cards/06-the-lovers.jpg", theme:"A real choice",
               meaning:"This is about alignment, not only romance. Two paths, two values, two ways of being are asking you to choose with your whole self.",
               practice:"Name the two options without dressing them up. Which one you can stand behind in a year is usually the clearer of the two." },
-            { roman:"VII", name:"The Chariot", file:"images/cards/07-the-chariot.jpg", theme:"Directed will",
+            { group:"major", roman:"VII", name:"The Chariot", file:"images/cards/07-the-chariot.jpg", theme:"Directed will",
               meaning:"Opposing forces can still move in one direction if you hold the reins. Progress here comes from focus, not from hoping the road will choose itself.",
               practice:"Pick a destination for the next fortnight. Cut what pulls you sideways. Momentum follows a single clear aim." },
-            { roman:"VIII", name:"Strength", file:"images/cards/08-strength.jpg", theme:"Quiet courage",
+            { group:"major", roman:"VIII", name:"Strength", file:"images/cards/08-strength.jpg", theme:"Quiet courage",
               meaning:"True strength is composure. It is meeting intensity — yours or someone else’s — without becoming harsh or disappearing.",
               practice:"Where have you been using force when patience would work better? Try the gentler method first and stay with it." },
-            { roman:"IX", name:"The Hermit", file:"images/cards/09-the-hermit.jpg", theme:"Inner light",
+            { group:"major", roman:"IX", name:"The Hermit", file:"images/cards/09-the-hermit.jpg", theme:"Inner light",
               meaning:"A pause is not a failure. Solitude, reflection and a smaller circle help you hear what the crowd drowns out.",
               practice:"Give yourself a contained stretch of quiet — an evening, a walk, a page of writing — and follow the thread that appears there." },
-            { roman:"X", name:"Wheel of Fortune", file:"images/cards/10-wheel-of-fortune.jpg", theme:"A turning cycle",
+            { group:"major", roman:"X", name:"Wheel of Fortune", file:"images/cards/10-wheel-of-fortune.jpg", theme:"A turning cycle",
               meaning:"Circumstances are moving. What feels fixed is often only a phase. The useful question is how you meet the turn, not how you stop the wheel.",
               practice:"Name the cycle you are in: rising, falling, repeating. Then decide one response that fits this phase rather than the last one." },
-            { roman:"XI", name:"Justice", file:"images/cards/11-justice.jpg", theme:"Honest accounting",
+            { group:"major", roman:"XI", name:"Justice", file:"images/cards/11-justice.jpg", theme:"Honest accounting",
               meaning:"Cause and effect are on the table. Fairness asks for truth — about what happened, what you owe, and what you will no longer carry that is not yours.",
               practice:"Write the facts without the story you usually add. What needs to be set right, said plainly, or released?" },
-            { roman:"XII", name:"The Hanged Man", file:"images/cards/12-the-hanged-man.jpg", theme:"A new angle",
+            { group:"major", roman:"XII", name:"The Hanged Man", file:"images/cards/12-the-hanged-man.jpg", theme:"A new angle",
               meaning:"The old approach is stalled on purpose. Seeing the situation upside down — surrendering the need to push — is how a new perspective arrives.",
               practice:"Stop forcing the outcome for a short, defined time. Ask: if I am not in control here, what else becomes visible?" },
-            { roman:"XIII", name:"Death", file:"images/cards/13-death.jpg", theme:"Necessary ending",
+            { group:"major", roman:"XIII", name:"Death", file:"images/cards/13-death.jpg", theme:"Necessary ending",
               meaning:"Something has completed its season. This is transformation, not catastrophe: a form ending so another can begin. Grief and relief can sit together.",
               practice:"Name what is actually over. Mark it. Do not keep watering a garden that has already gone to seed." },
-            { roman:"XIV", name:"Temperance", file:"images/cards/14-temperance.jpg", theme:"Blending opposites",
+            { group:"major", roman:"XIV", name:"Temperance", file:"images/cards/14-temperance.jpg", theme:"Blending opposites",
               meaning:"The way through is mixture, not extremes. Two ingredients that seemed at odds can become a third thing if you pour slowly.",
               practice:"Where are you all-or-nothing? Design a middle path that honours both needs instead of sacrificing one." },
-            { roman:"XV", name:"The Devil", file:"images/cards/15-the-devil.jpg", theme:"What binds you",
+            { group:"major", roman:"XV", name:"The Devil", file:"images/cards/15-the-devil.jpg", theme:"What binds you",
               meaning:"Attachment can look like fate. Habits, fear, appetite or a story about powerlessness keep the chain in place — and the chain is often looser than it feels.",
               practice:"Name the bind without shame. Then test it: what happens if you loosen one link today?" },
-            { roman:"XVI", name:"The Tower", file:"images/cards/16-the-tower.jpg", theme:"Sudden truth",
+            { group:"major", roman:"XVI", name:"The Tower", file:"images/cards/16-the-tower.jpg", theme:"Sudden truth",
               meaning:"A structure built on an untrue foundation cannot stand. The shock is honest. After the dust, you can see the ground.",
               practice:"If something has already fallen, do not rebuild the same wall. Ask what the collapse revealed that you can now use." },
-            { roman:"XVII", name:"The Star", file:"images/cards/17-the-star.jpg", theme:"Hope after the storm",
+            { group:"major", roman:"XVII", name:"The Star", file:"images/cards/17-the-star.jpg", theme:"Hope after the storm",
               meaning:"Quiet restoration. Faith here is practical: water the ground, look up, let the nervous system settle. Hope is a resource, not a slogan.",
               practice:"Choose one gentle repair — rest, a true conversation, a small creative act — and let it be enough for now." },
-            { roman:"XVIII", name:"The Moon", file:"images/cards/18-the-moon.jpg", theme:"Fog and instinct",
+            { group:"major", roman:"XVIII", name:"The Moon", file:"images/cards/18-the-moon.jpg", theme:"Fog and instinct",
               meaning:"Not everything is clear yet, and that is the point. Dreams, anxiety and half-seen shapes are information. Walk slowly. Do not invent monsters to fill the mist.",
               practice:"Separate fear from fact. Write both columns. Act only on what you can verify, and keep a light on the path." },
-            { roman:"XIX", name:"The Sun", file:"images/cards/19-the-sun.jpg", theme:"Clear daylight",
+            { group:"major", roman:"XIX", name:"The Sun", file:"images/cards/19-the-sun.jpg", theme:"Clear daylight",
               meaning:"Warmth, visibility, simple joy. What was obscure is easier to see. Share it. Let success be uncomplicated for a moment.",
               practice:"Name what is actually going well. Give it air and time. Clarity sometimes looks like allowing the good to be good." },
-            { roman:"XX", name:"Judgement", file:"images/cards/20-judgement.jpg", theme:"A call to rise",
+            { group:"major", roman:"XX", name:"Judgement", file:"images/cards/20-judgement.jpg", theme:"A call to rise",
               meaning:"A summons to a more honest version of your life. The past is not on trial so much as ready to be integrated so you can answer the call.",
               practice:"What are you being asked to step into? Say yes or no clearly. Half-answering keeps you in the old chapter." },
-            { roman:"XXI", name:"The World", file:"images/cards/21-the-world.jpg", theme:"The picture complete",
+            { group:"major", roman:"XXI", name:"The World", file:"images/cards/21-the-world.jpg", theme:"The picture complete",
               meaning:"A cycle closes well. Integration, belonging, the sense that the pieces belong to one picture. Completion is also a doorway.",
-              practice:"Mark the ending properly — thank it, document it, celebrate it — before you reach for the next beginning." }
+              practice:"Mark the ending properly — thank it, document it, celebrate it — before you reach for the next beginning." },
+
+            { group:"wands", roman:"Ace", name:"Ace of Wands", theme:"A spark you can use",
+              meaning:"Fresh heat. An idea, an urge or a beginning with real life in it. The gift is ignition, not a finished plan.",
+              practice:"Do not over-plan the first hour. Take the smallest action that proves the spark is real." },
+            { group:"wands", roman:"II", name:"Two of Wands", theme:"Looking out from here",
+              meaning:"You have a foothold. The next question is direction — stay with what you know, or step toward a wider map.",
+              practice:"Name the horizon you keep glancing at. Decide whether this month is for holding ground or leaving it." },
+            { group:"wands", roman:"III", name:"Three of Wands", theme:"Work already underway",
+              meaning:"Something you sent out is in motion. Waiting here is active: watching the water, adjusting, staying ready.",
+              practice:"Follow up on what you launched. The next move is often a message, a revision, or simply staying visible." },
+            { group:"wands", roman:"IV", name:"Four of Wands", theme:"A stable landing",
+              meaning:"A threshold worth marking. Home, milestone, reunion, a structure that can hold celebration without collapsing.",
+              practice:"Name what has actually been built. Mark it in a simple way so the nervous system can register safety." },
+            { group:"wands", roman:"V", name:"Five of Wands", theme:"Competing heat",
+              meaning:"Several wills in the same room. Friction can sharpen the work if it does not become a fight for its own sake.",
+              practice:"Separate useful disagreement from noise. Give each voice a turn, then choose one direction." },
+            { group:"wands", roman:"VI", name:"Six of Wands", theme:"Visible progress",
+              meaning:"Recognition after effort. The point is not vanity; it is proof that the path is working and can be shared.",
+              practice:"Accept the credit that is due, then decide what the next quiet stretch of work will be." },
+            { group:"wands", roman:"VII", name:"Seven of Wands", theme:"Holding your ground",
+              meaning:"You are asked to defend a position you earned. Courage here is stamina, not theatrics.",
+              practice:"Know what you will not concede. Then stop arguing with people who are not in the conversation that matters." },
+            { group:"wands", roman:"VIII", name:"Eight of Wands", theme:"Things moving quickly",
+              meaning:"Messages, travel, decisions arriving in a cluster. Speed is available — so is scattering.",
+              practice:"Handle what is live today. Park the rest. Fast does not have to mean sloppy." },
+            { group:"wands", roman:"IX", name:"Nine of Wands", theme:"Tired and still standing",
+              meaning:"You have been through enough to be wary. The last stretch asks for rest without abandoning the post.",
+              practice:"Protect your energy. Ask what one boundary or one night of sleep would change before you push again." },
+            { group:"wands", roman:"X", name:"Ten of Wands", theme:"Too much on the back",
+              meaning:"Responsibility has stacked past usefulness. Carrying everything yourself is not the same as being reliable.",
+              practice:"Put one load down. Delegate, delay or drop it. Capacity is part of the work." },
+            { group:"wands", roman:"Page", name:"Page of Wands", theme:"Curious fire",
+              meaning:"A beginner’s heat: enthusiasm, a message, a trial run. Skill will come; interest is the first material.",
+              practice:"Follow the spark far enough to learn if it is yours. A small experiment beats a grand announcement." },
+            { group:"wands", roman:"Knight", name:"Knight of Wands", theme:"Forward without delay",
+              meaning:"Courage with motion. The risk is leaving before the work is finished, or starting three fires at once.",
+              practice:"Choose one pursuit for the next two weeks. Let the rest wait until this one has a shape." },
+            { group:"wands", roman:"Queen", name:"Queen of Wands", theme:"Warm authority",
+              meaning:"Presence that does not need to shout. Confidence here includes others without shrinking yourself.",
+              practice:"Stand in what you know. Share the warmth, keep the centre. Visibility is allowed." },
+            { group:"wands", roman:"King", name:"King of Wands", theme:"Direction with heat",
+              meaning:"Vision that can organise other people. Leadership here is purpose, not control for its own sake.",
+              practice:"State the aim in one sentence. Then give the people around you a clear next step." },
+
+            { group:"cups", roman:"Ace", name:"Ace of Cups", theme:"A feeling that can open",
+              meaning:"Fresh water. Love, compassion, creativity or simple feeling returning after drought. The cup is offered; you still choose to drink.",
+              practice:"Notice what softens you. Give that feeling a small, safe place to exist this week." },
+            { group:"cups", roman:"II", name:"Two of Cups", theme:"A meeting of equals",
+              meaning:"Reciprocity. Two people, or two parts of you, able to face each other without performing.",
+              practice:"Name the relationship that wants balance. Offer what you hope to receive, and watch what comes back." },
+            { group:"cups", roman:"III", name:"Three of Cups", theme:"Shared joy",
+              meaning:"Friendship, reunion, the relief of being among people who do not require a mask.",
+              practice:"Make one real gathering — even a short one. Belonging is maintained by showing up." },
+            { group:"cups", roman:"IV", name:"Four of Cups", theme:"Turning inward",
+              meaning:"Apathy or self-protection can look like boredom. Something is being offered that you cannot see yet because you are full of the last disappointment.",
+              practice:"Look up once. What is actually available now, not what you expected last season?" },
+            { group:"cups", roman:"V", name:"Five of Cups", theme:"What was spilled",
+              meaning:"Grief is real. So is the part of the picture still standing behind you. Both can be true in the same hour.",
+              practice:"Mourn what is gone without deciding that everything is gone. Turn when you are ready, not before." },
+            { group:"cups", roman:"VI", name:"Six of Cups", theme:"The past as a resource",
+              meaning:"Memory, kindness, an older version of you. Nostalgia helps when it nourishes; it hinders when it becomes a hiding place.",
+              practice:"Take one good thing from then and use it now. Leave the rest in its time." },
+            { group:"cups", roman:"VII", name:"Seven of Cups", theme:"Too many pictures",
+              meaning:"Options, fantasies, wishes without a body. Imagination is rich here; choice is the missing piece.",
+              practice:"Pick one image and test it in the real world. The rest can wait on the shelf." },
+            { group:"cups", roman:"VIII", name:"Eight of Cups", theme:"Walking away with respect",
+              meaning:"You have given this what you can. Leaving is not failure when the feeling has already gone.",
+              practice:"Name what you are finished with. Leave cleanly enough that you do not have to keep explaining." },
+            { group:"cups", roman:"IX", name:"Nine of Cups", theme:"A wish with a body",
+              meaning:"Satisfaction that is allowed. Pleasure, comfort, a desire met. The work is to receive it without apology or immediate raising of the bar.",
+              practice:"Enjoy what is working. Say thank you to it before you ask for the next thing." },
+            { group:"cups", roman:"X", name:"Ten of Cups", theme:"A shared home in feeling",
+              meaning:"Emotional completeness — family in whatever form you mean it. Harmony here is practiced, not accidental.",
+              practice:"Protect the climate of the household or the inner family. One kind act keeps the picture intact." },
+            { group:"cups", roman:"Page", name:"Page of Cups", theme:"A tender message",
+              meaning:"New feeling, a creative impulse, an unexpected kindness. The invitation is to stay open without becoming unguarded.",
+              practice:"Answer the small emotional signal. A note, a sketch, a true sentence is enough." },
+            { group:"cups", roman:"Knight", name:"Knight of Cups", theme:"Feeling as a quest",
+              meaning:"Romance, art, an offer carried with sincerity. The risk is living in the poem and missing the person.",
+              practice:"If you are offering your heart, be specific. If you are receiving, ask what the offer actually is." },
+            { group:"cups", roman:"Queen", name:"Queen of Cups", theme:"Deep water, steady banks",
+              meaning:"Empathy with a spine. You can hold feeling — yours and others’ — without drowning in it.",
+              practice:"Listen fully. Then decide what is yours to carry home and what is not." },
+            { group:"cups", roman:"King", name:"King of Cups", theme:"Feeling under stewardship",
+              meaning:"Emotional authority. Calm is not coldness; it is the ability to stay present when the water rises.",
+              practice:"Respond rather than react. Name the feeling, then choose the action that keeps dignity for everyone involved." },
+
+            { group:"swords", roman:"Ace", name:"Ace of Swords", theme:"A clean cut of truth",
+              meaning:"Insight that divides confusion from fact. A word, a decision, a principle that can stand the light.",
+              practice:"Write the true sentence. Say it where it needs to be said, without extra theatre." },
+            { group:"swords", roman:"II", name:"Two of Swords", theme:"The stalemate",
+              meaning:"A decision postponed behind a blindfold. Peace here is temporary; the facts are still waiting.",
+              practice:"Remove one piece of the blindfold. You do not need the whole answer — only the next honest fact." },
+            { group:"swords", roman:"III", name:"Three of Swords", theme:"Pain that tells the truth",
+              meaning:"Heartbreak, disappointment, a sharp piece of reality. The card does not ask you to enjoy it. It asks you not to lie about it.",
+              practice:"Let the hurt be named. Then ask what this truth now makes possible that the old story did not." },
+            { group:"swords", roman:"IV", name:"Four of Swords", theme:"A necessary rest",
+              meaning:"The mind needs a closed door. Recovery is strategy, not luxury, after strain or conflict.",
+              practice:"Schedule quiet as if it were an appointment. No new arguments until you have slept." },
+            { group:"swords", roman:"V", name:"Five of Swords", theme:"A hollow win",
+              meaning:"Someone got the last word. The cost may be the room. Victory that isolates is worth examining.",
+              practice:"Ask whether being right is still worth the relationship. If you must leave the fight, leave without taking trophies." },
+            { group:"swords", roman:"VI", name:"Six of Swords", theme:"Passage to calmer water",
+              meaning:"Leaving difficulty with what you can carry. The crossing is quiet, not triumphant — and that is enough.",
+              practice:"Take the next practical step away from the storm. Pack only what you will need on the other side." },
+            { group:"swords", roman:"VII", name:"Seven of Swords", theme:"What is being hidden",
+              meaning:"Strategy, secrecy, or a truth being moved out of sight. Sometimes survival; sometimes avoidance.",
+              practice:"Name what cannot stay in the shadows. If you are the one concealing, decide whether the cost of hiding has grown larger than the risk of speaking." },
+            { group:"swords", roman:"VIII", name:"Eight of Swords", theme:"The bind that is mostly thought",
+              meaning:"Restriction feels total. Often the ropes are belief, habit and the story that there is no door.",
+              practice:"Find one small movement that is actually available. The first free step is usually closer than the mind admits." },
+            { group:"swords", roman:"IX", name:"Nine of Swords", theme:"The night mind",
+              meaning:"Worry rehearsing itself. The pictures at 3 a.m. are rarely the full account of the day.",
+              practice:"Write the fears down and leave them on the page. In daylight, circle only what you can act on." },
+            { group:"swords", roman:"X", name:"Ten of Swords", theme:"The end of that story",
+              meaning:"A chapter has exhausted itself. The image is stark so you will stop bargaining with what is finished.",
+              practice:"Stop picking the wound. Tend the body, tell one trusted person, and let the sun come up on a different sentence." },
+            { group:"swords", roman:"Page", name:"Page of Swords", theme:"A mind that wants to learn",
+              meaning:"Curiosity, questions, news. Watchfulness is useful until it becomes suspicion of everything.",
+              practice:"Ask the question you are actually wondering. Gather facts before you build a theory." },
+            { group:"swords", roman:"Knight", name:"Knight of Swords", theme:"Charge toward the point",
+              meaning:"Swift intellect, a battle chosen, words used as a blade. Speed can serve truth or cut the wrong thing.",
+              practice:"Pause long enough to aim. Then speak or act once, clearly, and stop." },
+            { group:"swords", roman:"Queen", name:"Queen of Swords", theme:"Clear seeing, kind edge",
+              meaning:"Discernment without cruelty. You can tell the truth and still leave people their dignity.",
+              practice:"Cut what is false. Keep what is human. Precision is a form of care." },
+            { group:"swords", roman:"King", name:"King of Swords", theme:"Principle with authority",
+              meaning:"Judgement that can hold a standard. Fairness here is reasoned, not cold for its own sake.",
+              practice:"Decide by the rule you would want applied to you. Then communicate the decision without fog." },
+
+            { group:"pentacles", roman:"Ace", name:"Ace of Pentacles", theme:"A seed in the real world",
+              meaning:"A tangible beginning: money, work, health, a chance you can hold. Potential that wants soil, not just talk.",
+              practice:"Plant it. Open the account, send the application, book the appointment. Begin in matter." },
+            { group:"pentacles", roman:"II", name:"Two of Pentacles", theme:"Keeping two things in motion",
+              meaning:"Juggling time, money or roles. Flexibility is the skill; drop the fantasy of doing all of it perfectly.",
+              practice:"Name the two priorities that actually matter this week. Let the third wait." },
+            { group:"pentacles", roman:"III", name:"Three of Pentacles", theme:"Work done together",
+              meaning:"Craft, collaboration, a standard being met in public. Skill improves when other eyes are on the work.",
+              practice:"Show someone the draft. Ask for the kind of feedback that makes the thing better, not just praised." },
+            { group:"pentacles", roman:"IV", name:"Four of Pentacles", theme:"Holding on",
+              meaning:"Security that can become a clenched fist. Saving is wisdom; hoarding is fear wearing a sensible coat.",
+              practice:"Keep what you need. Loosen one grip — a little money, a little control, a little trust — and see if the ground still holds." },
+            { group:"pentacles", roman:"V", name:"Five of Pentacles", theme:"Lean times",
+              meaning:"Shortage, exclusion, the cold outside the door. Help may be closer than pride wants to admit.",
+              practice:"Ask for the practical thing: advice, a meal, a shift, a clinic. Isolation makes winter longer." },
+            { group:"pentacles", roman:"VI", name:"Six of Pentacles", theme:"The flow of giving",
+              meaning:"Exchange that can be fair or uneven. Generosity is clean when it does not purchase power.",
+              practice:"Give what you can spare, or receive without performing gratitude you do not feel. Keep the ledger honest." },
+            { group:"pentacles", roman:"VII", name:"Seven of Pentacles", theme:"Waiting on growth",
+              meaning:"You have invested. The harvest is not yet. Patience here is assessment, not passivity.",
+              practice:"Look at the results so far. Double what is working; stop feeding what is not." },
+            { group:"pentacles", roman:"VIII", name:"Eight of Pentacles", theme:"The work of getting good",
+              meaning:"Repetition with care. Mastery is unglamorous: another hour, another correction, another finished piece.",
+              practice:"Return to the bench. One focused session will move you further than a new plan." },
+            { group:"pentacles", roman:"IX", name:"Nine of Pentacles", theme:"Enough, well tended",
+              meaning:"Self-sufficiency with grace. Enjoyment of what your labour grew, without needing an audience.",
+              practice:"Take the pleasure you earned. Protect the conditions that made it possible." },
+            { group:"pentacles", roman:"X", name:"Ten of Pentacles", theme:"What lasts beyond you",
+              meaning:"Family systems, inheritance, a house in the long sense — money, land, tradition, a business that can outlive a mood.",
+              practice:"Ask what you are building for the people who come after this week. Make one decision that serves the longer line." },
+            { group:"pentacles", roman:"Page", name:"Page of Pentacles", theme:"A student of the real",
+              meaning:"Willingness to learn a craft, a budget, a body of work. Seriousness in small things.",
+              practice:"Start the course, the spreadsheet, the habit. Treat the beginning as worthy of respect." },
+            { group:"pentacles", roman:"Knight", name:"Knight of Pentacles", theme:"Slow reliable motion",
+              meaning:"The long road taken on purpose. Not exciting; trustworthy. Progress you can count.",
+              practice:"Do the unglamorous next task. Consistency will beat intensity here." },
+            { group:"pentacles", roman:"Queen", name:"Queen of Pentacles", theme:"Practical care",
+              meaning:"Nourishment you can touch: food, money sense, a room that works, a body that is looked after.",
+              practice:"Tend the physical layer. A good meal, a paid bill, a rest. Care is not an idea." },
+            { group:"pentacles", roman:"King", name:"King of Pentacles", theme:"Stewardship of plenty",
+              meaning:"Material authority used well. Stability that can shelter other people without turning them into dependents.",
+              practice:"Make the sound decision for the long term. Then share the security without making a show of it." }
         ];
 
+        const groupSelect = document.getElementById("groupSelect");
         const select = document.getElementById("cardSelect");
         const view = document.getElementById("view");
         const empty = document.getElementById("empty");
-
-        CARDS.forEach(function(card, i) {
-            const opt = document.createElement("option");
-            opt.value = String(i);
-            opt.textContent = card.roman + "  ·  " + card.name;
-            select.appendChild(opt);
-        });
-
-        function openCard(i) {
-            const card = CARDS[i];
-            select.value = String(i);
-            empty.style.display = "none";
-            view.classList.add("show");
-            const img = document.getElementById("cardImg");
-            img.src = card.file;
-            img.alt = card.name + " tarot card";
-            document.getElementById("roman").textContent = card.roman;
-            document.getElementById("title").textContent = card.name;
-            document.getElementById("theme").textContent = card.theme;
-            document.getElementById("upright").textContent = card.meaning;
-            document.getElementById("practice").textContent = card.practice;
-        }
+        const img = document.getElementById("cardImg");
+        const face = document.getElementById("cardFace");
 
         function slug(name) {
             return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
         }
 
+        function cardsInGroup(group) {
+            return CARDS.map(function(c, i) { return { card: c, index: i }; })
+                .filter(function(item) { return item.card.group === group; });
+        }
+
+        function fillSelect(group) {
+            select.innerHTML = "";
+            const ph = document.createElement("option");
+            ph.value = "";
+            ph.textContent = "Select a card…";
+            select.appendChild(ph);
+            cardsInGroup(group).forEach(function(item) {
+                const opt = document.createElement("option");
+                opt.value = String(item.index);
+                opt.textContent = item.card.roman + "  ·  " + item.card.name;
+                select.appendChild(opt);
+            });
+        }
+
+        function showFace(card) {
+            img.style.display = "none";
+            img.removeAttribute("src");
+            face.classList.add("show");
+            document.getElementById("faceMark").textContent = MARK[card.group] || "✦";
+            document.getElementById("faceName").textContent = card.name;
+            document.getElementById("faceGroup").textContent = card.group === "major" ? "Major Arcana" : card.group;
+        }
+
+        function openCard(i) {
+            const card = CARDS[i];
+            groupSelect.value = card.group;
+            fillSelect(card.group);
+            select.value = String(i);
+            empty.style.display = "none";
+            view.classList.add("show");
+            face.classList.remove("show");
+            document.getElementById("roman").textContent = card.roman;
+            document.getElementById("title").textContent = card.name;
+            document.getElementById("theme").textContent = card.theme;
+            document.getElementById("upright").textContent = card.meaning;
+            document.getElementById("practice").textContent = card.practice;
+
+            if (card.file) {
+                img.style.display = "block";
+                img.alt = card.name + " tarot card";
+                img.onerror = function() { showFace(card); };
+                img.onload = function() { face.classList.remove("show"); img.style.display = "block"; };
+                img.src = card.file;
+            } else {
+                showFace(card);
+            }
+        }
+
+        function resetView() {
+            empty.style.display = "block";
+            view.classList.remove("show");
+            face.classList.remove("show");
+            img.removeAttribute("src");
+        }
+
+        groupSelect.addEventListener("change", function() {
+            fillSelect(groupSelect.value);
+            resetView();
+            history.replaceState(null, "", "cards.html");
+        });
+
         select.addEventListener("change", function() {
             if (select.value === "") {
-                empty.style.display = "block";
-                view.classList.remove("show");
+                resetView();
                 history.replaceState(null, "", "cards.html");
                 return;
             }
-            openCard(Number(select.value));
-            history.replaceState(null, "", "cards.html#" + slug(CARDS[Number(select.value)].name));
+            const i = Number(select.value);
+            openCard(i);
+            history.replaceState(null, "", "cards.html#" + slug(CARDS[i].name));
             if (typeof gtag === "function") {
-                gtag("event", "view_item", { item_id: slug(CARDS[Number(select.value)].name) });
+                gtag("event", "view_item", { item_id: slug(CARDS[i].name) });
             }
         });
+
+        fillSelect("major");
 
         (function openFromHash() {
             const hash = (location.hash || "").replace(/^#/, "");
