@@ -51,10 +51,10 @@
             height: auto;
             margin: 0 auto 0.5rem;
             display: block;
-            border-radius: 50%;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
-            background-color: var(--deep-plum);
-            object-fit: cover;
+            border-radius: 0;
+            box-shadow: none;
+            background-color: transparent;
+            object-fit: contain;
         }
         header h1 {
             font-size: 1.32rem;
@@ -229,6 +229,16 @@
         }
         header.compact .logo {
             border-radius: 0;
+        }
+    
+        header img.logo,
+        img.logo {
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            background: transparent !important;
+            background-color: transparent !important;
+            object-fit: contain !important;
+            overflow: visible;
         }
     </style>
 </head>
