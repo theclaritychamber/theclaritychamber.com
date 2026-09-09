@@ -715,6 +715,31 @@
             .meet-media { grid-template-columns: 1fr; }
             .meet-loveleen .photo { max-width: 300px; margin: 0 auto; }
         }
+    
+        .meet-loveleen {
+            display: block !important;
+        }
+        .meet-loveleen .bio {
+            max-width: none;
+        }
+        .certificate {
+            margin: 1rem 0 1.2rem !important;
+            max-width: 420px !important;
+        }
+        .meet-loveleen .photo {
+            flex: none !important;
+            max-width: 320px !important;
+            width: 100%;
+            margin: 1.6rem auto 0 !important;
+            text-align: center;
+        }
+        .meet-loveleen .photo video {
+            aspect-ratio: 3 / 4 !important;
+            object-fit: cover;
+            object-position: 50% 18%;
+            margin: 0 auto;
+        }
+        .meet-media { display: none; }
     </style>
 </head>
 <body>
@@ -746,25 +771,23 @@
                     <p>Experienced, genuine and grounded.</p>
                     <p>Loveleen is an Advanced Tarot Practitioner who approaches every reading with honesty, intuition, warmth and care.</p>
                     <p>She completed the Tarot Master's Program at the Academy of Tarot, India, with her certificate dated 24 November 2021.</p>
-                    <p>Her approach is direct and honest while remaining thoughtful and empathetic. She uses tarot to help clients explore their questions, gain perspective and better understand the situation they are facing.</p>
-                    <p>Loveleen is comfortable reading on every topic and believes a meaningful reading should leave you with greater clarity—not fear or confusion.</p>
-                </div>
-                <div class="meet-media">
-                    <div class="photo">
-                        <video
-                            poster="images/loveleen-poster.jpg"
-                            controls
-                            playsinline
-                            preload="metadata"
-                            aria-label="Loveleen introducing a tarot reading at The Clarity Chamber">
-                            <source src="videos/loveleen-reading.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p class="video-caption">Welcome to The Clarity Chamber — a short introduction to the cards.</p>
-                    </div>
                     <figure class="certificate">
                         <img src="images/certificate.png" alt="Certificate of Completion, Tarot Master's Program, Academy of Tarot, awarded to Dr Loveleen Kaur Sarao on 24 November 2021">
                     </figure>
+                    <p>Her approach is direct and honest while remaining thoughtful and empathetic. She uses tarot to help clients explore their questions, gain perspective and better understand the situation they are facing.</p>
+                    <p>Loveleen is comfortable reading on every topic and believes a meaningful reading should leave you with greater clarity—not fear or confusion.</p>
+                </div>
+                <div class="photo">
+                    <video
+                        poster="images/loveleen-poster.jpg"
+                        controls
+                        playsinline
+                        preload="metadata"
+                        aria-label="Loveleen introducing a tarot reading at The Clarity Chamber">
+                        <source src="videos/loveleen-reading.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="video-caption">Welcome to The Clarity Chamber — a short introduction to the cards.</p>
                 </div>
             </div>
         </section>
