@@ -470,7 +470,10 @@
                 <p id="success-lead">Thank you. We’ve received your booking.</p>
                 <p id="success-detail">Please check your email for confirmation. If you booked a live reading, a calendar invitation will follow with the requested time in Australian Eastern Time.</p>
                 <p id="success-booking" style="margin-top:1rem; letter-spacing:0.04em;">Booking number: —</p>
-                <p id="success-next">We’ll be in touch shortly to confirm the details and next steps.</p>
+                <p id="success-next">Complete payment to confirm this booking.</p>
+                <p style="margin-top:1.4rem;">
+                    <a id="success-pay" href="#" style="display:inline-block;padding:0.85rem 2.5rem;background-color:var(--deep-plum);color:var(--soft-cream);text-decoration:none;letter-spacing:0.05em;">Submit a booking request</a>
+                </p>
             </div>
 
             <form id="booking-form">
@@ -560,7 +563,7 @@
                     </div>
 
                     <div class="full-width">
-                        <button type="submit" id="submit-btn">Submit booking request</button>
+                        <button type="submit" id="submit-btn">Save booking request</button>
                         <p id="form-status"></p>
                     </div>
                 </div>
@@ -571,6 +574,15 @@
 
     <script>
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyrLcMbIha3Gs2lwjKD54c92xmXx4fpSSGXcvXGLikhXQGUaK8PgD_qZfqyK7ARiY5K7Q/exec';
+
+        const PAYMENT_LINKS = {
+            'live-30': 'https://book.stripe.com/3cI7sFaOA3zJ1R5b5C3AY00',
+            'live-60': 'https://book.stripe.com/fZu28lf4Qfir8ft7Tq3AY01',
+            'live-90': 'https://book.stripe.com/dRm8wJaOA3zJ8ftddK3AY02',
+            'rec-5': 'https://book.stripe.com/dRmbIV8Gsc6fdzNa1y3AY03',
+            'rec-7': 'https://book.stripe.com/5kQfZb5ugc6fbrFb5C3AY04',
+            'rec-11': 'https://book.stripe.com/9B6bIV3m80nx8ft0qY3AY05'
+        };
 
         // Edit this to match your live-reading availability (Australia/Sydney)
         const AVAILABILITY = {
@@ -891,6 +903,16 @@
                 bookingEl.textContent = 'Booking number: ' + bookingNumber;
             }
 
+            const payBtn = document.getElementById('success-pay');
+            const pkg = document.getElementById('reading-option').value;
+            const payUrl = PAYMENT_LINKS[pkg];
+            if (payBtn && payUrl && payUrl.indexOf('PASTE_STRIPE_') !== 0) {
+                payBtn.href = payUrl;
+                payBtn.style.display = 'inline-block';
+            } else if (payBtn) {
+                payBtn.style.display = 'none';
+            }
+
             form.style.display = 'none';
             successMsg.style.display = 'block';
             window.scrollTo({ top: successMsg.offsetTop - 40, behavior: 'smooth' });
@@ -969,7 +991,7 @@
                 status.textContent = 'Sorry, there was a problem submitting your booking. Please try again or email us directly.';
                 status.style.color = '#a33';
                 submitBtn.disabled = false;
-                submitBtn.textContent = 'Submit';
+                submitBtn.textContent = 'Save booking request';
                 console.error(error);
             }
         });
