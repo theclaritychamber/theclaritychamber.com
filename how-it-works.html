@@ -639,6 +639,111 @@
             }
             main { padding: 1.7rem 1.2rem 2.4rem !important; }
         }
+    
+        /* How it works — page layout */
+        .hiw-lead {
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto 2.4rem;
+        }
+        .hiw-lead .mark {
+            color: var(--warm-gold);
+            letter-spacing: 0.28em;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            margin-bottom: 0.7rem;
+        }
+        .hiw-lead h2.tagline {
+            font-size: 1.7rem !important;
+            letter-spacing: 0.06em;
+            line-height: 1.3;
+            margin-bottom: 0.9rem !important;
+            padding-bottom: 0 !important;
+        }
+        .hiw-lead h2.tagline::after { display: none !important; }
+        .hiw-lead p {
+            margin-bottom: 0.85rem;
+            color: #3d314a;
+        }
+        .hiw-lead .closing {
+            margin-top: 1.1rem;
+            color: var(--dusty-mauve);
+            font-style: italic;
+            font-size: 1.05rem;
+        }
+        .steps {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.1rem;
+            margin-top: 1.2rem;
+            counter-reset: step-counter;
+        }
+        .steps li {
+            background: #fff;
+            border: 1px solid var(--muted-taupe);
+            border-radius: 2px;
+            padding: 1.35rem 1.3rem 1.3rem 1.3rem;
+            position: relative;
+            min-height: 100%;
+        }
+        .steps li::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.7rem;
+            height: 1.7rem;
+            margin-bottom: 0.7rem;
+            background: var(--deep-plum);
+            color: var(--soft-cream);
+            border: 1px solid var(--warm-gold);
+            font-size: 0.9rem;
+            position: static;
+            transform: none;
+            left: auto;
+            top: auto;
+        }
+        .steps strong {
+            display: block;
+            color: var(--dusty-mauve);
+            font-size: 1.08rem;
+            margin-bottom: 0.35rem;
+            font-weight: 400;
+        }
+        .steps li span {
+            display: block;
+            color: #4a3f55;
+            font-size: 0.97rem;
+            line-height: 1.65;
+        }
+        .hiw-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            justify-content: center;
+            margin-top: 0.4rem;
+        }
+        .hiw-actions a {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            font-size: 0.92rem;
+            border: 1px solid var(--deep-plum);
+        }
+        .hiw-actions .primary {
+            background: var(--deep-plum);
+            color: var(--soft-cream);
+        }
+        .hiw-actions .ghost {
+            background: transparent;
+            color: var(--deep-plum);
+        }
+        @media (max-width: 700px) {
+            .steps { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -663,12 +768,12 @@
     </header>
 
     <main id="main">
-        <section class="intro">
+        <section class="hiw-lead">
+            <p class="mark">The process</p>
             <h2 class="tagline">Find Clarity.<br>Move Forward.</h2>
-            <div class="divider">✦</div>
             <p>The Clarity Chamber is a space to pause, reflect and gain honest insights through the wisdom of tarot.</p>
             <p>Loveleen's readings are direct, intuitive and thoughtful—delivered with empathy so you can see your path with greater clarity.</p>
-            <p class="closing">Clarity is the first step.<br>You take the next.</p>
+            <p class="closing">Clarity is the first step. You take the next.</p>
         </section>
 
         <section>
@@ -693,8 +798,9 @@
             </ul>
         </section>
 
-        <div class="faq-link">
-            <a href="faq.html">View Frequently Asked Questions</a>
+        <div class="hiw-actions">
+            <a class="primary" href="contact.html">Book a Reading</a>
+            <a class="ghost" href="faq.html">View Frequently Asked Questions</a>
         </div>
     </main>
 
