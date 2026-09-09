@@ -23,10 +23,12 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="The Clarity Chamber">
-    <meta property="og:title" content="The Clarity Chamber | Tarot by Loveleen Sarao">
+    <meta property="og:title" content="Tarot Readings in Australia | The Clarity Chamber">
     <meta property="og:description" content="Tarot readings with Loveleen Sarao for clarity, perspective and honest guidance. Live video and recorded readings from The Clarity Chamber.">
     <meta property="og:url" content="https://theclaritychamber.com/">
-    <meta property="og:image" content="https://theclaritychamber.com/images/logo.png">
+    <meta property="og:image" content="https://theclaritychamber.com/images/og-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <style>
         :root {
@@ -515,7 +517,7 @@
             margin: 0.8rem auto 0;
             cursor: pointer;
         }
-        @media (max-width: 700px) {
+        @media (max-width: 900px) {
             .nav-toggle { display: inline-block; }
             header nav {
                 display: none;
@@ -557,6 +559,25 @@
                 max-width: 132px;
             }
         }
+    
+        .intro-with-photo {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(180px, 280px);
+            gap: 2rem;
+            align-items: start;
+        }
+        .intro-photo { margin: 0; }
+        .intro-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            box-shadow: 0 8px 24px rgba(46, 31, 61, 0.12);
+        }
+        @media (max-width: 700px) {
+            .intro-with-photo { grid-template-columns: 1fr; }
+            .intro-photo { order: -1; max-width: 320px; }
+        }
     </style>
 </head>
 <body>
@@ -581,13 +602,18 @@
     </header>
 
     <main id="main">
-        <section>
+        <section class="intro-with-photo">
+            <div class="intro-copy">
             <h2>A Space for Perspective</h2>
             <p>Sometimes clarity begins with looking at things differently.</p>
             <p>Life can bring questions about relationships, career, important decisions, personal growth or simply what comes next.</p>
             <p>A tarot reading can offer a different perspective—helping you explore what may be influencing a situation, understand your thoughts and feelings, and consider the possibilities ahead.</p>
             <p>The aim is not to tell you what to do, but to help you find greater clarity so you can move forward with confidence.</p>
             <p><a class="intro-cta" href="readings.html">See readings &amp; prices</a></p>
+            </div>
+            <figure class="intro-photo">
+                <img src="images/Loveleen-approach.JPG" alt="Loveleen Sarao, tarot reader at The Clarity Chamber">
+            </figure>
         </section>
 
         <section class="atmosphere">
@@ -673,6 +699,7 @@
             <a href="cancel.html">Cancel a booking</a>
             <a href="legal.html">Legal</a>
         </p>
+        <p class="footer-meta">Prices in AUD. Live times in AEST/AEDT.</p>
         <p class="footer-contact"><a href="mailto:loveleensarao@theclaritychamber.com">loveleensarao@theclaritychamber.com</a> · <a href="tel:+61475756576">+61 475 756 576</a></p>
         <p>&copy; 2026 The Clarity Chamber. All rights reserved.</p>
     </footer>
