@@ -15,16 +15,17 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"ProfessionalService","name":"The Clarity Chamber","url":"https://theclaritychamber.com/","email":"loveleensarao@theclaritychamber.com","telephone":"+61475756576","areaServed":"AU","currenciesAccepted":"AUD","priceRange":"$60–$100","founder":{"@type":"Person","name":"Loveleen Sarao","jobTitle":"Advanced Tarot Practitioner"}}
     </script>
-    <title>The Cards | THE CLARITY CHAMBER</title>
+    <title>Tarot Card Meanings | The Clarity Chamber</title>
     <meta name="description" content="Explore the Major and Minor Arcana used at The Clarity Chamber. Choose a card to see a grounded meaning — direct, thoughtful, and free of fear.">
-    <link rel="icon" href="images/Logo.jpg" type="image/jpeg">
-    <link rel="apple-touch-icon" href="images/Logo.jpg">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="The Clarity Chamber">
     <meta property="og:title" content="The Cards | The Clarity Chamber">
     <meta property="og:description" content="Explore the Major and Minor Arcana used at The Clarity Chamber. Choose a card to see a grounded meaning.">
     <meta property="og:url" content="https://theclaritychamber.com/cards.html">
-    <meta property="og:image" content="https://theclaritychamber.com/images/Logo.jpg">
+    <meta property="og:image" content="https://theclaritychamber.com/images/logo.png">
     <meta name="twitter:card" content="summary_large_image">
     <style>
         :root {
@@ -59,9 +60,9 @@
             margin: 0 auto 1.2rem;
             display: block;
             border-radius: 0;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
-            background-color: var(--deep-plum);
-            object-fit: cover;
+            box-shadow: none;
+            background-color: transparent;
+            object-fit: contain;
         }
 
         header h1 {
@@ -358,15 +359,84 @@
             .chooser-row { grid-template-columns: 1fr; }
             .suits { grid-template-columns: 1fr; }
         }
+    
+        a.skip-link {
+            position: absolute;
+            left: 1rem;
+            top: -40px;
+            background: var(--warm-gold);
+            color: var(--deep-plum);
+            padding: 0.4rem 0.8rem;
+            z-index: 100;
+            text-decoration: none;
+        }
+        a.skip-link:focus { top: 0.6rem; }
+        .nav-toggle {
+            display: none;
+            background: transparent;
+            border: 1px solid rgba(212,175,55,0.45);
+            color: var(--soft-cream);
+            font: inherit;
+            letter-spacing: 0.06em;
+            padding: 0.4rem 0.8rem;
+            margin: 0.8rem auto 0;
+            cursor: pointer;
+        }
+        @media (max-width: 700px) {
+            .nav-toggle { display: inline-block; }
+            header nav {
+                display: none;
+                margin-top: 0.6rem;
+            }
+            header nav.is-open { display: block; }
+            header nav a { display: block; margin: 0.45rem 0; }
+        }
+    
+        /* Canonical brand mark — same file and crop on every page */
+        header img.logo,
+        img.logo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 96px;
+            height: auto;
+            max-width: 96px;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            background: transparent !important;
+            background-color: transparent !important;
+            object-fit: contain !important;
+            object-position: center center !important;
+        }
+        header:not(.compact) img.logo {
+            width: 168px;
+            max-width: 168px;
+            margin-bottom: 1rem;
+        }
+        header.compact img.logo {
+            width: 96px;
+            max-width: 96px;
+            margin-bottom: 0.45rem;
+        }
+        @media (max-width: 700px) {
+            header:not(.compact) img.logo {
+                width: 132px;
+                max-width: 132px;
+            }
+        }
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    
     <header class="compact">
-        <img src="images/Logo.jpg" alt="The Clarity Chamber Tarot Readings Logo" class="logo">
+        <img src="images/logo.png" alt="The Clarity Chamber Tarot Readings Logo" class="logo">
         <h1>THE CLARITY CHAMBER</h1>
         <p class="tagline-lead">Find clarity. Move forward.</p>
         <p class="tagline-sub">Tarot readings for clarity, perspective &amp; honest guidance.</p>
-        <nav>
+                <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav">
+
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="readings.html">Readings</a>
@@ -377,7 +447,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main">
         <section>
             <h2>The Cards</h2>
             <p>A full deck has seventy-eight cards. Twenty-two Major Arcana map the larger themes of a life. Fifty-six Minor Arcana describe the weather of ordinary days — work, feeling, thought and the material world.</p>
@@ -406,6 +476,9 @@
                 </article>
             </div>
 
+            <noscript>
+                <p>Card meanings are listed in the page source and can be requested by email if JavaScript is unavailable. Enable JavaScript to browse the deck on this page.</p>
+            </noscript>
             <div class="chooser-row">
                 <div class="chooser">
                     <label for="groupSelect">Choose a group</label>
@@ -804,5 +877,19 @@
             if (i >= 0) openCard(i);
         })();
     </script>
+
+<script>
+(function(){
+  var btn = document.querySelector(".nav-toggle");
+  var nav = document.querySelector("header nav");
+  if (!btn || !nav) return;
+  btn.addEventListener("click", function(){
+    var open = nav.classList.toggle("is-open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.textContent = open ? "Close menu" : "Menu";
+  });
+})();
+</script>
+
 </body>
 </html>

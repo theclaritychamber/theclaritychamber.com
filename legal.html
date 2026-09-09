@@ -16,7 +16,7 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"ProfessionalService","name":"The Clarity Chamber","url":"https://theclaritychamber.com/","email":"loveleensarao@theclaritychamber.com","telephone":"+61475756576","areaServed":"AU","currenciesAccepted":"AUD","priceRange":"$60–$100","founder":{"@type":"Person","name":"Loveleen Sarao","jobTitle":"Advanced Tarot Practitioner"}}
     </script>
-    <title>Legal | THE CLARITY CHAMBER</title>
+    <title>Privacy, Terms &amp; Cancellation | The Clarity Chamber</title>
     <meta name="description" content="Privacy policy, terms, cancellation policy and disclaimer for The Clarity Chamber.">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
@@ -309,15 +309,84 @@
             object-fit: contain !important;
             overflow: visible;
         }
+    
+        a.skip-link {
+            position: absolute;
+            left: 1rem;
+            top: -40px;
+            background: var(--warm-gold);
+            color: var(--deep-plum);
+            padding: 0.4rem 0.8rem;
+            z-index: 100;
+            text-decoration: none;
+        }
+        a.skip-link:focus { top: 0.6rem; }
+        .nav-toggle {
+            display: none;
+            background: transparent;
+            border: 1px solid rgba(212,175,55,0.45);
+            color: var(--soft-cream);
+            font: inherit;
+            letter-spacing: 0.06em;
+            padding: 0.4rem 0.8rem;
+            margin: 0.8rem auto 0;
+            cursor: pointer;
+        }
+        @media (max-width: 700px) {
+            .nav-toggle { display: inline-block; }
+            header nav {
+                display: none;
+                margin-top: 0.6rem;
+            }
+            header nav.is-open { display: block; }
+            header nav a { display: block; margin: 0.45rem 0; }
+        }
+    
+        /* Canonical brand mark — same file and crop on every page */
+        header img.logo,
+        img.logo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 96px;
+            height: auto;
+            max-width: 96px;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            background: transparent !important;
+            background-color: transparent !important;
+            object-fit: contain !important;
+            object-position: center center !important;
+        }
+        header:not(.compact) img.logo {
+            width: 168px;
+            max-width: 168px;
+            margin-bottom: 1rem;
+        }
+        header.compact img.logo {
+            width: 96px;
+            max-width: 96px;
+            margin-bottom: 0.45rem;
+        }
+        @media (max-width: 700px) {
+            header:not(.compact) img.logo {
+                width: 132px;
+                max-width: 132px;
+            }
+        }
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    
     <header class="compact">
         <img src="images/logo.png" alt="The Clarity Chamber Tarot Readings Logo" class="logo">
         <h1>THE CLARITY CHAMBER</h1>
         <p class="tagline-lead">Find clarity. Move forward.</p>
         <p class="tagline-sub">Tarot readings for clarity, perspective &amp; honest guidance.</p>
-        <nav>
+                <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav">
+
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="readings.html">Readings</a>
@@ -328,81 +397,57 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main">
         <section>
             <h2>Privacy Policy</h2>
-            <p>The Clarity Chamber (“we”, “us”), operated by Loveleen Sarao, respects your privacy and handles personal information in line with the Australian Privacy Principles where they apply.</p>
-            <h3>What we collect</h3>
-            <p>When you book, pay, email, call, use a feedback form, or use the website, we may collect: name, email, phone, booking number, reading type and package, preferred date, time and platform, questions and remarks you submit, payment status (not your full card number), and messages you send us. The website may also collect basic technical data such as pages visited, through Google Analytics.</p>
-            <h3>How we use it</h3>
-            <p>We use this information to provide and manage readings, send confirmations and calendar invites, process or refund payments, deliver recordings, respond to you, improve the service, and meet legal obligations.</p>
-            <p>We do not sell your personal information for marketing.</p>
-            <h3>Who we share it with</h3>
-            <p>We share only what is needed to run the service:</p>
-            <p><strong>Stripe</strong> — payment processing. Card details are handled by Stripe, not stored by us. Stripe’s terms and privacy policy apply to that payment.</p>
-            <p><strong>Google</strong> (Workspace, Gmail, Calendar, Drive, Sheets, Forms, Apps Script, Analytics, Google Meet) — bookings, email, calendar invites, files, forms and site analytics. Google’s terms and privacy policy apply to those services.</p>
-            <p><strong>Zoom</strong> — if you choose Zoom for a live reading. Zoom’s terms and privacy policy apply to that session.</p>
-            <p><strong>GitHub</strong> — hosting of the public website.</p>
-            <p><strong>Squarespace</strong> — domain registration and DNS.</p>
-            <p>We do not control how those providers handle data once it is on their systems.</p>
-            <h3>Recordings and readings</h3>
-            <p>Live sessions are not routinely recorded by us. Recorded readings and written summaries are prepared for you and sent to the email you give. They are for your personal use. Please do not share or republish them. We keep copies only as needed to deliver the service and handle follow-up.</p>
-            <h3>Storage and security</h3>
-            <p>Information is stored in Google Workspace and related tools. We take reasonable steps to protect it from misuse, loss and unauthorised access. No online system is completely secure.</p>
-            <h3>Access and questions</h3>
-            <p>You may ask to access or correct your information, or raise a privacy concern, by emailing <a href="mailto:loveleensarao@theclaritychamber.com">loveleensarao@theclaritychamber.com</a>.</p>
+            <p>The Clarity Chamber respects your privacy and handles personal information responsibly, in line with the Australian Privacy Principles where they apply.</p>
+            <p>Information may be collected when you make a booking, submit questions, contact Loveleen or otherwise use the website. This may include your name, contact details, booking information, preferred appointment time, and information you voluntarily provide as part of your reading.</p>
+            <p>Personal information is used to provide and manage services, communicate with you, process bookings and payments, and meet applicable legal obligations.</p>
+            <p>Personal information will not be sold for marketing purposes.</p>
+            <p>The site uses Google Analytics (GA4) to understand how pages are used. Analytics cookies collect aggregated usage data such as pages viewed and approximate location. You can block analytics cookies in your browser if you prefer.</p>
+            <p>Where third-party providers are used, relevant information may be shared with them only as needed to provide the service. Current providers include: GitHub Pages (website hosting), Google Analytics, Stripe (card payments), Google Apps Script / Google Workspace (booking records and email), and Zoom or Google Meet (live sessions).</p>
+            <p>The website will take reasonable steps to protect personal information from misuse, loss, unauthorised access, modification or disclosure.</p>
+            <p>You may ask to access or correct personal information held about you, or raise a privacy concern, by emailing loveleensarao@theclaritychamber.com.</p>
         </section>
 
         <section>
-            <h2>Terms &amp; Conditions</h2>
-            <p>By booking or paying for a reading with The Clarity Chamber, you agree to these terms.</p>
-            <h3>The service</h3>
-            <p>Readings are for personal reflection, perspective and guidance. They are not medical, psychological, legal, financial or other professional advice. No particular outcome is guaranteed. You remain responsible for your own decisions.</p>
-            <h3>Eligibility</h3>
-            <p>You must be 18 or over.</p>
-            <h3>Booking and information</h3>
-            <p>You must give accurate contact and booking details. A booking request is received when the form is submitted. The booking is confirmed when payment is completed for the matching package, unless we tell you otherwise.</p>
-            <h3>Live Video Readings</h3>
-            <p>Sessions are held on Zoom or Google Meet, as you choose. You must have a suitable device, internet connection and access to that platform. We start and finish on time. If you arrive late, we work with the time remaining. If you have not joined within 10 minutes and we have not heard from you, the session may be treated as missed.</p>
-            <h3>Recorded Video Readings</h3>
-            <p>Recordings are prepared from the questions you submit and sent by email, usually within 3 business days after the questions are received. The recording and written summary are for your personal use only.</p>
-            <h3>Payment</h3>
-            <p>Prices are in Australian dollars as shown on the website. Payment is taken through Stripe payment links. Stripe’s terms apply to the payment itself.</p>
-            <h3>Third-party tools</h3>
-            <p>The website, email, calendar, forms, video and payments rely on Squarespace, GitHub, Google, Zoom and Stripe. Their own terms and acceptable-use rules apply. We are not responsible for an outage or policy change on those platforms, but we will offer a reasonable alternative where we can (for example a backup video option).</p>
-            <h3>Intellectual property</h3>
-            <p>Website content, card meanings and materials we send you stay our property, except for your personal right to use your own reading privately.</p>
-            <h3>Liability</h3>
-            <p>Nothing in these terms excludes, restricts or modifies a consumer guarantee, right or remedy that cannot legally be excluded under Australian law, including the Australian Consumer Law. Where we are allowed to limit our liability, we limit it to supplying the reading again or refunding the amount paid for that reading.</p>
-            <h3>Law</h3>
-            <p>These terms are governed by the laws of New South Wales, Australia, subject to your Australian Consumer Law rights.</p>
+            <h2>Terms & Conditions</h2>
+            <p>By booking or purchasing a reading through The Clarity Chamber, the client agrees to these Terms & Conditions.</p>
+            <p>Readings are provided for personal reflection, perspective and guidance. They do not constitute medical, psychological, legal, financial or other professional advice.</p>
+            <p>Clients must be 18 years or older.</p>
+            <p>Clients are responsible for providing accurate contact and booking information.</p>
+            <p>Live readings are conducted through Zoom or Google Meet. Clients are responsible for having a suitable device, internet connection and access to the relevant platform.</p>
+            <p>Recorded readings are prepared based on the questions submitted by the client and are delivered by email.</p>
+            <p>The Clarity Chamber does not guarantee any particular outcome from a reading.</p>
+            <p>Nothing in these Terms & Conditions excludes, restricts or modifies any consumer guarantee, right or remedy that cannot legally be excluded under Australian law, including the Australian Consumer Law.</p>
+            <p>These Terms & Conditions are governed by the laws of New South Wales, Australia, subject to applicable Australian Consumer Law rights.</p>
         </section>
 
         <section>
-            <h2>Cancellation, Rescheduling and Refund Policy</h2>
-            <p>This policy applies to bookings made through theclaritychamber.com. It does not remove rights you have under the Australian Consumer Law.</p>
+            <h2>Cancellation & Rescheduling Policy</h2>
+            
             <h3>Live Video Readings</h3>
-            <p>Give at least 24 hours’ notice to cancel or reschedule.</p>
-            <p><strong>24 hours or more before the appointment</strong><br>A 100% refund will be provided if you cancel. You may reschedule once without a fee, subject to available times.</p>
-            <p><strong>Less than 24 hours before, or a no-show</strong><br>A refund is not normally available. The session may be treated as used.</p>
-            <p>We may apply reasonable discretion for genuine exceptional circumstances.</p>
-            <p>Cancel online where the site allows, or email <a href="mailto:loveleensarao@theclaritychamber.com">loveleensarao@theclaritychamber.com</a> with your booking number. If you received a calendar invite, delete it after cancellation.</p>
-            <p>Refunds, where due, are returned by the original Stripe payment method. Stripe’s processing time applies.</p>
+            <p>Please provide at least 24 hours' notice if you need to cancel or reschedule.</p>
+            <p><strong>Cancellation 24+ hours before the appointment</strong><br>A 100% refund will be provided.</p>
+            <p><strong>Rescheduling 24+ hours before the appointment</strong><br>You may reschedule without a fee, subject to appointment availability.</p>
+            <p><strong>Cancellation or rescheduling less than 24 hours before the appointment</strong><br>Late cancellations or rescheduling requests will normally not be eligible for a refund and may be treated as a cancellation or no-show.</p>
+            <p>Reasonable discretion may be applied where genuine exceptional circumstances arise.</p>
+
             <h3>Recorded Video Readings</h3>
-            <p>A 100% refund is available if you cancel before your questions are submitted or before preparation has begun.</p>
+            <p>A 100% refund is available if the cancellation occurs before the questions have been submitted or preparation has begun.</p>
             <p>Once preparation or recording has begun, a change-of-mind refund is not automatically available.</p>
-            <p>Delivery is usually within 3 business days after questions are received.</p>
-            <h3>If the service cannot be supplied</h3>
-            <p>If we have to cancel (illness, a platform failure we cannot work around, or a slot clash), we will refund you in full or offer another time.</p>
             <p>This does not affect any rights or remedies available under the Australian Consumer Law.</p>
+            <p>Recorded readings are normally delivered within 3 business days after the questions are received.</p>
         </section>
 
         <section>
             <h2>Disclaimer</h2>
-            <p>Tarot readings from The Clarity Chamber are for personal reflection, perspective, insight and guidance.</p>
-            <p>They are not a substitute for medical, psychological, legal, financial or other specialist advice. No particular outcome is guaranteed. You remain responsible for your decisions, actions and choices.</p>
-            <p>If a matter needs professional advice or urgent help, contact a qualified professional or the relevant emergency service.</p>
-            <p>Nothing on this website or in a reading is intended to exclude or limit rights that cannot legally be excluded under Australian law, including the Australian Consumer Law.</p>
+            <p>Tarot readings provided by The Clarity Chamber are intended for personal reflection, perspective, insight and guidance.</p>
+            <p>Tarot readings are not a substitute for professional medical, psychological, legal, financial or other specialist advice.</p>
+            <p>No particular outcome is guaranteed.</p>
+            <p>Clients remain responsible for their own decisions, actions and choices.</p>
+            <p>If a matter requires professional advice or urgent assistance, an appropriately qualified professional or relevant emergency service should be contacted.</p>
+            <p>Nothing on this website or in a tarot reading is intended to exclude or limit rights that cannot legally be excluded under Australian law, including the Australian Consumer Law.</p>
         </section>
     </main>
 
@@ -417,5 +462,19 @@
         <p class="footer-contact"><a href="mailto:loveleensarao@theclaritychamber.com">loveleensarao@theclaritychamber.com</a> · <a href="tel:+61475756576">+61 475 756 576</a></p>
         <p>&copy; 2026 The Clarity Chamber. All rights reserved.</p>
     </footer>
+
+<script>
+(function(){
+  var btn = document.querySelector(".nav-toggle");
+  var nav = document.querySelector("header nav");
+  if (!btn || !nav) return;
+  btn.addEventListener("click", function(){
+    var open = nav.classList.toggle("is-open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.textContent = open ? "Close menu" : "Menu";
+  });
+})();
+</script>
+
 </body>
 </html>

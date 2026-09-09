@@ -16,7 +16,7 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"ProfessionalService","name":"The Clarity Chamber","url":"https://theclaritychamber.com/","email":"loveleensarao@theclaritychamber.com","telephone":"+61475756576","areaServed":"AU","currenciesAccepted":"AUD","priceRange":"$60–$100","founder":{"@type":"Person","name":"Loveleen Sarao","jobTitle":"Advanced Tarot Practitioner"}}
     </script>
-    <title>THE CLARITY CHAMBER | Home</title>
+    <title>Tarot Readings in Australia | The Clarity Chamber</title>
     <meta name="description" content="Tarot readings with Loveleen Sarao for clarity, perspective and honest guidance. Live video and recorded readings from The Clarity Chamber.">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
@@ -492,15 +492,84 @@
             object-fit: contain !important;
             overflow: visible;
         }
+    
+        a.skip-link {
+            position: absolute;
+            left: 1rem;
+            top: -40px;
+            background: var(--warm-gold);
+            color: var(--deep-plum);
+            padding: 0.4rem 0.8rem;
+            z-index: 100;
+            text-decoration: none;
+        }
+        a.skip-link:focus { top: 0.6rem; }
+        .nav-toggle {
+            display: none;
+            background: transparent;
+            border: 1px solid rgba(212,175,55,0.45);
+            color: var(--soft-cream);
+            font: inherit;
+            letter-spacing: 0.06em;
+            padding: 0.4rem 0.8rem;
+            margin: 0.8rem auto 0;
+            cursor: pointer;
+        }
+        @media (max-width: 700px) {
+            .nav-toggle { display: inline-block; }
+            header nav {
+                display: none;
+                margin-top: 0.6rem;
+            }
+            header nav.is-open { display: block; }
+            header nav a { display: block; margin: 0.45rem 0; }
+        }
+    
+        /* Canonical brand mark — same file and crop on every page */
+        header img.logo,
+        img.logo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 96px;
+            height: auto;
+            max-width: 96px;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            background: transparent !important;
+            background-color: transparent !important;
+            object-fit: contain !important;
+            object-position: center center !important;
+        }
+        header:not(.compact) img.logo {
+            width: 168px;
+            max-width: 168px;
+            margin-bottom: 1rem;
+        }
+        header.compact img.logo {
+            width: 96px;
+            max-width: 96px;
+            margin-bottom: 0.45rem;
+        }
+        @media (max-width: 700px) {
+            header:not(.compact) img.logo {
+                width: 132px;
+                max-width: 132px;
+            }
+        }
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    
     <header>
         <img src="images/logo.png" alt="The Clarity Chamber Tarot Readings Logo" class="logo">
         <h1>THE CLARITY CHAMBER</h1>
         <p class="tagline-lead">Find clarity. Move forward.</p>
         <p class="tagline-sub">Tarot readings for clarity, perspective &amp; honest guidance.</p>
-        <nav>
+                <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav id="site-nav">
+
             <a href="index.html" class="active">Home</a>
             <a href="about.html">About Us</a>
             <a href="readings.html">Readings</a>
@@ -511,14 +580,14 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main">
         <section>
             <h2>A Space for Perspective</h2>
             <p>Sometimes clarity begins with looking at things differently.</p>
             <p>Life can bring questions about relationships, career, important decisions, personal growth or simply what comes next.</p>
             <p>A tarot reading can offer a different perspective—helping you explore what may be influencing a situation, understand your thoughts and feelings, and consider the possibilities ahead.</p>
             <p>The aim is not to tell you what to do, but to help you find greater clarity so you can move forward with confidence.</p>
-            <p><a class="intro-cta" href="contact.html">Book a Reading</a></p>
+            <p><a class="intro-cta" href="readings.html">See readings &amp; prices</a></p>
         </section>
 
         <section class="atmosphere">
@@ -571,12 +640,14 @@
                     <h3>Live Video Reading</h3>
                     <p>A private conversation with Loveleen.</p>
                     <p>A real-time, one-to-one tarot reading via Zoom or Google Meet.</p>
+                    <p>From AUD $60 · 30, 60 or 90 minutes. Written summary included.</p>
                     <a href="contact.html?type=live">Book a Live Reading</a>
                 </div>
                 <div class="reading-card">
                     <h3>Recorded Video Reading</h3>
                     <p>Your reading, whenever you're ready.</p>
                     <p>Submit your questions and Loveleen will create a personalised recorded tarot reading for you.</p>
+                    <p>From AUD $60 · 5, 7 or 11 questions. Delivered within 3 business days.</p>
                     <a href="contact.html?type=recorded">Order a Recorded Reading</a>
                 </div>
             </div>
@@ -586,7 +657,7 @@
             <h2>Ready When You Are</h2>
             <p>Choose your path to clarity.</p>
             <p>Whether you'd prefer a private conversation or a recorded reading to return to in your own time, choose the format that feels right for you.</p>
-            <a href="contact.html">Book a Reading</a>
+            <a href="readings.html">Choose a package</a>
             <p>
                 <strong>Live Video Reading:</strong> Private, real-time guidance with Loveleen.<br>
                 <strong>Recorded Video Reading:</strong> A personalised reading created around your questions.
@@ -605,5 +676,19 @@
         <p class="footer-contact"><a href="mailto:loveleensarao@theclaritychamber.com">loveleensarao@theclaritychamber.com</a> · <a href="tel:+61475756576">+61 475 756 576</a></p>
         <p>&copy; 2026 The Clarity Chamber. All rights reserved.</p>
     </footer>
+
+<script>
+(function(){
+  var btn = document.querySelector(".nav-toggle");
+  var nav = document.querySelector("header nav");
+  if (!btn || !nav) return;
+  btn.addEventListener("click", function(){
+    var open = nav.classList.toggle("is-open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.textContent = open ? "Close menu" : "Menu";
+  });
+})();
+</script>
+
 </body>
 </html>
