@@ -529,6 +529,54 @@
                 max-width: 132px;
             }
         }
+
+        /* Compact cream footer */
+        footer {
+            background-color: var(--deep-plum);
+            color: #F3EFE6;
+            text-align: center;
+            padding: 1.25rem 1.5rem 1.35rem;
+            font-size: 0.88rem;
+            line-height: 1.45;
+            border-top: 1px solid rgba(212, 175, 55, 0.25);
+        }
+
+        footer p {
+            margin: 0;
+            color: #F3EFE6;
+        }
+
+        footer p + p {
+            margin-top: 0.4rem;
+        }
+
+        footer a {
+            color: #F3EFE6;
+            text-decoration: none;
+            margin: 0 0.45rem;
+            transition: color 0.25s ease;
+        }
+
+        footer a:hover {
+            color: var(--warm-gold);
+        }
+
+        footer .footer-contact {
+            margin-top: 0.4rem;
+            font-size: 0.88rem;
+        }
+
+        footer .footer-contact a {
+            margin: 0 0.2rem;
+        }
+
+        footer p:last-child,
+        footer .footer-meta {
+            margin-top: 0.4rem;
+            font-size: 0.82rem;
+            letter-spacing: 0.03em;
+            color: #F3EFE6;
+        }
     </style>
 </head>
 <body>
@@ -639,9 +687,9 @@
             <a href="cancel.html">Cancel a booking</a>
             <a href="legal.html">Legal</a>
         </p>
-        <p class="footer-meta">Prices in AUD. Live times in AEST/AEDT.</p>
         <p class="footer-contact"><a href="mailto:loveleensarao@theclaritychamber.com">loveleensarao@theclaritychamber.com</a> · <a href="tel:+61475756576">+61 475 756 576</a></p>
         <p>&copy; 2026 The Clarity Chamber. All rights reserved.</p>
+        <p class="footer-meta">Prices in AUD. Live times in AEST/AEDT.</p>
     </footer>
 
 <script>
