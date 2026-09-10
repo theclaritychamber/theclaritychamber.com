@@ -48,6 +48,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Georgia, 'Times New Roman', Times, serif;
             background-color: var(--soft-cream);
@@ -56,51 +60,76 @@
             font-size: 1.05rem;
         }
 
+        a.skip-link {
+            position: absolute;
+            left: 1rem;
+            top: -40px;
+            background: var(--warm-gold);
+            color: var(--deep-plum);
+            padding: 0.4rem 0.8rem;
+            z-index: 100;
+            text-decoration: none;
+        }
+
+        a.skip-link:focus {
+            top: 0.6rem;
+        }
+
         header {
             background-color: var(--deep-plum);
             color: var(--soft-cream);
             text-align: center;
-            padding: 2.2rem 1.5rem 1.8rem;
+            padding: 1rem 1.5rem 0.95rem;
             border-bottom: 4px solid var(--warm-gold);
         }
 
-        .logo {
-            width: 180px;
-            height: auto;
-            margin: 0 auto 1.2rem;
+        header img.logo {
             display: block;
+            margin: 0 auto 0.4rem;
+            width: 92px;
+            max-width: 92px;
+            height: auto;
             border-radius: 0;
             box-shadow: none;
-            background-color: transparent;
+            background: transparent;
             object-fit: contain;
+            object-position: center center;
         }
 
         header h1 {
-            font-size: 1.9rem;
-            letter-spacing: 0.12em;
+            font-size: 1.2rem;
+            letter-spacing: 0.14em;
             font-weight: 400;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.15rem;
             color: var(--soft-cream);
         }
 
-        header p {
+        header .tagline-lead {
             color: var(--muted-taupe);
-            font-size: 1.02rem;
-            margin-bottom: 0.3rem;
+            font-size: 0.92rem;
+            margin-bottom: 0;
             font-style: italic;
         }
 
-        header p:last-of-type {
-            color: var(--warm-gold);
-            font-style: normal;
-            font-size: 0.95rem;
-            margin-top: 0.6rem;
-            letter-spacing: 0.03em;
+        header .tagline-sub {
+            display: none;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: transparent;
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            color: var(--soft-cream);
+            font: inherit;
+            letter-spacing: 0.06em;
+            padding: 0.4rem 0.8rem;
+            margin: 0.8rem auto 0;
+            cursor: pointer;
         }
 
         nav {
-            margin-top: 1.8rem;
-            padding-top: 1.2rem;
+            margin-top: 0.75rem;
+            padding-top: 0.7rem;
             border-top: 1px solid rgba(212, 175, 55, 0.35);
         }
 
@@ -141,52 +170,29 @@
             width: 100%;
         }
 
-        header.compact {
-            padding: 1.15rem 1.5rem 1rem;
-        }
-
-        header.compact .logo {
-            width: 88px;
-            margin-bottom: 0.5rem;
-        }
-
-        header.compact h1 {
-            font-size: 1.32rem;
-            margin-bottom: 0.2rem;
-        }
-
-        header.compact .tagline-lead {
-            font-size: 0.95rem;
-            margin-bottom: 0;
-        }
-
-        header.compact .tagline-sub {
-            display: none;
-        }
-
-        header.compact nav {
-            margin-top: 0.95rem;
-            padding-top: 0.8rem;
-        }
-
         main {
-            max-width: 920px;
+            max-width: 840px;
             margin: 0 auto;
-            padding: 3rem 1.5rem 4rem;
+            padding: 2.25rem 1.5rem 3rem;
+            width: 100%;
         }
 
         section {
-            margin-bottom: 3.5rem;
+            margin-bottom: 2.75rem;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
         }
 
         h2 {
-            font-size: 1.7rem;
+            font-size: 1.55rem;
             color: var(--deep-plum);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.15rem;
             font-weight: 400;
             letter-spacing: 0.04em;
             position: relative;
-            padding-bottom: 0.6rem;
+            padding-bottom: 0.5rem;
         }
 
         h2::after {
@@ -194,7 +200,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 60px;
+            width: 48px;
             height: 2px;
             background-color: var(--warm-gold);
         }
@@ -205,87 +211,75 @@
         }
 
         .meet-loveleen {
-            display: flex;
-            gap: 2.2rem;
-            align-items: flex-start;
-            margin-top: 1.5rem;
+            display: grid;
+            grid-template-columns: minmax(220px, 280px) 1fr;
+            gap: 2rem 2.25rem;
+            align-items: start;
         }
 
         .meet-loveleen .photo {
-            flex: 0 0 42%;
-            max-width: 380px;
+            width: 100%;
         }
 
         .meet-loveleen .photo video {
             width: 100%;
             height: auto;
-            aspect-ratio: 2 / 3;
-            object-fit: contain;
-            object-position: 50% 18%;
             display: block;
+            object-fit: contain;
+            object-position: center;
+            background-color: var(--deep-plum);
             border-radius: 4px;
             box-shadow: 0 6px 20px rgba(46, 31, 61, 0.12);
-            background-color: var(--deep-plum);
-        }
-
-        .meet-loveleen .bio {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .meet-loveleen .bio p:first-child {
-            font-style: italic;
-            color: var(--dusty-mauve);
-            font-size: 1.1rem;
         }
 
         .video-caption {
-            margin-top: 0.65rem;
+            margin-top: 0.7rem;
+            margin-bottom: 0;
             font-size: 0.88rem;
             color: var(--dusty-mauve);
             font-style: italic;
+            line-height: 1.5;
         }
 
-        .approach-row {
-            display: flex;
-            gap: 2.2rem;
-            align-items: flex-start;
-            margin-top: 1.5rem;
+        .meet-loveleen .bio p:last-of-type {
+            margin-bottom: 0;
         }
 
-        .approach-row .approach-list {
-            flex: 1;
-            min-width: 0;
-            margin-top: 0;
+        .certificate {
+            grid-column: 1 / -1;
+            margin: 0.35rem 0 0;
+            max-width: 420px;
         }
 
-        .approach-row .approach-photo {
-            flex: 0 0 38%;
-            max-width: 340px;
-        }
-
-        .approach-row .approach-photo img {
+        .certificate img {
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 4px;
+            object-fit: contain;
+            border-radius: 2px;
             box-shadow: 0 6px 20px rgba(46, 31, 61, 0.12);
-            background-color: var(--soft-cream);
+            background: #fff;
         }
 
-        .approach-list {
+        .approach-list,
+        .testimonials {
             list-style: none;
             display: grid;
-            gap: 1.3rem;
-            margin-top: 1.5rem;
+            gap: 1.05rem;
+            margin-top: 1.2rem;
+            padding: 0;
+        }
+
+        .approach-list li,
+        .testimonials li {
+            background-color: #fff;
+            border: 1px solid var(--muted-taupe);
+            padding: 1.35rem 1.55rem;
+            border-radius: 2px;
         }
 
         .approach-list li {
-            background-color: #fff;
-            border: 1px solid var(--muted-taupe);
             border-left: 4px solid var(--dusty-mauve);
-            padding: 1.4rem 1.6rem;
-            border-radius: 2px;
             transition: border-color 0.25s ease, box-shadow 0.25s ease;
         }
 
@@ -309,23 +303,11 @@
 
         .testimonials-note {
             color: #4a3f55;
-            margin-bottom: 1.4rem;
-        }
-
-        .testimonials {
-            list-style: none;
-            display: grid;
-            gap: 1.3rem;
-            margin: 0;
-            padding: 0;
+            margin-bottom: 0.2rem;
         }
 
         .testimonials li {
-            background-color: #fff;
-            border: 1px solid var(--muted-taupe);
             border-left: 4px solid var(--warm-gold);
-            padding: 1.4rem 1.6rem;
-            border-radius: 2px;
         }
 
         .testimonials blockquote {
@@ -353,6 +335,10 @@
             margin-bottom: 0.7rem;
         }
 
+        .contact-box p:last-child {
+            margin-bottom: 0;
+        }
+
         .contact-box a {
             color: var(--dusty-mauve);
             text-decoration: none;
@@ -365,172 +351,6 @@
             border-bottom-color: var(--warm-gold);
         }
 
-        footer {
-            background-color: var(--deep-plum);
-            color: var(--muted-taupe);
-            text-align: center;
-            padding: 2rem 1.5rem;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(212, 175, 55, 0.25);
-        }
-
-        footer a {
-            color: var(--muted-taupe);
-            text-decoration: none;
-            margin: 0 0.7rem;
-            transition: color 0.25s ease;
-        }
-
-        footer a:hover {
-            color: var(--warm-gold);
-        }
-
-        footer p:last-child {
-            margin-top: 0.7rem;
-            font-size: 0.85rem;
-            color: rgba(184, 178, 170, 0.7);
-        }
-
-        footer .footer-contact {
-            margin-top: 0.85rem;
-            font-size: 0.88rem;
-        }
-
-        @media (max-width: 700px) {
-            .logo {
-                width: 140px;
-                margin-bottom: 1rem;
-            }
-
-            header h1 {
-                font-size: 1.55rem;
-            }
-
-            nav a {
-                display: inline-block;
-                margin: 0.3rem 0.6rem;
-            }
-
-            main {
-                padding: 2.2rem 1.2rem 3rem;
-            }
-
-            .meet-loveleen {
-                flex-direction: column;
-                gap: 1.6rem;
-            }
-
-            .meet-loveleen .photo {
-                flex: none;
-                max-width: 100%;
-                width: 100%;
-            }
-
-            .approach-row {
-                flex-direction: column;
-                gap: 1.6rem;
-            }
-
-            .approach-row .approach-photo {
-                flex: none;
-                max-width: 100%;
-                width: 100%;
-                order: 2;
-            }
-
-            .approach-row .approach-list {
-                order: 1;
-            }
-        }
-    
-        /* Square brand mark */
-        .logo {
-            border-radius: 0;
-            box-shadow: none;
-            background-color: transparent;
-            background: transparent;
-            object-fit: contain;
-        }
-        header.compact .logo {
-            border-radius: 0;
-        }
-    
-        header img.logo,
-        img.logo {
-            border-radius: 0 !important;
-            box-shadow: none !important;
-            background: transparent !important;
-            background-color: transparent !important;
-            object-fit: contain !important;
-            overflow: visible;
-        }
-    
-        a.skip-link {
-            position: absolute;
-            left: 1rem;
-            top: -40px;
-            background: var(--warm-gold);
-            color: var(--deep-plum);
-            padding: 0.4rem 0.8rem;
-            z-index: 100;
-            text-decoration: none;
-        }
-        a.skip-link:focus { top: 0.6rem; }
-        .nav-toggle {
-            display: none;
-            background: transparent;
-            border: 1px solid rgba(212,175,55,0.45);
-            color: var(--soft-cream);
-            font: inherit;
-            letter-spacing: 0.06em;
-            padding: 0.4rem 0.8rem;
-            margin: 0.8rem auto 0;
-            cursor: pointer;
-        }
-        @media (max-width: 900px) {
-            .nav-toggle { display: inline-block; }
-            header nav {
-                display: none;
-                margin-top: 0.6rem;
-            }
-            header nav.is-open { display: block; }
-            header nav a { display: block; margin: 0.45rem 0; }
-        }
-    
-        /* Canonical brand mark — same file and crop on every page */
-        header img.logo,
-        img.logo {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 96px;
-            height: auto;
-            max-width: 96px;
-            border-radius: 0 !important;
-            box-shadow: none !important;
-            background: transparent !important;
-            background-color: transparent !important;
-            object-fit: contain !important;
-            object-position: center center !important;
-        }
-        header:not(.compact) img.logo {
-            width: 168px;
-            max-width: 168px;
-            margin-bottom: 1rem;
-        }
-        header.compact img.logo {
-            width: 96px;
-            max-width: 96px;
-            margin-bottom: 0.45rem;
-        }
-        @media (max-width: 700px) {
-            header:not(.compact) img.logo {
-                width: 132px;
-                max-width: 132px;
-            }
-        }
-
-        /* Compact cream footer */
         footer {
             background-color: var(--deep-plum);
             color: #F3EFE6;
@@ -570,214 +390,73 @@
             margin: 0 0.2rem;
         }
 
-        footer p:last-child,
         footer .footer-meta {
             margin-top: 0.4rem;
             font-size: 0.82rem;
             letter-spacing: 0.03em;
             color: #F3EFE6;
         }
-    
-        /* Unified layout rhythm */
-        html { scroll-behavior: smooth; }
-        body {
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-        header,
-        header.compact {
-            padding: 1rem 1.5rem 0.95rem !important;
-        }
-        header h1,
-        header.compact h1 {
-            font-size: 1.2rem !important;
-            letter-spacing: 0.14em;
-            margin-bottom: 0.15rem !important;
-        }
-        header .tagline-lead,
-        header.compact .tagline-lead {
-            font-size: 0.92rem !important;
-            margin-bottom: 0 !important;
-        }
-        header .tagline-sub {
-            display: none !important;
-        }
-        header nav,
-        header.compact nav {
-            margin-top: 0.75rem !important;
-            padding-top: 0.7rem !important;
-        }
-        header img.logo,
-        header.compact img.logo,
-        header:not(.compact) img.logo {
-            width: 92px !important;
-            max-width: 92px !important;
-            margin-bottom: 0.4rem !important;
-        }
-        main {
-            max-width: 840px !important;
-            margin: 0 auto;
-            padding: 2.25rem 1.5rem 3rem !important;
-            width: 100%;
-        }
-        section {
-            margin-bottom: 2.4rem !important;
-        }
-        section:last-child {
-            margin-bottom: 0 !important;
-        }
-        h2 {
-            font-size: 1.55rem !important;
-            margin-bottom: 1rem !important;
-            padding-bottom: 0.5rem !important;
-        }
-        h2::after {
-            width: 48px !important;
-        }
-        .intro-with-photo,
-        .meet-loveleen,
-        .approach-row,
-        .reading-options,
-        .reading-grid,
-        .booking-options {
-            gap: 1.6rem !important;
-        }
-        ul.topics,
-        .steps,
-        .approach-list,
-        .testimonials {
-            gap: 1rem !important;
-            margin-top: 1.15rem !important;
-        }
-        .atmosphere {
-            margin: 0 0 2.4rem !important;
-        }
-        .atmosphere img,
-        .values-image {
-            max-width: 840px;
-            margin-bottom: 0;
-        }
-        .cta {
-            padding: 1.8rem 1.5rem !important;
-            margin-bottom: 0 !important;
-        }
+
         @media (max-width: 900px) {
-            header img.logo,
-            header.compact img.logo,
-            header:not(.compact) img.logo {
-                width: 80px !important;
-                max-width: 80px !important;
+            .nav-toggle {
+                display: inline-block;
             }
-            main { padding: 1.7rem 1.2rem 2.4rem !important; }
+
+            header nav {
+                display: none;
+                margin-top: 0.6rem;
+            }
+
+            header nav.is-open {
+                display: block;
+            }
+
+            header nav a {
+                display: block;
+                margin: 0.45rem 0;
+            }
+
+            header img.logo {
+                width: 80px;
+                max-width: 80px;
+            }
+
+            main {
+                padding: 1.7rem 1.2rem 2.4rem;
+            }
         }
-    
-        .certificate {
-            margin: 1rem 0 1.2rem;
-            max-width: 420px;
-        }
-        .certificate img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 2px;
-            box-shadow: 0 6px 20px rgba(46, 31, 61, 0.12);
-            background: #fff;
-        }
-    
-        .meet-loveleen {
-            display: block !important;
-        }
-        .meet-loveleen .bio {
-            max-width: 40rem;
-        }
-        .meet-media {
-            display: grid;
-            grid-template-columns: minmax(260px, 340px) minmax(200px, 280px);
-            gap: 1.5rem;
-            align-items: start;
-            margin-top: 1.4rem;
-        }
-        .meet-loveleen .photo {
-            flex: none !important;
-            max-width: 340px !important;
-            width: 100%;
-        }
-        .meet-loveleen .photo video {
-            aspect-ratio: 3 / 4 !important;
-            object-fit: cover;
-            object-position: 50% 18%;
-        }
-        .certificate {
-            margin: 0 !important;
-            max-width: 420px !important;
-        }
+
         @media (max-width: 700px) {
-            .meet-media { grid-template-columns: 1fr; }
-            .meet-loveleen .photo { max-width: 300px; margin: 0 auto; }
-        }
-    
-        .meet-loveleen {
-            display: block !important;
-        }
-        .meet-loveleen .bio {
-            max-width: none;
-        }
-        .certificate {
-            margin: 1rem 0 1.2rem !important;
-            max-width: 420px !important;
-        }
-        .meet-loveleen .photo {
-            flex: none !important;
-            max-width: 320px !important;
-            width: 100%;
-            margin: 1.6rem auto 0 !important;
-            text-align: center;
-        }
-        .meet-loveleen .photo video {
-            aspect-ratio: 3 / 4 !important;
-            object-fit: cover;
-            object-position: 50% 18%;
-            margin: 0 auto;
-        }
-        .meet-media { display: none; }
-    
-        .meet-loveleen {
-            display: block !important;
-            text-align: left;
-        }
-        .meet-loveleen .photo {
-            flex: none !important;
-            max-width: 320px !important;
-            width: 100%;
-            margin: 0 0 1.4rem 0 !important;
-            text-align: left;
-        }
-        .meet-loveleen .photo video {
-            aspect-ratio: 3 / 4 !important;
-            object-fit: cover;
-            object-position: 50% 18%;
-            display: block;
-        }
-        .meet-loveleen .bio {
-            max-width: 40rem;
-        }
-        .certificate {
-            margin: 1.1rem 0 0 !important;
-            max-width: 420px !important;
+            .meet-loveleen {
+                grid-template-columns: 1fr;
+                gap: 1.4rem;
+            }
+
+            .meet-loveleen .photo {
+                max-width: 320px;
+            }
+
+            .certificate {
+                max-width: 360px;
+            }
+
+            header nav.is-open a {
+                display: block;
+                margin: 0.45rem 0;
+            }
         }
     </style>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    
+
     <header class="compact">
         <img src="images/logo-192.png" alt="The Clarity Chamber Tarot Readings Logo" class="logo">
         <h1>THE CLARITY CHAMBER</h1>
         <p class="tagline-lead">Find clarity. Move forward.</p>
         <p class="tagline-sub">Tarot readings for clarity, perspective &amp; honest guidance.</p>
-                <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
         <nav id="site-nav">
-
             <a href="index.html">Home</a>
             <a href="about.html" class="active">About Us</a>
             <a href="readings.html">Readings</a>
@@ -791,7 +470,7 @@
     <main id="main">
         <section>
             <h2>Meet Loveleen</h2>
-                        <div class="meet-loveleen">
+            <div class="meet-loveleen">
                 <div class="photo">
                     <video
                         poster="images/loveleen-poster.jpg"
@@ -805,17 +484,16 @@
                     <p class="video-caption">Welcome to The Clarity Chamber — a short introduction to the cards.</p>
                 </div>
                 <div class="bio">
-                    <p>Experienced, genuine and grounded.</p>
+                    <p>In November 2021 she completed the Tarot Master’s Program at the Academy of Tarot, India, and has been reading ever since. She moved to Australia permanently in February 2023 and began a new career. She is now ready to return to the work she loves — Tarot.</p>
                     <p>Loveleen is an Advanced Tarot Practitioner who approaches every reading with honesty, intuition, warmth and care.</p>
-                    <p>She completed the Tarot Master's Program at the Academy of Tarot, India, with her certificate dated 24 November 2021.</p>
                     <p>Her approach is direct and honest while remaining thoughtful and empathetic. She uses tarot to help clients explore their questions, gain perspective and better understand the situation they are facing.</p>
                     <p>Loveleen is comfortable reading on every topic and believes a meaningful reading should leave you with greater clarity—not fear or confusion.</p>
-                    <figure class="certificate">
-                        <img src="images/certificate.jpg" alt="Certificate of Completion, Tarot Master's Program, Academy of Tarot, awarded to Dr Loveleen Kaur Sarao on 24 November 2021">
-                    </figure>
                 </div>
+                <figure class="certificate">
+                    <img src="images/certificate.jpg" alt="Certificate of Completion, Tarot Master's Program, Academy of Tarot, awarded to Dr Loveleen Kaur Sarao on 24 November 2021">
+                </figure>
             </div>
-</section>
+        </section>
 
         <section>
             <h2>Our Approach</h2>
@@ -878,18 +556,17 @@
         <p class="footer-meta">Prices in AUD. Live times in AEST/AEDT.</p>
     </footer>
 
-<script>
-(function(){
-  var btn = document.querySelector(".nav-toggle");
-  var nav = document.querySelector("header nav");
-  if (!btn || !nav) return;
-  btn.addEventListener("click", function(){
-    var open = nav.classList.toggle("is-open");
-    btn.setAttribute("aria-expanded", open ? "true" : "false");
-    btn.textContent = open ? "Close menu" : "Menu";
-  });
-})();
-</script>
-
+    <script>
+    (function(){
+      var btn = document.querySelector(".nav-toggle");
+      var nav = document.querySelector("header nav");
+      if (!btn || !nav) return;
+      btn.addEventListener("click", function(){
+        var open = nav.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        btn.textContent = open ? "Close menu" : "Menu";
+      });
+    })();
+    </script>
 </body>
 </html>
