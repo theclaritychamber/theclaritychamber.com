@@ -221,12 +221,39 @@
             color: var(--deep-plum);
         }
 
+        .intro-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem 0.85rem;
+            align-items: center;
+            margin-top: 0.35rem;
+        }
+
         .intro-cta {
             display: inline-block;
-            margin-top: 0.4rem;
+            margin-top: 0;
             padding: 0.75rem 1.8rem;
+            background-color: var(--warm-gold);
+            color: var(--deep-plum);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid var(--warm-gold);
+            transition: all 0.25s ease;
+        }
+
+        .intro-cta:hover {
             background-color: var(--deep-plum);
+            border-color: var(--deep-plum);
             color: var(--soft-cream);
+        }
+
+        .intro-cta-secondary {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            color: var(--deep-plum);
             text-decoration: none;
             letter-spacing: 0.04em;
             font-size: 0.95rem;
@@ -234,10 +261,49 @@
             transition: all 0.25s ease;
         }
 
-        .intro-cta:hover {
-            background-color: var(--warm-gold);
-            border-color: var(--warm-gold);
+        .intro-cta-secondary:hover {
+            background-color: var(--deep-plum);
+            color: var(--soft-cream);
+        }
+
+        .trust {
+            margin: 0 0 2.4rem;
+        }
+
+        .trust-strip {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem 1.25rem;
+            margin: 0;
+            padding: 1.15rem 0 1.2rem;
+            border-top: 1px solid rgba(46, 31, 61, 0.12);
+            border-bottom: 1px solid rgba(46, 31, 61, 0.12);
+        }
+
+        .trust-strip li {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .trust-strip strong {
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
             color: var(--deep-plum);
+        }
+
+        .trust-strip span {
+            font-size: 0.86rem;
+            color: var(--dusty-mauve);
+            line-height: 1.4;
+        }
+
+        @media (max-width: 700px) {
+            .trust-strip {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         ul.topics {
@@ -410,6 +476,21 @@
         .cta a:hover {
             background-color: var(--soft-cream);
             color: var(--deep-plum);
+        }
+
+        .cta a.cta-secondary {
+            display: block;
+            background: transparent;
+            color: var(--warm-gold);
+            padding: 0;
+            margin: 0 0 1rem;
+            font-weight: 400;
+            border: 0;
+        }
+
+        .cta a.cta-secondary:hover {
+            background: transparent;
+            color: var(--soft-cream);
         }
 
         .cta strong {
@@ -736,7 +817,7 @@
         <nav id="site-nav">
 
             <a href="index.html" class="active">Home</a>
-            <a href="about.html">About Us</a>
+            <a href="about.html">About</a>
             <a href="readings.html">Readings</a>
             <a href="cards.html">The Cards</a>
             <a href="how-it-works.html">How It Works</a>
@@ -753,11 +834,35 @@
             <p>Life can bring questions about relationships, career, important decisions, personal growth or simply what comes next.</p>
             <p>A tarot reading can offer a different perspective—helping you explore what may be influencing a situation, understand your thoughts and feelings, and consider the possibilities ahead.</p>
             <p>The aim is not to tell you what to do, but to help you find greater clarity so you can move forward with confidence.</p>
-            <p><a class="intro-cta" href="readings.html">See readings &amp; prices</a></p>
+            <div class="intro-actions">
+                <a class="intro-cta" href="contact.html">Book a reading</a>
+                <a class="intro-cta-secondary" href="readings.html">See readings &amp; prices</a>
+            </div>
             </div>
             <figure class="intro-photo">
                 <img src="images/Loveleen-approach.jpg" alt="Loveleen Sarao, tarot reader at The Clarity Chamber">
             </figure>
+        </section>
+
+        <section class="trust">
+        <ul class="trust-strip">
+            <li>
+                <strong>Tarot Master&rsquo;s Program</strong>
+                <span>Academy of Tarot, completed 2021</span>
+            </li>
+            <li>
+                <strong>Written summary included</strong>
+                <span>With every live video reading</span>
+            </li>
+            <li>
+                <strong>Recorded in 3 business days</strong>
+                <span>Personalised video around your questions</span>
+            </li>
+            <li>
+                <strong>From AUD $60</strong>
+                <span>Live or recorded · prices in Australian dollars</span>
+            </li>
+        </ul>
         </section>
 
         <section class="atmosphere">
@@ -827,7 +932,8 @@
             <h2>Ready When You Are</h2>
             <p>Choose your path to clarity.</p>
             <p>Whether you'd prefer a private conversation or a recorded reading to return to in your own time, choose the format that feels right for you.</p>
-            <a href="readings.html">Choose a package</a>
+            <a href="contact.html">Book a reading</a>
+            <p><a class="cta-secondary" href="readings.html">Or compare packages first</a></p>
             <p>
                 <strong>Live Video Reading:</strong> Private, real-time guidance with Loveleen.<br>
                 <strong>Recorded Video Reading:</strong> A personalised reading created around your questions.

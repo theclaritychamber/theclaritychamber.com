@@ -360,6 +360,39 @@
             display: none;
         }
 
+        #package-summary {
+            grid-column: 1 / -1;
+            margin: 0 0 0.4rem;
+            padding: 0.85rem 1rem;
+            background: #fff;
+            border: 1px solid var(--muted-taupe);
+            border-left: 4px solid var(--warm-gold);
+        }
+
+        #package-summary strong {
+            display: block;
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        #package-summary span {
+            display: block;
+            margin-top: 0.15rem;
+            color: var(--dusty-mauve);
+            font-size: 0.92rem;
+        }
+
+        .form-note {
+            margin-top: 0.85rem;
+            font-size: 0.9rem;
+            color: var(--dusty-mauve);
+            max-width: 36rem;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
         footer {
             background-color: var(--deep-plum);
             color: var(--muted-taupe);
@@ -664,7 +697,7 @@
         <nav id="site-nav">
 
             <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
+            <a href="about.html">About</a>
             <a href="readings.html">Readings</a>
             <a href="cards.html">The Cards</a>
             <a href="how-it-works.html">How It Works</a>
@@ -676,7 +709,7 @@
     <main id="main">
         <section>
             <h2>Book a Reading</h2>
-            <p style="max-width:40rem;margin-bottom:1.4rem;">Choose a format and package, then send your details. You will be taken to Stripe to pay and confirm. Live times are in Australian Eastern Time, Sunday–Saturday as shown on the form.</p>
+            <p style="max-width:40rem;margin-bottom:1.4rem;">Choose a format and package, then add your details.</p>
 
             <div id="success-message">
                 <h3>Your request is in the chamber</h3>
@@ -691,6 +724,10 @@
 
             <form id="booking-form">
                 <div class="form-grid">
+                    <p id="package-summary" role="status">
+                        <strong>Select a format and package</strong>
+                        <span>The price will appear here in Australian dollars.</span>
+                    </p>
                     <div class="session-row">
                         <p>
                             <label for="reading-type">Format</label>
@@ -780,6 +817,7 @@
 
                     <div class="full-width">
                         <button type="submit" id="submit-btn">Continue to payment</button>
+                        <p class="form-note">You will go to Stripe to pay and confirm. Live times are in Australian Eastern Time (Sydney). Available hours appear after you choose a date.</p>
                         <p id="form-status"></p>
                     </div>
                 </div>
@@ -790,6 +828,40 @@
 
     <script>
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyrLcMbIha3Gs2lwjKD54c92xmXx4fpSSGXcvXGLikhXQGUaK8PgD_qZfqyK7ARiY5K7Q/exec';
+
+        const PACKAGE_INFO = {
+            'live-30': { label: 'Live video · 30 minutes', price: 'AUD $60' },
+            'live-60': { label: 'Live video · 60 minutes', price: 'AUD $80' },
+            'live-90': { label: 'Live video · 90 minutes', price: 'AUD $100' },
+            'rec-5': { label: 'Recorded video · 5 questions', price: 'AUD $60' },
+            'rec-7': { label: 'Recorded video · 7 questions', price: 'AUD $80' },
+            'rec-11': { label: 'Recorded video · 11 questions', price: 'AUD $100' }
+        };
+
+        function updatePackageSummary() {
+            const box = document.getElementById('package-summary');
+            if (!box) return;
+            const type = document.getElementById('reading-type').value;
+            const pkg = document.getElementById('reading-option').value;
+            const info = PACKAGE_INFO[pkg];
+            if (info) {
+                box.querySelector('strong').textContent = info.label;
+                box.querySelector('span').textContent = info.price + ' · pay on Stripe after you send this form';
+                return;
+            }
+            if (type === 'live') {
+                box.querySelector('strong').textContent = 'Live video reading';
+                box.querySelector('span').textContent = 'Choose 30, 60 or 90 minutes to see the price.';
+                return;
+            }
+            if (type === 'recorded') {
+                box.querySelector('strong').textContent = 'Recorded video reading';
+                box.querySelector('span').textContent = 'Choose 5, 7 or 11 questions to see the price.';
+                return;
+            }
+            box.querySelector('strong').textContent = 'Select a format and package';
+            box.querySelector('span').textContent = 'The price will appear here in Australian dollars.';
+        }
 
         const PAYMENT_LINKS = {
             'live-30': 'https://book.stripe.com/3cI7sFaOA3zJ1R5b5C3AY00',
@@ -1367,8 +1439,11 @@
                 opt.hidden = !match;
                 opt.disabled = !match;
             });
-            optionSelect.value = '';
+            const current = optionSelect.value;
+            const stillValid = current && optionSelect.querySelector('option[value="' + current + '"]:not([disabled])');
+            optionSelect.value = stillValid ? current : '';
             handlePackageSelection();
+            updatePackageSummary();
         }
 
         function handlePackageSelection() {
@@ -1412,6 +1487,7 @@
                     }
                 }
             }
+            updatePackageSummary();
         }
 
         function resetDynamicContainers() {
@@ -1501,6 +1577,7 @@
                 remarks.placeholder = 'Topic: ' + topic;
                 if (!remarks.value) remarks.value = 'I would like guidance on ' + topic + '.';
             }
+            updatePackageSummary();
             if (typeof gtag === 'function') {
                 gtag('event', 'select_content', { content_type: 'booking_form', item_id: type || 'open' });
             }
