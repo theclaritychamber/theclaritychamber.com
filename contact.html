@@ -235,11 +235,29 @@
         }
 
         .session-row,
-        .details-row,
-        .live-fields {
+        .details-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 0.35rem 2rem;
+        }
+
+        .live-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.35rem 2rem;
+            align-items: start;
+        }
+
+        .live-fields p {
+            min-width: 0;
+            width: 100%;
+        }
+
+        #booking-date {
+            width: 100% !important;
+            min-width: 0;
+            box-sizing: border-box;
+            display: block;
         }
 
         .dynamic-block,
@@ -443,7 +461,7 @@
             .session-row,
             .details-row,
             .live-fields {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr !important;
                 gap: 0.5rem;
             }
 
@@ -683,6 +701,74 @@
             }
             main { padding: 1.7rem 1.2rem 2.4rem !important; }
         }
+
+        /* Trust strip above submit button */
+        .trust-strip {
+            display: flex;
+            justify-content: center;
+            gap: 1.6rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .trust-strip span {
+            font-size: 0.88rem;
+            color: var(--dusty-mauve);
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            letter-spacing: 0.01em;
+        }
+        .trust-strip .trust-icon {
+            font-style: normal;
+            font-size: 0.95rem;
+        }
+
+        /* Platform hint note */
+        .field-hint {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--dusty-mauve);
+            margin-top: 0.3rem;
+            font-style: italic;
+        }
+
+        /* What happens next — post-form steps */
+        .next-steps {
+            margin-top: 2rem;
+            padding: 1.4rem 1.5rem;
+            background-color: #fff;
+            border: 1px solid var(--muted-taupe);
+            border-left: 4px solid var(--warm-gold);
+        }
+        .next-steps h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--deep-plum);
+            letter-spacing: 0.03em;
+            margin-bottom: 0.85rem;
+        }
+        .next-steps ol {
+            padding-left: 1.2rem;
+            margin: 0;
+        }
+        .next-steps ol li {
+            font-size: 0.95rem;
+            color: var(--dusty-mauve);
+            margin-bottom: 0.4rem;
+            line-height: 1.5;
+        }
+        .next-steps ol li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Question example hint inside recorded questions */
+        .question-hint {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--dusty-mauve);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -709,7 +795,7 @@
     <main id="main">
         <section>
             <h2>Book a Reading</h2>
-            <p style="max-width:40rem;margin-bottom:1.4rem;">Choose a format and package, then add your details.</p>
+            <p style="max-width:40rem;margin-bottom:1.4rem;">Step 1: choose your format and package. Step 2: add your details and continue to payment.</p>
 
             <div id="success-message">
                 <h3>Your request is in the chamber</h3>
@@ -760,6 +846,7 @@
                                     <option value="zoom">Zoom</option>
                                     <option value="google-meet">Google Meet</option>
                                 </select>
+                                <em class="field-hint">Not sure? Zoom is recommended — no account needed.</em>
                             </p>
                             <p>
                                 <label for="booking-date">Preferred date</label>
@@ -771,7 +858,7 @@
                                     <option value="" disabled selected>Select a date first</option>
                                 </select>
                             </p>
-                            <p id="availability-note" style="color:var(--dusty-mauve);font-size:0.9rem;"></p>
+                            <p id="availability-note" style="color:var(--dusty-mauve);font-size:0.9rem;grid-column:1/-1;margin-top:0;"></p>
                             </div>
                         </div>
                         <div id="recorded-questions-container" style="display: none;"></div>
@@ -792,13 +879,13 @@
                                 <input type="email" id="email" name="email" required autocomplete="email">
                             </p>
                             <p>
-                                <label for="phone">Phone</label>
-                                <input type="tel" id="phone" name="phone" required autocomplete="tel">
+                                <label for="phone">Phone <span style="font-size:0.85em;color:var(--muted-taupe);">(optional)</span></label>
+                                <input type="tel" id="phone" name="phone" autocomplete="tel">
                             </p>
                         </div>
                         <p class="remarks-row">
-                            <label for="remarks">Remarks (if any)</label>
-                            <textarea id="remarks" name="remarks" rows="4"></textarea>
+                            <label for="remarks">Anything you'd like Loveleen to know before your reading? (optional)</label>
+                            <textarea id="remarks" name="remarks" rows="4" placeholder="e.g. background on the situation, what you're hoping to explore, or any other context that would help."></textarea>
                         </p>
                         <p class="hp" aria-hidden="true" style="position:absolute;left:-10000px;height:0;overflow:hidden;">
                             <label for="website">Website</label>
@@ -816,12 +903,25 @@
                     </div>
 
                     <div class="full-width">
+                        <div class="trust-strip">
+                            <span><em class="trust-icon">🔒</em> Secure payment via Stripe</span>
+                            <span><em class="trust-icon">✓</em> Free rescheduling with 24+ hours' notice</span>
+                            <span><em class="trust-icon">✓</em> Written summary included</span>
+                        </div>
                         <button type="submit" id="submit-btn">Continue to payment</button>
                         <p class="form-note">You will go to Stripe to pay and confirm. Live times are in Australian Eastern Time (Sydney). Available hours appear after you choose a date.</p>
                         <p id="form-status"></p>
                     </div>
                 </div>
             </form>
+            <div class="next-steps">
+                <h3>What happens next</h3>
+                <ol>
+                    <li>You'll receive a confirmation email with your booking details.</li>
+                    <li>Pay via Stripe to secure your booking — your time is held once payment is received.</li>
+                    <li id="next-step-3">For live readings, a calendar invitation will follow with your appointment time in Australian Eastern Time. For recorded readings, your video will be delivered by email within 3 business days of receiving your questions.</li>
+                </ol>
+            </div>
             <p style="margin-top:1.2rem;font-size:0.95rem;color:var(--dusty-mauve);">Already booked? <a href="cancel.html">Cancel a booking</a> · Need a change of time? Email <a href="mailto:loveleensarao@theclaritychamber.com">loveleensarao@theclaritychamber.com</a>.</p>
         </section>
     </main>
@@ -1303,39 +1403,54 @@
 
         function overlapsBusy(slotStart, duration, busy) {
             const slotEnd = slotStart + duration;
-            return busy.some(function(b) {
+            const buffer = AVAILABILITY.bufferMinutes || 0;
+            return (busy || []).some(function(b) {
                 const busyStart = hhmmToMinutes(b.start);
-                const busyEnd = hhmmToMinutes(b.end) + (AVAILABILITY.bufferMinutes || 0);
+                const busyEnd = hhmmToMinutes(b.end) + buffer;
+                if (isNaN(busyStart) || isNaN(busyEnd)) return false;
                 return slotStart < busyEnd && slotEnd > busyStart;
             });
         }
 
         function loadBusySlots(ymd) {
-            return new Promise(function(resolve) {
+            return new Promise(function(resolve, reject) {
                 const cbName = 'busyCb_' + Date.now() + '_' + Math.floor(Math.random() * 10000);
+                let scriptNode = null;
+                let settled = false;
+
                 const timeout = setTimeout(function() {
                     cleanup();
-                    resolve([]);
-                }, 8000);
+                    if (!settled) {
+                        settled = true;
+                        reject(new Error('timeout'));
+                    }
+                }, 10000);
 
                 function cleanup() {
                     clearTimeout(timeout);
-                    try { delete window[cbName]; } catch (err) { window[cbName] = undefined; }
-                    if (script && script.parentNode) script.parentNode.removeChild(script);
+                    delete window[cbName];
+                    if (scriptNode && scriptNode.parentNode) {
+                        scriptNode.parentNode.removeChild(scriptNode);
+                    }
                 }
 
                 window[cbName] = function(data) {
                     cleanup();
-                    resolve((data && data.busy) ? data.busy : []);
+                    if (settled) return;
+                    settled = true;
+                    resolve(Array.isArray(data && data.busy) ? data.busy : []);
                 };
 
-                const script = document.createElement('script');
-                script.src = SCRIPT_URL + '?date=' + encodeURIComponent(ymd) + '&callback=' + cbName;
-                script.onerror = function() {
+                scriptNode = document.createElement('script');
+                scriptNode.src = SCRIPT_URL + '?date=' + encodeURIComponent(ymd) + '&callback=' + encodeURIComponent(cbName) + '&_=' + Date.now();
+                scriptNode.onerror = function() {
                     cleanup();
-                    resolve([]);
+                    if (!settled) {
+                        settled = true;
+                        reject(new Error('network'));
+                    }
                 };
-                document.body.appendChild(script);
+                document.body.appendChild(scriptNode);
             });
         }
 
@@ -1375,7 +1490,14 @@
 
             note.textContent = 'Checking available times...';
 
-            const busy = await loadBusySlots(ymd);
+            let busy = [];
+            try {
+                busy = await loadBusySlots(ymd);
+            } catch (err) {
+                timeSelect.innerHTML = '<option value="" disabled selected>Times unavailable</option>';
+                note.textContent = 'Could not load booked times for that date. Please wait a moment and choose the date again.';
+                return;
+            }
 
             const slots = [];
             for (let minutes = hours.startMinutes; minutes + duration <= endLimitMinutes; minutes += AVAILABILITY.slotMinutes) {
@@ -1477,17 +1599,36 @@
                     note.innerHTML = '<em>Readings will be delivered within 3 business days after your questions are received.</em>';
                     questionsContainer.appendChild(note);
 
+                    const hint = document.createElement('em');
+                    hint.className = 'question-hint';
+                    hint.textContent = 'Tip: be as specific as you can. e.g. "What do I need to know about my relationship with X?" or "What is blocking my progress in my career right now?"';
+                    questionsContainer.appendChild(hint);
+
                     for (let i = 1; i <= count; i++) {
                         const p = document.createElement('p');
                         p.innerHTML = `
                             <label for="question-${i}">Question ${i}</label>
-                            <input type="text" id="question-${i}" name="question-${i}" required>
+                            <input type="text" id="question-${i}" name="question-${i}" required placeholder="e.g. What do I need to know about...">
                         `;
                         questionsContainer.appendChild(p);
                     }
                 }
             }
             updatePackageSummary();
+            updateNextSteps();
+        }
+
+        function updateNextSteps() {
+            const type = document.getElementById('reading-type').value;
+            const step3 = document.getElementById('next-step-3');
+            if (!step3) return;
+            if (type === 'live') {
+                step3.textContent = 'A calendar invitation will follow with your appointment time in Australian Eastern Time.';
+            } else if (type === 'recorded') {
+                step3.textContent = 'Your recorded reading will be delivered by email within 3 business days of receiving your questions.';
+            } else {
+                step3.textContent = 'For live readings, a calendar invitation will follow. For recorded readings, your video will be delivered by email within 3 business days.';
+            }
         }
 
         function resetDynamicContainers() {
