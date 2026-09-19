@@ -1,13 +1,33 @@
-/* iOS Safari hides type=date when appearance is stripped */
-#booking-date,
-input[type="date"] {
-  -webkit-appearance: auto;
-  appearance: auto;
+.live-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.85rem 1.1rem;
+  align-items: end;
+}
+
+.live-fields p {
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+}
+
+.live-fields label {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.live-fields select,
+.live-fields input[type="date"],
+#booking-date {
+  -webkit-appearance: none;
+  appearance: none;
   display: block;
   width: 100%;
-  box-sizing: border-box;
+  height: 48px;
   min-height: 48px;
-  padding: 0.65rem 0.8rem;
+  max-height: 48px;
+  box-sizing: border-box;
+  padding: 0 0.9rem;
   background-color: #f3efe6 !important;
   color: #2e1f3d !important;
   -webkit-text-fill-color: #2e1f3d !important;
@@ -15,29 +35,42 @@ input[type="date"] {
   border-radius: 2px;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 1rem;
-  line-height: 1.3;
+  line-height: 48px;
+}
+
+#booking-date {
+  -webkit-appearance: auto;
+  appearance: auto;
+  line-height: normal;
+  padding: 0 0.7rem;
 }
 
 #booking-date::-webkit-date-and-time-value {
   text-align: left;
-  min-height: 1.2em;
+  min-height: 46px;
+  line-height: 46px;
 }
 
 #booking-date::-webkit-datetime-edit,
-#booking-date::-webkit-datetime-edit-fields-wrapper,
-#booking-date::-webkit-datetime-edit-text,
-#booking-date::-webkit-datetime-edit-month-field,
-#booking-date::-webkit-datetime-edit-day-field,
-#booking-date::-webkit-datetime-edit-year-field {
+#booking-date::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
   color: #2e1f3d;
   -webkit-text-fill-color: #2e1f3d;
-  padding: 0;
 }
 
 #booking-date::-webkit-calendar-picker-indicator {
   display: block;
   opacity: 1;
+  width: 1rem;
+  height: 1rem;
   cursor: pointer;
-  width: 1.1rem;
-  height: 1.1rem;
+}
+
+@media (max-width: 900px) {
+  .live-fields {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .live-fields p:first-child {
+    grid-column: 1 / -1;
+  }
 }
