@@ -1,0 +1,46 @@
+/* Homepage topic cards: one border only */
+ul.topics {
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.1rem;
+}
+
+ul.topics > li {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0;
+}
+
+ul.topics > li:hover {
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+ul.topics a {
+  display: block;
+  background-color: #fff;
+  border: 1px solid var(--muted-taupe);
+  border-left: 4px solid var(--dusty-mauve);
+  padding: 0.95rem 1.15rem;
+  border-radius: 2px;
+  text-decoration: none;
+  color: inherit;
+}
+
+ul.topics a:hover {
+  border-left-color: var(--warm-gold);
+  box-shadow: 0 4px 14px rgba(46, 31, 61, 0.08);
+}
+
+ul.topics h3 {
+  margin-bottom: 0.25rem;
+}
+
+ul.topics p {
+  margin-bottom: 0;
+  font-size: 0.98rem;
+  color: #4a3f55;
+}
