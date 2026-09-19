@@ -4,7 +4,6 @@
   if (btn && nav) {
     btn.textContent = "Menu";
     btn.setAttribute("aria-expanded", "false");
-    btn.setAttribute("aria-label", "Menu");
     var closer = nav.querySelector(".nav-close");
     if (!closer) {
       closer = document.createElement("a");
@@ -28,15 +27,16 @@
     });
   }
 
-  if (document.getElementById("booking-date") && !document.getElementById("fix-contact-date")) {
-    var style = document.createElement("style");
-    style.id = "fix-contact-date";
-    style.textContent =
-      ".live-fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:0.85rem 1.1rem;align-items:end;}" +
-      ".live-fields p{min-width:0;width:100%;margin:0;}" +
-      ".live-fields select,.live-fields input[type=date],#booking-date{display:block;width:100%;height:48px;min-height:48px;max-height:48px;box-sizing:border-box;padding:0 0.9rem;background-color:#f3efe6 !important;color:#2e1f3d !important;border:1px solid #b8b2aa;border-radius:2px;font-size:1rem;}" +
-      "#booking-date{-webkit-appearance:auto;appearance:auto;padding:0 0.7rem;}" +
-      "@media (max-width:900px){.live-fields{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}.live-fields p:first-child{grid-column:1/-1;}}";
-    document.head.appendChild(style);
-  }
+  var date = document.getElementById("booking-date");
+  if (!date) return;
+  var old = document.getElementById("fix-contact-date");
+  if (old) old.remove();
+  var style = document.createElement("style");
+  style.id = "fix-contact-date";
+  style.textContent =
+    ".live-fields{display:grid !important;grid-template-columns:1fr !important;gap:0.9rem !important;}" +
+    ".live-fields>p{grid-column:1/-1 !important;width:100% !important;min-width:0 !important;margin:0 !important;overflow:hidden;}" +
+    ".live-fields select,.live-fields input,#booking-date,#platform,#booking-time{display:block !important;width:100% !important;max-width:100% !important;height:48px !important;min-height:48px !important;max-height:48px !important;box-sizing:border-box !important;padding:0 0.9rem !important;background:#f3efe6 !important;color:#2e1f3d !important;border:1px solid #b8b2aa !important;border-radius:2px !important;}" +
+    "#booking-date{-webkit-appearance:none !important;appearance:none !important;}";
+  document.head.appendChild(style);
 })();
