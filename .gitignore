@@ -1,0 +1,13 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.log
+.env
+.env.*
+node_modules/
+.cache/
