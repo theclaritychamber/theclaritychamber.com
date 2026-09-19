@@ -16,15 +16,15 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"ProfessionalService","name":"The Clarity Chamber","url":"https://theclaritychamber.com/","email":"loveleensarao@theclaritychamber.com","telephone":"+61475756576","areaServed":"AU","currenciesAccepted":"AUD","priceRange":"$60–$100","founder":{"@type":"Person","name":"Loveleen Sarao","jobTitle":"Advanced Tarot Practitioner"}}
     </script>
-    <title>How a Reading Works | The Clarity Chamber</title>
-    <meta name="description" content="How a Clarity Chamber reading works: choose a format, pick a package, book, and receive your reading.">
+    <title>How an Online Tarot Reading Works | The Clarity Chamber</title>
+    <meta name="description" content="Choose live or recorded, pick a package, pay with Stripe, then meet on Zoom or receive a video in 3 business days. Times in AEST/AEDT.">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="The Clarity Chamber">
-    <meta property="og:title" content="How a Reading Works | The Clarity Chamber">
-    <meta property="og:description" content="How a Clarity Chamber reading works: choose a format, pick a package, book, and receive your reading.">
+    <meta property="og:title" content="How an Online Tarot Reading Works | The Clarity Chamber">
+    <meta property="og:description" content="Choose live or recorded, pick a package, pay with Stripe, then meet on Zoom or receive a video in 3 business days. Times in AEST/AEDT.">
     <meta property="og:url" content="https://theclaritychamber.com/how-it-works.html">
     <meta property="og:image" content="https://theclaritychamber.com/images/og-card.png">
     <meta property="og:image:width" content="1200">
@@ -71,7 +71,7 @@
             box-shadow: none;
         }
 
-        header h1 {
+        header .site-name {
             font-size: 1.9rem;
             letter-spacing: 0.12em;
             font-weight: 400;
@@ -147,7 +147,7 @@
             margin-bottom: 0.5rem;
         }
 
-        header.compact h1 {
+        header.compact .site-name {
             font-size: 1.32rem;
             margin-bottom: 0.2rem;
         }
@@ -181,6 +181,15 @@
 
         section {
             margin-bottom: 3.5rem;
+        }
+
+        main h1 {
+            font-family: inherit;
+            font-size: 1.85rem;
+            letter-spacing: 0.01em;
+            font-weight: 500;
+            color: inherit;
+            margin: 0 0 0.85rem;
         }
 
         h2 {
@@ -386,7 +395,7 @@
                 margin-bottom: 1rem;
             }
 
-            header h1 {
+            header .site-name {
                 font-size: 1.55rem;
             }
 
@@ -557,8 +566,8 @@
         header.compact {
             padding: 1rem 1.5rem 0.95rem !important;
         }
-        header h1,
-        header.compact h1 {
+        header .site-name,
+        header.compact .site-name {
             font-size: 1.2rem !important;
             letter-spacing: 0.14em;
             margin-bottom: 0.15rem !important;
@@ -751,7 +760,7 @@
     
     <header class="compact">
         <img src="images/logo-192.png" alt="The Clarity Chamber Tarot Readings Logo" class="logo">
-        <h1>THE CLARITY CHAMBER</h1>
+        <p class="site-name">THE CLARITY CHAMBER</p>
         <p class="tagline-lead">Find clarity. Move forward.</p>
         <p class="tagline-sub">Tarot readings for clarity, perspective &amp; honest guidance.</p>
                 <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
@@ -777,7 +786,7 @@
         </section>
 
         <section>
-            <h2>How It Works</h2>
+            <h1>How an online tarot reading works</h1>
             <ul class="steps">
                 <li>
                     <strong>Choose your format</strong>

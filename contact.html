@@ -16,15 +16,15 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"ProfessionalService","name":"The Clarity Chamber","url":"https://theclaritychamber.com/","email":"loveleensarao@theclaritychamber.com","telephone":"+61475756576","areaServed":"AU","currenciesAccepted":"AUD","priceRange":"$60–$100","founder":{"@type":"Person","name":"Loveleen Sarao","jobTitle":"Advanced Tarot Practitioner"}}
     </script>
-    <title>Book a Tarot Reading | The Clarity Chamber</title>
-    <meta name="description" content="Book a live video or recorded tarot reading with Loveleen Sarao. Choose your format, package and preferred time.">
+    <title>Book a Tarot Reading Online | The Clarity Chamber</title>
+    <meta name="description" content="Book a live video reading or order a recorded reading. Choose your package, preferred time in Australian Eastern Time, and pay securely with Stripe.">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="The Clarity Chamber">
-    <meta property="og:title" content="Book a Tarot Reading | The Clarity Chamber">
-    <meta property="og:description" content="Book a live video or recorded tarot reading with Loveleen Sarao. Choose your format, package and preferred time.">
+    <meta property="og:title" content="Book a Tarot Reading Online | The Clarity Chamber">
+    <meta property="og:description" content="Book a live video reading or order a recorded reading. Choose your package, preferred time in Australian Eastern Time, and pay securely with Stripe.">
     <meta property="og:url" content="https://theclaritychamber.com/contact.html">
     <meta property="og:image" content="https://theclaritychamber.com/images/og-card.png">
     <meta property="og:image:width" content="1200">
@@ -71,7 +71,7 @@
             box-shadow: none;
         }
 
-        header h1 {
+        header .site-name {
             font-size: 1.9rem;
             letter-spacing: 0.12em;
             font-weight: 400;
@@ -146,7 +146,7 @@
             margin-bottom: 0.5rem;
         }
 
-        header.compact h1 {
+        header.compact .site-name {
             font-size: 1.32rem;
             margin-bottom: 0.2rem;
         }
@@ -176,6 +176,15 @@
             max-width: 960px;
             margin: 0 auto;
             padding: 3rem 1.5rem 4rem;
+        }
+
+        main h1 {
+            font-family: inherit;
+            font-size: 1.85rem;
+            letter-spacing: 0.01em;
+            font-weight: 500;
+            color: inherit;
+            margin: 0 0 0.85rem;
         }
 
         h2 {
@@ -448,7 +457,7 @@
                 margin-bottom: 1rem;
             }
 
-            header h1 {
+            header .site-name {
                 font-size: 1.55rem;
             }
 
@@ -619,8 +628,8 @@
         header.compact {
             padding: 1rem 1.5rem 0.95rem !important;
         }
-        header h1,
-        header.compact h1 {
+        header .site-name,
+        header.compact .site-name {
             font-size: 1.2rem !important;
             letter-spacing: 0.14em;
             margin-bottom: 0.15rem !important;
@@ -769,6 +778,69 @@
             font-style: italic;
             margin-bottom: 1rem;
         }
+
+        /* Larger, easy-to-tap checkboxes */
+        .consent-row {
+            margin-bottom: 0.85rem;
+        }
+        .consent-label {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+            color: var(--deep-plum);
+            cursor: pointer;
+            line-height: 1.5;
+        }
+        .consent-label input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            flex: 0 0 1.35rem;
+            width: 1.35rem;
+            height: 1.35rem;
+            min-width: 1.35rem;
+            min-height: 1.35rem;
+            margin: 0.15rem 0 0;
+            padding: 0;
+            border: 2px solid var(--dusty-mauve);
+            border-radius: 3px;
+            background: var(--soft-cream);
+            cursor: pointer;
+            position: relative;
+            accent-color: var(--deep-plum);
+        }
+        .consent-label input[type="checkbox"]:checked {
+            background-color: var(--deep-plum);
+            border-color: var(--deep-plum);
+        }
+        .consent-label input[type="checkbox"]:checked::after {
+            content: '';
+            position: absolute;
+            left: 0.32rem;
+            top: 0.08rem;
+            width: 0.38rem;
+            height: 0.7rem;
+            border: solid var(--soft-cream);
+            border-width: 0 2.5px 2.5px 0;
+            transform: rotate(45deg);
+        }
+        .consent-label input[type="checkbox"]:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.28);
+            border-color: var(--warm-gold);
+        }
+        .consent-label input[type="checkbox"]:focus-visible {
+            outline: 2px solid var(--warm-gold);
+            outline-offset: 2px;
+        }
+        @media (max-width: 700px) {
+            .consent-label input[type="checkbox"] {
+                flex-basis: 1.5rem;
+                width: 1.5rem;
+                height: 1.5rem;
+                min-width: 1.5rem;
+                min-height: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -776,7 +848,7 @@
     
     <header class="compact">
         <img src="images/logo-192.png" alt="The Clarity Chamber Tarot Readings Logo" class="logo">
-        <h1>THE CLARITY CHAMBER</h1>
+        <p class="site-name">THE CLARITY CHAMBER</p>
         <p class="tagline-lead">Find clarity. Move forward.</p>
         <p class="tagline-sub">Tarot readings for clarity, perspective &amp; honest guidance.</p>
                 <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
@@ -794,7 +866,7 @@
 
     <main id="main">
         <section>
-            <h2>Book a Reading</h2>
+            <h1>Book a live or recorded tarot reading</h1>
             <p style="max-width:40rem;margin-bottom:1.4rem;">Step 1: choose your format and package. Step 2: add your details and continue to payment.</p>
 
             <div id="success-message">
@@ -891,10 +963,16 @@
                             <label for="website">Website</label>
                             <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
                         </p>
-                        <p class="remarks-row">
-                            <label style="display:flex;gap:0.6rem;align-items:flex-start;color:var(--deep-plum);">
-                                <input type="checkbox" id="consent" name="consent" required style="margin-top:0.35rem;width:auto;">
+                        <p class="remarks-row consent-row">
+                            <label class="consent-label" for="consent">
+                                <input type="checkbox" id="consent" name="consent" required>
                                 <span>I am 18 or over and I agree to the <a href="legal.html">terms, privacy and cancellation policy</a>.</span>
+                            </label>
+                        </p>
+                        <p class="remarks-row consent-row">
+                            <label class="consent-label" for="promo-consent">
+                                <input type="checkbox" id="promo-consent" name="promo-consent" value="yes">
+                                <span>I agree to receive occasional promotional emails about readings, offers and updates. I can unsubscribe at any time.</span>
                             </label>
                         </p>
                         <p class="remarks-row" style="font-size:0.9rem;color:var(--dusty-mauve);margin-top:0.2rem;">

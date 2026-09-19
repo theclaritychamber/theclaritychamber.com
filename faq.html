@@ -27,14 +27,14 @@
     </script>
 
     <title>Tarot Reading FAQ | The Clarity Chamber</title>
-    <meta name="description" content="Frequently asked questions about Clarity Chamber tarot readings, booking, payments and cancellations.">
+    <meta name="description" content="What you can ask, how live and recorded readings work, payment, preparation, age limit, and the 24-hour cancellation policy.">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="The Clarity Chamber">
     <meta property="og:title" content="Tarot Reading FAQ | The Clarity Chamber">
-    <meta property="og:description" content="Frequently asked questions about Clarity Chamber tarot readings, booking, payments and cancellations.">
+    <meta property="og:description" content="What you can ask, how live and recorded readings work, payment, preparation, age limit, and the 24-hour cancellation policy.">
     <meta property="og:url" content="https://theclaritychamber.com/faq.html">
     <meta property="og:image" content="https://theclaritychamber.com/images/og-card.png">
     <meta property="og:image:width" content="1200">
@@ -81,7 +81,7 @@
             box-shadow: none;
         }
 
-        header h1 {
+        header .site-name {
             font-size: 1.9rem;
             letter-spacing: 0.12em;
             font-weight: 400;
@@ -157,7 +157,7 @@
             margin-bottom: 0.5rem;
         }
 
-        header.compact h1 {
+        header.compact .site-name {
             font-size: 1.32rem;
             margin-bottom: 0.2rem;
         }
@@ -187,6 +187,15 @@
             max-width: 920px;
             margin: 0 auto;
             padding: 3rem 1.5rem 4rem;
+        }
+
+        main h1 {
+            font-family: inherit;
+            font-size: 1.85rem;
+            letter-spacing: 0.01em;
+            font-weight: 500;
+            color: inherit;
+            margin: 0 0 0.85rem;
         }
 
         h2 {
@@ -318,7 +327,7 @@
                 margin-bottom: 1rem;
             }
 
-            header h1 {
+            header .site-name {
                 font-size: 1.55rem;
             }
 
@@ -481,8 +490,8 @@
         header.compact {
             padding: 1rem 1.5rem 0.95rem !important;
         }
-        header h1,
-        header.compact h1 {
+        header .site-name,
+        header.compact .site-name {
             font-size: 1.2rem !important;
             letter-spacing: 0.14em;
             margin-bottom: 0.15rem !important;
@@ -570,7 +579,7 @@
     
     <header class="compact">
         <img src="images/logo-192.png" alt="The Clarity Chamber Tarot Readings Logo" class="logo">
-        <h1>THE CLARITY CHAMBER</h1>
+        <p class="site-name">THE CLARITY CHAMBER</p>
         <p class="tagline-lead">Find clarity. Move forward.</p>
         <p class="tagline-sub">Tarot readings for clarity, perspective &amp; honest guidance.</p>
                 <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
@@ -588,7 +597,7 @@
 
     <main id="main">
         <section>
-            <h2>Frequently Asked Questions</h2>
+            <h1>Frequently asked questions about tarot readings</h1>
 
             <h3>About Readings</h3>
             <details>
