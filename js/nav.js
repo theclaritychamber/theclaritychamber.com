@@ -49,6 +49,26 @@
     if (!mobile()) setOpen(false);
   }
 
+  var pay = document.getElementById("success-pay");
+  if (pay) {
+    function goStripe() {
+      var href = pay.getAttribute("href") || "";
+      if (href.indexOf("book.stripe.com") === -1) return;
+      pay.style.display = "none";
+      var nextLine = document.getElementById("success-next");
+      if (nextLine) nextLine.textContent = "Taking you to secure payment.";
+      window.location.assign(href);
+    }
+    var obs = new MutationObserver(goStripe);
+    obs.observe(pay, { attributes: true, attributeFilter: ["href", "style"] });
+    pay.addEventListener("click", function (event) {
+      if ((pay.getAttribute("href") || "").indexOf("book.stripe.com") !== -1) {
+        event.preventDefault();
+        goStripe();
+      }
+    });
+  }
+
   var date = document.getElementById("booking-date");
   if (!date) return;
   var old = document.getElementById("fix-contact-date");
