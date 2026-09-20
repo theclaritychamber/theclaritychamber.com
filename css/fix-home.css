@@ -44,3 +44,48 @@ ul.topics p {
   font-size: 0.98rem;
   color: #4a3f55;
 }
+
+/* Trust cards: equal tiles, not a centred flex wrap */
+.trust .trust-strip {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1rem !important;
+  justify-content: stretch !important;
+  align-items: stretch !important;
+  margin: 0 !important;
+  padding: 1.15rem 0 1.2rem !important;
+  list-style: none;
+}
+
+.trust .trust-strip li {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  box-sizing: border-box;
+  margin: 0 !important;
+  padding: 1rem 1.1rem;
+  background: #fff;
+  border: 1px solid var(--muted-taupe);
+  border-left: 4px solid var(--dusty-mauve);
+}
+
+.trust .trust-strip strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--deep-plum);
+}
+
+.trust .trust-strip span {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--dusty-mauve);
+}
+
+@media (max-width: 640px) {
+  .trust .trust-strip {
+    grid-template-columns: 1fr !important;
+  }
+}
