@@ -1,0 +1,83 @@
+.suits {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 0.85rem !important;
+  margin: 0 0 1.8rem !important;
+}
+
+.suits > .suit-tile:first-child,
+.suit-tile--major {
+  grid-column: 1 / -1 !important;
+}
+
+.suit-tile {
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.suit-tile--major h3::after,
+.suits > .suit-tile:first-child h3::after {
+  content: "22 cards · the larger themes of a life";
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--dusty-mauve);
+  font-weight: 400;
+}
+
+.deck-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+}
+
+.deck-heading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(212, 175, 55, 0.55);
+}
+
+.deck-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 0.65rem !important;
+}
+
+/* Centre a leftover pair on the last row (22 or 14 cards). */
+.deck-grid .deck-cell:nth-last-child(2):nth-child(4n + 1) {
+  grid-column: 2;
+}
+
+.stage {
+  min-height: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.stage .empty {
+  margin: 0;
+  padding: 0.85rem 1rem !important;
+  text-align: left !important;
+  background: var(--soft-cream);
+  border: 1px solid var(--muted-taupe);
+  border-left: 4px solid var(--warm-gold);
+}
+
+.stage .card-view.show {
+  padding: 1.2rem 1.15rem;
+  background: #fff;
+  border: 1px solid var(--muted-taupe);
+}
+
+@media (max-width: 640px) {
+  .suits,
+  .deck-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .deck-grid .deck-cell:nth-last-child(2):nth-child(4n + 1) {
+    grid-column: auto;
+  }
+}
