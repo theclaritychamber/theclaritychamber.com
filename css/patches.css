@@ -9,3 +9,12 @@
 
 .is-invalid{border-color:#a33 !important;box-shadow:0 0 0 3px rgba(170,51,51,0.18) !important;}
 #form-status{display:block;margin:0.8rem 0 0;font-size:0.95rem;}
+
+/* Final seal — locked 20 Sep 2026. Circular mark on cream. */
+header img.logo,
+img.logo {
+  border-radius: 50% !important;
+  background: #F3EFE6 !important;
+  object-fit: contain !important;
+  box-shadow: none !important;
+}
