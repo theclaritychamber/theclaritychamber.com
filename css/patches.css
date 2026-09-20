@@ -1,0 +1,11 @@
+/* Folded page patches — load after site.css and pages.css */
+@import url("fix-nav.css");
+@import url("fix-home.css");
+@import url("fix-about.css");
+@import url("fix-cards.css");
+@import url("fix-hiw.css");
+@import url("fix-readings.css");
+@import url("fix-contact.css");
+
+.is-invalid{border-color:#a33 !important;box-shadow:0 0 0 3px rgba(170,51,51,0.18) !important;}
+#form-status{display:block;margin:0.8rem 0 0;font-size:0.95rem;}
