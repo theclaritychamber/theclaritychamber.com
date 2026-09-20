@@ -21,9 +21,10 @@ Static website for Loveleen Sarao’s tarot practice (Australia). Hosted on **Gi
 
 ## How to edit and publish
 
-1. Edit HTML in the root, styles in `css/site.css`, and the mobile menu in `js/nav.js`.
+1. Edit HTML in the root, styles in `css/site.css` and `css/pages.css`, and behaviour in `js/nav.js`.
+   Do not replace `js/nav.js` with a local draft unless you diff it against `main` first — older copies in working folders are stubs.
 2. Put images in `images/` (card art in `images/cards/`).
-3. Commit to `main`. GitHub Pages rebuilds automatically.
+3. Commit to `main`. GitHub Pages rebuilds automatically. Treat `main` as the source of truth, not local zip extracts.
 4. After content changes, update `<lastmod>` dates in `sitemap.xml`.
 
 Prefer git commits with a short purpose (`Update readings prices`) instead of “Add files via upload”.
@@ -38,6 +39,7 @@ These paths are referenced by every page:
 - `images/logo-192.png` (header mark)
 - `images/logo.png` (same mark, extra path)
 - `images/og-card.png` (Open Graph 1200×630)
+- `site.webmanifest` (theme colour and home-screen name)
 
 ## Media
 
