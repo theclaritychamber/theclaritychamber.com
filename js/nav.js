@@ -51,22 +51,20 @@
 
   var pay = document.getElementById("success-pay");
   if (pay) {
+    var sent = false;
     function goStripe() {
       var href = pay.getAttribute("href") || "";
-      if (href.indexOf("book.stripe.com") === -1) return;
+      if (sent || href.indexOf("book.stripe.com") === -1) return;
+      sent = true;
       pay.style.display = "none";
       var nextLine = document.getElementById("success-next");
       if (nextLine) nextLine.textContent = "Taking you to secure payment.";
-      window.location.assign(href);
+      window.setTimeout(function () {
+        window.location.assign(href);
+      }, 2500);
     }
     var obs = new MutationObserver(goStripe);
     obs.observe(pay, { attributes: true, attributeFilter: ["href", "style"] });
-    pay.addEventListener("click", function (event) {
-      if ((pay.getAttribute("href") || "").indexOf("book.stripe.com") !== -1) {
-        event.preventDefault();
-        goStripe();
-      }
-    });
   }
 
   var date = document.getElementById("booking-date");
