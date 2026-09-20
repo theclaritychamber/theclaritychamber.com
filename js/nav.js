@@ -1,9 +1,26 @@
 (function () {
   var btn = document.querySelector(".nav-toggle");
   var nav = document.querySelector("header nav");
+
+  function addSheet(href, test) {
+    if (test && !document.querySelector(test)) return;
+    if (document.querySelector('link[href*="' + href.split("/").pop() + '"]')) return;
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = href;
+    document.head.appendChild(link);
+  }
+  addSheet("css/fix-nav.css", "header");
+  addSheet("css/fix-cards.css", ".suits");
+  addSheet("css/fix-about.css", ".meet-loveleen");
+  addSheet("css/fix-hiw.css", ".hiw-page");
+
   if (btn && nav) {
     btn.textContent = "Menu";
     btn.setAttribute("aria-expanded", "false");
+    function mobile() {
+      return window.matchMedia("(max-width: 900px)").matches;
+    }
     var closer = nav.querySelector(".nav-close");
     if (!closer) {
       closer = document.createElement("a");
@@ -13,6 +30,7 @@
       nav.insertBefore(closer, nav.firstChild);
     }
     function setOpen(open) {
+      if (!mobile()) open = false;
       nav.classList.toggle("is-open", !!open);
       btn.setAttribute("aria-expanded", open ? "true" : "false");
       btn.textContent = "Menu";
@@ -25,19 +43,11 @@
       event.preventDefault();
       setOpen(false);
     });
+    window.addEventListener("resize", function () {
+      if (!mobile()) setOpen(false);
+    });
+    if (!mobile()) setOpen(false);
   }
-
-  function addSheet(href, test) {
-    if (!document.querySelector(test)) return;
-    if (document.querySelector('link[href*="' + href.split("/").pop() + '"]')) return;
-    var link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = href;
-    document.head.appendChild(link);
-  }
-  addSheet("css/fix-cards.css", ".suits");
-  addSheet("css/fix-about.css", ".meet-loveleen");
-  addSheet("css/fix-hiw.css", ".hiw-page");
 
   var date = document.getElementById("booking-date");
   if (!date) return;

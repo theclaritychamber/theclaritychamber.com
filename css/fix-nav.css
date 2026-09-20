@@ -5,17 +5,26 @@
   min-height: 2.5rem;
 }
 
-header nav .nav-close {
-  display: none;
+header nav .nav-close,
+header nav a.nav-close {
+  display: none !important;
 }
 
 @media (max-width: 900px) {
-  header nav.is-open .nav-close {
-    display: block;
+  header nav.is-open .nav-close,
+  header nav.is-open a.nav-close {
+    display: block !important;
     color: #d4af37 !important;
     margin: 0.15rem 0 0.7rem;
     font-size: 0.95rem;
     letter-spacing: 0.04em;
     text-decoration: none;
+  }
+}
+
+@media (min-width: 901px) {
+  header nav .nav-close,
+  header nav a.nav-close {
+    display: none !important;
   }
 }
