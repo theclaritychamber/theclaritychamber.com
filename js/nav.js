@@ -27,6 +27,13 @@
     });
   }
 
+  if (document.querySelector(".suits") && !document.querySelector('link[href*="fix-cards"]')) {
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "css/fix-cards.css";
+    document.head.appendChild(link);
+  }
+
   var date = document.getElementById("booking-date");
   if (!date) return;
   var old = document.getElementById("fix-contact-date");
