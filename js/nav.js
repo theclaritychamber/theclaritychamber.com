@@ -27,12 +27,17 @@
     });
   }
 
-  if (document.querySelector(".suits") && !document.querySelector('link[href*="fix-cards"]')) {
+  function addSheet(href, test) {
+    if (!document.querySelector(test)) return;
+    if (document.querySelector('link[href*="' + href.split("/").pop() + '"]')) return;
     var link = document.createElement("link");
     link.rel = "stylesheet";
-    link.href = "css/fix-cards.css";
+    link.href = href;
     document.head.appendChild(link);
   }
+  addSheet("css/fix-cards.css", ".suits");
+  addSheet("css/fix-about.css", ".meet-loveleen");
+  addSheet("css/fix-hiw.css", ".hiw-page");
 
   var date = document.getElementById("booking-date");
   if (!date) return;
