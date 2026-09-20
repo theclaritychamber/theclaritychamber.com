@@ -1,0 +1,110 @@
+.hiw-page {
+  background: #fff;
+  border: 1px solid var(--muted-taupe);
+  padding: 1.8rem 1.5rem 1.6rem;
+}
+
+.hiw-page .hiw-lead {
+  text-align: center;
+  max-width: none;
+  margin: 0 0 1.4rem;
+}
+
+.hiw-page .hiw-lead .mark {
+  color: var(--warm-gold);
+  letter-spacing: 0.22em;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  margin-bottom: 0.55rem;
+}
+
+.hiw-page .hiw-lead h1 {
+  text-align: center;
+  font-size: 1.7rem;
+  margin: 0 0 0.55rem;
+}
+
+.hiw-page .hiw-lead h1::after {
+  display: none !important;
+}
+
+.hiw-page .hiw-kicker {
+  margin: 0;
+  color: #4a3f55;
+}
+
+.hiw-page .steps {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 0.9rem !important;
+  margin: 0 0 1.2rem !important;
+  list-style: none;
+  counter-reset: step-counter;
+}
+
+.hiw-page .steps li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 100%;
+  margin: 0 !important;
+  padding: 1.15rem 1.1rem 1.2rem !important;
+  background: #fff !important;
+  border: 1px solid var(--muted-taupe) !important;
+  border-left: 1px solid var(--muted-taupe) !important;
+  box-shadow: none !important;
+}
+
+.hiw-page .steps li::before {
+  counter-increment: step-counter;
+  content: counter(step-counter) !important;
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  width: 1.7rem;
+  height: 1.7rem;
+  margin: 0 0 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--warm-gold);
+  border-radius: 50%;
+  background: transparent !important;
+  color: var(--warm-gold) !important;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.hiw-page .steps strong {
+  display: block;
+  color: var(--deep-plum);
+  font-weight: 500;
+  margin-bottom: 0.35rem;
+}
+
+.hiw-page .steps span {
+  color: #4a3f55;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.hiw-page .closing {
+  text-align: center;
+  font-style: italic;
+  color: var(--dusty-mauve);
+  margin: 0 0 1.2rem;
+}
+
+.hiw-page .hiw-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .hiw-page .steps {
+    grid-template-columns: 1fr !important;
+  }
+}
