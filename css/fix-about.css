@@ -1,0 +1,62 @@
+.meet-loveleen {
+  display: grid !important;
+  grid-template-columns: minmax(200px, 280px) minmax(0, 1fr) !important;
+  gap: 1.4rem 1.8rem !important;
+  align-items: start !important;
+}
+
+.meet-loveleen .photo {
+  grid-column: 1;
+  margin: 0;
+}
+
+.meet-loveleen .bio {
+  grid-column: 2;
+}
+
+.meet-loveleen .certificate {
+  grid-column: 1 / -1;
+  margin: 0.4rem 0 0;
+  text-align: center;
+}
+
+.meet-loveleen video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: contain;
+  background: #2E1F3D;
+  border-radius: 2px;
+}
+
+.meet-loveleen .video-caption {
+  margin: 0.55rem 0 0;
+  font-style: italic;
+  color: var(--dusty-mauve);
+  font-size: 0.92rem;
+}
+
+.meet-loveleen .certificate img {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  margin: 0 auto;
+  box-shadow: 0 8px 24px rgba(46, 31, 61, 0.08);
+}
+
+@media (max-width: 700px) {
+  .meet-loveleen {
+    grid-template-columns: 1fr !important;
+  }
+  .meet-loveleen .photo,
+  .meet-loveleen .bio,
+  .meet-loveleen .certificate {
+    grid-column: 1;
+  }
+  .meet-loveleen video {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
