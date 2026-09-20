@@ -45,7 +45,7 @@ ul.topics p {
   color: #4a3f55;
 }
 
-/* Trust cards: equal tiles, not a centred flex wrap */
+/* Trust cards: equal tiles */
 .trust .trust-strip {
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
@@ -84,7 +84,46 @@ ul.topics p {
   color: var(--dusty-mauve);
 }
 
-@media (max-width: 640px) {
+/* Hero A: photo column matches the copy height */
+.intro-with-photo {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.9fr) !important;
+  gap: 1.8rem !important;
+  align-items: stretch !important;
+}
+
+.intro-copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-photo {
+  margin: 0 !important;
+  height: 100%;
+  min-height: 0;
+}
+
+.intro-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: 50% 18% !important;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .intro-with-photo {
+    grid-template-columns: 1fr !important;
+  }
+  .intro-photo {
+    order: 0;
+    height: auto;
+    max-height: 340px;
+  }
+  .intro-photo img {
+    height: 340px !important;
+  }
   .trust .trust-strip {
     grid-template-columns: 1fr !important;
   }
