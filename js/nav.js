@@ -2,21 +2,14 @@
   var btn = document.querySelector(".nav-toggle");
   var nav = document.querySelector("header nav");
 
-  function addSheet(href, test) {
-    if (test && !document.querySelector(test)) return;
+  function addSheet(href) {
     if (document.querySelector('link[href*="' + href.split("/").pop() + '"]')) return;
     var link = document.createElement("link");
     link.rel = "stylesheet";
     link.href = href;
     document.head.appendChild(link);
   }
-  addSheet("css/fix-nav.css", "header");
-  addSheet("css/fix-cards.css", ".suits");
-  addSheet("css/fix-about.css", ".meet-loveleen");
-  addSheet("css/fix-hiw.css", ".hiw-page");
-  addSheet("css/fix-home.css", ".intro-with-photo");
-  addSheet("css/fix-readings.css", ".reading-options");
-  addSheet("css/fix-contact.css", "#booking-form");
+  addSheet("css/patches.css");
 
   if (document.getElementById("booking-form")) {
     var validate = document.createElement("script");
