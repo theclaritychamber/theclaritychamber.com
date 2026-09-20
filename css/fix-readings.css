@@ -1,56 +1,102 @@
-/* readings.html — override shared .reading-card a so prices stay readable */
 .reading-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.6rem;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1.4rem !important;
+  align-items: stretch !important;
   margin-top: 1.5rem;
-  align-items: start;
+}
+
+.reading-grid > .reading-card {
+  display: flex !important;
+  flex-direction: column;
+  text-align: left !important;
+  padding: 1.5rem 1.4rem !important;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.reading-grid > .reading-card h3 {
+  text-align: center;
+  margin-bottom: 0.45rem;
+}
+
+.reading-grid > .reading-card h3::after {
+  content: "";
+  display: block;
+  width: 3.2rem;
+  height: 2px;
+  background: var(--warm-gold);
+  margin: 0.55rem auto 0.9rem;
+}
+
+.reading-grid > .reading-card p {
+  text-align: left !important;
 }
 
 .reading-card .price-list {
-  background-color: var(--soft-cream);
-  border-left: 3px solid var(--warm-gold);
-  padding: 0.75rem 1rem;
-  margin: 1.1rem 0;
+  width: 100% !important;
+  box-sizing: border-box;
+  background-color: var(--soft-cream) !important;
+  border: 0 !important;
+  border-left: 3px solid var(--warm-gold) !important;
+  padding: 0.85rem 1rem !important;
+  margin: 0.9rem 0 1.1rem !important;
 }
 
 .reading-card .price-list a,
 .price-list a {
   display: block !important;
   margin: 0 !important;
-  padding: 0.35rem 0 !important;
+  padding: 0.28rem 0 !important;
   background: transparent !important;
-  background-color: transparent !important;
   color: var(--deep-plum) !important;
   border: 0 !important;
   text-align: left !important;
   font-weight: 600;
-  letter-spacing: 0.02em;
   text-decoration: none;
 }
 
-.reading-card .price-list a:hover,
-.price-list a:hover {
-  color: var(--dusty-mauve) !important;
-  background: transparent !important;
+.reading-card .includes {
+  margin-top: auto;
+  text-align: left !important;
 }
 
-.reading-card .includes ul,
-.includes ul {
-  display: block;
-  list-style: disc;
-  padding-left: 1.2rem;
-  margin: 0;
-  gap: 0;
+.reading-card .includes p {
+  text-align: left !important;
+  margin-bottom: 0.45rem;
 }
 
-.reading-card .includes li,
-.includes li {
+.reading-card .includes ul {
+  display: block !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+.reading-card .includes li {
+  position: relative !important;
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
-  padding: 0.15rem 0 !important;
-  color: var(--deep-plum);
+  padding: 0.28rem 0 0.28rem 1.05rem !important;
+  margin: 0 !important;
+  color: var(--deep-plum) !important;
+  text-align: left !important;
+  line-height: 1.4;
+}
+
+.reading-card .includes li::before {
+  content: "" !important;
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--warm-gold);
+  color: transparent !important;
+  font-size: 0 !important;
 }
 
 .booking-options {
@@ -70,23 +116,9 @@
   border: 1px solid var(--deep-plum);
 }
 
-.booking-card a:hover {
-  background-color: var(--warm-gold);
-  border-color: var(--warm-gold);
-  color: var(--deep-plum) !important;
-}
-
-.values-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 0 1.8rem;
-  border-radius: 4px;
-}
-
 @media (max-width: 700px) {
   .reading-grid,
   .booking-options {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 }
