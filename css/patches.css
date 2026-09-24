@@ -42,26 +42,27 @@ footer .footer-social {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  margin: 0.85rem 0 0.2rem;
+  gap: 1.05rem;
+  margin: 0.9rem 0 0.25rem;
 }
 footer .footer-social a.social-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.15rem;
-  height: 2.15rem;
-  color: #2E1F3D;
-  opacity: 0.82;
+  width: 2.35rem;
+  height: 2.35rem;
+  color: inherit;
+  opacity: 1;
   text-decoration: none;
+  margin: 0 !important;
 }
 footer .footer-social a.social-icon:hover,
 footer .footer-social a.social-icon:focus {
-  opacity: 1;
-  color: #6B3FA0;
+  opacity: 0.88;
+  transform: translateY(-1px);
 }
 footer .footer-social a.social-icon svg {
-  width: 1.35rem;
-  height: 1.35rem;
+  width: 1.7rem;
+  height: 1.7rem;
   display: block;
 }
