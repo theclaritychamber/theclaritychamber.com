@@ -18,3 +18,29 @@ img.logo {
   object-fit: contain !important;
   box-shadow: none !important;
 }
+header.compact img.logo {
+  width: 128px !important;
+  max-width: 128px !important;
+  margin-bottom: 0.55rem !important;
+}
+header:not(.compact) img.logo {
+  width: 196px !important;
+  max-width: 196px !important;
+}
+@media (max-width: 700px) {
+  header.compact img.logo {
+    width: 112px !important;
+    max-width: 112px !important;
+  }
+  header:not(.compact) img.logo {
+    width: 156px !important;
+    max-width: 156px !important;
+  }
+}
+
+footer .footer-social {
+  margin-top: 0.55rem;
+}
+footer .footer-social a {
+  margin: 0 0.45rem;
+}
