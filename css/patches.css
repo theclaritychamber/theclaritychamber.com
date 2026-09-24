@@ -39,8 +39,29 @@ header:not(.compact) img.logo {
 }
 
 footer .footer-social {
-  margin-top: 0.55rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.85rem 0 0.2rem;
 }
-footer .footer-social a {
-  margin: 0 0.45rem;
+footer .footer-social a.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  color: #2E1F3D;
+  opacity: 0.82;
+  text-decoration: none;
+}
+footer .footer-social a.social-icon:hover,
+footer .footer-social a.social-icon:focus {
+  opacity: 1;
+  color: #6B3FA0;
+}
+footer .footer-social a.social-icon svg {
+  width: 1.35rem;
+  height: 1.35rem;
+  display: block;
 }
