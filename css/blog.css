@@ -14,9 +14,6 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* ---------- Reset leaks from the site's global styles ----------
-   site.css styles bare `ul li` as bordered white cards and `section` with
-   its own spacing/!important rules. Neutralise both inside the blog only. */
 .blog-page ul li {
     background: none;
     border: 0;
@@ -56,8 +53,6 @@
 }
 .blog-page h2::after { display: none !important; }
 
-/* The site's global `ul { list-style:none; display:grid; gap:1.4rem }` is built for
-   card lists. Restore ordinary bulleted lists inside articles. */
 .blog-page .blog-body ul {
     list-style: disc;
     display: block;
@@ -73,7 +68,6 @@
 .blog-page .blog-body ul li::marker { color: var(--warm-gold); }
 .blog-page .blog-body .blog-fit ul { margin-top: 0.3rem; }
 
-/* Screen-reader-only text (not defined elsewhere on the site) */
 .blog-page .visually-hidden {
     position: absolute;
     width: 1px;
@@ -86,7 +80,6 @@
     border: 0;
 }
 
-/* ---------- Lead / heading block ---------- */
 .blog-page .blog-lead {
     text-align: center;
     margin-bottom: 2.2rem;
@@ -126,7 +119,6 @@
     margin: 1.6rem auto 0;
 }
 
-/* ---------- Article body ---------- */
 .blog-page .blog-body h2 {
     font-size: 1.45rem;
     line-height: 1.3;
@@ -160,7 +152,6 @@
 .blog-page .blog-body .blog-fit strong { display: block; margin-bottom: 0.4rem; }
 .blog-page .blog-body .blog-fit ul { margin-bottom: 0; }
 
-/* ---------- Comparison table ---------- */
 .blog-page .blog-table-wrap {
     overflow-x: auto;
     margin: 1.4rem 0 1.4rem;
@@ -206,7 +197,6 @@
 .blog-page .blog-table tbody tr:last-child th,
 .blog-page .blog-table tbody tr:last-child td { border-bottom: 0; }
 
-/* ---------- Buttons (match .hiw-actions) ---------- */
 .blog-page .blog-actions {
     display: flex;
     flex-wrap: wrap;
@@ -229,7 +219,6 @@
 }
 .blog-page .blog-actions a:hover { opacity: 0.88; }
 
-/* ---------- Sign-off ---------- */
 .blog-page .blog-signoff {
     margin-top: 2.4rem;
     padding-top: 1.6rem;
@@ -256,7 +245,6 @@
 }
 .blog-page .blog-back a { color: var(--dusty-mauve); }
 
-/* ---------- Blog index: intro + post list ---------- */
 .blog-page .blog-intro {
     margin: 0 auto 2.4rem;
     max-width: 38rem;
@@ -345,7 +333,6 @@
     .blog-page .blog-body h2 { font-size: 1.3rem; }
 }
 
-/* ---------- Deliberate card look (index page), restored after the reset ---------- */
 .blog-page ul.blog-list li.blog-card {
     background: #fbf9f4;
     border: 1px solid rgba(46, 31, 61, 0.14);
@@ -366,7 +353,6 @@
 .blog-page ul.blog-list { list-style: none; display: grid; gap: 1rem; margin: 0 0 2.6rem; }
 .blog-page ul.blog-topics { list-style: none; display: grid; gap: 0.9rem; margin: 0 0 2.4rem; }
 
-/* Small-caps section labels: beat the site's global h2 !important sizing */
 .blog-page h2.blog-section-title {
     font-size: 0.8rem !important;
     letter-spacing: 0.26em;
@@ -377,7 +363,6 @@
     padding: 0 !important;
 }
 
-/* Comparison table: stack into labelled rows on phones so no column is hidden */
 @media (max-width: 700px) {
     .blog-page .blog-table-wrap { overflow-x: visible; }
     .blog-page table.blog-table { min-width: 0; border: 0; background: transparent; }
@@ -414,4 +399,48 @@
         color: var(--dusty-mauve);
         margin-bottom: 0.15rem;
     }
+}
+
+.blog-page .blog-body ol.blog-steps {
+    list-style: none;
+    display: grid;
+    gap: 0.9rem;
+    margin: 1.2rem 0 1.6rem;
+    padding: 0;
+    counter-reset: blogstep;
+}
+.blog-page .blog-body ol.blog-steps li {
+    counter-increment: blogstep;
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 1rem 1.1rem 1rem 4rem;
+    background: #fbf9f4;
+    border: 1px solid rgba(46, 31, 61, 0.14);
+    border-left: 3px solid var(--warm-gold);
+    line-height: 1.6;
+}
+.blog-page .blog-body ol.blog-steps li::before {
+    content: counter(blogstep);
+    position: absolute;
+    left: 1.05rem;
+    top: 1rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--deep-plum);
+    color: var(--warm-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+.blog-page .blog-body ol.blog-steps li strong {
+    display: block;
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.02em;
+}
+.blog-page .blog-body ol.blog-steps li span { display: block; }
+@media (max-width: 700px) {
+    .blog-page .blog-body ol.blog-steps li { padding-left: 3.6rem; }
 }
