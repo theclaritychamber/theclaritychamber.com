@@ -1,19 +1,21 @@
 (function () {
   var btn = document.querySelector(".nav-toggle");
   var nav = document.querySelector("header nav");
+  var root = (location.pathname.indexOf("/blog/") === 0) ? "../" : "";
 
   function addSheet(href) {
-    if (document.querySelector('link[href*="' + href.split("/").pop() + '"]')) return;
+    var file = href.split("/").pop();
+    if (document.querySelector('link[href*="' + file + '"]')) return;
     var link = document.createElement("link");
     link.rel = "stylesheet";
-    link.href = href;
+    link.href = root + href;
     document.head.appendChild(link);
   }
   addSheet("css/patches.css");
 
   if (document.getElementById("booking-form")) {
     var validate = document.createElement("script");
-    validate.src = "js/fix-booking.js";
+    validate.src = root + "js/fix-booking.js";
     document.body.appendChild(validate);
   }
 
@@ -67,5 +69,18 @@
     }
     var obs = new MutationObserver(goStripe);
     obs.observe(pay, { attributes: true, attributeFilter: ["href", "style"] });
+  }
+
+  var footer = document.querySelector("footer");
+  if (footer && !footer.querySelector(".footer-social")) {
+    var social = document.createElement("p");
+    social.className = "footer-social";
+    social.innerHTML =
+      '<a href="https://www.instagram.com/theclaritychamber" rel="noopener noreferrer" target="_blank">Instagram</a>' +
+      '<a href="https://www.youtube.com/@theclaritychamber.official" rel="noopener noreferrer" target="_blank">YouTube</a>' +
+      '<a href="https://www.tiktok.com/@theclaritychamber" rel="noopener noreferrer" target="_blank">TikTok</a>';
+    var contact = footer.querySelector(".footer-contact");
+    if (contact && contact.nextSibling) footer.insertBefore(social, contact.nextSibling);
+    else footer.appendChild(social);
   }
 })();
