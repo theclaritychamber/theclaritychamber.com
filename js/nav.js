@@ -78,12 +78,14 @@
     var ig = '<svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#f58529"/><stop offset="0.5" stop-color="#dd2a7b"/><stop offset="1" stop-color="#8134af"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#ig)"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.15" fill="#fff"/></svg>';
     var yt = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="5" width="22" height="14" rx="4" fill="#FF0000"/><path fill="#fff" d="M10 9.2v5.6l5.2-2.8z"/></svg>';
     var tt = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25F4EE" d="M14.4 3.2h2.5c.25 1.7 1.2 3.15 2.7 4.05 1 .6 2.15.9 3.35.95v2.55c-1.55-.05-3-.5-4.2-1.25v6.85A6.85 6.85 0 1 1 10.2 9.6v2.7a4.2 4.2 0 1 0 2.95 4V3.2z" transform="translate(0.7 0.7)"/><path fill="#FE2C55" d="M14.4 3.2h2.5c.25 1.7 1.2 3.15 2.7 4.05 1 .6 2.15.9 3.35.95v2.55c-1.55-.05-3-.5-4.2-1.25v6.85A6.85 6.85 0 1 1 10.2 9.6v2.7a4.2 4.2 0 1 0 2.95 4V3.2z" transform="translate(-0.7 -0.7)"/><path fill="#fff" d="M14.4 3.2h2.5c.25 1.7 1.2 3.15 2.7 4.05 1 .6 2.15.9 3.35.95v2.55c-1.55-.05-3-.5-4.2-1.25v6.85A6.85 6.85 0 1 1 10.2 9.6v2.7a4.2 4.2 0 1 0 2.95 4V3.2z"/></svg>';
+    var wa = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#25D366"/><path fill="#fff" d="M12.05 6.2A5.75 5.75 0 0 0 6.9 15.4l-.32 1.85 1.9-.32A5.75 5.75 0 1 0 12.05 6.2zm3.28 8.05c-.14.4-.82.76-1.15.81-.3.04-.67.06-1.08-.07-.25-.08-.57-.18-.98-.36-1.73-.75-2.85-2.48-2.94-2.6-.08-.12-.7-.93-.7-1.77s.44-1.25.6-1.42c.14-.16.32-.2.42-.2h.31c.1 0 .23 0 .35.27.14.31.46 1.12.5 1.2.04.08.07.18.01.29-.06.12-.1.18-.19.28l-.28.33c-.1.1-.2.22-..08.44.08.22.38.74.82 1.2.56.59 1.03.78 1.25.87.22.08.35.07.48-.04.13-.12.56-.65.71-.87.15-.22.3-.18.5-.11.2.08 1.27.6 1.49.71.22.11.36.16.42.25.05.09.05.5-.09.9z"/></svg>';
     var social = document.createElement("p");
     social.className = "footer-social";
     social.innerHTML =
       '<a class="social-icon" href="https://www.instagram.com/theclaritychamber" rel="noopener noreferrer" target="_blank" aria-label="Instagram">' + ig + '</a>' +
       '<a class="social-icon" href="https://www.youtube.com/@theclaritychamber.official" rel="noopener noreferrer" target="_blank" aria-label="YouTube">' + yt + '</a>' +
-      '<a class="social-icon" href="https://www.tiktok.com/@theclaritychamber" rel="noopener noreferrer" target="_blank" aria-label="TikTok">' + tt + '</a>';
+      '<a class="social-icon" href="https://www.tiktok.com/@theclaritychamber" rel="noopener noreferrer" target="_blank" aria-label="TikTok">' + tt + '</a>' +
+      '<a class="social-icon" href="https://whatsapp.com/channel/0029Vb9274uIyPtQbM6vCw3T" rel="noopener noreferrer" target="_blank" aria-label="WhatsApp channel">' + wa + '</a>';
     var contact = footer.querySelector(".footer-contact");
     if (contact && contact.nextSibling) footer.insertBefore(social, contact.nextSibling);
     else footer.appendChild(social);
