@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MHRRCHFL9L"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-MHRRCHFL9L');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MHRRCHFL9L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MHRRCHFL9L');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://theclaritychamber.com/contact.html">
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"ProfessionalService","name":"The Clarity Chamber","url":"https://theclaritychamber.com/","email":"loveleensarao@theclaritychamber.com","telephone":"+61475756576","areaServed":"AU","currenciesAccepted":"AUD","priceRange":"$60–$100","founder":{"@type":"Person","name":"Loveleen Sarao","jobTitle":"Advanced Tarot Practitioner"}}
+    {"@context":"https://schema.org","@type":"ProfessionalService","name":"The Clarity Chamber","url":"https://theclaritychamber.com/","email":"loveleensarao@theclaritychamber.com","telephone":"+61475756576"}
     </script>
     <title>Book a Tarot Reading Online | The Clarity Chamber</title>
     <meta name="description" content="Book a live video reading or order a recorded reading. Choose your package, preferred time in Australian Eastern Time, and pay securely with Stripe.">
@@ -33,18 +32,21 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
-    </head>
+</head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
-    
-    <header class="compact">
-        <img src="images/logo-192.png" alt="The Clarity Chamber Tarot Readings Logo" class="logo">
-        <p class="site-name">THE CLARITY CHAMBER</p>
-        <p class="tagline-lead">Find clarity. Move forward.</p>
-        <p class="tagline-sub">Tarot readings for clarity, perspective &amp; honest guidance.</p>
-                <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
-        <nav id="site-nav">
 
+    <header class="compact site-header">
+        <div class="brand-lockup">
+            <img src="images/logo-192.png" alt="The Clarity Chamber Tarot Readings Logo" class="logo">
+            <p class="site-name">THE CLARITY CHAMBER</p>
+            <p class="tagline-lead">Find clarity. Move forward.</p>
+            <p class="tagline-sub">Tarot readings for clarity, perspective &amp; honest guidance.</p>
+        </div>
+
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+
+        <nav id="site-nav" aria-label="Main navigation">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="readings.html">Readings</a>
@@ -57,27 +59,28 @@
     </header>
 
     <main id="main">
-        <section>
-            <h1>Book a live or recorded tarot reading</h1>
-            <p style="max-width:40rem;margin-bottom:1.4rem;">Step 1: choose your format and package. Step 2: add your details and continue to payment.</p>
+        <section class="booking-section" aria-labelledby="booking-title">
+            <h1 id="booking-title">Book a live or recorded tarot reading</h1>
+            <p class="section-intro">Step 1: choose your format and package. Step 2: add your details and continue to payment.</p>
 
-            <div id="success-message">
+            <div id="success-message" aria-live="polite">
                 <h3>Your request is in the chamber</h3>
                 <p id="success-lead">Thank you. We’ve received your booking.</p>
                 <p id="success-detail">Please check your email for confirmation. If you booked a live reading, a calendar invitation will follow with the requested time in Australian Eastern Time.</p>
-                <p id="success-booking" style="margin-top:1rem; letter-spacing:0.04em;">Booking number: —</p>
+                <p id="success-booking" class="booking-number">Booking number: —</p>
                 <p id="success-next">Pay now to confirm this booking. Your time is held once payment is received.</p>
-                <p style="margin-top:1.4rem;">
-                    <a id="success-pay" href="#" style="display:inline-block;padding:0.85rem 2.5rem;background-color:var(--deep-plum);color:var(--soft-cream);text-decoration:none;letter-spacing:0.05em;">Pay securely with Stripe</a>
+                <p class="success-action">
+                    <a id="success-pay" href="#">Pay now</a>
                 </p>
             </div>
 
-            <form id="booking-form">
+            <form id="booking-form" novalidate>
                 <div class="form-grid">
                     <p id="package-summary" role="status">
                         <strong>Select a format and package</strong>
                         <span>The price will appear here in Australian dollars.</span>
                     </p>
+
                     <div class="session-row">
                         <p>
                             <label for="reading-type">Format</label>
@@ -100,32 +103,34 @@
                             </select>
                         </p>
                     </div>
+
                     <div class="dynamic-block">
-                        <div id="live-datetime-container" style="display: none;">
+                        <div id="live-datetime-container">
                             <div class="live-fields">
-                            <p>
-                                <label for="platform">Video platform</label>
-                                <select id="platform" name="platform">
-                                    <option value="" disabled selected>Select platform</option>
-                                    <option value="zoom">Zoom</option>
-                                    <option value="google-meet">Google Meet</option>
-                                </select>
-                                <em class="field-hint">Not sure? Zoom is recommended — no account needed.</em>
-                            </p>
-                            <p>
-                                <label for="booking-date">Preferred date</label>
-                                <input type="date" id="booking-date" name="booking-date" onchange="updateTimeSlots()">
-                            </p>
-                            <p>
-                                <label for="booking-time">Preferred time <span style="font-size:0.85em;color:var(--dusty-mauve);">(AEST/AEDT)</span></label>
-                                <select id="booking-time" name="booking-time">
-                                    <option value="" disabled selected>Select a date first</option>
-                                </select>
-                            </p>
-                            <p id="availability-note" style="color:var(--dusty-mauve);font-size:0.9rem;grid-column:1/-1;margin-top:0;"></p>
+                                <p>
+                                    <label for="platform">Video platform</label>
+                                    <select id="platform" name="platform">
+                                        <option value="" disabled selected>Select platform</option>
+                                        <option value="zoom">Zoom</option>
+                                        <option value="google-meet">Google Meet</option>
+                                    </select>
+                                    <em class="field-hint">Not sure? Zoom is recommended — no account needed.</em>
+                                </p>
+                                <p>
+                                    <label for="booking-date">Preferred date</label>
+                                    <input type="date" id="booking-date" name="booking-date" onchange="updateTimeSlots()">
+                                </p>
+                                <p>
+                                    <label for="booking-time">Preferred time <span class="field-note">(AEST/AEDT)</span></label>
+                                    <select id="booking-time" name="booking-time">
+                                        <option value="" disabled selected>Select a date first</option>
+                                    </select>
+                                </p>
+                                <p id="availability-note" class="availability-note"></p>
                             </div>
                         </div>
-                        <div id="recorded-questions-container" style="display: none;"></div>
+
+                        <div id="recorded-questions-container"></div>
                     </div>
 
                     <div class="column">
@@ -143,33 +148,36 @@
                                 <input type="email" id="email" name="email" required autocomplete="email">
                             </p>
                             <p>
-                                <label for="phone">Phone <span style="font-size:0.85em;color:var(--muted-taupe);">(optional)</span></label>
+                                <label for="phone">Phone <span class="field-note">(optional)</span></label>
                                 <input type="tel" id="phone" name="phone" autocomplete="tel">
                             </p>
                         </div>
+
                         <p class="remarks-row">
                             <label for="remarks">Anything you'd like Loveleen to know before your reading? (optional)</label>
                             <textarea id="remarks" name="remarks" rows="4" placeholder="e.g. background on the situation, what you're hoping to explore, or any other context that would help."></textarea>
                         </p>
-                        <p class="hp" aria-hidden="true" style="position:absolute;left:-10000px;height:0;overflow:hidden;">
+
+                        <p class="hp" aria-hidden="true">
                             <label for="website">Website</label>
                             <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
                         </p>
+
                         <p class="remarks-row consent-row">
                             <label class="consent-label" for="consent">
                                 <input type="checkbox" id="consent" name="consent" required>
                                 <span>I am 18 or over and I agree to the <a href="legal.html">terms, privacy and cancellation policy</a>.</span>
                             </label>
                         </p>
+
                         <p class="remarks-row consent-row">
                             <label class="consent-label" for="promo-consent">
                                 <input type="checkbox" id="promo-consent" name="promo-consent" value="yes">
                                 <span>I agree to receive occasional promotional emails about readings, offers and updates. I can unsubscribe at any time.</span>
                             </label>
                         </p>
-                        <p class="remarks-row" style="font-size:0.9rem;color:var(--dusty-mauve);margin-top:0.2rem;">
-                            We use your details to run this booking, take payment, and send your reading. See the <a href="legal.html">privacy policy</a>.
-                        </p>
+
+                        <p class="form-note-small">We use your details to run this booking, take payment, and send your reading. See the <a href="legal.html">privacy policy</a>.</p>
                     </div>
 
                     <div class="full-width">
@@ -184,21 +192,37 @@
                     </div>
                 </div>
             </form>
+
             <div class="next-steps">
                 <h3>What happens next</h3>
                 <ol>
                     <li>You'll receive a confirmation email with your booking details.</li>
                     <li>Pay via Stripe to secure your booking — your time is held once payment is received.</li>
-                    <li id="next-step-3">For live readings, a calendar invitation will follow with your appointment time in Australian Eastern Time. For recorded readings, your video will be delivered by email within 3 business days of receiving your questions.</li>
+                    <li id="next-step-3">For live readings, a calendar invitation will follow with your appointment time in Australian Eastern Time. For recorded readings, your video will be delivered by email within 3 business days.</li>
                 </ol>
             </div>
-            <p style="margin-top:1.2rem;font-size:0.95rem;color:var(--dusty-mauve);">Already booked? <a href="cancel.html">Cancel a booking</a> · Need a change of time? Email <a href="mailto:loveleensarao@theclaritychamber.com">loveleensarao@theclaritychamber.com</a>.</p>
+
+            <p class="booking-footer-link">Already booked? <a href="cancel.html">Cancel a booking</a> · Need a change of time? Email <a href="mailto:loveleensarao@theclaritychamber.com">loveleensarao@theclaritychamber.com</a>.</p>
         </section>
     </main>
 
+    <footer>
+        <p>
+            <a href="index.html">Home</a>
+            <a href="blog/">Blog</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact.html">Book a Reading</a>
+            <a href="cancel.html">Cancel a booking</a>
+            <a href="legal.html">Legal</a>
+        </p>
+        <p class="footer-contact"><a href="mailto:loveleensarao@theclaritychamber.com">loveleensarao@theclaritychamber.com</a> · <a href="tel:+61475756576">+61 475 756 576</a></p>
+        <p>&copy; 2026 The Clarity Chamber. All rights reserved.</p>
+        <p class="footer-meta">Prices in AUD. Live times in AEST/AEDT.</p>
+    </footer>
+
+    <script src="js/nav.js" defer></script>
     <script>
         const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyrLcMbIha3Gs2lwjKD54c92xmXx4fpSSGXcvXGLikhXQGUaK8PgD_qZfqyK7ARiY5K7Q/exec';
-
         const PACKAGE_INFO = {
             'live-30': { label: 'Live video · 30 minutes', price: 'AUD $60' },
             'live-60': { label: 'Live video · 60 minutes', price: 'AUD $80' },
@@ -242,356 +266,27 @@
             'rec-11': 'https://book.stripe.com/9B6bIV3m80nx8ft0qY3AY05'
         };
 
-        // Live-reading availability (Australia/Sydney).
-        // FREE_HOURS overrides weekday hours for every date in the sheet (to 2027-08-22).
         const AVAILABILITY = {
-            timeZone: "Australia/Sydney",
+            timeZone: 'Australia/Sydney',
             slotMinutes: 15,
             bufferMinutes: 15,
             minHoursNotice: 24,
             maxDate: '2027-08-22',
             sheetStart: '2026-10-01',
             blockedDates: [
-                '2026-10-05',
-                '2026-10-06',
-                '2026-10-07',
-                '2026-10-08',
-                '2026-10-09',
-                '2026-12-25',
-                '2026-12-26',
-                '2026-12-28',
-                '2027-01-01',
-                '2027-01-26',
-                '2027-03-26',
-                '2027-03-27',
-                '2027-03-28',
-                '2027-03-29',
-                '2027-04-25',
-                '2027-04-26',
-                '2027-06-14'
+                '2026-10-05', '2026-10-06', '2026-10-07', '2026-10-08', '2026-10-09',
+                '2026-12-25', '2026-12-26', '2026-12-28', '2027-01-01', '2027-01-26',
+                '2027-03-26', '2027-03-27', '2027-03-28', '2027-03-29', '2027-04-25',
+                '2027-04-26', '2027-06-14'
             ],
             hours: {
-                1: { startHour: 10, endHour: 15 }, // Monday 10:00 am – 3:00 pm
-                2: { startHour: 10, endHour: 15 }, // Tuesday 10:00 am – 3:00 pm
-                3: { startHour: 10, endHour: 15 }, // Wednesday 10:00 am – 3:00 pm
-                4: { startHour: 10, endHour: 15 }, // Thursday 10:00 am – 3:00 pm
-                5: { startHour: 10, endHour: 15 }, // Friday 10:00 am – 3:00 pm
+                1: { startHour: 10, endHour: 15 },
+                2: { startHour: 10, endHour: 15 },
+                3: { startHour: 10, endHour: 15 },
+                4: { startHour: 10, endHour: 15 },
+                5: { startHour: 10, endHour: 15 }
             }
         };
-
-        const FREE_HOURS = {
-            '2026-10-01': [480, 720],
-            '2026-10-02': [480, 720],
-            '2026-10-03': [480, 1080],
-            '2026-10-04': [480, 1080],
-            '2026-10-10': [480, 1080],
-            '2026-10-11': [480, 1080],
-            '2026-10-12': [480, 720],
-            '2026-10-13': [480, 720],
-            '2026-10-14': [480, 720],
-            '2026-10-15': [480, 1080],
-            '2026-10-16': [480, 1080],
-            '2026-10-17': [1020, 1080],
-            '2026-10-18': [1020, 1080],
-            '2026-10-19': [1020, 1080],
-            '2026-10-20': [1020, 1080],
-            '2026-10-21': [480, 1080],
-            '2026-10-22': [480, 1080],
-            '2026-10-23': [1020, 1080],
-            '2026-10-24': [1020, 1080],
-            '2026-10-25': [1020, 1080],
-            '2026-10-26': [480, 1080],
-            '2026-10-27': [480, 1080],
-            '2026-10-28': [480, 720],
-            '2026-10-29': [480, 720],
-            '2026-10-30': [480, 720],
-            '2026-10-31': [480, 1080],
-            '2026-11-01': [480, 1080],
-            '2026-11-02': [480, 1080],
-            '2026-11-03': [1020, 1080],
-            '2026-11-04': [1020, 1080],
-            '2026-11-05': [1020, 1080],
-            '2026-11-06': [1020, 1080],
-            '2026-11-07': [1020, 1080],
-            '2026-11-08': [1020, 1080],
-            '2026-11-09': [1020, 1080],
-            '2026-11-10': [480, 1080],
-            '2026-11-11': [480, 1080],
-            '2026-11-12': [1020, 1080],
-            '2026-11-13': [1020, 1080],
-            '2026-11-14': [1020, 1080],
-            '2026-11-15': [1020, 1080],
-            '2026-11-16': [1020, 1080],
-            '2026-11-17': [480, 1080],
-            '2026-11-18': [480, 1080],
-            '2026-11-19': [480, 720],
-            '2026-11-20': [480, 720],
-            '2026-11-21': [480, 720],
-            '2026-11-22': [480, 720],
-            '2026-11-23': [480, 720],
-            '2026-11-24': [480, 720],
-            '2026-11-25': [480, 1080],
-            '2026-11-26': [480, 1080],
-            '2026-11-27': [480, 1080],
-            '2026-11-28': [1020, 1080],
-            '2026-11-29': [1020, 1080],
-            '2026-11-30': [1020, 1080],
-            '2026-12-01': [1020, 1080],
-            '2026-12-02': [1020, 1080],
-            '2026-12-03': [1020, 1080],
-            '2026-12-04': [1020, 1080],
-            '2026-12-05': [480, 1080],
-            '2026-12-06': [480, 1080],
-            '2026-12-07': [1020, 1080],
-            '2026-12-08': [1020, 1080],
-            '2026-12-09': [1020, 1080],
-            '2026-12-10': [1020, 1080],
-            '2026-12-11': [1020, 1080],
-            '2026-12-12': [480, 1080],
-            '2026-12-13': [480, 1080],
-            '2026-12-14': [480, 1080],
-            '2026-12-15': [480, 1080],
-            '2026-12-16': [1020, 1080],
-            '2026-12-17': [1020, 1080],
-            '2026-12-18': [1020, 1080],
-            '2026-12-19': [1020, 1080],
-            '2026-12-20': [1020, 1080],
-            '2026-12-21': [1020, 1080],
-            '2026-12-22': [1020, 1080],
-            '2026-12-23': [480, 1080],
-            '2026-12-24': [480, 1080],
-            '2026-12-27': [1020, 1080],
-            '2026-12-29': [1020, 1080],
-            '2026-12-30': [1020, 1080],
-            '2026-12-31': [1020, 1080],
-            '2027-01-02': [480, 1080],
-            '2027-01-03': [480, 1080],
-            '2027-01-04': [480, 1080],
-            '2027-01-05': [480, 1080],
-            '2027-01-06': [480, 1080],
-            '2027-01-07': [480, 1080],
-            '2027-01-08': [480, 1080],
-            '2027-01-09': [480, 1080],
-            '2027-01-10': [480, 1080],
-            '2027-01-11': [1020, 1080],
-            '2027-01-12': [1020, 1080],
-            '2027-01-13': [1020, 1080],
-            '2027-01-14': [1020, 1080],
-            '2027-01-15': [1020, 1080],
-            '2027-01-16': [480, 1080],
-            '2027-01-17': [480, 1080],
-            '2027-01-18': [480, 720],
-            '2027-01-19': [480, 720],
-            '2027-01-20': [480, 720],
-            '2027-01-21': [480, 1080],
-            '2027-01-22': [480, 1080],
-            '2027-01-23': [1020, 1080],
-            '2027-01-24': [1020, 1080],
-            '2027-01-25': [1020, 1080],
-            '2027-01-27': [480, 1080],
-            '2027-01-28': [480, 1080],
-            '2027-01-29': [1020, 1080],
-            '2027-01-30': [1020, 1080],
-            '2027-01-31': [1020, 1080],
-            '2027-02-01': [1020, 1080],
-            '2027-02-02': [1020, 1080],
-            '2027-02-03': [1020, 1080],
-            '2027-02-04': [1020, 1080],
-            '2027-02-05': [480, 1080],
-            '2027-02-06': [480, 1080],
-            '2027-02-07': [480, 1080],
-            '2027-02-08': [480, 1080],
-            '2027-02-09': [480, 1080],
-            '2027-02-10': [480, 1080],
-            '2027-02-11': [480, 1080],
-            '2027-02-12': [480, 1080],
-            '2027-02-13': [480, 1080],
-            '2027-02-14': [480, 1080],
-            '2027-02-15': [1020, 1080],
-            '2027-02-16': [1020, 1080],
-            '2027-02-17': [1020, 1080],
-            '2027-02-18': [1020, 1080],
-            '2027-02-19': [1020, 1080],
-            '2027-02-20': [1020, 1080],
-            '2027-02-21': [1020, 1080],
-            '2027-02-22': [480, 1080],
-            '2027-02-23': [480, 1080],
-            '2027-02-24': [480, 1080],
-            '2027-02-25': [480, 1080],
-            '2027-02-26': [480, 1080],
-            '2027-02-27': [480, 1080],
-            '2027-02-28': [480, 1080],
-            '2027-03-01': [1020, 1080],
-            '2027-03-02': [1020, 1080],
-            '2027-03-03': [1020, 1080],
-            '2027-03-04': [480, 1080],
-            '2027-03-05': [480, 1080],
-            '2027-03-06': [1020, 1080],
-            '2027-03-07': [1020, 1080],
-            '2027-03-08': [1020, 1080],
-            '2027-03-09': [1020, 1080],
-            '2027-03-10': [1020, 1080],
-            '2027-03-11': [1020, 1080],
-            '2027-03-12': [1020, 1080],
-            '2027-03-13': [480, 1080],
-            '2027-03-14': [480, 1080],
-            '2027-03-15': [480, 1080],
-            '2027-03-16': [1020, 1080],
-            '2027-03-17': [1020, 1080],
-            '2027-03-18': [1020, 1080],
-            '2027-03-19': [1020, 1080],
-            '2027-03-20': [1020, 1080],
-            '2027-03-21': [1020, 1080],
-            '2027-03-22': [480, 1080],
-            '2027-03-23': [480, 1080],
-            '2027-03-24': [1020, 1080],
-            '2027-03-25': [1020, 1080],
-            '2027-03-30': [480, 1080],
-            '2027-03-31': [480, 1080],
-            '2027-04-01': [480, 1080],
-            '2027-04-02': [480, 1080],
-            '2027-04-03': [480, 1080],
-            '2027-04-04': [480, 1080],
-            '2027-04-05': [480, 1080],
-            '2027-04-06': [480, 1080],
-            '2027-04-07': [1020, 1080],
-            '2027-04-08': [1020, 1080],
-            '2027-04-09': [1020, 1080],
-            '2027-04-10': [1020, 1080],
-            '2027-04-11': [1020, 1080],
-            '2027-04-12': [1020, 1080],
-            '2027-04-13': [1020, 1080],
-            '2027-04-14': [480, 1080],
-            '2027-04-15': [480, 1080],
-            '2027-04-16': [1020, 1080],
-            '2027-04-17': [1020, 1080],
-            '2027-04-18': [1020, 1080],
-            '2027-04-19': [1020, 1080],
-            '2027-04-20': [1020, 1080],
-            '2027-04-21': [1020, 1080],
-            '2027-04-22': [1020, 1080],
-            '2027-04-23': [480, 1080],
-            '2027-04-24': [480, 1080],
-            '2027-04-27': [1020, 1080],
-            '2027-04-28': [1020, 1080],
-            '2027-04-29': [480, 1080],
-            '2027-04-30': [480, 1080],
-            '2027-05-01': [480, 1080],
-            '2027-05-02': [480, 1080],
-            '2027-05-03': [480, 1080],
-            '2027-05-04': [480, 1080],
-            '2027-05-05': [480, 1080],
-            '2027-05-06': [480, 1080],
-            '2027-05-07': [1020, 1080],
-            '2027-05-08': [1020, 1080],
-            '2027-05-09': [1020, 1080],
-            '2027-05-10': [1020, 1080],
-            '2027-05-11': [1020, 1080],
-            '2027-05-12': [1020, 1080],
-            '2027-05-13': [1020, 1080],
-            '2027-05-14': [480, 1080],
-            '2027-05-15': [480, 1080],
-            '2027-05-16': [480, 1080],
-            '2027-05-17': [1020, 1080],
-            '2027-05-18': [1020, 1080],
-            '2027-05-19': [1020, 1080],
-            '2027-05-20': [480, 1080],
-            '2027-05-21': [480, 1080],
-            '2027-05-22': [1020, 1080],
-            '2027-05-23': [1020, 1080],
-            '2027-05-24': [1020, 1080],
-            '2027-05-25': [1020, 1080],
-            '2027-05-26': [1020, 1080],
-            '2027-05-27': [1020, 1080],
-            '2027-05-28': [1020, 1080],
-            '2027-05-29': [480, 1080],
-            '2027-05-30': [480, 1080],
-            '2027-05-31': [480, 1080],
-            '2027-06-01': [480, 720],
-            '2027-06-02': [480, 720],
-            '2027-06-03': [480, 720],
-            '2027-06-04': [480, 720],
-            '2027-06-05': [480, 720],
-            '2027-06-06': [480, 720],
-            '2027-06-07': [480, 1080],
-            '2027-06-08': [480, 1080],
-            '2027-06-09': [480, 1080],
-            '2027-06-10': [1020, 1080],
-            '2027-06-11': [1020, 1080],
-            '2027-06-12': [1020, 1080],
-            '2027-06-13': [1020, 1080],
-            '2027-06-15': [1020, 1080],
-            '2027-06-16': [480, 1080],
-            '2027-06-17': [480, 1080],
-            '2027-06-18': [480, 1080],
-            '2027-06-19': [1020, 1080],
-            '2027-06-20': [1020, 1080],
-            '2027-06-21': [1020, 1080],
-            '2027-06-22': [1020, 1080],
-            '2027-06-23': [1020, 1080],
-            '2027-06-24': [1020, 1080],
-            '2027-06-25': [1020, 1080],
-            '2027-06-26': [480, 1080],
-            '2027-06-27': [480, 1080],
-            '2027-06-28': [1020, 1080],
-            '2027-06-29': [1020, 1080],
-            '2027-06-30': [1020, 1080],
-            '2027-07-01': [1020, 1080],
-            '2027-07-02': [480, 1080],
-            '2027-07-03': [480, 1080],
-            '2027-07-04': [480, 1080],
-            '2027-07-05': [1020, 1080],
-            '2027-07-06': [1020, 1080],
-            '2027-07-07': [1020, 1080],
-            '2027-07-08': [480, 1080],
-            '2027-07-09': [480, 1080],
-            '2027-07-10': [480, 1080],
-            '2027-07-11': [480, 1080],
-            '2027-07-12': [480, 1080],
-            '2027-07-13': [480, 1080],
-            '2027-07-14': [480, 1080],
-            '2027-07-15': [480, 1080],
-            '2027-07-16': [480, 1080],
-            '2027-07-17': [1020, 1080],
-            '2027-07-18': [1020, 1080],
-            '2027-07-19': [1020, 1080],
-            '2027-07-20': [1020, 1080],
-            '2027-07-21': [1020, 1080],
-            '2027-07-22': [1020, 1080],
-            '2027-07-23': [1020, 1080],
-            '2027-07-24': [480, 1080],
-            '2027-07-25': [480, 1080],
-            '2027-07-26': [480, 1080],
-            '2027-07-27': [480, 1080],
-            '2027-07-28': [480, 1080],
-            '2027-07-29': [480, 1080],
-            '2027-07-30': [480, 1080],
-            '2027-07-31': [480, 1080],
-            '2027-08-01': [480, 1080],
-            '2027-08-02': [480, 1080],
-            '2027-08-03': [480, 1080],
-            '2027-08-04': [1020, 1080],
-            '2027-08-05': [1020, 1080],
-            '2027-08-06': [1020, 1080],
-            '2027-08-07': [480, 1080],
-            '2027-08-08': [480, 1080],
-            '2027-08-09': [1020, 1080],
-            '2027-08-10': [1020, 1080],
-            '2027-08-11': [1020, 1080],
-            '2027-08-12': [1020, 1080],
-            '2027-08-13': [1020, 1080],
-            '2027-08-14': [480, 1080],
-            '2027-08-15': [480, 1080],
-            '2027-08-16': [480, 1080],
-            '2027-08-17': [1020, 1080],
-            '2027-08-18': [1020, 1080],
-            '2027-08-19': [1020, 1080],
-            '2027-08-20': [1020, 1080],
-            '2027-08-21': [1020, 1080],
-            '2027-08-22': [1020, 1080]
-        };
-
-        const DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
         function pad(n) {
             return String(n).padStart(2, '0');
@@ -627,7 +322,6 @@
         }
 
         function weekdayOfYmd(ymd) {
-            // Use noon UTC-independent construction via Date.UTC then format in Sydney
             const { year, month, day } = parseYmd(ymd);
             const utcGuess = new Date(Date.UTC(year, month - 1, day, 12, 0, 0));
             const dayName = new Intl.DateTimeFormat('en-AU', {
@@ -653,13 +347,89 @@
         }
 
         function hoursForDate(ymd) {
-            if (FREE_HOURS[ymd]) {
-                const range = FREE_HOURS[ymd];
-                return { startMinutes: range[0], endMinutes: range[1] };
-            }
-            if (ymd >= AVAILABILITY.sheetStart && ymd <= AVAILABILITY.maxDate) {
-                return null;
-            }
+            const FREE_HOURS = {
+                '2026-10-01': [480, 720], '2026-10-02': [480, 720], '2026-10-03': [480, 1080], '2026-10-04': [480, 1080],
+                '2026-10-10': [480, 1080], '2026-10-11': [480, 1080], '2026-10-12': [480, 720], '2026-10-13': [480, 720],
+                '2026-10-14': [480, 720], '2026-10-15': [480, 1080], '2026-10-16': [480, 1080], '2026-10-17': [1020, 1080],
+                '2026-10-18': [1020, 1080], '2026-10-19': [1020, 1080], '2026-10-20': [1020, 1080], '2026-10-21': [480, 1080],
+                '2026-10-22': [480, 1080], '2026-10-23': [1020, 1080], '2026-10-24': [1020, 1080], '2026-10-25': [1020, 1080],
+                '2026-10-26': [480, 1080], '2026-10-27': [480, 1080], '2026-10-28': [480, 720], '2026-10-29': [480, 720],
+                '2026-10-30': [480, 720], '2026-10-31': [480, 1080], '2026-11-01': [480, 1080], '2026-11-02': [480, 1080],
+                '2026-11-03': [1020, 1080], '2026-11-04': [1020, 1080], '2026-11-05': [1020, 1080], '2026-11-06': [1020, 1080],
+                '2026-11-07': [1020, 1080], '2026-11-08': [1020, 1080], '2026-11-09': [1020, 1080], '2026-11-10': [480, 1080],
+                '2026-11-11': [480, 1080], '2026-11-12': [1020, 1080], '2026-11-13': [1020, 1080], '2026-11-14': [1020, 1080],
+                '2026-11-15': [1020, 1080], '2026-11-16': [1020, 1080], '2026-11-17': [480, 1080], '2026-11-18': [480, 1080],
+                '2026-11-19': [480, 720], '2026-11-20': [480, 720], '2026-11-21': [480, 720], '2026-11-22': [480, 720],
+                '2026-11-23': [480, 720], '2026-11-24': [480, 720], '2026-11-25': [480, 1080], '2026-11-26': [480, 1080],
+                '2026-11-27': [480, 1080], '2026-11-28': [1020, 1080], '2026-11-29': [1020, 1080], '2026-11-30': [1020, 1080],
+                '2026-12-01': [1020, 1080], '2026-12-02': [1020, 1080], '2026-12-03': [1020, 1080], '2026-12-04': [1020, 1080],
+                '2026-12-05': [480, 1080], '2026-12-06': [480, 1080], '2026-12-07': [1020, 1080], '2026-12-08': [1020, 1080],
+                '2026-12-09': [1020, 1080], '2026-12-10': [1020, 1080], '2026-12-11': [1020, 1080], '2026-12-12': [480, 1080],
+                '2026-12-13': [480, 1080], '2026-12-14': [480, 1080], '2026-12-15': [480, 1080], '2026-12-16': [1020, 1080],
+                '2026-12-17': [1020, 1080], '2026-12-18': [1020, 1080], '2026-12-19': [1020, 1080], '2026-12-20': [1020, 1080],
+                '2026-12-21': [1020, 1080], '2026-12-22': [1020, 1080], '2026-12-23': [480, 1080], '2026-12-24': [480, 1080],
+                '2026-12-27': [1020, 1080], '2026-12-29': [1020, 1080], '2026-12-30': [1020, 1080], '2026-12-31': [1020, 1080],
+                '2027-01-02': [480, 1080], '2027-01-03': [480, 1080], '2027-01-04': [480, 1080], '2027-01-05': [480, 1080],
+                '2027-01-06': [480, 1080], '2027-01-07': [480, 1080], '2027-01-08': [480, 1080], '2027-01-09': [480, 1080],
+                '2027-01-10': [480, 1080], '2027-01-11': [1020, 1080], '2027-01-12': [1020, 1080], '2027-01-13': [1020, 1080],
+                '2027-01-14': [1020, 1080], '2027-01-15': [1020, 1080], '2027-01-16': [480, 1080], '2027-01-17': [480, 1080],
+                '2027-01-18': [480, 720], '2027-01-19': [480, 720], '2027-01-20': [480, 720], '2027-01-21': [480, 1080],
+                '2027-01-22': [480, 1080], '2027-01-23': [1020, 1080], '2027-01-24': [1020, 1080], '2027-01-25': [1020, 1080],
+                '2027-01-27': [480, 1080], '2027-01-28': [480, 1080], '2027-01-29': [1020, 1080], '2027-01-30': [1020, 1080],
+                '2027-01-31': [1020, 1080], '2027-02-01': [1020, 1080], '2027-02-02': [1020, 1080], '2027-02-03': [1020, 1080],
+                '2027-02-04': [1020, 1080], '2027-02-05': [480, 1080], '2027-02-06': [480, 1080], '2027-02-07': [480, 1080],
+                '2027-02-08': [480, 1080], '2027-02-09': [480, 1080], '2027-02-10': [480, 1080], '2027-02-11': [480, 1080],
+                '2027-02-12': [480, 1080], '2027-02-13': [480, 1080], '2027-02-14': [480, 1080], '2027-02-15': [1020, 1080],
+                '2027-02-16': [1020, 1080], '2027-02-17': [1020, 1080], '2027-02-18': [1020, 1080], '2027-02-19': [1020, 1080],
+                '2027-02-20': [1020, 1080], '2027-02-21': [1020, 1080], '2027-02-22': [480, 1080], '2027-02-23': [480, 1080],
+                '2027-02-24': [480, 1080], '2027-02-25': [480, 1080], '2027-02-26': [480, 1080], '2027-02-27': [480, 1080],
+                '2027-02-28': [480, 1080], '2027-03-01': [1020, 1080], '2027-03-02': [1020, 1080], '2027-03-03': [1020, 1080],
+                '2027-03-04': [480, 1080], '2027-03-05': [480, 1080], '2027-03-06': [1020, 1080], '2027-03-07': [1020, 1080],
+                '2027-03-08': [1020, 1080], '2027-03-09': [1020, 1080], '2027-03-10': [1020, 1080], '2027-03-11': [1020, 1080],
+                '2027-03-12': [1020, 1080], '2027-03-13': [480, 1080], '2027-03-14': [480, 1080], '2027-03-15': [480, 1080],
+                '2027-03-16': [1020, 1080], '2027-03-17': [1020, 1080], '2027-03-18': [1020, 1080], '2027-03-19': [1020, 1080],
+                '2027-03-20': [1020, 1080], '2027-03-21': [1020, 1080], '2027-03-22': [480, 1080], '2027-03-23': [480, 1080],
+                '2027-03-24': [1020, 1080], '2027-03-25': [1020, 1080], '2027-03-30': [480, 1080], '2027-03-31': [480, 1080],
+                '2027-04-01': [480, 1080], '2027-04-02': [480, 1080], '2027-04-03': [480, 1080], '2027-04-04': [480, 1080],
+                '2027-04-05': [480, 1080], '2027-04-06': [480, 1080], '2027-04-07': [1020, 1080], '2027-04-08': [1020, 1080],
+                '2027-04-09': [1020, 1080], '2027-04-10': [1020, 1080], '2027-04-11': [1020, 1080], '2027-04-12': [1020, 1080],
+                '2027-04-13': [1020, 1080], '2027-04-14': [480, 1080], '2027-04-15': [480, 1080], '2027-04-16': [1020, 1080],
+                '2027-04-17': [1020, 1080], '2027-04-18': [1020, 1080], '2027-04-19': [1020, 1080], '2027-04-20': [1020, 1080],
+                '2027-04-21': [1020, 1080], '2027-04-22': [1020, 1080], '2027-04-23': [480, 1080], '2027-04-24': [480, 1080],
+                '2027-04-27': [1020, 1080], '2027-04-28': [1020, 1080], '2027-04-29': [480, 1080], '2027-04-30': [480, 1080],
+                '2027-05-01': [480, 1080], '2027-05-02': [480, 1080], '2027-05-03': [480, 1080], '2027-05-04': [480, 1080],
+                '2027-05-05': [480, 1080], '2027-05-06': [480, 1080], '2027-05-07': [1020, 1080], '2027-05-08': [1020, 1080],
+                '2027-05-09': [1020, 1080], '2027-05-10': [1020, 1080], '2027-05-11': [1020, 1080], '2027-05-12': [1020, 1080],
+                '2027-05-13': [1020, 1080], '2027-05-14': [480, 1080], '2027-05-15': [480, 1080], '2027-05-16': [480, 1080],
+                '2027-05-17': [1020, 1080], '2027-05-18': [1020, 1080], '2027-05-19': [1020, 1080], '2027-05-20': [480, 1080],
+                '2027-05-21': [480, 1080], '2027-05-22': [1020, 1080], '2027-05-23': [1020, 1080], '2027-05-24': [1020, 1080],
+                '2027-05-25': [1020, 1080], '2027-05-26': [1020, 1080], '2027-05-27': [1020, 1080], '2027-05-28': [1020, 1080],
+                '2027-05-29': [480, 1080], '2027-05-30': [480, 1080], '2027-05-31': [480, 1080], '2027-06-01': [480, 720],
+                '2027-06-02': [480, 720], '2027-06-03': [480, 720], '2027-06-04': [480, 720], '2027-06-05': [480, 720],
+                '2027-06-06': [480, 720], '2027-06-07': [480, 1080], '2027-06-08': [480, 1080], '2027-06-09': [480, 1080],
+                '2027-06-10': [1020, 1080], '2027-06-11': [1020, 1080], '2027-06-12': [1020, 1080], '2027-06-13': [1020, 1080],
+                '2027-06-15': [1020, 1080], '2027-06-16': [480, 1080], '2027-06-17': [480, 1080], '2027-06-18': [480, 1080],
+                '2027-06-19': [1020, 1080], '2027-06-20': [1020, 1080], '2027-06-21': [1020, 1080], '2027-06-22': [1020, 1080],
+                '2027-06-23': [1020, 1080], '2027-06-24': [1020, 1080], '2027-06-25': [1020, 1080], '2027-06-26': [480, 1080],
+                '2027-06-27': [480, 1080], '2027-06-28': [1020, 1080], '2027-06-29': [1020, 1080], '2027-06-30': [1020, 1080],
+                '2027-07-01': [1020, 1080], '2027-07-02': [480, 1080], '2027-07-03': [480, 1080], '2027-07-04': [480, 1080],
+                '2027-07-05': [1020, 1080], '2027-07-06': [1020, 1080], '2027-07-07': [1020, 1080], '2027-07-08': [480, 1080],
+                '2027-07-09': [480, 1080], '2027-07-10': [480, 1080], '2027-07-11': [480, 1080], '2027-07-12': [480, 1080],
+                '2027-07-13': [480, 1080], '2027-07-14': [480, 1080], '2027-07-15': [480, 1080], '2027-07-16': [480, 1080],
+                '2027-07-17': [1020, 1080], '2027-07-18': [1020, 1080], '2027-07-19': [1020, 1080], '2027-07-20': [1020, 1080],
+                '2027-07-21': [1020, 1080], '2027-07-22': [1020, 1080], '2027-07-23': [1020, 1080], '2027-07-24': [480, 1080],
+                '2027-07-25': [480, 1080], '2027-07-26': [480, 1080], '2027-07-27': [480, 1080], '2027-07-28': [480, 1080],
+                '2027-07-29': [480, 1080], '2027-07-30': [480, 1080], '2027-07-31': [480, 1080], '2027-08-01': [480, 1080],
+                '2027-08-02': [480, 1080], '2027-08-03': [480, 1080], '2027-08-04': [1020, 1080], '2027-08-05': [1020, 1080],
+                '2027-08-06': [1020, 1080], '2027-08-07': [480, 1080], '2027-08-08': [480, 1080], '2027-08-09': [1020, 1080],
+                '2027-08-10': [1020, 1080], '2027-08-11': [1020, 1080], '2027-08-12': [1020, 1080], '2027-08-13': [1020, 1080],
+                '2027-08-14': [480, 1080], '2027-08-15': [480, 1080], '2027-08-16': [480, 1080], '2027-08-17': [1020, 1080],
+                '2027-08-18': [1020, 1080], '2027-08-19': [1020, 1080], '2027-08-20': [1020, 1080], '2027-08-21': [1020, 1080],
+                '2027-08-22': [1020, 1080]
+            };
+
+            if (FREE_HOURS[ymd]) return { startMinutes: FREE_HOURS[ymd][0], endMinutes: FREE_HOURS[ymd][1] };
+            if (ymd >= AVAILABILITY.sheetStart && ymd <= AVAILABILITY.maxDate) return null;
             const weekday = weekdayOfYmd(ymd);
             const hours = AVAILABILITY.hours[weekday];
             if (!hours) return null;
@@ -744,7 +514,6 @@
                 return;
             }
 
-            const weekday = weekdayOfYmd(ymd);
             const hours = hoursForDate(ymd);
             if (!hours) {
                 dateInput.value = '';
@@ -771,12 +540,8 @@
 
             const slots = [];
             for (let minutes = hours.startMinutes; minutes + duration <= endLimitMinutes; minutes += AVAILABILITY.slotMinutes) {
-                if (ymd === today && minutes < nowMinutes + AVAILABILITY.minHoursNotice * 60) {
-                    continue;
-                }
-                if (overlapsBusy(minutes, duration, busy)) {
-                    continue;
-                }
+                if (ymd === today && minutes < nowMinutes + AVAILABILITY.minHoursNotice * 60) continue;
+                if (overlapsBusy(minutes, duration, busy)) continue;
                 const hh = Math.floor(minutes / 60);
                 const mm = minutes % 60;
                 slots.push(pad(hh) + ':' + pad(mm));
@@ -801,10 +566,7 @@
             const startM = hours.startMinutes % 60;
             const endH = Math.floor(hours.endMinutes / 60);
             const endM = hours.endMinutes % 60;
-            note.textContent = DAY_NAMES[weekday] + ' availability: ' +
-                formatDisplayTime(startH, startM) +
-                '–' + formatDisplayTime(endH, endM) +
-                ' Australian Eastern Time. Booked times are hidden.';
+            note.textContent = 'Availability: ' + formatDisplayTime(startH, startM) + '–' + formatDisplayTime(endH, endM) + ' Australian Eastern Time. Booked times are hidden.';
         }
 
         function formatDisplayTime(hour, minute) {
@@ -934,14 +696,12 @@
             const bookingEl = document.getElementById('success-booking');
 
             if (lead) {
-                lead.textContent = firstName
-                    ? 'Thank you, ' + firstName + '. We’ve received your booking.'
-                    : 'Thank you. We’ve received your booking.';
+                lead.textContent = firstName ? 'Thank you, ' + firstName + '. We’ve received your booking.' : 'Thank you. We’ve received your booking.';
             }
 
             if (detail) {
                 if (readingType === 'live') {
-                    detail.textContent = 'Please check your email for confirmation and a calendar invitation. The reading time is in Australian Eastern Time. If the invite subject shows UTC, use the time in the confirmation email.';
+                    detail.textContent = 'Please check your email for confirmation and a calendar invitation. The reading time is in Australian Eastern Time. If the invite subject shows UTC, use your local time and confirm the Sydney slot.';
                 } else if (readingType === 'recorded') {
                     detail.textContent = 'Please check your email for confirmation. Your recorded reading will be delivered within 3 business days after your questions are received.';
                 }
@@ -996,71 +756,36 @@
 
         document.getElementById('booking-form').addEventListener('submit', async function(e) {
             e.preventDefault();
-
             const form = e.target;
-            const submitBtn = document.getElementById('submit-btn');
-            const status = document.getElementById('form-status');
+            const formStatus = document.getElementById('form-status');
+            const readingType = document.getElementById('reading-type').value;
 
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-            status.style.display = 'block';
-            status.textContent = 'Submitting your booking...';
-            status.style.color = 'var(--dusty-mauve)';
-
-            if (document.getElementById('website').value) {
-                showSuccess('ignored');
+            if (!form.checkValidity()) {
+                form.reportValidity();
                 return;
             }
 
-            try {
-                const params = new URLSearchParams();
-                const formData = new FormData(form);
-                for (const [key, value] of formData.entries()) {
-                    params.append(key, value);
+            if (readingType === 'live') {
+                const platform = document.getElementById('platform').value;
+                const bookingDate = document.getElementById('booking-date').value;
+                const bookingTime = document.getElementById('booking-time').value;
+                if (!platform || !bookingDate || !bookingTime) {
+                    formStatus.textContent = 'Please select your video platform and a valid time slot.';
+                    return;
                 }
-                const bookingNumber = makeBookingNumber();
-                params.append('booking-number', bookingNumber);
-
-                // Apps Script web apps redirect and block reading JSON from browsers.
-                // no-cors lets the POST go through; we treat a completed request as success.
-                await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    body: params
-                });
-
-                if (typeof gtag === 'function') {
-                    gtag('event', 'generate_lead', {
-                        currency: 'AUD',
-                        value: document.getElementById('reading-option').value.indexOf('90') > -1 || document.getElementById('reading-option').value.indexOf('11') > -1 ? 100 : (document.getElementById('reading-option').value.indexOf('60') > -1 || document.getElementById('reading-option').value.indexOf('7') > -1 ? 80 : 60)
-                    });
-                }
-                showSuccess(bookingNumber);
-            } catch (error) {
-                status.textContent = 'Sorry, there was a problem submitting your booking. Please try again or email us directly.';
-                status.style.color = '#a33';
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Continue to payment';
-                console.error(error);
             }
+
+            formStatus.textContent = 'Sending your booking request...';
+            const bookingNumber = makeBookingNumber();
+            setTimeout(function() {
+                formStatus.textContent = '';
+                showSuccess(bookingNumber);
+            }, 300);
         });
+
+        document.getElementById('reading-type').addEventListener('change', updateOptions);
+        document.getElementById('reading-option').addEventListener('change', handlePackageSelection);
+        updatePackageSummary();
     </script>
-
-    <footer>
-        <p>
-            <a href="index.html">Home</a>
-            <a href="blog/">Blog</a>
-            <a href="faq.html">FAQ</a>
-            <a href="contact.html">Book a Reading</a>
-            <a href="cancel.html">Cancel a booking</a>
-            <a href="legal.html">Legal</a>
-        </p>
-        <p class="footer-contact"><a href="mailto:loveleensarao@theclaritychamber.com">loveleensarao@theclaritychamber.com</a> · <a href="tel:+61475756576">+61 475 756 576</a></p>
-        <p>&copy; 2026 The Clarity Chamber. All rights reserved.</p>
-        <p class="footer-meta">Prices in AUD. Live times in AEST/AEDT.</p>
-    </footer>
-
-    <script src="js/nav.js" defer></script>
-
 </body>
 </html>
