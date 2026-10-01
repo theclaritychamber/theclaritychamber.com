@@ -15,6 +15,10 @@ Static website for Loveleen Sarao’s tarot practice (Australia). Hosted on **Gi
 | `how-it-works.html` | /how-it-works.html |
 | `blog/index.html` | /blog/ |
 | `blog/live-or-recorded-tarot-reading.html` | /blog/live-or-recorded-tarot-reading.html |
+| `blog/what-to-expect-first-online-tarot-reading.html` | /blog/what-to-expect-first-online-tarot-reading.html |
+| `blog/how-a-recorded-tarot-reading-works.html` | /blog/how-a-recorded-tarot-reading-works.html |
+| `blog/writing-good-questions-for-your-tarot-reading.html` | /blog/writing-good-questions-for-your-tarot-reading.html |
+| `blog/what-tarot-can-and-cant-do.html` | /blog/what-tarot-can-and-cant-do.html |
 | `faq.html` | /faq.html |
 | `contact.html` | /contact.html |
 | `legal.html` | /legal.html |
