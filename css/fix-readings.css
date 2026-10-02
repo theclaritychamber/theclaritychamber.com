@@ -130,7 +130,8 @@
 
 .booking-card a {
   display: inline-block;
-  margin-top: 0.8rem;
+  margin-top: auto !important;
+  align-self: center;
   padding: 0.65rem 1.4rem;
   background-color: var(--deep-plum);
   color: var(--soft-cream) !important;
