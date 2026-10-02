@@ -78,3 +78,18 @@ a.logo-link:hover img.logo,
 a.logo-link:focus img.logo {
   opacity: 0.92;
 }
+
+/* Equal reading cards: buttons share a baseline */
+.reading-options {
+  align-items: stretch;
+}
+.reading-options > .reading-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+.reading-options > .reading-card a {
+  margin-top: auto;
+  align-self: center;
+}

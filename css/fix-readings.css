@@ -57,8 +57,30 @@
 }
 
 .reading-card .includes {
-  margin-top: auto;
+  margin-top: 0.2rem;
   text-align: left !important;
+}
+
+.reading-grid > .reading-card > p:nth-of-type(2) {
+  min-height: 3.2em;
+}
+
+.booking-options {
+  align-items: stretch;
+}
+.booking-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+.booking-card p {
+  margin-bottom: 0;
+}
+.booking-card a {
+  margin-top: auto;
+  align-self: center;
 }
 
 .reading-card .includes p {
