@@ -67,3 +67,14 @@ footer .footer-social a.social-icon svg {
   height: 1.7rem;
   display: block;
 }
+
+a.logo-link {
+  display: inline-block;
+  line-height: 0;
+  text-decoration: none;
+  border: 0;
+}
+a.logo-link:hover img.logo,
+a.logo-link:focus img.logo {
+  opacity: 0.92;
+}
