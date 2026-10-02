@@ -181,7 +181,7 @@
     var span = box.querySelector('span');
     if (info) {
       strong.textContent = info.label;
-      span.textContent = info.price + ' · pay on Stripe after you send this form';
+      span.textContent = info.price + ' · pay on Stripe after this booking number is emailed';
       return;
     }
     if (type === 'live') {
@@ -364,7 +364,7 @@
     var startM = hours.startMinutes % 60;
     var endH = Math.floor(hours.endMinutes / 60);
     var endM = hours.endMinutes % 60;
-    note.textContent = DAY_NAMES[weekday] + ' availability: ' + formatDisplayTime(startH, startM) + '–' + formatDisplayTime(endH, endM) + ' Australian Eastern Time. Booked times are hidden.';
+    note.textContent = DAY_NAMES[weekday] + ' availability: ' + formatDisplayTime(startH, startM) + '–' + formatDisplayTime(endH, endM) + ' Australian Eastern Time (Sydney). Booked times are hidden.';
   }
 
   function resetDynamicContainers() {
@@ -430,7 +430,7 @@
         questionsContainer.style.display = 'block';
 
         var note = document.createElement('p');
-        note.innerHTML = '<em>Readings will be delivered within 3 business days after your questions are received.</em>';
+        note.innerHTML = '<em>Readings will be delivered within 3 business days of your questions being submitted.</em>';
         questionsContainer.appendChild(note);
 
         var hint = document.createElement('p');
@@ -455,11 +455,11 @@
     var step3 = document.getElementById('next-step-3');
     if (!step3) return;
     if (type === 'live') {
-      step3.textContent = 'A calendar invitation will follow with your appointment time in Australian Eastern Time.';
+      step3.textContent = 'A calendar invitation follows once payment is received, in Australian Eastern Time (Sydney).';
     } else if (type === 'recorded') {
-      step3.textContent = 'Your recorded reading will be delivered by email within 3 business days of receiving your questions.';
+      step3.textContent = 'Your recorded reading will be delivered by email within 3 business days of your questions being submitted.';
     } else {
-      step3.textContent = 'For live readings, a calendar invitation will follow. For recorded readings, your video will be delivered by email within 3 business days.';
+      step3.textContent = 'For live readings, a calendar invitation follows once payment is received. For recorded readings, your video will be delivered by email within 3 business days of your questions being submitted.';
     }
   }
 
@@ -488,9 +488,9 @@
 
     if (detail) {
       if (readingType === 'live') {
-        detail.textContent = 'Please check your email for confirmation and a calendar invitation. The reading time is in Australian Eastern Time. If the invite subject shows UTC, use your local time and confirm the Sydney slot.';
+        detail.textContent = 'Please check your confirmation email for the booking number. A calendar invitation follows once payment is received. The reading time is in Australian Eastern Time (Sydney). If the invite subject shows UTC, use your local time and confirm the Sydney slot.';
       } else if (readingType === 'recorded') {
-        detail.textContent = 'Please check your email for confirmation. Your recorded reading will be delivered within 3 business days after your questions are received.';
+        detail.textContent = 'Please check your confirmation email for the booking number. Your recorded reading will be delivered within 3 business days of your questions being submitted.';
       }
     }
 

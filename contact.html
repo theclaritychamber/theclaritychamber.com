@@ -59,14 +59,14 @@
     <main id="main">
         <section>
             <h1>Book a live or recorded tarot reading</h1>
-            <p style="max-width:40rem;margin-bottom:1.4rem;">Step 1: choose your format and package. Step 2: add your details and continue to payment.</p>
+            <p style="max-width:40rem;margin-bottom:1.4rem;">Step 1: choose your format and package. Step 2: add your details and questions, then continue to payment.</p>
 
             <div id="success-message">
-                <h3>Your request is in the chamber</h3>
+                <h3>Your booking number has been sent</h3>
                 <p id="success-lead">Thank you. We’ve received your booking.</p>
-                <p id="success-detail">Please check your email for confirmation. If you booked a live reading, a calendar invitation will follow with the requested time in Australian Eastern Time.</p>
+                <p id="success-detail">A confirmation email with your booking number is sent at the same time. You are then taken to payment. If you booked a live reading, a calendar invitation follows once payment is received, with the time in Australian Eastern Time (Sydney).</p>
                 <p id="success-booking" style="margin-top:1rem; letter-spacing:0.04em;">Booking number: —</p>
-                <p id="success-next">Pay now to confirm this booking. Your time is held once payment is received.</p>
+                <p id="success-next">Pay now to hold this booking. If payment is not received, the booking is not held.</p>
                 <p style="margin-top:1.4rem;">
                     <a id="success-pay" href="#" style="display:inline-block;padding:0.85rem 2.5rem;background-color:var(--deep-plum);color:var(--soft-cream);text-decoration:none;letter-spacing:0.05em;">Pay securely with Stripe</a>
                 </p>
@@ -91,12 +91,12 @@
                             <label for="reading-option">Package</label>
                             <select id="reading-option" name="reading-option" required onchange="handlePackageSelection()">
                                 <option value="" disabled selected>Select package</option>
-                                <option value="live-30" data-type="live">Live · 30 Minutes — AUD $60</option>
-                                <option value="live-60" data-type="live">Live · 60 Minutes — AUD $80</option>
-                                <option value="live-90" data-type="live">Live · 90 Minutes — AUD $100</option>
-                                <option value="rec-5" data-type="recorded">Recorded · 5 Questions — AUD $60</option>
-                                <option value="rec-7" data-type="recorded">Recorded · 7 Questions — AUD $80</option>
-                                <option value="rec-11" data-type="recorded">Recorded · 11 Questions — AUD $100</option>
+                                <option value="live-30" data-type="live">Live · 30 minutes — AUD $60</option>
+                                <option value="live-60" data-type="live">Live · 60 minutes — AUD $80</option>
+                                <option value="live-90" data-type="live">Live · 90 minutes — AUD $100</option>
+                                <option value="rec-5" data-type="recorded">Recorded · 5 questions — AUD $60</option>
+                                <option value="rec-7" data-type="recorded">Recorded · 7 questions — AUD $80</option>
+                                <option value="rec-11" data-type="recorded">Recorded · 11 questions — AUD $100</option>
                             </select>
                         </p>
                     </div>
@@ -118,7 +118,7 @@
                                 <input type="date" id="booking-date" name="booking-date" onchange="updateTimeSlots()" disabled>
                             </p>
                             <p>
-                                <label for="booking-time">Preferred time <span style="font-size:0.85em;color:var(--dusty-mauve);">(AEST/AEDT)</span></label>
+                                <label for="booking-time">Preferred time <span style="font-size:0.85em;color:var(--dusty-mauve);">(Sydney)</span></label>
                                 <select id="booking-time" name="booking-time">
                                     <option value="" disabled selected>Select a date first</option>
                                 </select>
@@ -176,11 +176,11 @@
                     <div class="full-width">
                         <div class="trust-strip">
                             <span><em class="trust-icon">🔒</em> Secure payment via Stripe</span>
-                            <span><em class="trust-icon">✓</em> Free rescheduling with 24+ hours' notice</span>
-                            <span><em class="trust-icon">✓</em> Written summary included</span>
+                            <span><em class="trust-icon">✓</em> Live: full refund or free reschedule with 24+ hours' notice</span>
+                            <span><em class="trust-icon">✓</em> Written summary (PDF) included</span>
                         </div>
                         <button type="submit" id="submit-btn">Continue to payment</button>
-                        <p class="form-note">You will go to Stripe to pay and confirm. Live times are in Australian Eastern Time (Sydney). Available hours appear after you choose a date.</p>
+                        <p class="form-note">A booking number is emailed as confirmation, then this page takes you to payment. The booking is not held unless payment is received. Live times are in Australian Eastern Time (Sydney). Available hours appear after you choose a date.</p>
                         <p id="form-status"></p>
                     </div>
                 </div>
@@ -188,12 +188,12 @@
             <div class="next-steps">
                 <h3>What happens next</h3>
                 <ol>
-                    <li>You'll receive a confirmation email with your booking details.</li>
-                    <li>Pay via Stripe to secure your booking — your time is held once payment is received.</li>
-                    <li id="next-step-3">For live readings, a calendar invitation will follow with your appointment time in Australian Eastern Time. For recorded readings, your video will be delivered by email within 3 business days of receiving your questions.</li>
+                    <li>A confirmation email with your booking number is sent as you are taken to payment.</li>
+                    <li>Pay via Stripe. The booking is held only once payment is received. If payment is not received, the booking is not held.</li>
+                    <li id="next-step-3">For live readings, a calendar invitation follows once payment is received, in Australian Eastern Time (Sydney). For recorded readings, the video is delivered by email within 3 business days of your questions being submitted.</li>
                 </ol>
             </div>
-            <p style="margin-top:1.2rem;font-size:0.95rem;color:var(--dusty-mauve);">Already booked? <a href="cancel.html">Cancel a booking</a> · Need a change of time? Email <a href="mailto:loveleensarao@theclaritychamber.com">loveleensarao@theclaritychamber.com</a>.</p>
+            <p style="margin-top:1.2rem;font-size:0.95rem;color:var(--dusty-mauve);">Already booked? <a href="cancel.html">Cancel a Booking</a> · Need a change of time? Email <a href="mailto:loveleensarao@theclaritychamber.com">loveleensarao@theclaritychamber.com</a>.</p>
         </section>
     </main>
 
@@ -755,12 +755,12 @@
             <a href="blog/">Blog</a>
             <a href="faq.html">FAQ</a>
             <a href="contact.html">Book a Reading</a>
-            <a href="cancel.html">Cancel a booking</a>
+            <a href="cancel.html">Cancel a Booking</a>
             <a href="legal.html">Legal</a>
         </p>
         <p class="footer-contact"><a href="mailto:loveleensarao@theclaritychamber.com">loveleensarao@theclaritychamber.com</a> · <a href="tel:+61475756576">+61 475 756 576</a></p>
         <p>&copy; 2026 The Clarity Chamber. All rights reserved.</p>
-        <p class="footer-meta">Prices in AUD. Live times in AEST/AEDT.</p>
+        <p class="footer-meta">Prices in AUD. Live times in Australian Eastern Time (Sydney).</p>
     </footer>
 
     <script src="js/nav.js" defer></script>
