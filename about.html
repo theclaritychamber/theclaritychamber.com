@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="css/site.css">
     <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="css/patches.css">
-    <link rel="stylesheet" href="css/fix-about.css">
+    <link rel="stylesheet" href="css/fix-about.css?v=4">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="The Clarity Chamber">
     <meta property="og:title" content="Loveleen Sarao, Tarot Reader in Australia | The Clarity Chamber">
@@ -38,6 +38,12 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
+    <style>
+      @media (max-width: 700px) {
+        .seal-row { flex-direction: column !important; align-items: center !important; }
+        .seal-figure, .seal-figure img { width: 168px !important; max-width: 168px !important; flex-basis: 168px !important; }
+      }
+    </style>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -142,12 +148,12 @@
 
         <section class="seal-note" aria-labelledby="seal-title">
             <h2 id="seal-title">The seal</h2>
-            <div class="seal-row">
-                <figure class="seal-figure">
-                    <img src="images/chamber-seal.jpg" width="1100" height="1100" alt="Circular gold seal for The Clarity Chamber: an arched doorway opening onto a crescent moon and stars, ringed with amethyst and clear stones, with Loveleen Sarao’s name beneath.">
+            <div class="seal-row" style="display:flex;flex-direction:row;align-items:flex-start;gap:1.6rem;">
+                <figure class="seal-figure" style="flex:0 0 200px;width:200px;margin:0;">
+                    <img src="images/chamber-seal.jpg" width="200" height="200" alt="Circular gold seal for The Clarity Chamber: an arched doorway opening onto a crescent moon and stars, ringed with amethyst and clear stones, with Loveleen Sarao’s name beneath." style="display:block;width:200px;max-width:200px;height:auto;">
                     <figcaption>The Clarity Chamber · Loveleen Sarao<br>A marked doorway. Moonlight enough to see by.</figcaption>
                 </figure>
-                <div class="seal-copy">
+                <div class="seal-copy" style="flex:1 1 auto;min-width:0;">
                     <p>The seal is the room.</p>
                     <p>A gold circle holds the session in. Four amethysts mark the directions; clear stones sit between them. Amethyst for a quieter mind, clear stone for seeing. Inside, two columns and an arch open onto night: a crescent, low cloud, and a fixed star above the door.</p>
                     <p>Clarity here is not a floodlight. It is enough light to name what has been moving underneath, and a point to steer by once it is named.</p>
