@@ -66,3 +66,32 @@
     margin: 0 auto;
   }
 }
+
+.seal-note {
+  margin: 2.4rem 0 0.4rem;
+}
+
+.seal-figure {
+  margin: 0 auto 1.2rem;
+  max-width: 420px;
+  text-align: center;
+}
+
+.seal-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.seal-figure figcaption {
+  margin-top: 0.7rem;
+  font-style: italic;
+  color: var(--dusty-mauve, #6E4D6E);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.seal-copy p:last-child {
+  margin-bottom: 0;
+}
