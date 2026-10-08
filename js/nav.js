@@ -76,6 +76,7 @@
     var existing = footer.querySelector(".footer-social");
     if (existing) existing.remove();
     var ig = '<svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#f58529"/><stop offset="0.5" stop-color="#dd2a7b"/><stop offset="1" stop-color="#8134af"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#ig)"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.15" fill="#fff"/></svg>';
+    var fb = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#1877F2"/><path fill="#fff" d="M13.4 18.5v-5.2h1.7l.3-2h-2v-1.3c0-.6.2-1 1-1h1.1V7.1c-.2 0-.9-.1-1.7-.1-1.7 0-2.8 1-2.8 2.9v1.4H9.6v2h1.4v5.2h2.4z"/></svg>';
     var yt = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="1" y="5" width="22" height="14" rx="4" fill="#FF0000"/><path fill="#fff" d="M10 9.2v5.6l5.2-2.8z"/></svg>';
     var tt = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25F4EE" d="M14.4 3.2h2.5c.25 1.7 1.2 3.15 2.7 4.05 1 .6 2.15.9 3.35.95v2.55c-1.55-.05-3-.5-4.2-1.25v6.85A6.85 6.85 0 1 1 10.2 9.6v2.7a4.2 4.2 0 1 0 2.95 4V3.2z" transform="translate(0.7 0.7)"/><path fill="#FE2C55" d="M14.4 3.2h2.5c.25 1.7 1.2 3.15 2.7 4.05 1 .6 2.15.9 3.35.95v2.55c-1.55-.05-3-.5-4.2-1.25v6.85A6.85 6.85 0 1 1 10.2 9.6v2.7a4.2 4.2 0 1 0 2.95 4V3.2z" transform="translate(-0.7 -0.7)"/><path fill="#fff" d="M14.4 3.2h2.5c.25 1.7 1.2 3.15 2.7 4.05 1 .6 2.15.9 3.35.95v2.55c-1.55-.05-3-.5-4.2-1.25v6.85A6.85 6.85 0 1 1 10.2 9.6v2.7a4.2 4.2 0 1 0 2.95 4V3.2z"/></svg>';
     var wa = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 2C6.5 2 2 6.3 2 11.5c0 2.1.7 4 1.9 5.6L2 22l5.1-1.3c1.5.8 3.1 1.3 4.9 1.3 5.5 0 10-4.3 10-9.5S17.5 2 12 2z"/><path fill="#fff" d="M16.6 14.6c-.2.6-1.1 1.1-1.5 1.1-.4.1-.8.1-1.3-.1-.4-.1-.8-.3-1.4-.5-1.9-.8-3.2-2.8-3.3-2.9-.1-.1-.8-1-.8-2s.5-1.4.7-1.6c.2-.2.4-.2.5-.2h.4c.1 0 .3 0 .4.3.2.4.5 1.3.6 1.4.1.1.1.2 0 .3l-.2.3-.3.4c-.1.1-.2.2-.1.5.1.2.4.8.9 1.3.6.7 1.2.9 1.4 1 .2.1.4.1.5 0 .2-.1.6-.7.8-1 .2-.2.3-.2.6-.1.2.1 1.4.7 1.7.8.3.1.4.2.5.3.1.1.1.6-.1 1z"/></svg>';
@@ -83,6 +84,7 @@
     social.className = "footer-social";
     social.innerHTML =
       '<a class="social-icon" href="https://www.instagram.com/theclaritychamber" rel="noopener noreferrer" target="_blank" aria-label="Instagram">' + ig + '</a>' +
+      '<a class="social-icon" href="https://www.facebook.com/theclaritychamber.official" rel="noopener noreferrer" target="_blank" aria-label="Facebook">' + fb + '</a>' +
       '<a class="social-icon" href="https://www.youtube.com/@theclaritychamber.official" rel="noopener noreferrer" target="_blank" aria-label="YouTube">' + yt + '</a>' +
       '<a class="social-icon" href="https://www.tiktok.com/@theclaritychamber" rel="noopener noreferrer" target="_blank" aria-label="TikTok">' + tt + '</a>' +
       '<a class="social-icon" href="https://whatsapp.com/channel/0029Vb9274uIyPtQbM6vCw3T" rel="noopener noreferrer" target="_blank" aria-label="WhatsApp channel">' + wa + '</a>';
