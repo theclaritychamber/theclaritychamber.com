@@ -54,6 +54,7 @@ These paths are referenced by every page:
 ## Social
 
 - [Instagram](https://www.instagram.com/theclaritychamber)
+- [Facebook](https://www.facebook.com/theclaritychamber.official)
 - [YouTube](https://www.youtube.com/@theclaritychamber.official)
 - [TikTok](https://www.tiktok.com/@theclaritychamber)
 
