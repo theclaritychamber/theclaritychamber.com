@@ -21,6 +21,8 @@ Static website for Loveleen Sarao’s tarot practice (Australia). Hosted on **Gi
 | `blog/what-tarot-can-and-cant-do.html` | /blog/what-tarot-can-and-cant-do.html |
 | `blog/tarot-for-relationships.html` | /blog/tarot-for-relationships.html |
 | `blog/tarot-for-career-decisions.html` | /blog/tarot-for-career-decisions.html |
+| `blog/tarot-for-life-decisions.html` | /blog/tarot-for-life-decisions.html |
+| `blog/tarot-for-personal-growth.html` | /blog/tarot-for-personal-growth.html |
 | `faq.html` | /faq.html |
 | `contact.html` | /contact.html |
 | `legal.html` | /legal.html |
