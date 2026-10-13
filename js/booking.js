@@ -205,6 +205,8 @@
     var today = formatYmd(now.year, now.month, now.day);
     dateInput.min = today;
     dateInput.max = AVAILABILITY.maxDate;
+    dateInput.disabled = false;
+    dateInput.removeAttribute('disabled');
   }
 
   function hoursForDate(ymd) {
