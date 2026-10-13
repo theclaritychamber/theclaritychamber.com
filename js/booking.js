@@ -614,11 +614,53 @@
         status.textContent = 'Sending your booking request...';
       }
 
+      var submitBtn = document.getElementById('submit-btn');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+      }
+
+      // Honeypot
+      var website = document.getElementById('website');
+      if (website && website.value) {
+        showSuccess('ignored');
+        return;
+      }
+
       var bookingNumber = makeBookingNumber();
-      window.setTimeout(function () {
+      var params = new URLSearchParams();
+      var formData = new FormData(form);
+      for (var pair of formData.entries()) {
+        params.append(pair[0], pair[1]);
+      }
+      params.append('booking-number', bookingNumber);
+
+      var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyrLcMbIha3Gs2lwjKD54c92xmXx4fpSSGXcvXGLikhXQGUaK8PgD_qZfqyK7ARiY5K7Q/exec';
+
+      fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: params
+      }).then(function () {
+        if (typeof gtag === 'function') {
+          var opt = document.getElementById('reading-option').value || '';
+          var value = (opt.indexOf('90') > -1 || opt.indexOf('11') > -1) ? 100 : ((opt.indexOf('60') > -1 || opt.indexOf('7') > -1) ? 80 : 60);
+          gtag('event', 'generate_lead', { currency: 'AUD', value: value });
+        }
         if (status) status.textContent = '';
         showSuccess(bookingNumber);
-      }, 250);
+      }).catch(function (error) {
+        if (status) {
+          status.style.display = 'block';
+          status.style.color = '#a33';
+          status.textContent = 'Sorry, there was a problem submitting your booking. Please try again or email us directly.';
+        }
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Continue to payment';
+        }
+        console.error(error);
+      });
     });
 
     document.getElementById('reading-type').addEventListener('change', updateOptions);
